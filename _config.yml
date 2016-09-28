@@ -18,12 +18,13 @@ collections:
     title: Uploads
     output: true
 email: hello@streamanalyze.com
-description: 'Stream Analyze specialize in software for scalable on-line analyses of streamed data.'
+description: Stream Analyze specialize in software for scalable on-line analyses of
+  streamed data.
 url: https://streamanalyze.github.com
 twitter_username: streamanalyze
 github_username: streamanalyze
 markdown: kramdown
 exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
+- README.md
+- Gemfile
+- Gemfile.lock
