@@ -18,12 +18,12 @@ collections:
     title: Uploads
     output: true
 email: hello@streamanalyze.com
-description: 'Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for Google search
-  results) and in your feed.xml site description.
-
-'
+description: 'Stream Analyze specialize in software for scalable on-line analyses of streamed data.'
 url: https://streamanalyze.github.com
 twitter_username: streamanalyze
 github_username: streamanalyze
 markdown: kramdown
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
