@@ -1,7 +1,7 @@
 ---
-layout: default
 title: About Stream Analyze
-permalink: /about/
+permalink: "/about/"
+layout: default
 ---
 
 This is the about page
