@@ -30,8 +30,7 @@ exclude:
 - Gemfile.lock
 - sass
 - scss
-- .gitignore
-
+- ".gitignore"
 sass:
   sass_dir: _scss
   style: compressed
