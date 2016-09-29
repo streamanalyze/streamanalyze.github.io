@@ -28,3 +28,10 @@ exclude:
 - README.md
 - Gemfile
 - Gemfile.lock
+- sass
+- scss
+- .gitignore
+
+sass:
+  sass_dir: _scss
+  style: compressed

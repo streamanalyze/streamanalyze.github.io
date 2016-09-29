@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/feed.xml">
+    <link rel="stylesheet" href="/assets/stylesheets/application.css" media="screen,projection"/>
+    <link rel="canonical" href="{{ page.url }}" />
+    <script src="/assets/javascripts/modernizr-2.8.3-min.js"></script>
+    <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="">
+    <link rel="apple-touch-icon-precomposed" href="">
   </head>
 
   <body>
     {{ content }}
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="/assets/javascripts/jquery-2.1.1.min.js"></script>
+    <script src="/assets/javascripts/materialize/bin/materialize.min.js"></script>
+    <script src="/assets/javascripts/application.js"></script>
   </body>
 </html>

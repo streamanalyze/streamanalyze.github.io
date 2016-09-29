@@ -1,0 +1,14 @@
+# humanstxt.org
+
+# TEAM
+
+    Martin Holmin -- Lead Developer -- @martinholmin
+
+# THANKS
+
+  Steve Jobs
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Materialize CSS, jQuery, Modernizr, Normalize.css

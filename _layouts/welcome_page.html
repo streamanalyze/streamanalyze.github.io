@@ -4,4 +4,9 @@ layout: default
 
 <div class="container">
   {{ content }}
+
+  {% for strength in site.strengths %}
+    <h2>{{ strength.title }}</h2>
+    {{ strength.output }}
+  {% endfor %}
 </div>
