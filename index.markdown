@@ -12,3 +12,5 @@ We provide a groundbreaking analytic engine built with efficiency and performanc
 
 We call it sa.engine.
 
+![amos_logo_53x50.jpg](/uploads/amos_logo_53x50.jpg)
+
