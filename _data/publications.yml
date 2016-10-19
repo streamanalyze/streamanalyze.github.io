@@ -1,0 +1,351 @@
+---
+- categories:
+  - PhD Theses
+  title: Scalable Preservation, Reconstruction, and Querying of Databases in terms
+    of Semantic Web Representations
+  description: Digital Comprehensive Summaries of Uppsala Dissertations from the Faculty
+    of Science and Technology 1052
+  authors:
+  - Silvia Stefanova
+  issn: 1651-6214
+  isbn: 978-91-554-8690-7
+  urn: urn:nbn:se:uu:diva-199573
+  url: http://www.it.uu.se/research/group/udbl/Theses/SilviaStefanovaPhD.pdf
+  year: '2013'
+- categories:
+  - PhD Theses
+  title: Scalable Parallelization of Expensive Continuous Queries over Massive Data
+    Streams
+  description: Digital Comprehensive Summaries of Uppsala Dissertations from the Faculty
+    of Science and Technology 836
+  authors:
+  - Erik Zeitler
+  issn: 1651-6214
+  isbn: 978-91-554-8095-0
+  urn: urn:nbn:se:uu:diva-152255
+  url: http://www.it.uu.se/research/group/udbl/Theses/ErikZeitlerPhD.pdf
+  year: '2011'
+- categories:
+  - PhD Theses
+  title: Querying Data Providing Web Services
+  description: Digital Comprehensive Summaries of Uppsala Dissertations from the Faculty
+    of Science and Technology 755
+  authors:
+  - Manivasakan Sabesan
+  issn: 1651-6214
+  isbn: 978-91-554-7852-0
+  urn: urn:nbn:se:uu:diva-128928
+  url: http://www.it.uu.se/research/group/udbl/Theses/ManivasakanSabesanPhD.pdf
+  year: '2010'
+- categories:
+  - PhD Theses
+  title: Optimization and Execution of Complex Scientific Queries
+  description: Uppsala Dissertations from the Faculty of Science and Technology 80
+  authors:
+  - Ruslan Fomkin
+  issn: 1104-2516
+  isbn: 978-91-554-7382-2
+  urn: urn:nbn:se:uu:diva-9514
+  url: http://www.it.uu.se/research/group/udbl/Theses/RuslanFomkinPhD.pdf
+  year: '2009'
+- categories:
+  - PhD Theses
+  title: Querying RDF Schema Views of Relational Databases
+  description: Uppsala Dissertations from the Faculty of Science and Technology 75
+  authors:
+  - Johan Petrini
+  issn: 1104-2516
+  isbn: 978-91-554-7202-3
+  urn: urn:nbn:se:uu:diva-8740
+  url: http://www.it.uu.se/research/group/udbl/Theses/JohanPetriniPhD.pdf
+  year: '2008'
+- categories:
+  - PhD Theses
+  title: Scalable Scientific Stream Query Processing
+  description: Uppsala Dissertations from the Faculty of Science and Technology 66
+  authors:
+  - Milena Ivanova
+  issn: 1104-2516
+  isbn: 91-554-6351-7
+  urn: urn:nbn:se:uu:diva-6024
+  url: http://www.it.uu.se/research/group/udbl/Theses/MilenaIvanovaPhD.pdf
+  year: '2005'
+- categories:
+  - PhD Theses
+  title: Query Processing for Peer Mediator Databases
+  description: Comprehensive Summaries of Uppsala Dissertations from the Faculty of
+    Science and Technology 901
+  authors:
+  - Timour Katchaounov
+  issn: 1104-232X
+  isbn: 91-554-5770-3
+  urn: urn:nbn:se:uu:diva-3687
+  url: http://www.it.uu.se/research/group/udbl/Theses/TimourKatchaounovPhD.pdf
+  year: '2003'
+- categories:
+  - PhD Theses
+  title: Design, Implementation and Evaluation of a Distributed Mediator System for
+    Data Integration
+  description: Linköping Studies in Science and Technology Dissertation No. 582
+  authors:
+  - Vanja Josifovski
+  issn: 0345-7524
+  isbn: 91-7219-482-0
+  url: http://www.it.uu.se/research/group/udbl/Theses/VanjaJosifovskiPhD.pdf
+  year: '1999'
+- categories:
+  - PhD Theses
+  title: Management of 1-D Sequence Data from Discrete to Continuous
+  description: Linköping Studies in Science and Technology Dissertation No. 561
+  authors:
+  - Ling Lin
+  issn: 0345-7524
+  isbn: 91-7219-402-2
+  url: http://www.it.uu.se/research/group/udbl/Theses/LingLinPhD.pdf
+  year: '1998'
+- categories:
+  - PhD Theses
+  title: Active Database Management Systems for Monitoring and Control
+  description: Linköping Studies in Science and Technology Dissertation No. 494
+  authors:
+  - Martin Sköld
+  issn: 0345-7524
+  isbn: 91-7219-002-7
+  url: http://www.it.uu.se/research/group/udbl/Theses/MartinSkoldPhD.pdf
+  year: '1997'
+- categories:
+  - PhD Theses
+  title: On Extensible and Object-Relational Database Technology for Finite Element
+    Analysis Applications
+  description: Linköping Studies in Science and Technology Dissertation No. 452
+  authors:
+  - Kjell Orsborn
+  issn: 0345-7524
+  isbn: 91-7871-827-9
+  url: http://www.it.uu.se/research/group/udbl/Theses/KjellOrsbornPhD.pdf
+  year: '1995'
+- categories:
+  - Licentiate Theses
+  title: Querying Mediated Web Services
+  description: Dissertation for the degree of Licentiate of Philosophy in Computer
+    Science with specialization in Database Technology at Uppsala University
+  authors:
+  - Manivasakan Sabesan
+  urn: urn:nbn:se:uu:diva-100903
+  url: http://www.it.uu.se/research/group/udbl/Theses/ManivasakanSabesanLic.pdf
+  year: '2007'
+- categories:
+  - Licentiate Theses
+  title: Performance-Polymorphic Declarative Queries
+  description: Linköping Studies in Science and Technology Thesis No 733
+  authors:
+  - Thomas Padron-McCarthy
+  issn: 0280-7971
+  isbn: 91-7219-354-9
+  url: http://www.it.uu.se/research/group/udbl/Theses/ThomasPadron-McCarthyLic.pdf
+  year: '1998'
+- categories:
+  - Licentiate Theses
+  title: Multidatabase integration using polymorphic queries and views
+  description: Linköping University Licentiate Thesis No 546
+  authors:
+  - Magnus Werner
+  issn: 0280-7971
+  isbn: 91-7871-687-X
+  url: http://www.it.uu.se/research/group/udbl/Theses/MagnusWernerLic.pdf
+  year: '1996'
+- categories:
+  - Licentiate Theses
+  title: Efficient Management of Object-Oriented Queries with Late Bound Functions
+  description: Linköping University Licentiate Thesis No 538
+  authors:
+  - Staffan Flodin
+  issn: 0280-7971
+  isbn: 91-7871-667-5
+  url: http://www.it.uu.se/research/group/udbl/Theses/StaffanFlodinLic.pdf
+  year: '1996'
+- categories:
+  - Foo
+  title: Active Rules based on Object-Relational Queries - Efficient Change Monitoring
+    Techniques
+  description: Linköping University Licentiate Thesis No 452
+  authors:
+  - Martin Sköld
+  url: http://www.it.uu.se/research/group/udbl/Theses/MartinSkoldLic.pdf
+  year: '1994'
+- categories:
+  - Licentiate Theses
+  title: Object Views of Relational Data in Multidatabase Systems
+  description: Linköping Studies in Science and Technology Thesis No 446
+  authors:
+  - Gustav Fahl
+  url: http://www.it.uu.se/research/group/udbl/Theses/GustavFahlLic.pdf
+  year: '1994'
+- categories:
+  - Licentiate Theses
+  title: A Scalable Data Structure for a Parallel Data Server
+  description: Linköping University Licentiate Thesis No 609
+  authors:
+  - Jonas S Karlsson
+  url: http://www.it.uu.se/research/group/udbl/Theses/JonasSKarlssonLic.pdf
+  year: '1997'
+- categories:
+  - MSc Theses
+  title: Scalable Persisting and Querying of Streaming Data by Utilizing a NoSQL Data
+    Store
+  description: MSc Thesis IT 14 021, Department of Information Technology, Uppsala
+    University
+  authors:
+  - Khalid Mahmood
+  url: http://www.it.uu.se/research/group/udbl/Theses/KhalidMahmoodMSc.pdf
+  year: '2014'
+- categories:
+  - MSc Theses
+  title: Integrating SciSPARQL and MATLAB
+  description: MSc Thesis IT 14 019, Department of Information Technology, Uppsala
+    University
+  authors:
+  - Xueming He
+  urn: urn:nbn:se:uu:diva-220907
+  url: http://www.it.uu.se/research/group/udbl/Theses/XuemingHeMSc.pdf
+  year: '2014'
+- categories:
+  - MSc Theses
+  title: Frequent Route Based Continuous Moving Object Location and Density Prediction
+    on Road Networks
+  description: MSc Thesis IT 11 027, Department of Information Technology, Uppsala
+    University
+  authors:
+  - Manohar Kaul
+  urn: urn:nbn:se:uu:diva-155759
+  url: http://www.it.uu.se/research/group/udbl/Theses/ManoharKaulMSc.pdf
+  year: '2011'
+- categories:
+  - MSc Theses
+  title: An Algorithm for Streaming Clustering
+  description: MSc Thesis IT 11 011, Department of Information Technology, Uppsala
+    University
+  authors:
+  - Jiaowei Tang
+  urn: urn:nbn:se:uu:diva-150820
+  url: http://www.it.uu.se/research/group/udbl/Theses/Jiaowei.TangMSc.pdf
+  year: '2011'
+- categories:
+  - MSc Theses
+  title: Wrapping SparQL Query Services
+  description: MSc Thesis IT 10 065, Department of Information Technology, Uppsala
+    University
+  authors:
+  - Mikael Lax
+  urn: urn:nbn:se:uu:diva-134260
+  url: http://www.it.uu.se/research/group/udbl/Theses/MikaelLaxMSc.pdf
+  year: '2010'
+- categories:
+  - MSc Theses
+  title: Processing Functional CQL Queries
+  description: MSc Thesis IT 10 059, Department of Information Technology, Uppsala
+    University
+  authors:
+  - Robert Kajic
+  urn: urn:nbn:se:uu:diva-133869
+  url: http://www.it.uu.se/research/group/udbl/Theses/RobertKajicMSc.pdf
+  year: '2010'
+- categories:
+  - MSc Theses
+  title: Embedding Naive Bayes classification in a Functional and Object Oriented
+    DBMS
+  description:
+  authors:
+  - Thibault Sellam
+  urn: urn:nbn:se:uu:diva-130629
+  url: http://www.it.uu.se/research/group/udbl/Theses/ThibaultSellamMSc.pdf
+  year: '2010'
+- categories:
+  - MSc Theses
+  title: Querying JSON Streams
+  description: MSc Thesis IT 10 030, Department of Information Technology, Uppsala
+    University
+  authors:
+  - Yang Bo
+  urn: urn:nbn:se:uu:diva-129478
+  url: http://www.it.uu.se/research/group/udbl/Theses/YangBoMSc.pdf
+  year: '2010'
+- categories:
+  - MSc Theses
+  title: JavaScript based web service access to a functional DBMS
+  description: MSc Thesis IT 10 019, Department of Information Technology, Uppsala
+    University
+  authors:
+  - Di Jin
+  urn: urn:nbn:se:uu:diva-129468
+  url: http://www.it.uu.se/research/group/udbl/Theses/DiJinMSc.pdf
+  year: '2010'
+- categories:
+  - MSc Theses
+  title: Indexing nearest neighbor queries
+  description: MSc Thesis IT 10 017, Department of Information Technology, Uppsala
+    University
+  authors:
+  - Thanh Truong
+  urn: urn:nbn:se:uu:diva-129464
+  url: http://www.it.uu.se/research/group/udbl/Theses/ThanhTruongMSc.pdf
+  year: '2010'
+- categories:
+  - MSc Theses
+  title: The performance of a relational database system for a data stream management
+    system benchmark
+  description: MSc Thesis IT 10 006, Department of Information Technology, Uppsala
+    University
+  authors:
+  - Fredrik Edemar
+  urn: urn:nbn:se:uu:diva-122642
+  url: http://www.it.uu.se/research/group/udbl/Theses/FredrikEdemarMSc.pdf
+  year: '2010'
+- categories:
+  - MSc Theses
+  title: Python Integration with a Functional DBMS
+  description: MSc Thesis IT 09 036, Department of Information Technology, Uppsala
+    University
+  authors:
+  - Hanzheng Zou
+  urn: urn:nbn:se:uu:diva-112033
+  url: http://www.it.uu.se/research/group/udbl/Theses/HanzhengZouMSc.pdf
+  year: '2009'
+- categories:
+  - MSc Theses
+  title: Searching Web Feeds from a Functional Database Management System
+  description: MSc Thesis IT 09 035, Department of Information Technology, Uppsala
+    University
+  authors:
+  - Niklas Gåfvels
+  urn: urn:nbn:se:uu:diva-110893
+  url: http://www.it.uu.se/research/group/udbl/Theses/NiklasGafvelsMSc.pdf
+  year: '2009'
+- categories:
+  - MSc Theses
+  title: Storing and Searching Scientific Data with a Relational Database System
+  description: MSc Thesis IT 08 020, Department of Information Technology, Uppsala
+    University
+  authors:
+  - Luis Urea
+  urn: urn:nbn:se:uu:diva-98276
+  url: http://www.it.uu.se/research/group/udbl/Theses/LuisUreaMSc.pdf
+  year: '2008'
+- categories:
+  - MSc Theses
+  title: Benchmarking the performance of a data stream management system
+  description: MSc Thesis UPTEC F07 105, Faculty of Science and Technology, Uppsala
+    University
+  authors:
+  - Mårten Svensson
+  url: http://www.it.uu.se/research/group/udbl/Theses/MartenSvenssonMSc.pdf
+  year: '2007'
+- categories:
+  - MSc Theses
+  title: Archiving Relational Databases using a Semantic Web Representation
+  description:
+  authors:
+  - Santosh Kumar
+  - Reddy Maddula
+  url: http://www.it.uu.se/research/group/udbl/Theses/SantoshKumarReddyMaddulaMSc.pdf
+  year: '2007'
