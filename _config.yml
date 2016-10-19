@@ -14,6 +14,8 @@ collections:
   publications:
     title: Publications
     output: false
+    authors:
+    - 
   strengths:
     title: Strengths
     output: false
