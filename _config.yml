@@ -13,7 +13,7 @@ collections:
     output: true
   publications:
     title: Publications
-    output: true
+    output: false
   strengths:
     title: Strengths
     output: false
