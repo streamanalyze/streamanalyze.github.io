@@ -1,14 +1,8 @@
-//
-// Jekyll-Materialize-Boilerplate
-// Author: @newaeonweb
-//
-/* Custom Style
--------------------------------------------------- */
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src: url(../fonts/material-design-icons/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: url('../fonts/material-design-icons/MaterialIcons-Regular.eot');
   src: local('Material Icons'),
        local('MaterialIcons-Regular'),
        url(../fonts/material-design-icons/MaterialIcons-Regular.woff2) format('woff2'),
@@ -17,26 +11,19 @@
 }
 
 .material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
   display: inline-block;
-  width: 1em;
-  height: 1em;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
+  font-family: 'Material Icons';
   font-feature-settings: 'liga';
+  font-size: 24px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  height: 1em;
+  letter-spacing: normal;
+  line-height: 1;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  width: 1em;
+  word-wrap: normal;
 }

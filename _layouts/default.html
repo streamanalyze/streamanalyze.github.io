@@ -1,21 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.description }}">
+    <meta property="og:image" content="">
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/feed.xml">
     <link rel="stylesheet" href="/assets/stylesheets/application.css" media="screen,projection"/>
     <link rel="canonical" href="{{ page.url }}" />
-    <script src="/assets/javascripts/modernizr-2.8.3-min.js"></script>
     <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="">
     <link rel="apple-touch-icon-precomposed" href="">
+    <link rel="dns-prefetch" href="//s3.amazonaws.com">
+    <link rel="dns-prefetch" href="//ajax.googleapis.com">
+    <script src="/assets/javascripts/modernizr-2.8.3.min.js"></script>
   </head>
 
   <body>
     {{ content }}
-    <script src="/assets/javascripts/jquery-2.1.1.min.js"></script>
-    <script src="/assets/javascripts/materialize/bin/materialize.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/javascripts/jquery-2.1.1.min.js"><\/script>')</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script>window.Materialize || document.write('<script src="/assets/javascripts/materialize.min.js"><\/script>')</script>
     <script src="/assets/javascripts/application.js"></script>
   </body>
 </html>
