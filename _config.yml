@@ -11,6 +11,9 @@ collections:
   products:
     title: Products
     output: true
+  publications:
+    title: Publications
+    output: true
   strengths:
     title: Strengths
     output: false
