@@ -1,6 +1,5 @@
 ---
-title: Scalable Preservation Reconstruction And Querying Of Databases In Terms Of
-  Semantic Web Representations
+title: Scalable Preservation Reconstruction And Querying Of Databases In Terms Of Semantic Web Representations
 categories:
 - PhD Theses
 issn: 1651-6214
