@@ -1,8 +1,8 @@
 ---
+title: Management of 1-D Sequence Data from Discrete to Continuous
 categories:
 - PhD Theses
-title: Management of 1-D Sequence Data from Discrete to Continuous
-description:
+description: 
 authors:
 - Ling Lin
 issn: 0345-7524
