@@ -1,5 +1,13 @@
 ---
-title: '4'
+categories:
+- PhD Theses
+title: Active Database Management Systems for Monitoring and Control
+authors:
+- Martin Sköld
+issn: 0345-7524
+isbn: 91-7219-002-7
+url: http://www.it.uu.se/research/group/udbl/Theses/MartinSkoldPhD.pdf
+year: 1997
 date: 2016-10-23 13:02:00 +02:00
 ---
-
+Linköping Studies in Science and Technology Dissertation No. 494
