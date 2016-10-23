@@ -1,5 +1,5 @@
 ---
-title: Management of 1-D Sequence Data from Discrete to Continuous
+title: '3'
 categories:
 - PhD Theses
 description: 
