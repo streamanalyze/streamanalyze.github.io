@@ -1,8 +1,9 @@
 ---
-title: Frequent Route Based Continuous Moving Object Location and Density Prediction on Road Networks
+title: Frequent Route Based Continuous Moving Object Location and Density Prediction
+  on Road Networks
 date: 2016-10-23 13:35:00 +02:00
 categories:
-- MSc Theses 
+- MSc Theses
 authors:
 - Manohar Kaul
 urn: urn:nbn:se:uu:diva-155759
