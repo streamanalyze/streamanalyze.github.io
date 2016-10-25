@@ -7,7 +7,7 @@ position: 32
 authors:
 - Robert Kajic
 urn: urn:nbn:se:uu:diva-133869
-download: /uploads/research/RobertKajicMSc.pdf
+download: "/uploads/research/RobertKajicMSc.pdf"
 year: 2010
 ---
 

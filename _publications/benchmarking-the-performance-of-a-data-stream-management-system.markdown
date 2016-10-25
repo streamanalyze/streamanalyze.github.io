@@ -6,7 +6,7 @@ categories:
 position: 0
 authors:
 - Mårten Svensson
-download: /uploads/research/MartenSvenssonMSc.pdf
+download: "/uploads/research/MartenSvenssonMSc.pdf"
 year: 2007
 ---
 

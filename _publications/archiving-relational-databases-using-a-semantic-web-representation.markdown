@@ -7,7 +7,7 @@ position: 3
 authors:
 - Santosh Kumar
 - Reddy Maddula
-download: /uploads/research/SantoshKumarReddyMaddulaMSc.pdf
+download: "/uploads/research/SantoshKumarReddyMaddulaMSc.pdf"
 year: 2007
 ---
 

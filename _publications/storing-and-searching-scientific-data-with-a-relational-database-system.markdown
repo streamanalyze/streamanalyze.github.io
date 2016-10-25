@@ -7,7 +7,7 @@ position: 1
 authors:
 - Luis Urea
 urn: urn:nbn:se:uu:diva-98276
-download: /uploads/research/LuisUreaMSc.pdf
+download: "/uploads/research/LuisUreaMSc.pdf"
 year: 2008
 ---
 

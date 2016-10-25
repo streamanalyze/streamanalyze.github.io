@@ -7,7 +7,7 @@ position: 9
 authors:
 - Di Jin
 urn: urn:nbn:se:uu:diva-129468
-download: /uploads/research/DiJinMSc.pdf
+download: "/uploads/research/DiJinMSc.pdf"
 year: 2010
 ---
 

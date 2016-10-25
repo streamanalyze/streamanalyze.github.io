@@ -9,7 +9,7 @@ authors:
 issn: 1104-232X
 isbn: 91-554-5770-3
 urn: urn:nbn:se:uu:diva-3687
-download: /uploads/research/TimourKatchaounovPhD.pdf
+download: "/uploads/research/TimourKatchaounovPhD.pdf"
 year: 2003
 ---
 

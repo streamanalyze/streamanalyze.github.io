@@ -8,7 +8,7 @@ authors:
 - Magnus Werner
 issn: 0280-7971
 isbn: 91-7871-687-X
-download: /uploads/research/MagnusWernerLic.pdf
+download: "/uploads/research/MagnusWernerLic.pdf"
 year: 1996
 ---
 

@@ -6,7 +6,7 @@ categories:
 authors:
 - Thibault Sellam
 urn: urn:nbn:se:uu:diva-130629
-download: /uploads/research/ThibaultSellamMSc.pdf
+download: "/uploads/research/ThibaultSellamMSc.pdf"
 year: 2010
 ---
 

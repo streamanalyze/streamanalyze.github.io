@@ -7,7 +7,7 @@ categories:
 position: 30
 authors:
 - Khalid Mahmood
-download: /uploads/research/KhalidMahmoodMSc.pdf
+download: "/uploads/research/KhalidMahmoodMSc.pdf"
 year: 2014
 ---
 

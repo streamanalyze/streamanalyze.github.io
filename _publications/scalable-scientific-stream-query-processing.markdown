@@ -9,7 +9,7 @@ authors:
 issn: 1104-2516
 isbn: 91-554-6351-7
 urn: urn:nbn:se:uu:diva-6024
-download: /uploads/research/MilenaIvanovaPhD.pdf
+download: "/uploads/research/MilenaIvanovaPhD.pdf"
 year: 2005
 ---
 

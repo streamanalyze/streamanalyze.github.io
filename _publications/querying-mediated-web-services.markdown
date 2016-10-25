@@ -7,7 +7,7 @@ position: 15
 authors:
 - Manivasakan Sabesan
 urn: urn:nbn:se:uu:diva-100903
-download: /uploads/research/ManivasakanSabesanLic.pdf
+download: "/uploads/research/ManivasakanSabesanLic.pdf"
 year: 2007
 ---
 

@@ -8,7 +8,7 @@ position: 27
 authors:
 - Manohar Kaul
 urn: urn:nbn:se:uu:diva-155759
-download: /uploads/research/ManoharKaulMSc.pdf
+download: "/uploads/research/ManoharKaulMSc.pdf"
 year: 2011
 ---
 

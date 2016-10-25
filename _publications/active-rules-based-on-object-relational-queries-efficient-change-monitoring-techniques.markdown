@@ -7,7 +7,7 @@ categories:
 position: 16
 authors:
 - Martin Sköld
-download: /uploads/research/MartinSkoldLic.pdf
+download: "/uploads/research/MartinSkoldLic.pdf"
 year: 1994
 ---
 

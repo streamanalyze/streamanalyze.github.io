@@ -6,7 +6,7 @@ categories:
 position: 29
 authors:
 - Gustav Fahl
-download: /uploads/research/GustavFahlLic.pdf
+download: "/uploads/research/GustavFahlLic.pdf"
 year: 1994
 ---
 

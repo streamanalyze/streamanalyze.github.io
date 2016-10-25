@@ -6,7 +6,7 @@ categories:
 position: 14
 authors:
 - Jonas S Karlsson
-download: /uploads/research/JonasSKarlssonLic.pdf
+download: "/uploads/research/JonasSKarlssonLic.pdf"
 year: 1997
 ---
 

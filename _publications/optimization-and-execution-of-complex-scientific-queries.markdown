@@ -9,7 +9,7 @@ authors:
 issn: 1104-2516
 isbn: 978-91-554-7382-2
 urn: urn:nbn:se:uu:diva-9514
-download: /uploads/research/RuslanFomkinPhD.pdf
+download: "/uploads/research/RuslanFomkinPhD.pdf"
 year: 2009
 ---
 
