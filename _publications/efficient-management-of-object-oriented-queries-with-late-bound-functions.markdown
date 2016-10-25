@@ -7,7 +7,7 @@ authors:
 - Staffan Flodin
 issn: 0280-7971
 isbn: 91-7871-667-5
-url: http://www.it.uu.se/research/group/udbl/Theses/StaffanFlodinLic.pdf
+download: http://www.it.uu.se/research/group/udbl/Theses/StaffanFlodinLic.pdf
 year: 1996
 ---
 

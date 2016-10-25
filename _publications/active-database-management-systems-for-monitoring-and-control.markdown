@@ -7,7 +7,7 @@ authors:
 - Martin Sköld
 issn: 0345-7524
 isbn: 91-7219-002-7
-url: http://www.it.uu.se/research/group/udbl/Theses/MartinSkoldPhD.pdf
+download: http://www.it.uu.se/research/group/udbl/Theses/MartinSkoldPhD.pdf
 year: 1997
 ---
 

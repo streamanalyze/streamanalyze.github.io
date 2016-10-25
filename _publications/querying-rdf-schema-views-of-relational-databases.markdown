@@ -8,7 +8,7 @@ authors:
 issn: 1104-2516
 isbn: 978-91-554-7202-3
 urn: urn:nbn:se:uu:diva-8740
-url: http://www.it.uu.se/research/group/udbl/Theses/JohanPetriniPhD.pdf
+download: http://www.it.uu.se/research/group/udbl/Theses/JohanPetriniPhD.pdf
 year: 2008
 ---
 

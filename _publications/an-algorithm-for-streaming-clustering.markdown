@@ -6,8 +6,8 @@ categories:
 authors:
 - Jiaowei Tang
 urn: urn:nbn:se:uu:diva-150820
-url: http://www.it.uu.se/research/group/udbl/Theses/Jiaowei.TangMSc.pdf
-year: '2011'
+download: http://www.it.uu.se/research/group/udbl/Theses/Jiaowei.TangMSc.pdf
+year: 2011
 ---
 
 MSc Thesis IT 11 011, Department of Information Technology, Uppsala University

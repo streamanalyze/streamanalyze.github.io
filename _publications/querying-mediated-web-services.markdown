@@ -6,7 +6,7 @@ categories:
 authors:
 - Manivasakan Sabesan
 urn: urn:nbn:se:uu:diva-100903
-url: http://www.it.uu.se/research/group/udbl/Theses/ManivasakanSabesanLic.pdf
+download: http://www.it.uu.se/research/group/udbl/Theses/ManivasakanSabesanLic.pdf
 year: 2007
 ---
 

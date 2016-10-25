@@ -6,7 +6,7 @@ categories:
 authors:
 - Robert Kajic
 urn: urn:nbn:se:uu:diva-133869
-url: http://www.it.uu.se/research/group/udbl/Theses/RobertKajicMSc.pdf
+download: http://www.it.uu.se/research/group/udbl/Theses/RobertKajicMSc.pdf
 year: 2010
 ---
 

@@ -6,7 +6,7 @@ categories:
 authors:
 - Mikael Lax
 urn: urn:nbn:se:uu:diva-134260
-url: http://www.it.uu.se/research/group/udbl/Theses/MikaelLaxMSc.pdf
+download: http://www.it.uu.se/research/group/udbl/Theses/MikaelLaxMSc.pdf
 year: 2010
 ---
 

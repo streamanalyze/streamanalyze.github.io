@@ -6,7 +6,7 @@ categories:
 authors:
 - Xueming He
 urn: urn:nbn:se:uu:diva-220907
-url: http://www.it.uu.se/research/group/udbl/Theses/XuemingHeMSc.pdf
+download: http://www.it.uu.se/research/group/udbl/Theses/XuemingHeMSc.pdf
 year: 2014
 ---
 

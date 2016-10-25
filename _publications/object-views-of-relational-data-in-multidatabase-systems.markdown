@@ -5,7 +5,7 @@ categories:
 - Licentiate Theses
 authors:
 - Gustav Fahl
-url: http://www.it.uu.se/research/group/udbl/Theses/GustavFahlLic.pdf
+download: http://www.it.uu.se/research/group/udbl/Theses/GustavFahlLic.pdf
 year: 1994
 ---
 
