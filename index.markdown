@@ -4,9 +4,7 @@ position: 0
 main_heading: Analytics at the Edge
 sub_heading: Stream Analyze specialize in software for scalable real-time analyses
   of data in motion.
-description: Stream Analyze specialize in software for scalable on-line analyses of
-  streamed data.
-seo_description: Stream Analyze specialize in software for high level scalable on-line
+description: Stream Analyze specialize in software for high level scalable on-line
   analyses of streamed data.
 layout: welcome_page
 ---
