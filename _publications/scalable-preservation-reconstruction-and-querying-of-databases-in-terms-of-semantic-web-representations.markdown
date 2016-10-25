@@ -1,5 +1,6 @@
 ---
-title: Scalable Preservation Reconstruction And Querying Of Databases In Terms Of Semantic Web Representations
+title: Scalable Preservation Reconstruction And Querying Of Databases In Terms Of
+  Semantic Web Representations
 categories:
 - PhD Theses
 position: 7
