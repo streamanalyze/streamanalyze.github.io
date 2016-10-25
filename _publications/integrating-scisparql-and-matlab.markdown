@@ -1,5 +1,13 @@
 ---
 title: Integrating SciSPARQL and MATLAB
 date: 2016-10-23 13:35:00 +02:00
+categories:
+- MSc Theses
+authors:
+- Xueming He
+urn: urn:nbn:se:uu:diva-220907
+url: http://www.it.uu.se/research/group/udbl/Theses/XuemingHeMSc.pdf
+year: 2014
 ---
 
+MSc Thesis IT 14 019, Department of Information Technology, Uppsala University

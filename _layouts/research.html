@@ -5,7 +5,7 @@ layout: default
 <div class="container">
   <div class="row">
     <div class="col s12 m8 push-m2">
-      <div class="valign-wrapper main">
+      <div class="valign-wrapper">
         <div class="section valign">
           {{ content }}
         </div>
@@ -13,7 +13,21 @@ layout: default
     </div>
   </div>
 </div>
-{% for strength in site.strengths limit:3 %}
-  {{ strength.title }}
-  {{ strength.output }}
-{% endfor %}
+
+<div class="container">
+  <div class="row">
+    <div class="col s12 m8 push-m2">
+      <div class="valign-wrapper">
+        <div class="section valign">
+          {% assign phd_theses = site.publications | where:'categories', 'PhD Theses' %}
+          {% for publication in phd_theses %}
+          <div>
+            <h5>{{ publication.title }}</h5>
+            {{ publication.content}}
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
