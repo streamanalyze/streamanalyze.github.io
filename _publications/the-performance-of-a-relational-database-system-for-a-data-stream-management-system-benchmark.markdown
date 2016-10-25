@@ -8,7 +8,7 @@ position: 8
 authors:
 - Fredrik Edemar
 urn: urn:nbn:se:uu:diva-122642
-download: http://www.it.uu.se/research/group/udbl/Theses/FredrikEdemarMSc.pdf
+download: /uploads/research/FredrikEdemarMSc.pdf
 year: 2010
 ---
 

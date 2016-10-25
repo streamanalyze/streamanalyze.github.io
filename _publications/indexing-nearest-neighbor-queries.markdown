@@ -7,7 +7,7 @@ position: 5
 authors:
 - Thanh Truong
 urn: urn:nbn:se:uu:diva-129464
-download: http://www.it.uu.se/research/group/udbl/Theses/ThanhTruongMSc.pdf
+download: /uploads/research/ThanhTruongMSc.pdf
 year: 2010
 ---
 

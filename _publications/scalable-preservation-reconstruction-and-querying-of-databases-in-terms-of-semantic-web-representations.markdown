@@ -7,7 +7,7 @@ position: 7
 issn: 1651-6214
 isbn: 978-91-554-8690-7
 urn: urn:nbn:se:uu:diva-199573
-download: http://www.it.uu.se/research/group/udbl/Theses/SilviaStefanovaPhD.pdf
+download: /uploads/research/SilviaStefanovaPhD.pdf
 year: 2013
 authors:
 - Silvia Stefanova

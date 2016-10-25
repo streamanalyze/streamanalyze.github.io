@@ -10,7 +10,7 @@ authors:
 issn: 1651-6214
 isbn: 978-91-554-8095-0
 urn: urn:nbn:se:uu:diva-152255
-download: http://www.it.uu.se/research/group/udbl/Theses/ErikZeitlerPhD.pdf
+download: /uploads/research/ErikZeitlerPhD.pdf
 year: 2011
 ---
 

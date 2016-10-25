@@ -7,7 +7,7 @@ position: 28
 authors:
 - Xueming He
 urn: urn:nbn:se:uu:diva-220907
-download: http://www.it.uu.se/research/group/udbl/Theses/XuemingHeMSc.pdf
+download: /uploads/research/XuemingHeMSc.pdf
 year: 2014
 ---
 

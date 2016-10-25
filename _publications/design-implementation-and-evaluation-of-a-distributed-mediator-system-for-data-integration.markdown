@@ -8,7 +8,7 @@ authors:
 - Vanja Josifovski
 issn: 0345-7524
 isbn: 91-7219-482-0
-download: http://www.it.uu.se/research/group/udbl/Theses/VanjaJosifovskiPhD.pdf
+download: /uploads/research/VanjaJosifovskiPhD.pdf
 year: 1999
 ---
 

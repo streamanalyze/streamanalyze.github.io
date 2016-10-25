@@ -6,7 +6,7 @@ categories:
 position: 0
 authors:
 - Mårten Svensson
-download: http://www.it.uu.se/research/group/udbl/Theses/MartenSvenssonMSc.pdf
+download: /uploads/research/MartenSvenssonMSc.pdf
 year: 2007
 ---
 

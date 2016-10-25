@@ -7,7 +7,7 @@ position: 4
 authors:
 - Hanzheng Zou
 urn: urn:nbn:se:uu:diva-112033
-download: http://www.it.uu.se/research/group/udbl/Theses/HanzhengZouMSc.pdf
+download: /uploads/research/HanzhengZouMSc.pdf
 year: 2009
 ---
 

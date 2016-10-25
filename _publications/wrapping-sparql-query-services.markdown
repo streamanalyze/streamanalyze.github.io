@@ -7,7 +7,7 @@ position: 33
 authors:
 - Mikael Lax
 urn: urn:nbn:se:uu:diva-134260
-download: http://www.it.uu.se/research/group/udbl/Theses/MikaelLaxMSc.pdf
+download: /uploads/research/MikaelLaxMSc.pdf
 year: 2010
 ---
 

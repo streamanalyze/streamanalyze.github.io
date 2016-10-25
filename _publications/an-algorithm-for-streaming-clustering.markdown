@@ -7,7 +7,7 @@ position: 31
 authors:
 - Jiaowei Tang
 urn: urn:nbn:se:uu:diva-150820
-download: http://www.it.uu.se/research/group/udbl/Theses/Jiaowei.TangMSc.pdf
+download: /uploads/research/Jiaowei.TangMSc.pdf
 year: 2011
 ---
 

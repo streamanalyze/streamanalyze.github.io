@@ -8,7 +8,7 @@ authors:
 - Thomas Padron-McCarthy
 issn: 0280-7971
 isbn: 91-7219-354-9
-download: http://www.it.uu.se/research/group/udbl/Theses/ThomasPadron-McCarthyLic.pdf
+download: /uploads/research/ThomasPadron-McCarthyLic.pdf
 year: '1998'
 ---
 

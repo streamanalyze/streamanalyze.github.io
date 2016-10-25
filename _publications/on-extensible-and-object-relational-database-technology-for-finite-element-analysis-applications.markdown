@@ -9,7 +9,7 @@ authors:
 - Kjell Orsborn
 issn: 0345-7524
 isbn: 91-7871-827-9
-download: http://www.it.uu.se/research/group/udbl/Theses/KjellOrsbornPhD.pdf
+download: /uploads/research/KjellOrsbornPhD.pdf
 year: 1995
 ---
 

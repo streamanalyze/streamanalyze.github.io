@@ -7,7 +7,7 @@ position: 11
 authors:
 - Yang Bo
 urn: urn:nbn:se:uu:diva-129478
-download: http://www.it.uu.se/research/group/udbl/Theses/YangBoMSc.pdf
+download: /uploads/research/YangBoMSc.pdf
 year: 2010
 ---
 

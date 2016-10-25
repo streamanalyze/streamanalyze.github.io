@@ -7,7 +7,7 @@ categories:
 position: 30
 authors:
 - Khalid Mahmood
-download: http://www.it.uu.se/research/group/udbl/Theses/KhalidMahmoodMSc.pdf
+download: /uploads/research/KhalidMahmoodMSc.pdf
 year: 2014
 ---
 

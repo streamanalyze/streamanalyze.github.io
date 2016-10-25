@@ -7,7 +7,7 @@ position: 2
 authors:
 - Niklas Gåfvels
 urn: urn:nbn:se:uu:diva-110893
-download: http://www.it.uu.se/research/group/udbl/Theses/NiklasGafvelsMSc.pdf
+download: /uploads/research/NiklasGafvelsMSc.pdf
 year: 2009
 ---
 
