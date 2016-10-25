@@ -38,4 +38,8 @@ h3 {
 
 .click-box {
   cursor: pointer;
+
+  &:hover {
+    background-color: #f6f6f6;
+  }
 }
