@@ -3,6 +3,7 @@ title: Design, Implementation and Evaluation of a Distributed Mediator System fo
   Data Integration
 categories:
 - PhD Theses
+position: 21
 authors:
 - Vanja Josifovski
 issn: 0345-7524

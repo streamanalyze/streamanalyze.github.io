@@ -3,6 +3,7 @@ title: Scalable Parallelization of Expensive Continuous Queries over Massive Dat
 date: 2016-10-19 22:36:00 +02:00
 categories:
 - PhD Theses
+position: 23
 authors:
 - Erik Zeitler
 issn: 1651-6214

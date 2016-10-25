@@ -7,6 +7,7 @@ authors:
 - Mårten Svensson
 download: http://www.it.uu.se/research/group/udbl/Theses/MartenSvenssonMSc.pdf
 year: 2007
+position: 0
 ---
 
 MSc Thesis UPTEC F07 105, Faculty of Science and Technology, Uppsala University

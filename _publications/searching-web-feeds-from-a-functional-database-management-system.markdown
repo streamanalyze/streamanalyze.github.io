@@ -8,6 +8,7 @@ authors:
 urn: urn:nbn:se:uu:diva-110893
 download: http://www.it.uu.se/research/group/udbl/Theses/NiklasGafvelsMSc.pdf
 year: 2009
+position: 2
 ---
 
 MSc Thesis IT 09 035, Department of Information Technology, Uppsala University

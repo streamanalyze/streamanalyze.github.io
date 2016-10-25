@@ -8,6 +8,7 @@ authors:
 urn: urn:nbn:se:uu:diva-129478
 download: http://www.it.uu.se/research/group/udbl/Theses/YangBoMSc.pdf
 year: 2010
+position: 11
 ---
 
 MSc Thesis IT 10 030, Department of Information Technology, Uppsala University

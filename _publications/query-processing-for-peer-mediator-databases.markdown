@@ -3,6 +3,7 @@ title: Query Processing for Peer Mediator Databases
 date: 2016-10-23 13:37:00 +02:00
 categories:
 - PhD Theses
+position: 13
 authors:
 - Timour Katchaounov
 issn: 1104-232X

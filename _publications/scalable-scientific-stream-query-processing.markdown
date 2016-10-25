@@ -3,6 +3,7 @@ title: Scalable Scientific Stream Query Processing
 date: 2016-10-19 22:38:00 +02:00
 categories:
 - PhD Theses
+position: 6
 authors:
 - Milena Ivanova
 issn: 1104-2516
