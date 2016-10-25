@@ -1,7 +1,7 @@
 ---
 title: About Stream Analyze
 permalink: "/about/"
-position: 2
+position: 3
 layout: default
 ---
 
