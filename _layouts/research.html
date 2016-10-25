@@ -21,7 +21,7 @@ layout: default
         <div class="section valign">
           {% assign phd_theses = site.publications | where:'categories', 'PhD Theses' %}
           {% for publication in phd_theses %}
-          <div>
+          <div class="click-box" data-click-url='{{ publication.download }}'>
             <h5>{{ publication.title }}</h5>
             {{ publication.content}}
             <a href="{{ publication.download }}" target="_blank" title="Download {{ publication.title }}">

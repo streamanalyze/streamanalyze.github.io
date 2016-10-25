@@ -29,3 +29,11 @@
 
   });
 })(jQuery);
+
+$(function() {
+  $(document).on('click', '[data-click-url]', function(event) {
+    event.preventDefault();
+    window.location = this.getAttribute('data-click-url');
+    return false;
+  });
+});
