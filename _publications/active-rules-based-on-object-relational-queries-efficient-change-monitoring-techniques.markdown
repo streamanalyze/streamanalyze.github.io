@@ -4,6 +4,7 @@ title: Active Rules based on Object-Relational Queries - Efficient Change Monito
 date: 2016-10-23 13:34:00 +02:00
 categories:
 - Licentiate Theses
+position: 16
 authors:
 - Martin Sköld
 url: http://www.it.uu.se/research/group/udbl/Theses/MartinSkoldLic.pdf

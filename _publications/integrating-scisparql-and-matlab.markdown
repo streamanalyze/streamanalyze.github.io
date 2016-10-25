@@ -3,6 +3,7 @@ title: Integrating SciSPARQL and MATLAB
 date: 2016-10-23 13:35:00 +02:00
 categories:
 - MSc Theses
+position: 28
 authors:
 - Xueming He
 urn: urn:nbn:se:uu:diva-220907

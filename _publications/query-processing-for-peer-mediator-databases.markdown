@@ -2,6 +2,7 @@
 title: Query Processing for Peer Mediator Databases
 categories:
 - PhD Theses
+position: 13
 description: 
 authors:
 - Timour Katchaounov
