@@ -1,6 +1,6 @@
 ---
 title: User Defined Indexing
-date: 2016-09-28 10:37:00 Z
+date: 2016-09-28 12:37:00 +02:00
 position: 3
 ---
 

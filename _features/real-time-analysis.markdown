@@ -1,6 +1,6 @@
 ---
 title: Real-time Analysis
-date: 2016-09-28 10:35:00 Z
+date: 2016-09-28 12:35:00 +02:00
 position: 0
 ---
 
