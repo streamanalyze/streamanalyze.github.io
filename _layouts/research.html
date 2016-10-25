@@ -25,8 +25,24 @@ layout: default
             <h5>{{ publication.title }}</h5>
             {{ publication.content}}
             {{ publication.isbn }}
-          {% endfor %}
           </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col s12 m8 push-m2">
+      <div class="valign-wrapper">
+        <div class="section valign">
+          <pre>
+          {% for publication in site.publications %}
+            wget {{ publication.download}}
+          {% endfor %}
+          </pre>
         </div>
       </div>
     </div>
