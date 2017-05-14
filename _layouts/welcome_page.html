@@ -39,7 +39,11 @@ layout: default
           <div class="col s12 m4">
             <div class="icon-block">
               <div class="center icon-wrapper">
+                {% if strength.icon_image %}
+                <img src="{{ strength.icon_image }}">
+                {% else %}
                 <i class="material-icons">{{ strength.icon }}</i>
+                {% endif %}
               </div>
               <h3 class="center">{{ strength.title }}</h3>
               {{ strength.output }}
@@ -59,7 +63,11 @@ layout: default
           <div class="col s12 m4">
             <div class="icon-block">
               <div class="center icon-wrapper">
+                {% if strength.icon_image %}
+                <img src="{{ strength.icon_image }}">
+                {% else %}
                 <i class="material-icons">{{ strength.icon }}</i>
+                {% endif %}
               </div>
               <h3 class="center">{{ strength.title }}</h3>
               {{ strength.output }}
