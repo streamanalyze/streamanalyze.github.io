@@ -1,5 +1,5 @@
 ---
-title: Interface to Apache Kafka
+title: Apache Kafka
 date: 2017-05-14 23:41:00 +02:00
 ---
 
