@@ -1,5 +1,5 @@
 ---
-title: Real-Time Web Visualization
+title: Real-Time Visualization
 date: 2017-05-14 23:40:00 +02:00
 ---
 
