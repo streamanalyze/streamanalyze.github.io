@@ -1,5 +1,5 @@
 ---
-title: Stream Analyze  - Streaming Big Data Analytics
+title: Stream Analyze - Real-time Analytics Everywhere
 position: 0
 main_heading: Analytics at the Edge
 sub_heading: Stream Analyze specialize in software for scalable real-time analyses

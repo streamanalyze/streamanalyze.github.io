@@ -2,8 +2,10 @@
 title: About Stream Analyze
 permalink: "/about/"
 position: 3
-layout: default
+layout: plain
 ---
+
+# About Stream Analyze
 
 More and more devices are equipped with connectivity. Technology advance produce more data due to higher resolution, faster sampling etc. Deployment of fiber optics and new radio technology gives increasing bandwidth for more data to be transported.
 
