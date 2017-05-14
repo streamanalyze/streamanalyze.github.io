@@ -3,21 +3,20 @@ layout: default
 ---
 
 <div class="valign-wrapper parallax-container index-banner darken">
-  <div class="section no-pad-bot">
-    <div class="container">
-      <h1 class="header center">{{ page.main_heading }}</h1>
-      <div class="row center">
-        <h5 class="header col s12 m10 l8 offset-l2 offset-m1 light">{{ page.sub_heading }}</h5>
+
+    <div class="container no-pad-bot">
+      <div class="row">
+        <div class="col s12 m8 push-m2">
+          <h1 class="header center">{{ page.main_heading }}</h1>
+          <h5 class="header center light">{{ page.sub_heading }}</h5>
+        </div>
+
       </div>
       <div class="row center">
         <a href="/products/" id="learn-more" class="btn-large waves-effect waves-light">Learn More</a>
         <a href="mailto:info@streamanalyze.com?subject=sa.engine demo request" class="btn-large waves-effect waves-light modal-trigger">Schedule Demo</a>
       </div>
     </div>
-  </div>
-  <div class="parallax">
-    <img src="/assets/images/sa-london-view-1440.jpg">
-  </div>
 </div>
 
 <div class="container">
@@ -52,18 +51,22 @@ layout: default
   </div>
 </div>
 
-
-{% for strength in site.strengths limit:1 offset:3 %}
-<div class="container">
-  <div class="row">
-    <div class="col s12 m8 push-m2">
-      <div class="valign-wrapper main">
-        <div class="section valign">
-          <h2>{{ strength.title }}</h2>
-          {{ strength.output }}
-        </div>
+<div class="usps">
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        {% for strength in site.strengths limit:3 offset:3 %}
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <div class="center icon-wrapper">
+                <i class="material-icons">accessible</i>
+              </div>
+              <h3 class="center">{{ strength.title }}</h3>
+              {{ strength.output }}
+            </div>
+          </div>
+        {% endfor %}
       </div>
     </div>
   </div>
 </div>
-{% endfor %}
