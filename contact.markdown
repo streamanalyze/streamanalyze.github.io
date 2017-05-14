@@ -1,7 +1,7 @@
 ---
 title: Contact Stream Analyze
 permalink: "/contact/"
-position: 1
+position: 2
 layout: default
 ---
 
