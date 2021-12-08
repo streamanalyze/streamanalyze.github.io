@@ -286,7 +286,7 @@ visualize("Intensity plot", 345,345,{"margin": "auto"},{});
 winagg(rfft(audio(256,8000)),100,20);
 ```
 
-NOTE>  **Note:** this example requires Java installed and a microphone on your PC.
+> [note]  **Note:** this example requires Java installed and a microphone on your PC.
 If you do not have Java installed see the
 next example 
 

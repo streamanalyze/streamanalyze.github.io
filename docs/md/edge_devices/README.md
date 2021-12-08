@@ -62,5 +62,5 @@ enable_security(Charstring ca_file,
 ```
 before the call to `edge_listener`.
 
-NOTE>  **Note:** the connect config is a base-64 encoded JSON object with all known addresses for the server together with the Certificate, private key and other 
+> [note]  **Note:** the connect config is a base-64 encoded JSON object with all known addresses for the server together with the Certificate, private key and other 
 meta-data needed to connect seamlessly. 

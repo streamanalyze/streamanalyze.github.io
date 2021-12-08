@@ -63,7 +63,7 @@ To configure an sa.engine to enable TLS use the function `enable_security()`:
 ```LIVE {"vis":"showMarkdown"}
 mddoc(functionnamed("enable_security"));
 ```
-NOTE>  **Note:** that all sa.engines (both nameserver, stream servers, clients and edges)
+> [note]  **Note:** that all sa.engines (both nameserver, stream servers, clients and edges)
 in a federation must have certificates signed by the same certificate
 authority. 
 
@@ -91,7 +91,7 @@ select pp(rec)
  where base64_blob = read_file(sa_home()+"federation.localhost")
    and rec = json:unstringify(base64_decode(base64_blob));
 ```
-NOTE>  **Note:** when running this on sa.studio Community Edition you will get a huge 
+> [note]  **Note:** when running this on sa.studio Community Edition you will get a huge 
 record with IP-addresses,certificates, and keys to connect to the federation. 
 
 The content of `federation.localhost` is a specialization of the output from 

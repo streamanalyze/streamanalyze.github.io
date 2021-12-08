@@ -31,7 +31,7 @@ a nameserver:
 ```LIVE {"vis":"showMarkdown"}
 mddoc(functionnamed("nameserver"));
 ```
-NOTE>  **Note:** Run the query above to get the documentation for the `nameserver`
+> [note]  **Note:** Run the query above to get the documentation for the `nameserver`
 function. 
 
 Once you have called `nameserver` you can start it by calling the `listen` 
@@ -101,7 +101,7 @@ flag is evaluated in order of it's definition when starting.
 
 
 
-NOTE>  **Note:** In sa.studio Community Edition you already have a nameserver running in the cloud. 
+> [note]  **Note:** In sa.studio Community Edition you already have a nameserver running in the cloud. 
 
 
 

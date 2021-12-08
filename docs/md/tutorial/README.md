@@ -7,13 +7,6 @@ directly in the document for immediate evaluation and visualization to
 understand the outcomes of the evaluations. The tutorial should be run
 on under either Microsoft Windows, Apple OSX, or Linux.
 
-?> How old are you?
-
-
-
-LIVE-ONLY> Hello there!
-STATIC-ONLY> Should not be seen.
-## Index of the tutorial
 1. [Basic functions](/docs/md/tutorial/basic-functions.md)
 2. [Streams](/docs/md/tutorial/streams.md)
 3. [Querying the Microphone](/docs/md/tutorial/audiostream.md)

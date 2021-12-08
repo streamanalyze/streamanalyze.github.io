@@ -56,7 +56,7 @@ geojson:point(17.640617787837982,59.85822408829443,
 ```
 STATIC-ONLY> <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj5.png"/>
 
-NOTE>  **Note:** When using an id to track points you can click on it to mark it with a different color. 
+> [note]  **Note:** When using an id to track points you can click on it to mark it with a different color. 
 
 
 Geo JSON also supports Lines:

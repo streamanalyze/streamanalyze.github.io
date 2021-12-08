@@ -14,7 +14,7 @@ The command will save the current database in a **database image**
 file named `sa.engine.dmp` inside the `bin` folder of your **SA home
 folder**. The result of `save` is the full database image file name.
 
-NOTE>  **Note:** In the free web-based *sandbox* version of sa.engine the
+> [note]  **Note:** In the free web-based *sandbox* version of sa.engine the
 saved database image will disappear when the sandbox is restarted
 after 1-2 days. When restated sandbox system will use the 'factory'
 database image instead. 
@@ -182,7 +182,7 @@ You can also make a *save point* by executing the command
 `save`, the database is not saved on disk. This is practical
 when a part of the model has been developed.
 
-NOTE>  **Note:** The free web based *sandbox* version of sa.studio has
+> [note]  **Note:** The free web based *sandbox* version of sa.studio has
 limited memory that may be exhausted by the
 extra space needed to enable long rollbacks. This can be alleviated by
 issuing the `commit` command now and then to free space for the log. 

@@ -4,7 +4,7 @@
 **Parallel coordinates** is a very good alternative when visualizing many 
 dimensions. [Wikipedia](https://en.wikipedia.org/wiki/Parallel_coordinates)
 
-NOTE>  Parallel coordinates are a common way of visualizing high-dimensional geometry and analyzing multivariate data.
+> [note]  Parallel coordinates are a common way of visualizing high-dimensional geometry and analyzing multivariate data.
 To show a set of points in an n-dimensional space, a backdrop is drawn consisting of n parallel lines, typically vertical and equally spaced. A point in n-dimensional space is represented as a polyline with vertices on the parallel axes; the position of the vertex on the i:th axis corresponds to the i:th coordinate of the point. 
 
 ```LIVE {"vis":"showParallellCoordinates"}
@@ -32,7 +32,7 @@ select vector of { "cos(x)": cos(x),
 ```
 
 STATIC-ONLY> <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/pc2.png"/>
-NOTE>  **Note:** You can drag on each axis label to reorder the dimensions. Click 
+> [note]  **Note:** You can drag on each axis label to reorder the dimensions. Click 
 and drag on an axis to only view selected lines. Click on part of the axis 
 that isn't selected to remove selection. 
 
