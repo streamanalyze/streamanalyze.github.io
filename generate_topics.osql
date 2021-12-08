@@ -1,0 +1,15 @@
+load_model("getting-started");
+
+write_file(get_summary_md("","summary.md"), "docs/summary.md");
+write_file(get_summary_md("","summary.md"), "docs/md/summary.md");
+write_file(get_summary_md("topics/","summary.md"), "docs/md/topics/summary.md");
+write_file(get_summary_md("topics/","summary.md"), "docs/topic/summary.md");
+write_file(get_summary_md("modelmd/","summary.md"), "docs/md/modelmd/summary.md");
+write_file(get_summary_md("modelmd/","summary.md"), "docs/usermd/summary.md");
+create_folder("docs/topic");
+
+select write_file(content,"docs/topic/"+file)
+  from Charstring file, Charstring content, Topic topic
+ where file = replace(name(topic),[" "],["_"])+".md"
+   and content = get_topic_content(name(topic));
+quit;

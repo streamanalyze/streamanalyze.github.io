@@ -1,0 +1,7 @@
+(defun environphat-stream--+ (fno port signals r)
+  (let ((s (open-socket-block "localhost" port 5)))
+    (princ (json-stringify signals) s)
+    (terpri s)
+    (flush s)
+    (map-over-stream s (function read)
+                     (f/l (row) (osql-result port signals row)))))

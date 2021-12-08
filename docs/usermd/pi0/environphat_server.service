@@ -1,0 +1,14 @@
+[Unit]
+Description=environphat sensor server
+After=network.target
+
+[Service]
+ExecStart=/home/pi/SA/models/pi0/environphat.py 32345
+WorkingDirectory=/home/pi/SA/models/pi0/
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target

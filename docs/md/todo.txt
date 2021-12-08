@@ -1,0 +1,51 @@
+1. Stopp-knapp n�r man k�r i utvecklingssandl�da (JR), Klart.
+
+2. F�rval av edge i tutorial (JR), Klart.
+
+3. Hur g�ra tutorial d�r man visar hur man skapar modeller? Enkel
+l�sning: Visa med tv� tabbar. Klart.
+
+4. Dokumentera hur man s�tter personlig VA i Amazon sandl�da i
+manualen/tutorial, inklusive hur man delar p� nameserver i
+molnet. Inte f�r Halmstad. (JR)
+
+5. Hantera systemmodeller ekvivalent med anv�ndarmodeller. P� s� vis
+hanterar vi datamininglabben (TR, JR), fixat.
+
+6. autosave(true) ej p�slaget f�r edgar (TR)
+
+7. Dokumenterat paket f�r att Combient etc. skall kunna labba p� egen
+hand p� v�ra MangOH enheter. Kan t.ex. l�na ut konfigurerade
+enheter. (JR)
+
+8. Parse-fel n�r fil inte avslutas med ; (TR), fixat
+
+9. "Edge devices" menyval i dokumentationen (JR)
+
+10. start-edge-listener som alltid f�rs�ker �terkoppla �ven n�r
+socketen bryts.
+
+----------
+
+11. Funktion och knapp f�r att ta bort modellen (JR). Ej kritiskt f�r
+labb.
+
+12. Hur f�rhindra att man g�r farliga saker (separat auktorisering f�r
+VA-internal)? Beh�ver g� igenom APIs f�r att definiera vad/vem f�r
+att g�ra vad n�r. Ej kritiskt f�r labb. Senare.
+
+13. System f�r att kolla att versionerna matchar mellan edo och server
+
+14: OID-namnen propageras inte upp till VA fr�n edgar
+
+
+15. definiera record innan det används i Analyzing edge devices.
+
+16. Lägg till "excercise" boxar t.ex. for att variera window size, or slide
+på detect-shake modellen.
+
+17. Fixat targets så man kommer tillbaka efter att man följt länkar. JR.
+
+18. metadata för mer eller mindre automatkonfigurerar edge devices.
+
+

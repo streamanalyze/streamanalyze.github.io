@@ -1,0 +1,11 @@
+lisp;
+(defun start-phat+ (fno) (start-program (concat "pkill -9 python3 ; python3 " (model-folder-of "pi0") "environphat.py 32345"))
+ (osql-result 32345))
+:osql
+
+
+create function start_phat() -> Integer
+  as foreign 'start-phat+';
+
+
+

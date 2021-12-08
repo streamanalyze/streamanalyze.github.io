@@ -1,0 +1,4 @@
+_lisp("(setf _edge-auto-save_ nil)");
+
+create function start_edge(Charstring peer) -> Boolean
+  as reconnect_using_config_blob(read_file(model_folder("pi0")+"connect.blob"),peer, true);

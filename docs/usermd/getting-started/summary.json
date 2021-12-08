@@ -1,0 +1,45 @@
+["Getting started", "README.md", 
+  [
+    ["Sign up", "sign-up.md"],
+    ["Connecting an edge device","edge_README.md",[
+    ["Linux x86/64",  "linux/README.md",
+      [
+        ["Install","linux/install.md"]
+      ]],
+    ["Windows",  "windows/README.md",
+      [
+        ["Install","windows/install.md"],
+        ["First query","windows/firstq.md"]
+      ]],
+    ["Mac", "macos/README.md",
+      [
+        ["Install","macos/install.md"],
+        ["First query","macos/firstq.md"]
+      ]],
+    ["Android",  "android/README.md",
+      [
+        ["Install","android/install.md"],
+        ["First query","android/firstq.md"]
+      ]],
+    ["Rasberry Pi", "rpi/README.md",
+      [
+        ["Install","rpi/install.md"],
+        ["First query","rpi/firstq.md"]
+      ]],
+    
+    ["NXP i.MX6", "imx6/README.md",
+      [
+        ["Install", "imx6/install.md"]
+      ]],
+    ["NXP i.MX8", "imx8/README.md", [
+      ["Install","imx8/install.md"]]],
+    ["MX4-T30", "mx4/README.md", [
+      ["Install","mx4/install.md"]]],
+    ["HMS HGP", "hgp/README.md", [
+      ["Install","hgp/install.md"]]],
+    ["Microchip SAMA5D27", "sama5d27/README.md", [
+      ["Install", "sama5d27/install.md"]]]]]
+    ["Connecting sensors to your edge","sensors/README.md",[
+      ["Pi0 Environphat", "sensors/pi0envphat.md"]]]
+ ]
+]

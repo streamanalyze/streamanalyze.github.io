@@ -1,0 +1,36 @@
+load_lisp("environphat.lsp");
+
+create function _environphat_stream(Integer port, Vector of Integer signals) -> Stream of vector 
+  as foreign 'environphat-stream--+';
+
+create type pi0hat:signal under Signal;
+
+
+create function environphat_stream(pi0hat:signal s) -> Stream of Timeval of Vector of Number
+  as select Stream of ts(timeval(ts),data[3])
+       from Vector data, Number ts, Integer port, Vector of Integer signals
+    where port = options(s)["port"]
+      and signals = options(s)["signals"]
+      and data in _environphat_stream(port,signals)
+      and ts = data[1];
+       
+     
+
+
+create pi0hat:signal (name, options)
+  instances
+  ("accelerometer", {"port": 32345, "signals":[1]}),
+  ("temperature",   {"port": 32345, "signals":[2]}),
+  ("heading",       {"port": 32345, "signals":[3]}),
+  ("pressure",      {"port": 32345, "signals":[4]}),
+  ("light",         {"port": 32345, "signals":[5]}),
+  ("rgb",           {"port": 32345, "signals":[6]});
+
+
+for each pi0hat:signal s {
+  set ts_signal_stream(s) = environphat_stream(s);
+};
+
+
+load_osql("start.osql");
+
