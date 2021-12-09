@@ -1,4 +1,3 @@
-# Topics
   - [Topics](/docs/)
     - [Aggregate](/docs/topic/Aggregate)
     - [Complex number](/docs/topic/Complex_number)

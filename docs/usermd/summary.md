@@ -1,4 +1,3 @@
-# Loaded models
   - [Getting started](/docs/usermd/getting-started/README.md)
     - [Sign up](/docs/usermd/getting-started/sign-up.md)
     - [Connecting an edge device](/docs/usermd/getting-started/edge_README.md)
