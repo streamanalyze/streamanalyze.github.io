@@ -105,10 +105,9 @@ background noise stronger than 0.001. Try the CQ while whistling or
 humming, and you will notice that the whistling does not produce any
 stream elements since it is outside the frequency band `[80,400]`.
 
-:::EXERCISE
-**Exercise:** Make a query to find out your current background noise
+> [exercise] **Exercise:** Make a query to find out your current background noise
 level.
-:::
+
 ### <a name="define-model-function"> Defining a Model Function </a>
 
 In order to re-use the above CQ for different frequency bands we can
