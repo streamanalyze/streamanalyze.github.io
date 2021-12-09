@@ -10,7 +10,7 @@ This guide assumes that you have installed a Linux based operating system with g
 ## Download sa.engine package.
 Go to [the download page](https://studio.streamanalyze.com/download#tgeneral) and click the clipboard icon next to the i.MX6 download:
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/imx6_download.png" alt="imx6_download.png" width="800"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/imx6_download.png" alt="imx6_download.png" style="width:100%"/>
 
 
 This will copy a CURL command that will download the package to your i.MX6. Paste the copied command into your terminal session:
@@ -49,16 +49,16 @@ Now that you have SA Engine installed on your i.MX6 it is time to start a server
 
 **1.** Go back to the SA Studio Community Edition [landing page](https://studio.streamanalyze.com/).
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/streamanalyze-com-studio.png" alt="streamanalyze-com-studio.png" width="800"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/streamanalyze-com-studio.png" alt="streamanalyze-com-studio.png" style="width:100%"/>
 
 **2.** Start SA Studio with the <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/go-to-studio-button.png" alt="go-to-studio-button.png" width="100" /> button. This will be your server instance.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio.png" alt="sa-studio.png" width="800"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio.png" alt="sa-studio.png" style="width:100%"/>
 
 
 **3.** Go to the "connect edge devices" page by clicking the ![Connect edge devices](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/connect-edge-icon.png "Connect edge devices") icon in the top left row.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio-connect-edges.png" alt="sa-studio-connect-edges.png" width="800"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio-connect-edges.png" alt="sa-studio-connect-edges.png" style="width:100%"/>
 
 
 **4.** Under **Add clients or edges to the federation** change the name in the client name text field from "edge" to a desired name.
@@ -66,11 +66,11 @@ Now that you have SA Engine installed on your i.MX6 it is time to start a server
 <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/edge-name.png" alt="edge-name.png" />
 
 **5.** Copy the large text blob in the section **Connect as edge using base64 blob from within sa.engine** to the clipboard, and paste it into the sa.engine prompt on your Linux machine. This will connect the sa.engine instance to your SA Studio Community Edition federation:
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio-connect-edges-copy-connection-blob.png" alt="sa-studio-connect-edges-copy-connection-blob.png" width="800"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio-connect-edges-copy-connection-blob.png" alt="sa-studio-connect-edges-copy-connection-blob.png" style="width:100%"/>
 
 
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-linux-edge/linux-edge-connected.png" alt="linux-edge-connected.png" width="800"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-linux-edge/linux-edge-connected.png" alt="linux-edge-connected.png" style="width:100%"/>
 
 > [note]  **Note:** You can change the call `connect_using_config_blob` to `reconnect_using_config_blob` if you want the edge to override the current peer when connecting. You can also put this command inside an file of your choice (e.g. `connect.osql`) and then make sa.engine load the file, and connect as an edge, with the `-O` flag: 
 

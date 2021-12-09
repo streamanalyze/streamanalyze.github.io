@@ -8,7 +8,7 @@ Example of a single point:
 geojson:point(17.640617787837982,59.85822408829443,{})
 ```
 
-> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj1.png"/>
+> [static-only]  <img  src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj1.png"/>
 
 A point with custom style and a label:
 
@@ -17,7 +17,7 @@ geojson:point(17.640617787837982,59.85822408829443,
               {"style": {"label": "SA HQ"}})
 ```
 
-> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj2.png"/>
+> [static-only]  <img  src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj2.png"/>
 
 By default all added features are removed when new data arrives:
 
@@ -29,7 +29,7 @@ geojson:point(17.640617787837982,59.85822408829443,
               {"style": {"label": "SA HQ"}})
 ```
 
-> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj3.png"/>
+> [static-only]  <img  src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj3.png"/>
 
 This can be remedied by setting `persistent` to `true` in the properties Record:
 
@@ -40,7 +40,7 @@ geojson:point(17.640617787837982,59.85822408829443,
               {"persistent": true,"style": {"label": "SA HQ"}})
 ```
 
-> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj4.png"/>
+> [static-only]  <img  src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj4.png"/>
 
 If you wish to move a point you can set persistent to `true` and add an `id` property:
 
@@ -60,7 +60,7 @@ geojson:point(17.640617787837982,59.85822408829443,
                "style": {"label": "SA HQ"}});
 ```
 
-> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj5.png"/>
+> [static-only]  <img  src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj5.png"/>
 
 > [note]  **Note:** When using an id to track points you can click on it to mark it with a different color. 
 
@@ -75,7 +75,7 @@ geojson:line([[17.630586326122284, 59.859743971785704],
                          "strokeWeight": 1}});
 ```
 
-> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj6.png"/>
+> [static-only]  <img  src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj6.png"/>
 
 Polygon:
 
@@ -88,7 +88,7 @@ geojson:polygon([[[17.630586326122284, 59.859743971785704],
                          "strokeWeight": 1}});
 ```
 
-> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj7.png"/>
+> [static-only]  <img  src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj7.png"/>
 
 Using all we've seen so far:
 
@@ -124,7 +124,7 @@ geojson:line([[17.630586326122284, 59.859743971785704],
                          "strokeWeight": 10}});
 ```
 
-> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj8.png"/>
+> [static-only]  <img  src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj8.png"/>
 
 This can of course be made into a feature collection as well:
 
@@ -151,7 +151,7 @@ geojson:collection(
                          "strokeWeight": 10}})])
 ```
 
-> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj9.png"/>
+> [static-only]  <img  src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj9.png"/>
 
 Lets simulate two persons walking (well, flying) from Old SA HQ and Uppsala Train Station to the current SA HQ.
 
@@ -182,6 +182,6 @@ merge_streams(bag(
     interpolate_between(:station, :new_sa_hq, 4,1, "Erik")));
 ```
 
-> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj10.png"/>
+> [static-only]  <img  src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/geoj10.png"/>
 
 See [Topics -> Geo JSON](/docs/topic/Geo_JSON) for more info on GeoJSON in SA Studio

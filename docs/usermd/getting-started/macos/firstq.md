@@ -15,7 +15,7 @@ Now that you have added your Mac as an edge device to the server it is time to t
 
 **1.** Go to the OSQL editor by clicking the ![OSQL editor](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/osql-editor-icon.png "OSQL editor") icon.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio.png" alt="sa-studio.png" width="800"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio.png" alt="sa-studio.png" style="width:100%"/>
 
 **2.** Open a new OSQL editor by clicking the <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/open-new-osql-editor-button.png" alt="open-new-osql-editor-button.png" width="120"/> button.
 
@@ -25,7 +25,7 @@ Now that you have added your Mac as an edge device to the server it is time to t
 
 **4.** In the editor window, write the query `listening_edges();`. 
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio-osql-editor-enter-query.png" alt="sa-studio-osql-editor-enter-query.png" width="800"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio-osql-editor-enter-query.png" alt="sa-studio-osql-editor-enter-query.png" style="width:100%"/>
 
 Then run the query by pressing the ![Run queries](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/run-queries-icon.png "Run queries") icon to run the query. The result is a list of edges that are connected to the server. Your Mac should be present with the name "MAC-EDGE".
 
@@ -70,11 +70,11 @@ audio(256, 16000);
 
 You might need to give Terminal permission to access the microphone. If so then simply press OK.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-mac-edge/mac-microphone-access-permission.png" alt="mac-microphone-access-permission.png" width="400"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-mac-edge/mac-microphone-access-permission.png" alt="mac-microphone-access-permission.png"/>
 
 Now when you make a sound you should see some activity in the output plot.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-mac-edge/sa-studio-osql-editor-audio-query.png" alt="sa-studio-osql-editor-audio-query.png" width="600"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-mac-edge/sa-studio-osql-editor-audio-query.png" alt="sa-studio-osql-editor-audio-query.png" />
 
 
 ## Build a model
@@ -125,7 +125,7 @@ audio_band(80, 400);
 
 If you make a humming sound the model should detect it and emit the frequencies. If you instead make a whistle sound, which produces frequencies significantly higher than 400 Hz, the model will ignore it and not emit anything. 
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-mac-edge/sa-studio-osql-editor-audio-band-query.png" alt="sa-studio-osql-editor-audio-band-query.png" width="600"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-mac-edge/sa-studio-osql-editor-audio-band-query.png" alt="sa-studio-osql-editor-audio-band-query.png" />
 
 
 

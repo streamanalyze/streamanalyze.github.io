@@ -9,7 +9,7 @@ Now that you have added your Raspberry Pi as an edge device to the server it is 
 
 **1.** Go to the OSQL editor by clicking the ![OSQL editor](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/osql-editor-icon.png "OSQL editor") icon.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio.png" alt="sa-studio.png" width="800"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio.png" alt="sa-studio.png" style="width:100%"/>
 
 **2.** Open a new OSQL editor by clicking the <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/open-new-osql-editor-button.png" alt="open-new-osql-editor-button.png" width="120"/> button.
 
@@ -19,7 +19,7 @@ Now that you have added your Raspberry Pi as an edge device to the server it is 
 
 **4.** In the editor window, write the query `listening_edges();`. 
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio-osql-editor-enter-query.png" alt="sa-studio-osql-editor-enter-query.png" width="800"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio-osql-editor-enter-query.png" alt="sa-studio-osql-editor-enter-query.png" style="width:100%"/>
 
 Then run the query by pressing the ![Run queries](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/run-queries-icon.png "Run queries") icon to run the query. The result is a list of edges that are connected to the server. Your Raspberry Pi should be present with the name "PI-EDGE".
 
@@ -27,7 +27,7 @@ Then run the query by pressing the ![Run queries](https://s3.eu-north-1.amazonaw
 ["EDGE1","PI-EDGE"]
 ```
 
-**5.** Change the device on which the queries are run by clicking <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/device-selector.png" alt="device-selector.png" width="60" /> at the bottom (next to the run query button) and select `Pi-edge` from the list.
+**5.** Change the device on which the queries are run by clicking <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/device-selector.png" alt="device-selector.png"  /> at the bottom (next to the run query button) and select `Pi-edge` from the list.
 
 <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/sa-studio-osql-editor-device-selector-pi-edge.png" alt="sa-studio-osql-editor-device-selector-pi-edge.png" width="250"/>
 
@@ -64,7 +64,7 @@ Now that you have tested that you can execute queries on the Raspberry Pi edge d
 
 **2.** Write the model name "my_ctof" in the dialog that appears and click "Ok".
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/new-model-dialog2.png" alt="new-model-dialog2.png" width="800"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/new-model-dialog2.png" alt="new-model-dialog2.png" style="width:100%"/>
 
 This creates a new folder "my_ctof" with three files.
 
@@ -144,7 +144,7 @@ edge_cq("pi-edge", "
 ```
 
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/pi_read_sensor_csv.png" alt="pi_read_sensor_csv.png" width="800" />
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/pi_read_sensor_csv.png" alt="pi_read_sensor_csv.png" style="width:100%" />
 
 
 You are now looking at a stream of temperature readings from the internal sensor on the CPU.
@@ -164,7 +164,7 @@ set ts_signal_stream(signal_named("CPU_temp")) =
                                    'loop',0.1)/1000);
 ```
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/sa-studio-model-with-metadata.png" alt="sa-studio-model-with-metadata.png" width="800" />
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/sa-studio-model-with-metadata.png" alt="sa-studio-model-with-metadata.png" style="width:100%" />
 
 
 Save the file and then re-deploy the model to `pi-edge`:
@@ -175,7 +175,7 @@ deploy_model(["pi-edge"],"my_ctof");
 
 If you call the function `signals()` on the Raspberry pi now you will see that we have a signal called `CPU_temp` defined:
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/sa-studio-osql-editor-signals-pi-edge.png" alt="sa-studio-osql-editor-signals-pi-edge.png" width="400"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/sa-studio-osql-editor-signals-pi-edge.png" alt="sa-studio-osql-editor-signals-pi-edge.png" />
 
 
 You can now get a stream of the temperature signal by running:
@@ -184,7 +184,7 @@ You can now get a stream of the temperature signal by running:
 edge_cq('pi-edge', 'signal_stream("CPU_temp")');
 ```
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/sa-studio-osql-editor-signal-stream-temp-pi-edge.png" alt="sa-studio-osql-editor-signal-stream-temp-pi-edge.png" width="500" />
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/sa-studio-osql-editor-signal-stream-temp-pi-edge.png" alt="sa-studio-osql-editor-signal-stream-temp-pi-edge.png"  />
 
 
 
@@ -197,7 +197,7 @@ edge_cq('pi-edge', '
            where c in signal_stream("CPU_temp")
         ');
 ```
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/sa-studio-osql-editor-signal-stream-f-temp-pi-edge.png" alt="sa-studio-osql-editor-signal-stream-f-temp-pi-edge.png" width="600" />
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/sa-studio-osql-editor-signal-stream-f-temp-pi-edge.png" alt="sa-studio-osql-editor-signal-stream-f-temp-pi-edge.png"  />
 
 
 

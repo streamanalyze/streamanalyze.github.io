@@ -7,7 +7,7 @@ Now that you have added your Android phone as an edge device to the server it is
 
 **1.** Go to the OSQL editor by clicking the ![OSQL editor](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/osql-editor-icon.png "OSQL editor") icon.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio.png" alt="sa-studio.png" width="700"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio.png" alt="sa-studio.png" style="width:100%"/>
 
 **2.** Open a new OSQL editor by clicking the <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/open-new-osql-editor-button.png" alt="open-new-osql-editor-button.png" width="120"/> button.
 
@@ -17,7 +17,7 @@ Now that you have added your Android phone as an edge device to the server it is
 
 **4.** In the editor window, write the query `listening_edges();`. 
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio-osql-editor-enter-query.png" alt="sa-studio-osql-editor-enter-query.png" width="700"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio-osql-editor-enter-query.png" alt="sa-studio-osql-editor-enter-query.png" style="width:100%"/>
 
 Then run the query by pressing the ![Run queries](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/run-queries-icon.png "Run queries") icon to run the query. The result is a list of edges that are connected to the server. Your Android phone should be present with the name "ANDROID-EDGE".
 
@@ -71,7 +71,7 @@ signal_stream("accelerometer");
 
 This shows the accelerometer readings in the output window. Shake the phone a bit it to see how the readings change. See if you can determine which movement direction corresponds to which line in the plot.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-android-edge/sa-studio-osql-editor-accelerometer-plot.png" alt="sa-studio-osql-editor-accelerometer-plot.png" width="700"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-android-edge/sa-studio-osql-editor-accelerometer-plot.png" alt="sa-studio-osql-editor-accelerometer-plot.png" style="width:100%"/>
 
 
 ## Develop a detect-shake model
@@ -97,7 +97,7 @@ stdev(winagg(gravity_acceleration(),50,5));
 
 The query passes "a window" over the stream and computes the standard deviation on each window. The standard deviation will be zero when the phone is not moving and some positive value when the accelerator readings change. Shake the phone and see how the plot changes.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-android-edge/sa-studio-osql-editor-gravity-acceleration-plot.png" alt="sa-studio-osql-editor-gravity-acceleration-plot.png" width="700"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-android-edge/sa-studio-osql-editor-gravity-acceleration-plot.png" alt="sa-studio-osql-editor-gravity-acceleration-plot.png" style="width:100%"/>
 
 
 **3.** Define a function that signals if the shaking is above some threshold. This is done by running the following query.
@@ -119,7 +119,7 @@ shake_state(5);
 
 The output plot should show a step function with value `1` if the phone is shaking and `0` when the phone is still.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-android-edge/sa-studio-osql-editor-shake-state-plot.png" alt="sa-studio-osql-editor-shake-state-plot.png" width="700"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-android-edge/sa-studio-osql-editor-shake-state-plot.png" alt="sa-studio-osql-editor-shake-state-plot.png" style="width:100%"/>
 
 
 **5.** We want the final model to only emit values if the shake state changes. This is done by wrapping the function call in a `changed()` statement. We do this in a separate function by running the following query.

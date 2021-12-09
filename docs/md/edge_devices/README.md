@@ -17,7 +17,7 @@ the [advanced](/docs/md/servers/advanced.md) section under servers.
 Use the Android edge client app to scan the QR code; then press
 connect. In the video below you can see the flow from downloading the
 edge client app to connecting it as an edge to the federation of a
-sa.studio community.  <video width="800px" controls> <source
+sa.studio community.  <video style="width: 100%"  controls> <source
 src="https://s3-eu-west-1.amazonaws.com/dl.streamanalyze.com/gifs/connect_android.webm"
 type="video/webm"> Your browser does not support the video tag.
 </video>
@@ -31,7 +31,7 @@ sa.engine is in your path.  In the video below you can see the flow
 from downloading sa.engine to connecting it as an edge client to the
 federation of a sa.studio community.
 
-<video width="800px" controls>
+<video style="width: 100%"  controls>
 <source src="https://s3-eu-west-1.amazonaws.com/dl.streamanalyze.com/gifs/connect_terminal_edge.webm" type="video/webm">
 Your browser does not support the video tag.
 </video>

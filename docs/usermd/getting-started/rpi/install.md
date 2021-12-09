@@ -15,12 +15,12 @@ Now that you have signed up it is time to download and start an instance of the 
 
 **1.** Go to the [download page](https://studio.streamanalyze.com/download).
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/pi-download.png" alt="pi-download.png" width="800"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/pi-download.png" alt="pi-download.png" style="width:100%"/>
 
 
 **2.** Scroll down to the bottom and download `sa_engine_core_linux_armv7.tar.gz` (or `sa_engine_armv6.tar.gz` for the Pi Zero) and click the clipboard icon (see the red arrow in the picture). This will copy a command that you can just paste into the ssh session of your Raspberry Pi
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/pi-image-download-link.png" alt="pi-image-download-link.png" width="600"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/pi-image-download-link.png" alt="pi-image-download-link.png" />
 
 ```
 pi@pi-gw2:~ $ curl -o "sa_engine_core_linux_armv7.tar.gz" "<LONG-DOWNLOAD-URL>"
@@ -34,7 +34,7 @@ If using Raspberry Pi Zero:
 
 
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/pi0-image-download-link.png" alt="pi-image-download-link.png" width="600"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/pi0-image-download-link.png" alt="pi-image-download-link.png" />
 
 
 
@@ -85,16 +85,16 @@ Now that you have SA Engine installed on your Raspberry Pi it is time to start a
 
 **1.** Go back to the SA Studio Community Edition [landing page](https://studio.streamanalyze.com/).
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/streamanalyze-com-studio.png" alt="streamanalyze-com-studio.png" width="800"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/streamanalyze-com-studio.png" alt="streamanalyze-com-studio.png" style="width:100%"/>
 
 **2.** Start SA Studio with the <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/go-to-studio-button.png" alt="go-to-studio-button.png" width="100" /> button. This will be your server instance.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio.png" alt="sa-studio.png" width="800"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio.png" alt="sa-studio.png" style="width:100%"/>
 
 
 **3.** Go to the "connect edge devices" page by clicking the ![Connect edge devices](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/connect-edge-icon.png "Connect edge devices") icon in the top left row.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio-connect-edges.png" alt="sa-studio-connect-edges.png" width="800"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio-connect-edges.png" alt="sa-studio-connect-edges.png" style="width:100%"/>
 
 
 **4.** Under **Add clients or edges to the federation** change the name in the client name text field from "edge" to "pi-edge".
@@ -103,13 +103,13 @@ Now that you have SA Engine installed on your Raspberry Pi it is time to start a
 
 **5.** Copy the large text blob in the section **Connect as edge using base64 blob from within sa.engine** to the clipboard, open a new file "connect.osql" on the Raspberry Pi using nano (or your preffered editor) and paste your clipboard content.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio-connect-edges-copy-connection-blob.png" alt="sa-studio-connect-edges-copy-connection-blob.png" width="800"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio-connect-edges-copy-connection-blob.png" alt="sa-studio-connect-edges-copy-connection-blob.png" style="width:100%"/>
 
 ```sh
 pi@pi-gw2:~/sa.engine/bin $ nano connect.osql
 ```
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/sa-studio-connect-edges-paste-pi-connblob.png" alt="sa-studio-connect-edges-paste-pi-connblob.png" width="800"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/sa-studio-connect-edges-paste-pi-connblob.png" alt="sa-studio-connect-edges-paste-pi-connblob.png" style="width:100%"/>
 
 > [note]   **Note:** You can change the call `connect_using_config_blob` to `reconnect_using_config_blob` if you want the pi-edge to override the current peer when connecting. 
 
@@ -139,4 +139,4 @@ This connects the local instance of SA Engine to the server. The local SA Engine
 
 Your browser should also show your Raspberry Pi machine as "PI-EDGE" in the list of **Connected edge devices**. You might have to click the refresh icon at the top of the list for "PI-EDGE" to show up.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/sa-studio-connect-edges-list-connected.png" alt="sa-studio-connect-edges-list-connected.png" width="800"/>
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/sa-studio-connect-edges-list-connected.png" alt="sa-studio-connect-edges-list-connected.png" style="width:100%"/>

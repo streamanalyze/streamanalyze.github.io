@@ -15,7 +15,7 @@ where x in heartbeat(0.01)*10/(2*PI())
 
 
 
-> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/sp0.png"/>
+> [static-only]  <img  src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/sp0.png"/>
 
 > [note]    **Note:** You can click and drag the mouse on the graph to zoom in. 
 Double click to reset zoom. 
@@ -34,7 +34,7 @@ select { "cos(x)": cos(x),
  where x in heartbeat(0.01)*100
 ```
 
-> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/sp1.png"/>
+> [static-only]  <img  src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/sp1.png"/>
 
 > [exercise] **Exercise:** Select `cos(x)*sin(x)` as the color-axis. Then play around with
 setting the different axes.
@@ -53,4 +53,4 @@ select vector of { "cos(x)": cos(x),
 ```
 
 
-> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/sp2.png"/>
+> [static-only]  <img  src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/sp2.png"/>

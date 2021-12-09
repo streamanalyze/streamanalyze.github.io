@@ -85,7 +85,7 @@ in the pull-down menu. Then click `OK` to create a new model folder
 named `my_c_to_f`.
 
 - Choose the Documentation tab to get back here
- <video width="800px" controls> <source
+ <video style="width: 100%"  controls> <source
 src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/tutorial/create_model2.webm"
 type="video/webm"> Your browser does not support the video tag.
 </video>
