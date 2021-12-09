@@ -148,11 +148,9 @@ It should emit the value `1` when the phone starts shaking, and the value `0` wh
 
 Congratulations! You have now developed your first model on an Android edge device.
 
-STATIC-ONLY> 
-Where to go from here:
-* Use the [documentation](http://docs.streamanalyze.com/) to learn more about OSQL and how you can build models and interact with edge devices.
+> [static-only] Where to go from here:
+> * Use the [documentation](http://docs.streamanalyze.com/) to learn more about OSQL and how you can build models and interact with edge devices.
 
 
-LIVE-ONLY> 
-Where to go from here:
-* Use the [documentation](/docs/) to learn more about OSQL and how you can build models and interact with edge devices.
+> [live-only] Where to go from here:
+> * Use the [documentation](/docs/) to learn more about OSQL and how you can build models and interact with edge devices.

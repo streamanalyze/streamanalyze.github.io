@@ -3,7 +3,8 @@ Lets start by looking at how **Line plot** works:
 ```LIVE {"vis":"showLine"}
 simsig(siota(1,200)/10);
 ```
-STATIC-ONLY> <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/lp1.png"/>
+
+> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/lp1.png"/>
 
 
 > [note]   **Note:** You can click and drag the mouse vertically on the graph to zoom in 
@@ -17,7 +18,8 @@ select [simsig(x), cos(x)]
  where x in siota(1,200)/10;
 ```
 
-STATIC-ONLY> <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/lp2.png"/>
+
+> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/lp2.png"/>
 
 
 When a record is received the key for each value is used as series label:
@@ -28,7 +30,8 @@ select {"sim_sig(x)": simsig(x), "cos(x)": cos(x)}
  order by x;
 ```
 
-STATIC-ONLY> <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/lp3.png"/>
+
+> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/lp3.png"/>
 
 
 > [note]   **Note:** You can click the colored square next to a series to toggle the 
@@ -43,5 +46,6 @@ select {"sim_sig": simsig(x), "cos": cos(x)}
  order by x;
 ```
 
-STATIC-ONLY> <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/lp4.png"/>
+
+> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/lp4.png"/>
 

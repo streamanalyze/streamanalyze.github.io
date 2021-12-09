@@ -8,7 +8,7 @@ This document will walk you through how to connect a raspberry pi zero with an E
 
 
 
-LIVE-ONLY> **Note:** Before following this guide make sure that you have installed sa.engine and connected your Raspberry Pi Zero to your federation. See [Getting started](#/docs/&load_external=streamanalyze.com/getting-started&goto=getting-started/README.md).
+> [live-only] **Note:** Before following this guide make sure that you have installed sa.engine and connected your Raspberry Pi Zero to your federation. See [Getting started](#/docs/&load_external=streamanalyze.com/getting-started&goto=getting-started/README.md).
 
 ## Configuring the pi zero.
 Deploy the `pi0` model to your Raspberry Pi Zero:

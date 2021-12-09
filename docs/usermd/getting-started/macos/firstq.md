@@ -132,11 +132,10 @@ If you make a humming sound the model should detect it and emit the frequencies.
 ## Conclusion
 
 Congratulations! You have now developed your first model on a Mac edge device.
-STATIC-ONLY> 
-Where to go from here:
-* Use the [documentation](http://docs.streamanalyze.com/) to learn more about OSQL and how you can build models and interact with edge devices.
+> [static-only] Where to go from here:
+> * Use the [documentation](http://docs.streamanalyze.com/) to learn more about OSQL and how you can build models and interact with edge devices.
 
 
-LIVE-ONLY> 
-Where to go from here:
-* Use the [documentation](/docs/) to learn more about OSQL and how you can build models and interact with edge devices.
+> [live-only] 
+> Where to go from here:
+> * Use the [documentation](/docs/) to learn more about OSQL and how you can build models and interact with edge devices.

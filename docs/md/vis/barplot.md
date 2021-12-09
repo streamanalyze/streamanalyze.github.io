@@ -9,7 +9,7 @@ the Vector and Record data.
 rfft(winagg(simstream(0.01),256,4))
 ```
 
-STATIC-ONLY> <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/bp1.png"/>
+> [static-only] <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/bp1.png"/>
 
 > [note]   **Note:** You can click and drag the mouse vertically on the graph to zoom in 
 > the y-range. Double click to reset zoom. 

@@ -206,9 +206,6 @@ edge_cq('pi-edge', '
 Congratulations! You have now deployed your first model to a Raspberry Pi edge device and used it on the built in CPU temperature sensor.
 
 Where to go from here:
-LIVE-ONLY> 
-* Use the [documentation](/docs) to learn more about OSQL and how you can build models and interact with edge devices.
+> [live-only] * Use the [documentation](/docs) to learn more about OSQL and how you can build models and interact with edge devices.
 
-
-STATIC-ONLY> 
-* Use the [documentation](http://docs.streamanalyze.com/) to learn more about OSQL and how you can build models and interact with edge devices.
+> [static-only] * Use the [documentation](http://docs.streamanalyze.com/) to learn more about OSQL and how you can build models and interact with edge devices.

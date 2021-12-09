@@ -16,7 +16,8 @@ select { "cos(x)": cos(x),
   from Number x
  where x in heartbeat(0.01)*100
 ```
-STATIC-ONLY> <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/pc1.png"/>
+
+> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/pc1.png"/>
 
 Batch:
 
@@ -31,7 +32,8 @@ select vector of { "cos(x)": cos(x),
  limit 100
 ```
 
-STATIC-ONLY> <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/pc2.png"/>
+
+> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/pc2.png"/>
 > [note]  **Note:** You can drag on each axis label to reorder the dimensions. Click 
 and drag on an axis to only view selected lines. Click on part of the axis 
 that isn't selected to remove selection. 

@@ -2,14 +2,14 @@
 
 1. [Install sa.engine on SAMA5D27](/docs/usermd/getting-started/sama5d27/install.md)
 
-LIVE-ONLY> 
-From the sandbox you can connect it by using the device hub
-CTA>##/device_hub/getStarted/SAMA5D27|||Go to Device Hub
+> [live-only]
+> From the sandbox you can connect it by using the device hub
+> <div class="CTACont">
+> <a class="CTABtn" role="button" href="#/device_hub/getStarted/SAMA5D27">
+> <span>Go to Device Hub</span>
+> </a>
+> </div>
 
+> [static-only] 2.  [Your first queries](http://docs.streamanalyze.com/current/index.html#md_tutorial_README_html)
 
-STATIC-ONLY> 
-2.  [Your first queries](http://docs.streamanalyze.com/current/index.html#md_tutorial_README_html)
-
-
-LIVE-ONLY> 
-2.  [Your first queries](/docs/md/tutorial/README.md)
+> [live-only] 2.  [Your first queries](/docs/md/tutorial/README.md)

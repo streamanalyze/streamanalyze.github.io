@@ -1,13 +1,13 @@
 # Installing sa.engine on your Raspberry Pi.
-LIVE-ONLY> 
-Since you are running inside a live  environment you can go directly to Device Hub -> getting started:
 
-CTA>##/device_hub/getStarted/RPI|||Go to Device Hub
-
- 
-You can still read through this guide if you wish to learn how to connect edge devices manually.
-
-
+> [live-only]
+> From the sandbox you can connect it by using the device hub
+> <div class="CTACont">
+> <a class="CTABtn" role="button" href="#/device_hub/getStarted/RPI">
+> <span>Go to Device Hub</span>
+> </a>
+> </div>
+> You can still read through this guide if you wish to learn how to connect edge devices manually.
 
 ## Download and start SA Engine on your edge device
 

@@ -53,7 +53,8 @@ select [ cos(x),
  where x in heartbeat(0.01)*100
 ```
 
-STATIC-ONLY> <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/mp1.png"/>
+
+> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/mp1.png"/>
 
 
 ```LIVE {"vis":"showMultiPlot"}
@@ -71,7 +72,8 @@ select { "cos(x)": cos(x),
  where x in heartbeat(0.01)*100
 ```
 
-STATIC-ONLY> <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/mp2.png"/>
+
+> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/mp2.png"/>
 
 You can also instruct it to visualize the data in many different ways:
 
@@ -88,4 +90,5 @@ select simsig(x), sin(x), cos(x), (sin(x)+1.1)/(cos(x)+1.1)
 
 
 
-STATIC-ONLY> <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/mp3.png"/>
+
+> [static-only]  <img width="800px" src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/visualization/mp3.png"/>

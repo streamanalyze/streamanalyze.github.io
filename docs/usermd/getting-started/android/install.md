@@ -1,13 +1,13 @@
 > [note]   **Note:** Prerequisite(s): [Install on Android](/docs/usermd/getting-started/android/install.md) 
 
 # Connecting Android device to your federation
-LIVE-ONLY> 
-Since you are running inside a live  environment you can go directly to Device Hub -> getting started:
-
-CTA>##/device_hub/getStarted/Android|||Go to Device Hub
-
- 
-You can still read through this guide if you wish to learn how to connect edge devices manually.
+> [live-only] Since you are running inside a live  environment you can go directly to Device Hub -> getting started:
+> <div class="CTACont">
+> <a class="CTABtn" role="button" href="#/device_hub/getStarted/Android">
+> <span>Go to Device Hub</span>
+> </a>
+> </div>
+> You can still read through this guide if you wish to learn how to connect edge devices manually.
 
 ## Download and start the SA Edge app
 
