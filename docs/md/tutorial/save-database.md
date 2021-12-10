@@ -6,6 +6,7 @@ disk so that all data and function definitions remain the next time
 you use sa.studio.
 
 *Example:*
+
 ```LIVE
 save
 ```
@@ -22,25 +23,31 @@ You can find the exact location of the current image
 file by calling the function `image_file()`.
 
 You get the current **SA home folder** by evaluating:
+
 ```LIVE
 sa_home()
 ```
+
 Under Windows the SA home folder is located in
 `%USERPROFILE%\Documents\SA`, under OSX in `~/Documents/SA`, and under
 Linux in `~/SA`. The database image is by default saved in
 `sa.engine.dmp` in the `bin` folder under the SA home folder.
 
 You can list the files in your SA home `bin` folder by calling:
+
 ```LIVE
 dir(sa_home()+"bin")
 ```
+
 ## Erasing the database image file
 
 You can erase the current database disk image and reset it to the original
 'factory' database by:
+
 ```LIVE
 erase_image()
 ```
+
 The function returns the name of the erased database image if it was
 found. The next time the system is started it will use the 'factory'
 database image instead.
@@ -48,11 +55,10 @@ database image instead.
 You can change your mind and restore an erased image in the same
 session if you call `save` after you have erased it.
 
-
 ### Image loading order
 
 When sa.engine is started it uses the default image name
-`sa.engine.dmp`. 
+`sa.engine.dmp`.
 
 In general, the system will look for the image file to use in the
 following directory order:
@@ -64,7 +70,6 @@ following directory order:
 2. Then it looks in the **startup directory** where the sa.engine
    executable is located. This folder is returned by calling
    `startup_dir()`.
-
 
 ## User models
 
@@ -92,14 +97,16 @@ type="video/webm"> Your browser does not support the video tag.
 
 Check that `my_c_to_f` is added to your models by being included in the
 result of:
+
 ```LIVE
 user_models()
 ```
+
 The model folder `my_c_to_f` is located in the subfolder `models`
 under `sa_home()`. Check its contents by:
+
 ```LIVE
 dir(model_folder("my_c_to_f"))
-
 ```
 
 A model folder always contains an OSQL file `master.osql` where the
@@ -111,12 +118,11 @@ OSQL editor view.  You will the see `my_c_to_f` in the sidebar under
 text editor for the file where you can paste the definition of the
 function [ctof()](/docs/md/tutorial/basic-functions.md#define-model-function)
 
-Don't forget to save the model file by clicking 
-<img src="/docs/images/save.png" height="40"> 
-or pressing `ctrl+s`. Quit the
-editor by clicking <img src="/docs/images/cross.png" height="40">.
+Don't forget to save the model file by clicking <i class="material-icons" style="vertical-align: middle">save</i> or pressing `ctrl+s`. Quit the
+editor by clicking <i class="material-icons" style="vertical-align: middle">close</i>.
 
 You can now load the model into the database by running:
+
 ```LIVE
 load_model('my_c_to_f')
 ```
@@ -147,23 +153,25 @@ models are available click `<> -> System Models` and you can choose
 among a number of predefined system models. Some of these implement AI
 learning algorithms.
 
-To load a system model you can click the button <img
-src="/docs/images/load.png" height="20"> to the right of the model
-name whereby it will be loaded into the stream server. 
+To load a system model you can click the button <span class="material-icons" style="vertical-align: middle;">publish</span>to the right of the model
+name whereby it will be loaded into the stream server.
 
 For example, load the non-supervised learning algorithm
 [dbscan](https://en.wikipedia.org/wiki/DBSCAN) for automatically
 forming clusters of feature vectors. Choose to load it on the
-server. Now, if you click <img src="/docs/images/docs.png"
-height="20"> a menu entry `dbscan` will appear down to the
-left. Select it to run a tutorial on how to develop clustering models
-with dbscan.
+server.
+
+> [live-only] Now, if you go back to the [loaded models section of the
+> documentation](/docs/systemmd/dbscan/docs) a menu entry `dbscan` will appear 
+> to the left. Select it to run a tutorial on how to develop clustering models
+> with dbscan.
 
 You can do the same for the [k-means
 clustering](https://en.wikipedia.org/wiki/K-means_clustering)
 algorithm or for linear regression.
 
 <a name="transactions"></a>
+
 ## Undo changes
 
 The system logs all changes made by users if transaction logging is
@@ -185,8 +193,7 @@ when a part of the model has been developed.
 > [note]  **Note:** The free web based *sandbox* version of sa.studio has
 limited memory that may be exhausted by the
 extra space needed to enable long rollbacks. This can be alleviated by
-issuing the `commit` command now and then to free space for the log. 
+issuing the `commit` command now and then to free space for the log.
 
 The [next tutorial](/docs/md/tutorial/streams.md) shows how to query
 potentially infinite streams.
-

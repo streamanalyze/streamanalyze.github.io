@@ -17,7 +17,7 @@ heartbeat(0.5)
 > [note]   **Note:** The query is an example of a **continuous query (CQ)**
 since it continuously produces an infinite stream of results until you
 explicitly stop it by pressing the stop button 
-<img src="/docs/images/stop.png" height="30"> in sa.studio. 
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/stop.png" height="30"> in sa.studio. 
 
 The following CQ returns a continuous sine wave if visualized as a
 line plot:

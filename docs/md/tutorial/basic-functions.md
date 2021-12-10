@@ -10,7 +10,7 @@ Hello!
 system_version()
 ```
 
-> [exercise] **Exercise:** Run the function by clicking the play button <img src="/docs/images/play.png" height="20">:
+> [exercise] **Exercise:** Run the function by clicking the play button <i class="material-icons" style="vertical-align: middle">play_circle_outline</i>
 
 Documentation of functions and other sa.engine artifacts are stored in
 the database as well. You can **query** the database about the
@@ -344,8 +344,8 @@ dist([1,2],[3,4])
 The built-in function `euclid()` does the same.
 
 The general Minkowski distance computation function `minkowski()` is
-also built-in. This example shows Manhattan distance (c194a9eg$ L_1 $), Euclidean
-(c194a9eg$ L_2 $) and Chebyshev (c194a9eg$ L_infty $) distance expressed in terms of
+also built-in. This example shows Manhattan distance (c194a9egc194a9egc194a9egc194a9eg$ L_1 $), Euclidean
+(c194a9egc194a9egc194a9egc194a9eg$ L_2 $) and Chebyshev (c194a9egc194a9egc194a9egc194a9eg$ L_infty $) distance expressed in terms of
 `minkowski()`.
 
 *Examples:*

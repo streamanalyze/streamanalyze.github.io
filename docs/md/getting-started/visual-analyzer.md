@@ -43,7 +43,7 @@ The example query **Heartbeat** is the statement:
 heartbeat(1)
 ```
 Since `heartbeat` returns an infinite stream of number it will run until you terminate it by pressing the stop button 
-<img src="/docs/images/stop.png" height="30">.
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/stop.png" height="30">.
 
 As another CQ you can concatenate a string with each heartbeat element by evaluating:
 ```LIVE

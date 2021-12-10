@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   <style>
     :root {
       /*--theme-hue: 325;*/
@@ -180,10 +182,10 @@
         crossChapterText: true,
       },
       toc: {
-    scope: '.markdown-section',
-    headings: 'h1, h2, h3, h4, h5, h6',
-    title: 'Table of Contents',
-  },
+        scope: '.markdown-section',
+        headings: 'h1, h2, h3, h4, h5, h6',
+        title: 'Table of Contents',
+      },
       plugins: [
         function (hook, vm) {
           hook.doneEach(function () {

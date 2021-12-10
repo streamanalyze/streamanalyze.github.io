@@ -16,7 +16,7 @@ an account. Download the executable and run it.
 Start using the MangOH red as an edge device by plugging in the micro USB cable 
 in the port located under the board, see the green rectangle in **Fig 1**. 
 
-<img src="/docs/images/mangoh_red.jpg" style="width:500px;margin:auto;"/>
+![Mangoh red](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/mangoh_red.jpg)
 
 > **Fig 1** The MangOH red board.
 
