@@ -266,7 +266,7 @@ usual `[...]` notation.
 ```
 
 > [exercise] **Exercise:** Change visualization of the vector to `Bar plot` by clicking 
-<img src="/docs/images/text.png" height="20">
+**Text &gt;**
 
 The mathematical operators `+,-,*,/,^` can be used for whole vectors
 or mixes of vectors and scalar values.
@@ -344,8 +344,8 @@ dist([1,2],[3,4])
 The built-in function `euclid()` does the same.
 
 The general Minkowski distance computation function `minkowski()` is
-also built-in. This example shows Manhattan distance (c194a9egc194a9egc194a9egc194a9eg$ L_1 $), Euclidean
-(c194a9egc194a9egc194a9egc194a9eg$ L_2 $) and Chebyshev (c194a9egc194a9egc194a9egc194a9eg$ L_infty $) distance expressed in terms of
+also built-in. This example shows Manhattan distance ($ L_1 $), Euclidean
+($ L_2 $) and Chebyshev ($ L_infty $) distance expressed in terms of
 `minkowski()`.
 
 *Examples:*
