@@ -26,17 +26,19 @@ Now let's expand this example by pivoting two streams:
 
 ```LIVE
 select v
-  from Stream of Vector pivot, Vector of Stream v<s, Vector v
+  from Stream of Vector pivot, Vector of Stream vs, Vector v
  where pivot = pivot_streams(vs)
    and vs = [1+simstream(0.02), 2+simstream(.2)]
    and v in pivot
  limit 14
 ```
+
 > [note]   **Notice** that the first vector contains a `null` value. This is
 because the pivoted stream had not received any value from stream 2
 when it received the first value from stream 1.  This can be avoided
 by using a pivot streams variant that takes an extra argument being
 the initial vector in the result stream: 
+
 ```LIVE {"vis":"Text"}
 select v
   from Stream of Vector pivot, Vector of Stream vs, Vector v
@@ -45,7 +47,9 @@ select v
    and v in pivot
  limit 14
 ```
+
 The following is an example of a more advanced stream pivot:
+
 ```LIVE {"vis":"showLine"}
 select pivot
   from Stream of Vector pivot,
@@ -83,12 +87,14 @@ select v[1]*v[4] + v[3]*10, v[4], v[2]
    and hbmodfast = mod(round(10*heartbeat(.1)), 2)
    and v in ps
 ```
+
 > [note]   **Note:** when working with **in** over streams the order of the
 [predicates](/docs/md/osql/queries.md#predicates) matters. All
 variables used in the **in** statement needs to be bound. For instance
 the following query will fail because the query optimizer cannot
 determine the value of `vs` since `hbmodfast` is defined **after** the
 `and in sv` line. 
+
 ```LIVE
 select v[1]*v[4] + v[3]*10, v[4], v[2]
   from Stream of Vector sv,
@@ -102,7 +108,9 @@ select v[1]*v[4] + v[3]*10, v[4], v[2]
    and v in sv
    and hbmodfast = mod(round(10*heartbeat(.1)), 2)
 ```
+
 Let's smooth that `v[2]`
+
 ```LIVE {"vis":"automatic"}
 select v[1]*v[4] + v[3]*10, v[4], mean(win)
   from Stream of Vector sv,

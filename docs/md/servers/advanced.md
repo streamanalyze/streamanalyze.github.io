@@ -2,7 +2,7 @@
 
 # Advanced configuration of nameservers and peers
 When setting up a real federation with sa.engine the basic configurations will
-only get you so far. In this section we wil lgo through how you can configure the
+only get you so far. In this section we will go through how you can configure the
 following settings:
 
 * Hostname
@@ -12,7 +12,7 @@ following settings:
 
 ## Configure hostname of server
 By default sa.engine takes the hostname of the host computer as it's hostname.
-In many cases it is desireable to set this to a DNS name or similar. This can 
+In many cases it is desirable to set this to a DNS name or similar. This can 
 either be done by setting the environment variable `SA_HOSTNAME` to the desired
 hostname or by calling `my_hostname(Charstring host);`:
 ```LIVE {"vis":"showMarkdown"}
@@ -48,12 +48,12 @@ is an IP/hostname that is reachable from the client to the server.
 ## Secure sockets (TLS)
 Sa.engine uses ARM mbedtls for securing the transport layer. In sa.engine all peers
 must have a signed certificate from a common **Certificate Authority**. The server 
-certificate should have it's common name set to it's peername.
+certificate should have it's common name set to it's peer name.
 
-In this section we will assume that you have accquired/generated the following:
+In this section we will assume that you have acquired/generated the following:
 
 * 1 private RSA key (1024-bits or longer) - private.key
-* 1 certificate authortiy crertificate which was used to sign the certifiacte, ca.crt
+* 1 certificate authority certificate which was used to sign the certificate, ca.crt
 * 1 certificate which was signed by the certificate authority. cert.crt
 
 To configure an sa.engine to enable TLS use the function `enable_security()`:
@@ -69,7 +69,7 @@ operations. You have now enabled the physical security.
 ## Connect configurations
 
 Since there are many parameters to set which might be hard to get correctly set up 
-the sa.engine nameserver kan be used to generate valid configuration records for 
+the sa.engine nameserver can be used to generate valid configuration records for 
 connecting peers, edges, and, clients to the federation. If you have connected an 
 edge device to the sa.studio Community Edition via the device hub you have already
 used these configuration records to connect sa.engines to a federation.
@@ -107,7 +107,7 @@ mddoc(apropos("connect_using"));
 
 There is an optional key `ip-getter` which can be set in the connect configuration.
 If `ip-getter` is set to a valid http(s) address an edge device will send a `GET`
-request to the given url. The response from the request must be a JSON-array with
+request to the given URL. The response from the request must be a JSON-array with
 `[String host, Integer port]`. This host and port pair will be added to the tried
 addresses when connecting to a federation.
 
