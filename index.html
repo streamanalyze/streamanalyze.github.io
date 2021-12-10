@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
   <style>
     :root {
       /*--theme-hue: 325;*/
@@ -93,6 +94,9 @@
       justify-content: center;
       align-items: center;
     }
+    .nav {
+      margin-top: 50px;
+    }
   </style>
 </head>
 
@@ -111,9 +115,10 @@
       repo: '',
       auto2top: true,
       maxLevel: 3,
-      subMaxLevel: 3,
+      subMaxLevel: 0,
       loadSidebar: 'summary.md',
       loadNavbar: true,
+      topMargin: 50,
       mergeNavbar: true,
       // 5. docsify-themeable
       themeable: {
@@ -174,6 +179,11 @@
         crossChapter: true,
         crossChapterText: true,
       },
+      toc: {
+    scope: '.markdown-section',
+    headings: 'h1, h2, h3, h4, h5, h6',
+    title: 'Table of Contents',
+  },
       plugins: [
         function (hook, vm) {
           hook.doneEach(function () {
@@ -199,6 +209,7 @@
   <!-- <script src="https://unpkg.com/docsify-copy-code"></script> -->
   <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+  <script src="https://unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script>
 </body>
 
 </html>
