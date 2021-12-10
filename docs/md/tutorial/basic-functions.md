@@ -4,8 +4,6 @@ There is a large number of functions stored in sa.engine's in-memory
 *object-oriented database*. For example, the following function call
 returns the version of sa.engine you are running.
 
-Hello!
-
 ```LIVE
 system_version()
 ```
