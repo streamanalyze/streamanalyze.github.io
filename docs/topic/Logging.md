@@ -1,6 +1,7 @@
 # Logging functions:
 
-> [function]console_logger(Boolean flag)->Boolean
+> [function]
+> console_logger(Boolean flag)->Boolean
 
 > [function-docs]
 > Print log messages on server console 
@@ -9,7 +10,8 @@
 
 ___
 
-> [function]create_log_file(Charstring file)->Charstring
+> [function]
+> create_log_file(Charstring file)->Charstring
 
 > [function-docs]
 > Create `file` in current log directory 
@@ -18,7 +20,8 @@ ___
 
 ___
 
-> [function]delete_log_file(Charstring file)->Charstring
+> [function]
+> delete_log_file(Charstring file)->Charstring
 
 > [function-docs]
 > Delete `file` in log directory 
@@ -27,7 +30,8 @@ ___
 
 ___
 
-> [function]file_stream(Charstring kind,Charstring file,Charstring option)->Stream
+> [function]
+> file_stream(Charstring kind,Charstring file,Charstring option)->Stream
 
 > [function-docs]
 > Stream tuples from log `file` in format `kind` (`json` or `csv`).
@@ -37,7 +41,8 @@ ___
 
 ___
 
-> [function]file_stream(Charstring kind,Charstring file,Charstring option,Number pace)
+> [function]
+> file_stream(Charstring kind,Charstring file,Charstring option,Number pace)
            ->Stream
 
 > [function-docs]
@@ -49,7 +54,8 @@ ___
 
 ___
 
-> [function]file_stream(Charstring kind,Charstring file)->Stream
+> [function]
+> file_stream(Charstring kind,Charstring file)->Stream
 
 > [function-docs]
 > Stream tuples from log `file` in format `kind` (`json` or `csv`) 
@@ -58,7 +64,8 @@ ___
 
 ___
 
-> [function]log_directory(Charstring dir)->Charstring
+> [function]
+> log_directory(Charstring dir)->Charstring
 
 > [function-docs]
 > Change current log directory to `dir` 
@@ -67,7 +74,8 @@ ___
 
 ___
 
-> [function]log_directory()->Charstring
+> [function]
+> log_directory()->Charstring
 
 > [function-docs]
 > The current log directory where log files are located 
@@ -76,7 +84,8 @@ ___
 
 ___
 
-> [function]log_filename(Charstring file)->Charstring
+> [function]
+> log_filename(Charstring file)->Charstring
 
 > [function-docs]
 > The full path of `file` in current log directory 
@@ -85,7 +94,8 @@ ___
 
 ___
 
-> [function]stream_logger(Stream s,Charstring kind,Charstring file,Charstring option)
+> [function]
+> stream_logger(Stream s,Charstring kind,Charstring file,Charstring option)
              ->Stream
 
 > [function-docs]
@@ -99,7 +109,8 @@ ___
 
 ___
 
-> [function]write_logfile(Charstring kind,Charstring file,Stream s)->Charstring
+> [function]
+> write_logfile(Charstring kind,Charstring file,Stream s)->Charstring
 
 > [function-docs]
 > Write elements in stream `s` into new log `file` 

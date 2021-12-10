@@ -1,6 +1,7 @@
 # Documentation functions:
 
-> [function]add_topic(Function f,Charstring topic)->Topic
+> [function]
+> add_topic(Function f,Charstring topic)->Topic
 
 > [function-docs]
 > Add `topic` to function `f` 
@@ -9,7 +10,8 @@
 
 ___
 
-> [function]alltopics()->Bag of Topic
+> [function]
+> alltopics()->Bag of Topic
 
 > [function-docs]
 > All topics in database 
@@ -18,7 +20,8 @@ ___
 
 ___
 
-> [function]apropos(Charstring str)->Bag of Function
+> [function]
+> apropos(Charstring str)->Bag of Function
 
 > [function-docs]
 > Functions whose names contain `str` 
@@ -27,7 +30,8 @@ ___
 
 ___
 
-> [function]create_topic(Charstring tn)->Topic t
+> [function]
+> create_topic(Charstring tn)->Topic t
 
 > [function-docs]
 > Create a new topic named `tn` 
@@ -36,7 +40,8 @@ ___
 
 ___
 
-> [function]current_topics(Vector of Charstring tn)->Bag of Topic
+> [function]
+> current_topics(Vector of Charstring tn)->Bag of Topic
 
 > [function-docs]
 > Associate topics in `tn` with succeeding function definitions 
@@ -45,7 +50,8 @@ ___
 
 ___
 
-> [function]doc(Function fn)->Bag of Charstring
+> [function]
+> doc(Function fn)->Bag of Charstring
 
 > [function-docs]
 > Documentation of function `fn` 
@@ -54,7 +60,8 @@ ___
 
 ___
 
-> [function]doc(Charstring fn)->Bag of Charstring
+> [function]
+> doc(Charstring fn)->Bag of Charstring
 
 > [function-docs]
 > Documentation of function named `fn` 
@@ -63,7 +70,8 @@ ___
 
 ___
 
-> [function]doc(Topic t)->Charstring
+> [function]
+> doc(Topic t)->Charstring
 
 > [function-docs]
 > Documentation of functions in topic `t` 
@@ -72,7 +80,8 @@ ___
 
 ___
 
-> [function]functions(Topic t)->Bag of Function
+> [function]
+> functions(Topic t)->Bag of Function
 
 > [function-docs]
 > The functions associated with topic `t` 
@@ -81,7 +90,8 @@ ___
 
 ___
 
-> [function]mddoc(Function fn)->Bag of Charstring
+> [function]
+> mddoc(Function fn)->Bag of Charstring
 
 > [function-docs]
 > Documentation of function `fn` in Markdown format. 
@@ -90,7 +100,8 @@ ___
 
 ___
 
-> [function]mddoc(Charstring fn)->Bag of Charstring
+> [function]
+> mddoc(Charstring fn)->Bag of Charstring
 
 > [function-docs]
 > Documentation of function named `fn` in Markdown format. 
@@ -99,7 +110,8 @@ ___
 
 ___
 
-> [function]mddoc(Topic t)->Charstring
+> [function]
+> mddoc(Topic t)->Charstring
 
 > [function-docs]
 > Documentation of functions in topic `t` as Markdown 
@@ -108,7 +120,8 @@ ___
 
 ___
 
-> [function]name(Topic t)->Charstring nm
+> [function]
+> name(Topic t)->Charstring nm
 
 > [function-docs]
 > The name of topic `t` 
@@ -117,7 +130,8 @@ ___
 
 ___
 
-> [function]signature(Type t)->Charstring
+> [function]
+> signature(Type t)->Charstring
 
 > [function-docs]
 > The signature of type `t` 
@@ -126,7 +140,8 @@ ___
 
 ___
 
-> [function]signature(Function f)->Bag of Charstring
+> [function]
+> signature(Function f)->Bag of Charstring
 
 > [function-docs]
 > The signature of resolvent `f` or
@@ -136,7 +151,8 @@ ___
 
 ___
 
-> [function]sourcecode(Type t)->Charstring
+> [function]
+> sourcecode(Type t)->Charstring
 
 > [function-docs]
 > Source code to of user defined type `t` 
@@ -145,7 +161,8 @@ ___
 
 ___
 
-> [function]sourcecode(Function f)->Bag of Charstring
+> [function]
+> sourcecode(Function f)->Bag of Charstring
 
 > [function-docs]
 > Source code of function `f` 
@@ -154,7 +171,8 @@ ___
 
 ___
 
-> [function]sourcecode(Charstring fn)->Bag of Charstring
+> [function]
+> sourcecode(Charstring fn)->Bag of Charstring
 
 > [function-docs]
 > Source code of resolvents of function named `fn` 
@@ -163,7 +181,8 @@ ___
 
 ___
 
-> [function]topics(Function f)->Bag of Topic
+> [function]
+> topics(Function f)->Bag of Topic
 
 > [function-docs]
 > The topics associated with function `f` 
@@ -172,13 +191,15 @@ ___
 
 ___
 
-> [function]topic_intro(Charstring topic_name)->Charstring
+> [function]
+> topic_intro(Charstring topic_name)->Charstring
 
 
 
 ___
 
-> [function]topic_named(Charstring tn)->Topic
+> [function]
+> topic_named(Charstring tn)->Topic
 
 > [function-docs]
 > Get the topic named `tn` 
@@ -187,7 +208,8 @@ ___
 
 ___
 
-> [function]visible(Function f)->Boolean
+> [function]
+> visible(Function f)->Boolean
 
 > [function-docs]
 > True if object `f` is not a hidden function 

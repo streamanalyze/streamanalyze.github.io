@@ -1,6 +1,7 @@
 # Stream functions:
 
-> [function]changed(Stream s)->Stream
+> [function]
+> changed(Stream s)->Stream
 
 > [function-docs]
 > Stream containing the elements of stream `s` that are different 
@@ -10,7 +11,8 @@
 
 ___
 
-> [function]changed(Stream of Vector s,Vector of Number indexes)->Stream of Vector
+> [function]
+> changed(Stream of Vector s,Vector of Number indexes)->Stream of Vector
 
 > [function-docs]
 > Stream containing the vectors of stream `s` whose elements in `indexes`
@@ -20,7 +22,8 @@ ___
 
 ___
 
-> [function]concat(Stream a,Stream b)->Stream
+> [function]
+> concat(Stream a,Stream b)->Stream
 
 > [function-docs]
 > Concatenate streams `a` and `b` 
@@ -29,7 +32,8 @@ ___
 
 ___
 
-> [function]diota(Number pace,Number l,Number u)->Stream of Number
+> [function]
+> diota(Number pace,Number l,Number u)->Stream of Number
 
 > [function-docs]
 > Stream of natural numbers between `l` and `u` 
@@ -39,7 +43,8 @@ ___
 
 ___
 
-> [function]extract(Stream s)->Bag
+> [function]
+> extract(Stream s)->Bag
 
 > [function-docs]
 > Extract elements in stream `s` one by one as elements in a bag 
@@ -48,7 +53,8 @@ ___
 
 ___
 
-> [function]first(Stream s)->Object
+> [function]
+> first(Stream s)->Object
 
 > [function-docs]
 > The first element in stream `s` 
@@ -57,7 +63,8 @@ ___
 
 ___
 
-> [function]first_n(Stream s,Number n)->Stream
+> [function]
+> first_n(Stream s,Number n)->Stream
 
 > [function-docs]
 > The stream of the first `n` elements in stream `s` 
@@ -66,7 +73,8 @@ ___
 
 ___
 
-> [function]heartbeat(Number pace)->Stream of Number
+> [function]
+> heartbeat(Number pace)->Stream of Number
 
 > [function-docs]
 > Stream of seconds from start emitted at given `pace` in seconds 
@@ -75,7 +83,8 @@ ___
 
 ___
 
-> [function]heartbeat_wrap(Bag b,Number pace)->Stream
+> [function]
+> heartbeat_wrap(Bag b,Number pace)->Stream
 
 > [function-docs]
 > Convert bag `b` into stream with sampling frequency `pace` 
@@ -84,7 +93,8 @@ ___
 
 ___
 
-> [function]merge_streams(Bag of Stream b)->Stream
+> [function]
+> merge_streams(Bag of Stream b)->Stream
 
 > [function-docs]
 > Merge streams in bag `b` 
@@ -93,7 +103,8 @@ ___
 
 ___
 
-> [function]merge_streams(Stream s1,Stream s2)->Stream
+> [function]
+> merge_streams(Stream s1,Stream s2)->Stream
 
 > [function-docs]
 > Merge streams `s1` and `s2` 
@@ -102,7 +113,8 @@ ___
 
 ___
 
-> [function]pivot_events(Vector keys,Stream of Vector bus)->Stream of Timeval of Vector
+> [function]
+> pivot_events(Vector keys,Stream of Vector bus)->Stream of Timeval of Vector
 
 > [function-docs]
 > Pivot stream `bus` of `[timestamp, key, value]`
@@ -112,7 +124,8 @@ ___
 
 ___
 
-> [function]pivot_streams(Vector of Stream vs,Vector iv)->Stream of Vector
+> [function]
+> pivot_streams(Vector of Stream vs,Vector iv)->Stream of Vector
 
 > [function-docs]
 > A stream of the most recently received values in `vs`, 
@@ -122,7 +135,8 @@ ___
 
 ___
 
-> [function]pivot_streams(Vector of Stream vs)->Stream of Vector
+> [function]
+> pivot_streams(Vector of Stream vs)->Stream of Vector
 
 > [function-docs]
 > A stream of the most recently received elements in `vs` 
@@ -131,7 +145,8 @@ ___
 
 ___
 
-> [function]playback(Stream s)->Stream
+> [function]
+> playback(Stream s)->Stream
 
 > [function-docs]
 > Playback time stamped stream of vectors `s` with pace
@@ -141,7 +156,8 @@ ___
 
 ___
 
-> [function]predwin(Stream s,Integer c,Object p,Function e,Function l,Boolean start_entered)
+> [function]
+> predwin(Stream s,Integer c,Object p,Function e,Function l,Boolean start_entered)
        ->Stream of Vector
 
 > [function-docs]
@@ -155,7 +171,8 @@ ___
 
 ___
 
-> [function]predwin(Stream s,Integer c,Object p,Function e,Function l)->Stream of Vector
+> [function]
+> predwin(Stream s,Integer c,Object p,Function e,Function l)->Stream of Vector
 
 > [function-docs]
 > Form predicate windows over stream `s` by applying the window delimination
@@ -167,7 +184,8 @@ ___
 
 ___
 
-> [function]randstream(Real l,Real u)->Stream of Real
+> [function]
+> randstream(Real l,Real u)->Stream of Real
 
 > [function-docs]
 > Infinite stream of random numbers between `l` and `u` 
@@ -176,7 +194,8 @@ ___
 
 ___
 
-> [function]ravg(Stream s)->Stream of Number
+> [function]
+> ravg(Stream s)->Stream of Number
 
 > [function-docs]
 > Running averages of elements in stream `s` 
@@ -185,7 +204,8 @@ ___
 
 ___
 
-> [function]rcount(Stream s)->Stream of Number
+> [function]
+> rcount(Stream s)->Stream of Number
 
 > [function-docs]
 > Stream of running count of elements in stream `s` 
@@ -194,14 +214,16 @@ ___
 
 ___
 
-> [function]readlines(Charstring file,Charstring delim,Number chunk)
+> [function]
+> readlines(Charstring file,Charstring delim,Number chunk)
          ->Stream of Vector of Charstring
 
 
 
 ___
 
-> [function]readlines(Charstring file)->Stream of Charstring
+> [function]
+> readlines(Charstring file)->Stream of Charstring
 
 > [function-docs]
 > Stream of lines in `file` 
@@ -210,13 +232,15 @@ ___
 
 ___
 
-> [function]read_file_chunked(Charstring file,Integer chunk)->Stream
+> [function]
+> read_file_chunked(Charstring file,Integer chunk)->Stream
 
 
 
 ___
 
-> [function]remote_function_stream(Charstring peer,Charstring fn,Vector args)
+> [function]
+> remote_function_stream(Charstring peer,Charstring fn,Vector args)
                       ->Stream of Vector
 
 > [function-docs]
@@ -226,7 +250,8 @@ ___
 
 ___
 
-> [function]rsum(Stream s)->Stream of Number
+> [function]
+> rsum(Stream s)->Stream of Number
 
 > [function-docs]
 > Stream of running averages of elements in stream `s` 
@@ -235,7 +260,8 @@ ___
 
 ___
 
-> [function]sample_every(Stream s,Number pace)->Stream
+> [function]
+> sample_every(Stream s,Number pace)->Stream
 
 > [function-docs]
 > Run stream `s` and emit values every `pace` seconds since the last value 
@@ -244,7 +270,8 @@ ___
 
 ___
 
-> [function]sample_stream(Bag expression,Number pace)->Stream
+> [function]
+> sample_stream(Bag expression,Number pace)->Stream
 
 > [function-docs]
 > Stream of `expression` evaluated every `pace` seconds 
@@ -253,13 +280,15 @@ ___
 
 ___
 
-> [function]save_last_element(Stream s,Function f)->Stream
+> [function]
+> save_last_element(Stream s,Function f)->Stream
 
 
 
 ___
 
-> [function]section(Stream s,Number start,Number stop)->Stream
+> [function]
+> section(Stream s,Number start,Number stop)->Stream
 
 > [function-docs]
 > The section of stream `s` starting at position `start` 
@@ -269,7 +298,8 @@ ___
 
 ___
 
-> [function]simsig(Real x)->Real
+> [function]
+> simsig(Real x)->Real
 
 > [function-docs]
 > A simulated harmonic stream reading `x` seconds from its start 
@@ -278,7 +308,8 @@ ___
 
 ___
 
-> [function]simstream(Number pace)->Stream of Real
+> [function]
+> simstream(Number pace)->Stream of Real
 
 > [function-docs]
 > A simulated harmonic stream 
@@ -287,13 +318,15 @@ ___
 
 ___
 
-> [function]simwinstream(Number pace,Number sz)->Stream of Vector of Real
+> [function]
+> simwinstream(Number pace,Number sz)->Stream of Vector of Real
 
 
 
 ___
 
-> [function]sink(Stream s)->Boolean
+> [function]
+> sink(Stream s)->Boolean
 
 > [function-docs]
 > Run stream `s` silently without extracting any elements 
@@ -302,7 +335,8 @@ ___
 
 ___
 
-> [function]siota(Number l,Number u)->Stream of Integer
+> [function]
+> siota(Number l,Number u)->Stream of Integer
 
 > [function-docs]
 > Stream of natural numbers between `l` and `u` 
@@ -311,7 +345,8 @@ ___
 
 ___
 
-> [function]skip(Stream s,Number n)->Stream
+> [function]
+> skip(Stream s,Number n)->Stream
 
 > [function-docs]
 > Skip first `n` elements in stream `s` 
@@ -320,13 +355,15 @@ ___
 
 ___
 
-> [function]streamof(Stream s)->Stream
+> [function]
+> streamof(Stream s)->Stream
 
 
 
 ___
 
-> [function]streamof(Bag b)->Stream
+> [function]
+> streamof(Bag b)->Stream
 
 > [function-docs]
 > Convert a bag `b` to a stream 
@@ -335,7 +372,8 @@ ___
 
 ___
 
-> [function]timestamps(Number pace)->Stream of Charstring
+> [function]
+> timestamps(Number pace)->Stream of Charstring
 
 > [function-docs]
 > Stream of local timestamp UTC every `pace` seconds 
@@ -344,7 +382,8 @@ ___
 
 ___
 
-> [function]timestream(Number pace)->Stream of Timeval
+> [function]
+> timestream(Number pace)->Stream of Timeval
 
 > [function-docs]
 > Stream of time stamps every `pace` seconds 
@@ -353,7 +392,8 @@ ___
 
 ___
 
-> [function]ts_simstream(Number pace)->Stream of Timeval of Number
+> [function]
+> ts_simstream(Number pace)->Stream of Timeval of Number
 
 > [function-docs]
 > A sumulated time stamped harmonic stream 
@@ -362,7 +402,8 @@ ___
 
 ___
 
-> [function]twinagg(Stream of Timeval s,Number size,Number stride)
+> [function]
+> twinagg(Stream of Timeval s,Number size,Number stride)
        ->Stream of Timeval of Vector
 
 > [function-docs]
@@ -375,7 +416,8 @@ ___
 
 ___
 
-> [function]twinagg(Stream of Timeval s,Number size,Number stride,Timeval start)
+> [function]
+> twinagg(Stream of Timeval s,Number size,Number stride,Timeval start)
        ->Stream of Timeval of Vector
 
 > [function-docs]
@@ -389,7 +431,8 @@ ___
 
 ___
 
-> [function]vectorof(Stream b)->Vector v
+> [function]
+> vectorof(Stream b)->Vector v
 
 > [function-docs]
 > Convert finite stream to vector 
@@ -398,7 +441,8 @@ ___
 
 ___
 
-> [function]vstream(Vector v)->Stream
+> [function]
+> vstream(Vector v)->Stream
 
 > [function-docs]
 > Convert a vector `v` to a stream 
@@ -407,7 +451,8 @@ ___
 
 ___
 
-> [function]winagg(Stream s,Number size,Number stride)->Stream of Vector
+> [function]
+> winagg(Stream s,Number size,Number stride)->Stream of Vector
 
 > [function-docs]
 > Stream of count windows over stream `s` represented as vectors where:
@@ -418,7 +463,8 @@ ___
 
 ___
 
-> [function]writelines(Stream s,Charstring file)->Charstring
+> [function]
+> writelines(Stream s,Charstring file)->Charstring
 
 > [function-docs]
 > Create `file` by lines in stream `s` 

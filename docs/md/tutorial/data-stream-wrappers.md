@@ -13,7 +13,7 @@ or several measured variable values called **signals**.
 
 The OSQL type `Signal` represents data streams extracted from a raw
 data stream source. A signal stream can be seen as a variable *V* that
-continuously gets new values c194a9egc194a9eg$ V_t $ over time *t*. Each signal object
+continuously gets new values $ V_t $ over time *t*. Each signal object
 `s` has the following general meta-data properties:
 
 - `name(s)`: The signal's name; i.e. the name of the variable it

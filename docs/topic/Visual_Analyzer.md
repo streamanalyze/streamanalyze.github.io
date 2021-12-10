@@ -1,6 +1,7 @@
 # Visual Analyzer functions:
 
-> [function]va(Charstring connection,Charstring server)->Boolean
+> [function]
+> va(Charstring connection,Charstring server)->Boolean
 
 > [function-docs]
 > Run the Visual Analyzer on port 3001 
@@ -9,7 +10,8 @@
 
 ___
 
-> [function]va()->Boolean
+> [function]
+> va()->Boolean
 
 > [function-docs]
 > Run the Visual Analyzer on port 3001 
@@ -18,7 +20,8 @@ ___
 
 ___
 
-> [function]va_options()->Record
+> [function]
+> va_options()->Record
 
 > [function-docs]
 > Stored options for the visual analyzer default is none.
@@ -42,7 +45,8 @@ ___
 
 ___
 
-> [function]ws()->Boolean
+> [function]
+> ws()->Boolean
 
 > [function-docs]
 > Start a Stream Server and web server, but no browser 

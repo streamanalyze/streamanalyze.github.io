@@ -1,18 +1,21 @@
 # Neural network functions:
 
-> [function]maxi(Vector v)->Number i
+> [function]
+> maxi(Vector v)->Number i
 
 
 
 ___
 
-> [function]minus(Tensor x,Tensor y)->Tensor
+> [function]
+> minus(Tensor x,Tensor y)->Tensor
 
 
 
 ___
 
-> [function]name(Sann)->Charstring
+> [function]
+> name(Sann)->Charstring
 
 > [function-docs]
 > The unique name of a Sann 
@@ -21,7 +24,8 @@ ___
 
 ___
 
-> [function]one_hot(Number size,Number i)->Vector of Number
+> [function]
+> one_hot(Number size,Number i)->Vector of Number
 
 > [function-docs]
 > Create a vector of number of size `size` where index `i` is set to 1
@@ -30,7 +34,8 @@ ___
 
 ___
 
-> [function]one_hot_na(Number size,Number i)->Numarray
+> [function]
+> one_hot_na(Number size,Number i)->Numarray
 
 > [function-docs]
 > Create a numarray of size `size` where index `i` is set to 1
@@ -39,13 +44,15 @@ ___
 
 ___
 
-> [function]plus(Tensor x,Tensor y)->Tensor
+> [function]
+> plus(Tensor x,Tensor y)->Tensor
 
 
 
 ___
 
-> [function]sann:bind_tensor(Sann sann,Number index,Numarray values)->Boolean
+> [function]
+> sann:bind_tensor(Sann sann,Number index,Numarray values)->Boolean
 
 > [function-docs]
 > Bind `values` to tensor with index `index` in network `sann`
@@ -54,7 +61,8 @@ ___
 
 ___
 
-> [function]sann:bind_tensor(Sann sann,Number index,Vector of Number values)->Boolean
+> [function]
+> sann:bind_tensor(Sann sann,Number index,Vector of Number values)->Boolean
 
 > [function-docs]
 > Bind `values` to tensor with index `index` in network `sann`
@@ -63,7 +71,8 @@ ___
 
 ___
 
-> [function]sann:classify(Sann k,Vector of Numarray observation)->Vector of Real
+> [function]
+> sann:classify(Sann k,Vector of Numarray observation)->Vector of Real
 
 > [function-docs]
 > Classifies an `observation` based on the Sann-network `k` 
@@ -72,7 +81,8 @@ ___
 
 ___
 
-> [function]sann:classify(Sann k,Matrix observation)->Vector of Real
+> [function]
+> sann:classify(Sann k,Matrix observation)->Vector of Real
 
 > [function-docs]
 > Classifies an `observation` based on the Sann-network `k` 
@@ -81,7 +91,8 @@ ___
 
 ___
 
-> [function]sann:classify(Sann k,Numarray observation)->Vector of Real
+> [function]
+> sann:classify(Sann k,Numarray observation)->Vector of Real
 
 > [function-docs]
 > Classifies an `observation` based on the Sann-network `k` 
@@ -90,7 +101,8 @@ ___
 
 ___
 
-> [function]sann:classify(Sann k,Vector of Number observation)->Vector of Real
+> [function]
+> sann:classify(Sann k,Vector of Number observation)->Vector of Real
 
 > [function-docs]
 > Classifies an `observation` based on the Sann-network `k` 
@@ -99,7 +111,8 @@ ___
 
 ___
 
-> [function]sann:download(Charstring name)->Charstring
+> [function]
+> sann:download(Charstring name)->Charstring
 
 > [function-docs]
 > Download the Sann identified by `name` from edge server 
@@ -108,7 +121,8 @@ ___
 
 ___
 
-> [function]sann:ff_trainer(Sann k,Real learning_rate,Integer max_iterations,
+> [function]
+> sann:ff_trainer(Sann k,Real learning_rate,Integer max_iterations,
                Integer stop_iterations,Real validation_fraction,
                Stream of Vector of Vector data)->Stream of Record
 
@@ -125,13 +139,15 @@ ___
 
 ___
 
-> [function]sann:get(Sann k,Integer index)->Tensor
+> [function]
+> sann:get(Sann k,Integer index)->Tensor
 
 
 
 ___
 
-> [function]sann:import(Charstring name,Charstring folder)->Sann
+> [function]
+> sann:import(Charstring name,Charstring folder)->Sann
 
 > [function-docs]
 > Import exported Sann model in `folder` and name it `name` 
@@ -140,7 +156,8 @@ ___
 
 ___
 
-> [function]sann:import(Charstring name)->Sann
+> [function]
+> sann:import(Charstring name)->Sann
 
 > [function-docs]
 > Import exported Sann model in folder `name` 
@@ -149,7 +166,8 @@ ___
 
 ___
 
-> [function]sann:layer_conv2d(Tensor k,Integer n_flt,Integer kernel_height,
+> [function]
+> sann:layer_conv2d(Tensor k,Integer n_flt,Integer kernel_height,
                  Integer kernel_width,Integer row_stride,Integer column_stride,
                  Integer row_padding,Integer column_padding)->Tensor
 
@@ -157,7 +175,8 @@ ___
 
 ___
 
-> [function]sann:layer_dense(Tensor k,Integer num_neurons)->Tensor
+> [function]
+> sann:layer_dense(Tensor k,Integer num_neurons)->Tensor
 
 > [function-docs]
 > Add a hidden layer with `num_neurons` in to the networks `k`.
@@ -166,19 +185,22 @@ ___
 
 ___
 
-> [function]sann:layer_dropout(Tensor k,Number dropout)->Tensor
+> [function]
+> sann:layer_dropout(Tensor k,Number dropout)->Tensor
 
 
 
 ___
 
-> [function]sann:layer_input(Integer num_inputs)->Tensor
+> [function]
+> sann:layer_input(Integer num_inputs)->Tensor
 
 
 
 ___
 
-> [function]sann:mc_acc(Sann network,Charstring test_file)->Number
+> [function]
+> sann:mc_acc(Sann network,Charstring test_file)->Number
 
 > [function-docs]
 > Compute the accuracy of a Sann `network` using a test set in 
@@ -194,7 +216,8 @@ ___
 
 ___
 
-> [function]sann:mc_acc(Sann network,Charstring test_file,Number num_observations)->Number
+> [function]
+> sann:mc_acc(Sann network,Charstring test_file,Number num_observations)->Number
 
 > [function-docs]
 > Compute the accuracy of a Sann `network` using a test set in 
@@ -211,7 +234,8 @@ ___
 
 ___
 
-> [function]sann:mc_train_stream(Charstring filename,Integer classes)->Stream of Vector
+> [function]
+> sann:mc_train_stream(Charstring filename,Integer classes)->Stream of Vector
 
 > [function-docs]
 > Returns a stream of trainng pairs `[Vector expected, observation]` 
@@ -228,7 +252,8 @@ ___
 
 ___
 
-> [function]sann:mlp_gen(Charstring name,Integer input_dimension,Integer output_dimension,
+> [function]
+> sann:mlp_gen(Charstring name,Integer input_dimension,Integer output_dimension,
             Integer costfn,Integer layers,Integer hidden_dimensions,
             Integer random_seed,Charstring activationfn)->Sann
 
@@ -239,7 +264,8 @@ ___
 
 ___
 
-> [function]sann:mlp_gen(Charstring name,Integer input_dimension,Integer output_dimension,
+> [function]
+> sann:mlp_gen(Charstring name,Integer input_dimension,Integer output_dimension,
             Integer costfn,Integer layers,Integer hidden_dimensions,
             Integer random_seed)->Sann
 
@@ -250,7 +276,8 @@ ___
 
 ___
 
-> [function]sann:named(Charstring name)->Sann s
+> [function]
+> sann:named(Charstring name)->Sann s
 
 > [function-docs]
 > Get the Sann identified by `name` 
@@ -259,38 +286,44 @@ ___
 
 ___
 
-> [function]sann:new_bias(Integer n)->Tensor
+> [function]
+> sann:new_bias(Integer n)->Tensor
 
 
 
 ___
 
-> [function]sann:new_weight(Integer row_count,Integer column_count)->Tensor
+> [function]
+> sann:new_weight(Integer row_count,Integer column_count)->Tensor
 
 
 
 ___
 
-> [function]sann:new_weight_conv1d(Integer n_out,Integer n_in,Integer kernel_length)->Tensor
+> [function]
+> sann:new_weight_conv1d(Integer n_out,Integer n_in,Integer kernel_length)->Tensor
 
 
 
 ___
 
-> [function]sann:new_weight_conv2d(Integer n_out,Integer n_in,Integer kernel_rows,
+> [function]
+> sann:new_weight_conv2d(Integer n_out,Integer n_in,Integer kernel_rows,
                       Integer kernel_columns)->Tensor
 
 
 
 ___
 
-> [function]sann:print(Sann k)->Boolean
+> [function]
+> sann:print(Sann k)->Boolean
 
 
 
 ___
 
-> [function]sann:read(Charstring name,Charstring file)->Sann
+> [function]
+> sann:read(Charstring name,Charstring file)->Sann
 
 > [function-docs]
 > Reads a Sann-netword from a `file` 
@@ -299,7 +332,8 @@ ___
 
 ___
 
-> [function]sann:read_csv_file(Charstring filename)->Bag of (Vector,Numarray)
+> [function]
+> sann:read_csv_file(Charstring filename)->Bag of (Vector,Numarray)
 
 > [function-docs]
 > See sann:train_stream of usage example 
@@ -308,25 +342,29 @@ ___
 
 ___
 
-> [function]sann:rnn_end(Sann sann)->Boolean
+> [function]
+> sann:rnn_end(Sann sann)->Boolean
 
 
 
 ___
 
-> [function]sann:rnn_rand(Sann sann)->Boolean
+> [function]
+> sann:rnn_rand(Sann sann)->Boolean
 
 
 
 ___
 
-> [function]sann:rnn_start(Sann sann)->Boolean
+> [function]
+> sann:rnn_start(Sann sann)->Boolean
 
 
 
 ___
 
-> [function]sann:rnn_trainer(Sann sann,Number learning_rate,Number grad_clip,
+> [function]
+> sann:rnn_trainer(Sann sann,Number learning_rate,Number grad_clip,
                 Stream of Vector of Vector data)->Stream of Record
 
 > [function-docs]
@@ -343,7 +381,8 @@ ___
 
 ___
 
-> [function]sann:run_model(Tensor model,Vector of Tensor vars,Matrix params)->Bag of Number
+> [function]
+> sann:run_model(Tensor model,Vector of Tensor vars,Matrix params)->Bag of Number
 
 > [function-docs]
 >
@@ -352,14 +391,16 @@ ___
 
 ___
 
-> [function]sann:run_model(Tensor model,Vector of Integer labels,Matrix params)
+> [function]
+> sann:run_model(Tensor model,Vector of Integer labels,Matrix params)
               ->Bag of Number
 
 
 
 ___
 
-> [function]sann:send_to_peer(Charstring peer,Sann s)->Charstring
+> [function]
+> sann:send_to_peer(Charstring peer,Sann s)->Charstring
 
 > [function-docs]
 > Send Sann `s` to `peer` 
@@ -368,7 +409,8 @@ ___
 
 ___
 
-> [function]sann:srand(Integer seed)->Boolean
+> [function]
+> sann:srand(Integer seed)->Boolean
 
 > [function-docs]
 > Seed the neural network random generator with seed `seed`, good when testing
@@ -378,25 +420,29 @@ ___
 
 ___
 
-> [function]sann:structure(Sann k)->Vector of Record
+> [function]
+> sann:structure(Sann k)->Vector of Record
 
 
 
 ___
 
-> [function]sann:structure_str(Sann k)->Bag of Charstring
+> [function]
+> sann:structure_str(Sann k)->Bag of Charstring
 
 
 
 ___
 
-> [function]sann:test(Sann s,Matrix x,Matrix y)->Number
+> [function]
+> sann:test(Sann s,Matrix x,Matrix y)->Number
 
 
 
 ___
 
-> [function]sann:train_stream(Charstring filename,Integer truth_tag_index,
+> [function]
+> sann:train_stream(Charstring filename,Integer truth_tag_index,
                  Integer truth_size)->Stream of Vector
 
 > [function-docs]
@@ -409,7 +455,8 @@ ___
 
 ___
 
-> [function]sann:tree(Sann k)->Record
+> [function]
+> sann:tree(Sann k)->Record
 
 > [function-docs]
 > Creates a tree structure of the network. Call this function on a sann
@@ -420,7 +467,8 @@ ___
 
 ___
 
-> [function]sann:write(Sann k,Charstring file)->Charstring
+> [function]
+> sann:write(Sann k,Charstring file)->Charstring
 
 > [function-docs]
 > Saves Sann-network `k` in `file` 
@@ -429,7 +477,8 @@ ___
 
 ___
 
-> [function]sann_layer_cost(Tensor k,Integer number_of_outputs,Integer costfn)->Tensor
+> [function]
+> sann_layer_cost(Tensor k,Integer number_of_outputs,Integer costfn)->Tensor
 
 > [function-docs]
 > Add a final cost layer to network `k` This function must be called
@@ -446,32 +495,37 @@ ___
 
 ___
 
-> [function]spaces(Number n)->Charstring
+> [function]
+> spaces(Number n)->Charstring
 
 
 
 ___
 
-> [function]tensor:assign(Tensor var,Vector of Number val)->Vector of Number
+> [function]
+> tensor:assign(Tensor var,Vector of Number val)->Vector of Number
 
 
 
 ___
 
-> [function]tensor:assign(Tensor root,Integer ext_label,Vector of Number vals)
+> [function]
+> tensor:assign(Tensor root,Integer ext_label,Vector of Number vals)
              ->Vector of Number
 
 
 
 ___
 
-> [function]tensor:clear_flag(Tensor node,Integer flag)->Tensor
+> [function]
+> tensor:clear_flag(Tensor node,Integer flag)->Tensor
 
 
 
 ___
 
-> [function]tensor:compile(Charstring name,Tensor k)->Sann
+> [function]
+> tensor:compile(Charstring name,Tensor k)->Sann
 
 > [function-docs]
 > Creates and returns a new Sann object, ready to be trained.
@@ -480,7 +534,8 @@ ___
 
 ___
 
-> [function]tensor:const(Vector of Integer dimensions,Vector of Number val)->Tensor
+> [function]
+> tensor:const(Vector of Integer dimensions,Vector of Number val)->Tensor
 
 > [function-docs]
 > Create a constant tensor.
@@ -491,20 +546,23 @@ ___
 
 ___
 
-> [function]tensor:conv2d(Tensor k,Tensor weights,Integer row_stride,Integer column_stride,
+> [function]
+> tensor:conv2d(Tensor k,Tensor weights,Integer row_stride,Integer column_stride,
              Integer row_padding,Integer column_padding)->Tensor
 
 
 
 ___
 
-> [function]tensor:eval(Tensor k)->Vector of Number
+> [function]
+> tensor:eval(Tensor k)->Vector of Number
 
 
 
 ___
 
-> [function]tensor:feed(Vector of Number shape,Integer t)->Tensor
+> [function]
+> tensor:feed(Vector of Number shape,Integer t)->Tensor
 
 > [function-docs]
 > Create a tensor of type `t` with shape `shape`
@@ -522,13 +580,15 @@ ___
 
 ___
 
-> [function]tensor:find(Tensor root,Integer ext_label)->Tensor
+> [function]
+> tensor:find(Tensor root,Integer ext_label)->Tensor
 
 
 
 ___
 
-> [function]tensor:max2d(Tensor k,Integer kernel_height,Integer kernel_width,
+> [function]
+> tensor:max2d(Tensor k,Integer kernel_height,Integer kernel_width,
             Integer row_stride,Integer column_stride,Integer row_padding,
             Integer column_padding)->Tensor
 
@@ -536,7 +596,8 @@ ___
 
 ___
 
-> [function]tensor:op1(Charstring op,Tensor node)->Tensor
+> [function]
+> tensor:op1(Charstring op,Tensor node)->Tensor
 
 > [function-docs]
 > `op` can be: 
@@ -556,7 +617,8 @@ ___
 
 ___
 
-> [function]tensor:op2(Charstring op,Tensor x,Tensor y)->Tensor
+> [function]
+> tensor:op2(Charstring op,Tensor x,Tensor y)->Tensor
 
 > [function-docs]
 > `op` can be: 
@@ -574,7 +636,8 @@ ___
 
 ___
 
-> [function]tensor:placeholder(Vector of Integer shape)->Tensor
+> [function]
+> tensor:placeholder(Vector of Integer shape)->Tensor
 
 > [function-docs]
 > Ctreate a placeholder tensor with shape `shape`
@@ -584,49 +647,57 @@ ___
 
 ___
 
-> [function]tensor:print(Tensor k)->Tensor
+> [function]
+> tensor:print(Tensor k)->Tensor
 
 
 
 ___
 
-> [function]tensor:reduce_mean(Tensor x,Integer axis)->Tensor
+> [function]
+> tensor:reduce_mean(Tensor x,Integer axis)->Tensor
 
 
 
 ___
 
-> [function]tensor:reduce_sum(Tensor x,Integer axis)->Tensor
+> [function]
+> tensor:reduce_sum(Tensor x,Integer axis)->Tensor
 
 
 
 ___
 
-> [function]tensor:reshape(Tensor k,Vector of Number shape)->Tensor
+> [function]
+> tensor:reshape(Tensor k,Vector of Number shape)->Tensor
 
 
 
 ___
 
-> [function]tensor:set_flag(Tensor node,Integer flag)->Tensor
+> [function]
+> tensor:set_flag(Tensor node,Integer flag)->Tensor
 
 
 
 ___
 
-> [function]tensor:set_label(Tensor node,Integer label)->Tensor
+> [function]
+> tensor:set_label(Tensor node,Integer label)->Tensor
 
 
 
 ___
 
-> [function]tensor:size(Tensor k)->Integer
+> [function]
+> tensor:size(Tensor k)->Integer
 
 
 
 ___
 
-> [function]tensor:var(Vector of Integer dimensions,Vector of Number vals,
+> [function]
+> tensor:var(Vector of Integer dimensions,Vector of Number vals,
           Vector of Number gradients)->Tensor
 
 > [function-docs]
@@ -639,7 +710,8 @@ ___
 
 ___
 
-> [function]truth_vec(Number size,Number truth)->Vector of Number
+> [function]
+> truth_vec(Number size,Number truth)->Vector of Number
 
 > [function-docs]
 > Create a vector of number of size `size` where index `truth` is set to 1 
@@ -648,7 +720,8 @@ ___
 
 ___
 
-> [function]vec2numarray(Vector v)->Numarray
+> [function]
+> vec2numarray(Vector v)->Numarray
 
 > [function-docs]
 > Convert `v` to numarray. 

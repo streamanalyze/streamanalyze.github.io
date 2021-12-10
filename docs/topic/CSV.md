@@ -41,7 +41,8 @@ csv:file_stream("test.csv");
 
 ## Functions
 
-> [function]csv:file_stream(Charstring file)->Stream of Vector
+> [function]
+> csv:file_stream(Charstring file)->Stream of Vector
 
 > [function-docs]
 > Stream tuples from CSV `file` 
@@ -50,7 +51,8 @@ csv:file_stream("test.csv");
 
 ___
 
-> [function]csv:file_stream(Charstring file,Charstring option)->Stream of Vector
+> [function]
+> csv:file_stream(Charstring file,Charstring option)->Stream of Vector
 
 > [function-docs]
 > Stream tuples from CSV `file`.
@@ -60,7 +62,8 @@ ___
 
 ___
 
-> [function]csv:file_stream(Charstring file,Charstring option,Number pace)->Stream of Vector
+> [function]
+> csv:file_stream(Charstring file,Charstring option,Number pace)->Stream of Vector
 
 > [function-docs]
 > Playback CSV `file` in a specified `pace`. 
@@ -70,7 +73,8 @@ ___
 
 ___
 
-> [function]csv:load(Charstring model,Charstring file)->Charstring
+> [function]
+> csv:load(Charstring model,Charstring file)->Charstring
 
 > [function-docs]
 > Load exported functions from CSV `file` in `model` 
@@ -79,7 +83,8 @@ ___
 
 ___
 
-> [function]csv:popen_stream(Charstring command)->Stream of Vector
+> [function]
+> csv:popen_stream(Charstring command)->Stream of Vector
 
 > [function-docs]
 > Call an OS `command` that produces a CSV stream on standard output 
@@ -88,7 +93,8 @@ ___
 
 ___
 
-> [function]csv:serial_stream(Charstring sn,Integer br,Charstring flow_control,
+> [function]
+> csv:serial_stream(Charstring sn,Integer br,Charstring flow_control,
                  Integer data_bits,Integer stop_bits,Integer parity)
                  ->Stream of Vector
 
@@ -99,7 +105,8 @@ ___
 
 ___
 
-> [function]csv:serial_stream(Charstring sn,Integer br)->Stream of Vector
+> [function]
+> csv:serial_stream(Charstring sn,Integer br)->Stream of Vector
 
 > [function-docs]
 > CSV stream from serial port named `sp` with baud rate `br` 
@@ -108,7 +115,8 @@ ___
 
 ___
 
-> [function]csv:socket_stream(Charstring host,Integer sp)->Stream of Vector
+> [function]
+> csv:socket_stream(Charstring host,Integer sp)->Stream of Vector
 
 > [function-docs]
 > CSV stream from port `sp` on `host` 
@@ -117,7 +125,8 @@ ___
 
 ___
 
-> [function]csv:socket_stream(Charstring host,Integer sp,Object request)->Stream of Vector
+> [function]
+> csv:socket_stream(Charstring host,Integer sp,Object request)->Stream of Vector
 
 > [function-docs]
 > CSV stream from port `sp` on `host` 
@@ -126,7 +135,8 @@ ___
 
 ___
 
-> [function]csv:unload(Vector of Function fv,Charstring model,Charstring file)->Charstring
+> [function]
+> csv:unload(Vector of Function fv,Charstring model,Charstring file)->Charstring
 
 > [function-docs]
 > Unload functions in `fv` into CSV `file` in `model` 
@@ -135,7 +145,8 @@ ___
 
 ___
 
-> [function]csv:unload(Charstring fn,Charstring model,Charstring file)->Charstring
+> [function]
+> csv:unload(Charstring fn,Charstring model,Charstring file)->Charstring
 
 > [function-docs]
 > Unload function named `fn` into CSV `file` in `model` 
@@ -144,7 +155,8 @@ ___
 
 ___
 
-> [function]csv:write_file(Charstring file,Number feedback,Bag b)->Bag of Vector
+> [function]
+> csv:write_file(Charstring file,Number feedback,Bag b)->Bag of Vector
 
 > [function-docs]
 > Write bag of vectors `b` into `file` in CSV format.
@@ -154,7 +166,8 @@ ___
 
 ___
 
-> [function]csv:write_file(Charstring file,Bag b)->Boolean
+> [function]
+> csv:write_file(Charstring file,Bag b)->Boolean
 
 > [function-docs]
 > Write bag of vectors `b` into `file` in CSV format 
@@ -163,7 +176,8 @@ ___
 
 ___
 
-> [function]csv:write_file(Charstring file,Number feedback,Stream s)->Stream of Vector
+> [function]
+> csv:write_file(Charstring file,Number feedback,Stream s)->Stream of Vector
 
 > [function-docs]
 > Write Stream of vectors `s` into `file` in CSV format.
@@ -173,7 +187,8 @@ ___
 
 ___
 
-> [function]csv:write_file(Charstring file,Stream s)->Boolean
+> [function]
+> csv:write_file(Charstring file,Stream s)->Boolean
 
 > [function-docs]
 > Write Stream of vectors `s` into `file` in CSV format 

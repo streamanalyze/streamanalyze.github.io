@@ -1,6 +1,7 @@
 # Java interface functions:
 
-> [function]audio(Number windowsize,Number samplerate)->Stream of Vector of Number
+> [function]
+> audio(Number windowsize,Number samplerate)->Stream of Vector of Number
 
 > [function-docs]
 > Reads from the computer microphone. Supported sample rates differs on 
@@ -12,7 +13,8 @@
 
 ___
 
-> [function]enable_java()->Bag of Charstring
+> [function]
+> enable_java()->Bag of Charstring
 
 > [function-docs]
 > Connect to Java Runtime Environment in environment variable JAVA_HOME or
@@ -22,7 +24,8 @@ ___
 
 ___
 
-> [function]ips()->Bag of (Charstring,Charstring,Charstring)
+> [function]
+> ips()->Bag of (Charstring,Charstring,Charstring)
 
 > [function-docs]
 > Get a list of all interfaces, their ip version and their address 
@@ -31,31 +34,36 @@ ___
 
 ___
 
-> [function]ipv4s()->Bag of (Charstring,Charstring,Charstring)
+> [function]
+> ipv4s()->Bag of (Charstring,Charstring,Charstring)
 
 
 
 ___
 
-> [function]ipv4_network_interfaces()->Bag of (Charstring,Charstring,Charstring)
+> [function]
+> ipv4_network_interfaces()->Bag of (Charstring,Charstring,Charstring)
 
 
 
 ___
 
-> [function]ipv6s()->Bag of (Charstring,Charstring,Charstring)
+> [function]
+> ipv6s()->Bag of (Charstring,Charstring,Charstring)
 
 
 
 ___
 
-> [function]ipv6_network_interfaces()->Bag of (Charstring,Charstring,Charstring)
+> [function]
+> ipv6_network_interfaces()->Bag of (Charstring,Charstring,Charstring)
 
 
 
 ___
 
-> [function]javagc()->Boolean
+> [function]
+> javagc()->Boolean
 
 > [function-docs]
 > Call Java's garbage collector 
@@ -64,7 +72,8 @@ ___
 
 ___
 
-> [function]java_grab_url(Charstring url)->Charstring
+> [function]
+> java_grab_url(Charstring url)->Charstring
 
 > [function-docs]
 > Send a get request to url expecting a json response.
@@ -73,49 +82,57 @@ ___
 
 ___
 
-> [function]network_interfaces()->Bag of (Charstring,Charstring,Charstring)
+> [function]
+> network_interfaces()->Bag of (Charstring,Charstring,Charstring)
 
 
 
 ___
 
-> [function]output_audio(Stream of Vector windows,Number buffersize,Number samplerage)
+> [function]
+> output_audio(Stream of Vector windows,Number buffersize,Number samplerage)
             ->Boolean
 
 
 
 ___
 
-> [function]readintensityimage(Charstring filename,Integer size)->Matrix
+> [function]
+> readintensityimage(Charstring filename,Integer size)->Matrix
 
 
 
 ___
 
-> [function]readintensityimage(Charstring filename)->Matrix
+> [function]
+> readintensityimage(Charstring filename)->Matrix
 
 
 
 ___
 
-> [function]readintensityimage(Charstring filename,Integer width,Integer height)->Matrix
+> [function]
+> readintensityimage(Charstring filename,Integer width,Integer height)->Matrix
 
 
 
 ___
 
-> [function]test_engine()->Charstring
+> [function]
+> test_engine()->Charstring
 
 
 
 ___
 
-> [function]test_java()->Charstring
+> [function]
+> test_java()->Charstring
 
 
 
 ___
 
-> [function]writeintensityimage(Charstring filename,Matrix img)->Charstring
+> [function]
+> writeintensityimage(Charstring filename,Matrix img)->Charstring
 
 

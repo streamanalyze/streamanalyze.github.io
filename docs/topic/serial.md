@@ -1,6 +1,7 @@
 # serial functions:
 
-> [function]serial:streamer(Charstring serial_port,Integer baud_rate,Integer start_byte,
+> [function]
+> serial:streamer(Charstring serial_port,Integer baud_rate,Integer start_byte,
                Integer stop_byte,Integer data_len)->Stream of Binary
 
 > [function-docs]

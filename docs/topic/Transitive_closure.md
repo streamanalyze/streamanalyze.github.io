@@ -1,18 +1,21 @@
 # Transitive closure functions:
 
-> [function]iterate(Function fn,Integer maxdepth,Object,Object)->(Object,Object)
+> [function]
+> iterate(Function fn,Integer maxdepth,Object,Object)->(Object,Object)
 
 
 
 ___
 
-> [function]iterate(Function fn,Integer maxdepth,Object o)->Object r
+> [function]
+> iterate(Function fn,Integer maxdepth,Object o)->Object r
 
 
 
 ___
 
-> [function]tclose(Function fn,Object o)->Bag
+> [function]
+> tclose(Function fn,Object o)->Bag
 
 > [function-docs]
 > `fn(fn(...fn(o)))` 
@@ -21,7 +24,8 @@ ___
 
 ___
 
-> [function]tclose(Function fn,Object o,Object a1,Object a2)->Bag of (Object,Object,Object)
+> [function]
+> tclose(Function fn,Object o,Object a1,Object a2)->Bag of (Object,Object,Object)
 
 > [function-docs]
 > `fn(fn(...fn(o,a1,a2),a1,a2),a1,a2)` 
@@ -30,7 +34,8 @@ ___
 
 ___
 
-> [function]tclose(Function fn,Object o,Object a1)->Bag of (Object,Object)
+> [function]
+> tclose(Function fn,Object o,Object a1)->Bag of (Object,Object)
 
 > [function-docs]
 > `fn(fn(...fn(o,a1),a1),a1)` 
@@ -39,7 +44,8 @@ ___
 
 ___
 
-> [function]tclose(Function fn,Object o,Object a1,Object a2,Object a3)->Bag of (Object,
+> [function]
+> tclose(Function fn,Object o,Object a1,Object a2,Object a3)->Bag of (Object,
       Object,Object,Object)
 
 > [function-docs]
@@ -49,7 +55,8 @@ ___
 
 ___
 
-> [function]tclosed(Function fn,Object o,Number maxdepth)->(Object r,Integer depth)
+> [function]
+> tclosed(Function fn,Object o,Number maxdepth)->(Object r,Integer depth)
 
 > [function-docs]
 > Get the transitive closure of applying the function fn on the
@@ -61,25 +68,29 @@ ___
 
 ___
 
-> [function]traverse(Function fn,Object o)->Bag
+> [function]
+> traverse(Function fn,Object o)->Bag
 
 
 
 ___
 
-> [function]traverse(Function fn,Object,Object,Object)->Bag of (Object,Object,Object)
+> [function]
+> traverse(Function fn,Object,Object,Object)->Bag of (Object,Object,Object)
 
 
 
 ___
 
-> [function]traverse(Function fn,Object,Object)->Bag of (Object,Object)
+> [function]
+> traverse(Function fn,Object,Object)->Bag of (Object,Object)
 
 
 
 ___
 
-> [function]traverse(Function fn,Object,Object,Object,Object)->Bag of (Object,Object,Object,
+> [function]
+> traverse(Function fn,Object,Object,Object,Object)->Bag of (Object,Object,Object,
         Object)
 
 

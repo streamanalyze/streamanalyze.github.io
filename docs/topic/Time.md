@@ -57,7 +57,8 @@ now() - :t1
 
 ## Functions
 
-> [function]clock()->Number
+> [function]
+> clock()->Number
 
 > [function-docs]
 > The number of seconds since the system was started 
@@ -66,7 +67,8 @@ now() - :t1
 
 ___
 
-> [function]local_time(Timeval tv)->Charstring
+> [function]
+> local_time(Timeval tv)->Charstring
 
 > [function-docs]
 > Convert time point `tv` into local ISO time string 
@@ -75,7 +77,8 @@ ___
 
 ___
 
-> [function]local_time()->Charstring
+> [function]
+> local_time()->Charstring
 
 > [function-docs]
 > The current time as local ISO time string 
@@ -84,7 +87,8 @@ ___
 
 ___
 
-> [function]local_utc_time(Timeval tv)->Charstring
+> [function]
+> local_utc_time(Timeval tv)->Charstring
 
 > [function-docs]
 > Convert time point `tv` into local UTC time string 
@@ -93,7 +97,8 @@ ___
 
 ___
 
-> [function]local_utc_time()->Charstring
+> [function]
+> local_utc_time()->Charstring
 
 > [function-docs]
 > The current local time as ISO UTC time string 
@@ -102,7 +107,8 @@ ___
 
 ___
 
-> [function]minus(Timeval tv,Number sec)->Timeval
+> [function]
+> minus(Timeval tv,Number sec)->Timeval
 
 > [function-docs]
 > `tv - sec` 
@@ -111,7 +117,8 @@ ___
 
 ___
 
-> [function]minus(Timeval tv1,Timeval tv2)->Real
+> [function]
+> minus(Timeval tv1,Timeval tv2)->Real
 
 > [function-docs]
 > `tv2 - tv1` 
@@ -120,7 +127,8 @@ ___
 
 ___
 
-> [function]now()->Timeval
+> [function]
+> now()->Timeval
 
 > [function-docs]
 > Current time point 
@@ -129,7 +137,8 @@ ___
 
 ___
 
-> [function]parse_iso_timestamp(Charstring ts)->Timeval
+> [function]
+> parse_iso_timestamp(Charstring ts)->Timeval
 
 > [function-docs]
 > Convert ISO time string `ts` into time point 
@@ -138,7 +147,8 @@ ___
 
 ___
 
-> [function]plus(Number sec,Timeval tv)->Timeval
+> [function]
+> plus(Number sec,Timeval tv)->Timeval
 
 > [function-docs]
 > `sec + tv` 
@@ -147,7 +157,8 @@ ___
 
 ___
 
-> [function]plus(Timeval tv,Number sec)->Timeval
+> [function]
+> plus(Timeval tv,Number sec)->Timeval
 
 > [function-docs]
 > `tv + sec` 
@@ -156,7 +167,8 @@ ___
 
 ___
 
-> [function]real(Timeval tv)->Real r
+> [function]
+> real(Timeval tv)->Real r
 
 > [function-docs]
 > Convert time point `tv` into number of seconds since epoch 
@@ -165,7 +177,8 @@ ___
 
 ___
 
-> [function]rnow()->Real
+> [function]
+> rnow()->Real
 
 > [function-docs]
 > The current time as number of seconds since epoch 
@@ -174,7 +187,8 @@ ___
 
 ___
 
-> [function]sec(Timeval tv)->Integer
+> [function]
+> sec(Timeval tv)->Integer
 
 > [function-docs]
 > Second in time point `tv` 
@@ -183,7 +197,8 @@ ___
 
 ___
 
-> [function]shift(Timeval tv,Number sec)->Timeval
+> [function]
+> shift(Timeval tv,Number sec)->Timeval
 
 > [function-docs]
 > Shift `sec` seconds from time point `tv`. 
@@ -193,7 +208,8 @@ ___
 
 ___
 
-> [function]sleep(Number sec)->Number
+> [function]
+> sleep(Number sec)->Number
 
 > [function-docs]
 > Sleep for `sec` seconds 
@@ -202,7 +218,8 @@ ___
 
 ___
 
-> [function]span(Timeval tv1,Timeval tv2)->Real
+> [function]
+> span(Timeval tv1,Timeval tv2)->Real
 
 > [function-docs]
 > The difference in seconds between time points `tv2` and `tv1`.
@@ -212,7 +229,8 @@ ___
 
 ___
 
-> [function]timestamp(Timeval o)->Timeval
+> [function]
+> timestamp(Timeval o)->Timeval
 
 > [function-docs]
 > Get the timestamp of timestamped object `o` 
@@ -221,7 +239,8 @@ ___
 
 ___
 
-> [function]timeval(Number r)->Timeval t
+> [function]
+> timeval(Number r)->Timeval t
 
 > [function-docs]
 > Convert number of seconds since epoch `r` into time point 
@@ -230,7 +249,8 @@ ___
 
 ___
 
-> [function]timeval(Vector tv)->Timeval
+> [function]
+> timeval(Vector tv)->Timeval
 
 > [function-docs]
 > The time point of a UTC time vector 
@@ -240,7 +260,8 @@ ___
 
 ___
 
-> [function]time_vector(Timeval tv)->Vector of Number
+> [function]
+> time_vector(Timeval tv)->Vector of Number
 
 > [function-docs]
 > The components of time point `tv` as a UTC time vector
@@ -250,7 +271,8 @@ ___
 
 ___
 
-> [function]time_zone()->Number
+> [function]
+> time_zone()->Number
 
 > [function-docs]
 > Diffence in seconds between UTC and the current local time zone 
@@ -260,7 +282,8 @@ ___
 
 ___
 
-> [function]ts(Object o)->Timeval
+> [function]
+> ts(Object o)->Timeval
 
 > [function-docs]
 > Make a timestamped object for value `o` with current time 
@@ -269,7 +292,8 @@ ___
 
 ___
 
-> [function]ts(Timeval tv,Object o)->Timeval
+> [function]
+> ts(Timeval tv,Object o)->Timeval
 
 > [function-docs]
 > Make a timestamped object for `o` with time point `tv` 
@@ -278,7 +302,8 @@ ___
 
 ___
 
-> [function]usec(Timeval tv)->Integer
+> [function]
+> usec(Timeval tv)->Integer
 
 > [function-docs]
 > Microsecond in time point `tv` 
@@ -287,7 +312,8 @@ ___
 
 ___
 
-> [function]utc_offset()->Number
+> [function]
+> utc_offset()->Number
 
 > [function-docs]
 > Difference in seconds between UTC and the current local time zone
@@ -297,7 +323,8 @@ ___
 
 ___
 
-> [function]utc_time(Timeval tv)->Charstring
+> [function]
+> utc_time(Timeval tv)->Charstring
 
 > [function-docs]
 > Convert time point `tv` into ISO UTC time string 
@@ -306,7 +333,8 @@ ___
 
 ___
 
-> [function]utc_time()->Charstring
+> [function]
+> utc_time()->Charstring
 
 > [function-docs]
 > The current time as ISO UTC time string 
@@ -315,7 +343,8 @@ ___
 
 ___
 
-> [function]value(Timeval o)->Object
+> [function]
+> value(Timeval o)->Object
 
 > [function-docs]
 > Get the value of timestamped object `o` 

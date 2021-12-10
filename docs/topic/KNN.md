@@ -1,6 +1,7 @@
 # KNN functions:
 
-> [function]classdistances(Vector of Number x,Function disfn,Bag of (Object,
+> [function]
+> classdistances(Vector of Number x,Function disfn,Bag of (Object,
               Vector of Number))->Bag of (Number,Object)
 
 > [function-docs]
@@ -12,7 +13,8 @@
 
 ___
 
-> [function]distance(Vector of Number x,Function disfn,Vector of Number y)->Number
+> [function]
+> distance(Vector of Number x,Function disfn,Vector of Number y)->Number
 
 > [function-docs]
 > Compute the distance between `x` and `y` 
@@ -22,13 +24,15 @@ ___
 
 ___
 
-> [function]knn(Vector of Number,Number k,Function fn)->Bag
+> [function]
+> knn(Vector of Number,Number k,Function fn)->Bag
 
 
 
 ___
 
-> [function]k_nearest(Vector of Number x,Number k,Function disfn,Bag of (Object,
+> [function]
+> k_nearest(Vector of Number x,Number k,Function disfn,Bag of (Object,
          Vector of Number))->Bag of (Object,Object)
 
 > [function-docs]
@@ -39,7 +43,8 @@ ___
 
 ___
 
-> [function]k_nearest_with_fn(Vector of Number x,Number k,Function disfn,Function fn)
+> [function]
+> k_nearest_with_fn(Vector of Number x,Number k,Function disfn,Function fn)
                  ->Bag of (Object,Object)
 
 

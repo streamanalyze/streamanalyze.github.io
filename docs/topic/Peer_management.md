@@ -1,6 +1,7 @@
 # Peer management functions:
 
-> [function]all_peerinfo()->Bag of (Charstring,Charstring,Integer,Integer,Record)
+> [function]
+> all_peerinfo()->Bag of (Charstring,Charstring,Integer,Integer,Record)
 
 > [function-docs]
 > In nameserver: information about all registered peers 
@@ -9,7 +10,8 @@
 
 ___
 
-> [function]gethostname()->Charstring
+> [function]
+> gethostname()->Charstring
 
 > [function-docs]
 > The local host name of this computer 
@@ -18,7 +20,8 @@ ___
 
 ___
 
-> [function]get_ip(Charstring host)->Bag of Charstring
+> [function]
+> get_ip(Charstring host)->Bag of Charstring
 
 > [function-docs]
 > The IP address(es) of `host` 
@@ -27,19 +30,22 @@ ___
 
 ___
 
-> [function]host(Peer p)->Charstring
+> [function]
+> host(Peer p)->Charstring
 
 
 
 ___
 
-> [function]ips(Peer p)->Record
+> [function]
+> ips(Peer p)->Record
 
 
 
 ___
 
-> [function]is_running(Charstring peer)->Boolean
+> [function]
+> is_running(Charstring peer)->Boolean
 
 > [function-docs]
 > Is `peer` running? 
@@ -48,7 +54,8 @@ ___
 
 ___
 
-> [function]kill_all_peers()->Bag of Charstring
+> [function]
+> kill_all_peers()->Bag of Charstring
 
 > [function-docs]
 > Terminate all peers in federation 
@@ -57,7 +64,8 @@ ___
 
 ___
 
-> [function]kill_all_servers()->Boolean
+> [function]
+> kill_all_servers()->Boolean
 
 > [function-docs]
 > Terminate all servers in the federation
@@ -67,7 +75,8 @@ ___
 
 ___
 
-> [function]kill_peer(Charstring peer)->Charstring
+> [function]
+> kill_peer(Charstring peer)->Charstring
 
 > [function-docs]
 > Kill `peer` unless it is a nameserver 
@@ -76,7 +85,8 @@ ___
 
 ___
 
-> [function]kill_the_federation()->Boolean
+> [function]
+> kill_the_federation()->Boolean
 
 > [function-docs]
 > Terminate all peers in the federation, including the nameserver, 
@@ -86,7 +96,8 @@ ___
 
 ___
 
-> [function]listen()->Boolean
+> [function]
+> listen()->Boolean
 
 > [function-docs]
 > Start running this peer as a server 
@@ -95,13 +106,15 @@ ___
 
 ___
 
-> [function]multicastreceive(Vector peers,Charstring fn,Vector args)->Bag
+> [function]
+> multicastreceive(Vector peers,Charstring fn,Vector args)->Bag
 
 
 
 ___
 
-> [function]my_hostname()->Charstring
+> [function]
+> my_hostname()->Charstring
 
 > [function-docs]
 > The hostname used by the system to locate this computer 
@@ -110,7 +123,8 @@ ___
 
 ___
 
-> [function]my_hostname(Charstring host)->Charstring
+> [function]
+> my_hostname(Charstring host)->Charstring
 
 > [function-docs]
 > Set the hostname used by the system to `host` 
@@ -119,7 +133,8 @@ ___
 
 ___
 
-> [function]my_local_ip()->Bag of Charstring
+> [function]
+> my_local_ip()->Bag of Charstring
 
 > [function-docs]
 > The IP addresses of this computer in its local network 
@@ -128,13 +143,15 @@ ___
 
 ___
 
-> [function]name(Peer p)->Charstring
+> [function]
+> name(Peer p)->Charstring
 
 
 
 ___
 
-> [function]nameserver(Charstring descr)->Charstring
+> [function]
+> nameserver(Charstring descr)->Charstring
 
 > [function-docs]
 > Make this peer the nameserver of a federation of sa.engine peers.
@@ -149,7 +166,8 @@ ___
 
 ___
 
-> [function]nameserverhost(Charstring name)->Charstring
+> [function]
+> nameserverhost(Charstring name)->Charstring
 
 > [function-docs]
 > Set host name of nameserver to `name` 
@@ -158,7 +176,8 @@ ___
 
 ___
 
-> [function]nameserverhost()->Charstring
+> [function]
+> nameserverhost()->Charstring
 
 > [function-docs]
 > Get current nameserver's host name 
@@ -167,7 +186,8 @@ ___
 
 ___
 
-> [function]nameserverport(Integer no)->Integer
+> [function]
+> nameserverport(Integer no)->Integer
 
 > [function-docs]
 > Set port number used by nameserver to `no` 
@@ -176,7 +196,8 @@ ___
 
 ___
 
-> [function]other_peers()->Bag of Charstring
+> [function]
+> other_peers()->Bag of Charstring
 
 > [function-docs]
 > Return all other peers in federation 
@@ -185,7 +206,8 @@ ___
 
 ___
 
-> [function]peerinfo(Peer p)->(Charstring,Charstring,Integer,Integer,Record)
+> [function]
+> peerinfo(Peer p)->(Charstring,Charstring,Integer,Integer,Record)
 
 > [function-docs]
 > In nameserver: basic information about peer `p` 
@@ -194,7 +216,8 @@ ___
 
 ___
 
-> [function]peerinfo(Charstring pn)->(Charstring name,Charstring host,Integer portno,
+> [function]
+> peerinfo(Charstring pn)->(Charstring name,Charstring host,Integer portno,
         Integer pid,Record ips)
 
 > [function-docs]
@@ -204,7 +227,8 @@ ___
 
 ___
 
-> [function]peers_at_nameserver(Charstring except)->Bag of Charstring
+> [function]
+> peers_at_nameserver(Charstring except)->Bag of Charstring
 
 > [function-docs]
 > Retrieve peers of federation except the one named `except` 
@@ -213,7 +237,8 @@ ___
 
 ___
 
-> [function]peer_named(Charstring peer)->Peer
+> [function]
+> peer_named(Charstring peer)->Peer
 
 > [function-docs]
 > Get the object representing the `peer` 
@@ -222,19 +247,22 @@ ___
 
 ___
 
-> [function]pid(Peer p)->Integer
+> [function]
+> pid(Peer p)->Integer
 
 
 
 ___
 
-> [function]portno(Peer p)->Integer
+> [function]
+> portno(Peer p)->Integer
 
 
 
 ___
 
-> [function]porttimeout(Real timeout)->Real
+> [function]
+> porttimeout(Real timeout)->Real
 
 > [function-docs]
 > Set timout for opening a port to a peer 
@@ -243,7 +271,8 @@ ___
 
 ___
 
-> [function]register(Charstring peerspec)->Charstring
+> [function]
+> register(Charstring peerspec)->Charstring
 
 > [function-docs]
 > Register this peer in the nameserver with `peerspec` being
@@ -253,13 +282,15 @@ ___
 
 ___
 
-> [function]remote_function_tuples(Charstring peer,Charstring fn,Vector args)->Bag of Vector
+> [function]
+> remote_function_tuples(Charstring peer,Charstring fn,Vector args)->Bag of Vector
 
 
 
 ___
 
-> [function]reregister(Charstring peerspec)->Charstring
+> [function]
+> reregister(Charstring peerspec)->Charstring
 
 > [function-docs]
 > Register this peer in the nameserver with `peerspec` being
@@ -270,13 +301,15 @@ ___
 
 ___
 
-> [function]routeapply(Charstring fn,Bag inputs)->Bag
+> [function]
+> routeapply(Charstring fn,Bag inputs)->Bag
 
 
 
 ___
 
-> [function]send(Charstring peer,Charstring query)->Literal
+> [function]
+> send(Charstring peer,Charstring query)->Literal
 
 > [function-docs]
 > Send `query` to `peer` for evaluation without waiting for result 
@@ -285,7 +318,8 @@ ___
 
 ___
 
-> [function]server(Charstring name,Charstring host,Number port)->Boolean
+> [function]
+> server(Charstring name,Charstring host,Number port)->Boolean
 
 > [function-docs]
 > Run this process as server named `name` on `host` listening on `port` 
@@ -294,13 +328,15 @@ ___
 
 ___
 
-> [function]set_portno(Charstring pn,Integer port)->Integer
+> [function]
+> set_portno(Charstring pn,Integer port)->Integer
 
 
 
 ___
 
-> [function]ship(Charstring peer,Charstring query)->Bag of Vector
+> [function]
+> ship(Charstring peer,Charstring query)->Bag of Vector
 
 > [function-docs]
 > Ship `query` string to `peer` for evaluation and ship back result 
@@ -309,7 +345,8 @@ ___
 
 ___
 
-> [function]start_engine(Charstring name,Charstring image)->Charstring
+> [function]
+> start_engine(Charstring name,Charstring image)->Charstring
 
 > [function-docs]
 > Start a new local server named `name` with `image` 
@@ -318,7 +355,8 @@ ___
 
 ___
 
-> [function]start_engine(Charstring name,Charstring image,Number timeout)->Charstring
+> [function]
+> start_engine(Charstring name,Charstring image,Number timeout)->Charstring
 
 > [function-docs]
 > Start a new local server named `name` on this computer with `image`.
@@ -328,7 +366,8 @@ ___
 
 ___
 
-> [function]start_engine(Charstring name)->Charstring
+> [function]
+> start_engine(Charstring name)->Charstring
 
 > [function-docs]
 > Start a new local server named `name` on this computer 
@@ -337,7 +376,8 @@ ___
 
 ___
 
-> [function]start_nameserver(Charstring name)->Charstring
+> [function]
+> start_nameserver(Charstring name)->Charstring
 
 > [function-docs]
 > Start a new nameserver named `name` on this computer 
@@ -346,7 +386,8 @@ ___
 
 ___
 
-> [function]this_peerid()->Charstring
+> [function]
+> this_peerid()->Charstring
 
 > [function-docs]
 > Get the name of this peer 
@@ -355,7 +396,8 @@ ___
 
 ___
 
-> [function]wait_for(Vector of Charstring peers)->Boolean
+> [function]
+> wait_for(Vector of Charstring peers)->Boolean
 
 > [function-docs]
 > Wait for `peers` to start listening 
@@ -364,7 +406,8 @@ ___
 
 ___
 
-> [function]wait_for(Charstring peer)->Boolean
+> [function]
+> wait_for(Charstring peer)->Boolean
 
 > [function-docs]
 > Wait for `peer` to start listening 

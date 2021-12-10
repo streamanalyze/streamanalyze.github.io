@@ -24,7 +24,8 @@ of these properties are read from the `properties` field in a GeoJSON feature.
 
 ## Functions
 
-> [function]geojson:collection(Vector of Record features)->Record
+> [function]
+> geojson:collection(Vector of Record features)->Record
 
 > [function-docs]
 > Create a GeoJSON feature collection of a vector of GeoJSON objects 
@@ -33,7 +34,8 @@ of these properties are read from the `properties` field in a GeoJSON feature.
 
 ___
 
-> [function]geojson:feature(Charstring geojsontype,Vector coords,Record props)->Record
+> [function]
+> geojson:feature(Charstring geojsontype,Vector coords,Record props)->Record
 
 > [function-docs]
 > Create a GeoJSON line from the vector of `[longitude,latitude]` points
@@ -44,7 +46,8 @@ ___
 
 ___
 
-> [function]geojson:line(Vector of Vector coords,Record props)->Record
+> [function]
+> geojson:line(Vector of Vector coords,Record props)->Record
 
 > [function-docs]
 > Create a GeoJSON line from the vector of `[longitude,latitude]` points
@@ -55,7 +58,8 @@ ___
 
 ___
 
-> [function]geojson:point(Record r)->Record
+> [function]
+> geojson:point(Record r)->Record
 
 > [function-docs]
 > Create a GeoJSON point from a record `r` that describes the position
@@ -84,7 +88,8 @@ ___
 
 ___
 
-> [function]geojson:point(Object longitude,Object latitude,Record props)->Record
+> [function]
+> geojson:point(Object longitude,Object latitude,Record props)->Record
 
 > [function-docs]
 > Create a GeoJSON point object for the geo-position `latitude`/`longitude`
@@ -95,7 +100,8 @@ ___
 
 ___
 
-> [function]geojson:point(Vector pos,Record props)->Record
+> [function]
+> geojson:point(Vector pos,Record props)->Record
 
 > [function-docs]
 > Create a GeoJSON point object for the geo-position `longitude`, `latitude`
@@ -106,7 +112,8 @@ ___
 
 ___
 
-> [function]geojson:polygon(Vector of Vector coords,Record props)->Record
+> [function]
+> geojson:polygon(Vector of Vector coords,Record props)->Record
 
 > [function-docs]
 > Create a GeoJSON Polygon from the vector of `[longitude,latitude]` points

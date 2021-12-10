@@ -1,6 +1,7 @@
 # Database index functions:
 
-> [function]create_index(Function f,Charstring par,Charstring indtype,
+> [function]
+> create_index(Function f,Charstring par,Charstring indtype,
             Charstring multiplicity)->Vector
 
 > [function-docs]
@@ -11,7 +12,8 @@
 
 ___
 
-> [function]create_index(Charstring fn,Charstring par,Charstring indtype,
+> [function]
+> create_index(Charstring fn,Charstring par,Charstring indtype,
             Charstring multiplicity)->Vector
 
 > [function-docs]
@@ -22,7 +24,8 @@ ___
 
 ___
 
-> [function]drop_index(Function f,Charstring par)->Integer
+> [function]
+> drop_index(Function f,Charstring par)->Integer
 
 > [function-docs]
 > Remove index on function `f` at parameter `par` 
@@ -31,7 +34,8 @@ ___
 
 ___
 
-> [function]drop_index(Charstring fn,Charstring par)->Integer
+> [function]
+> drop_index(Charstring fn,Charstring par)->Integer
 
 > [function-docs]
 > Remove index on function named `fn` at parameter `par` 
@@ -40,6 +44,7 @@ ___
 
 ___
 
-> [function]extract_rows(Collection rows)->Bag of Vector
+> [function]
+> extract_rows(Collection rows)->Bag of Vector
 
 

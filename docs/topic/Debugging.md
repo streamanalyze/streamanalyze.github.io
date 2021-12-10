@@ -1,6 +1,7 @@
 # Debugging functions:
 
-> [function]asserteq(Object x,Object y,Charstring message)->Boolean
+> [function]
+> asserteq(Object x,Object y,Charstring message)->Boolean
 
 > [function-docs]
 > Print error message if `x` and `y` are different 
@@ -9,13 +10,15 @@
 
 ___
 
-> [function]expanded_image(Function f)->Number
+> [function]
+> expanded_image(Function f)->Number
 
 
 
 ___
 
-> [function]pp(Object o)->Charstring
+> [function]
+> pp(Object o)->Charstring
 
 > [function-docs]
 > Pretty print object `o` into a string 
@@ -24,7 +27,8 @@ ___
 
 ___
 
-> [function]print(Object o)->Boolean
+> [function]
+> print(Object o)->Boolean
 
 > [function-docs]
 > Print object `o` on console 
@@ -33,7 +37,8 @@ ___
 
 ___
 
-> [function]profile()->Vector of (Charstring,Number)
+> [function]
+> profile()->Vector of (Charstring,Number)
 
 > [function-docs]
 > return statistical profile as Vector of pairs `[fnname,percentage]` 
@@ -42,7 +47,8 @@ ___
 
 ___
 
-> [function]profiling(Charstring action)->Charstring
+> [function]
+> profiling(Charstring action)->Charstring
 
 > [function-docs]
 > Control statistical profiling by `action`:
@@ -56,13 +62,15 @@ ___
 
 ___
 
-> [function]test_server_connection()->Bag of Charstring msg
+> [function]
+> test_server_connection()->Bag of Charstring msg
 
 
 
 ___
 
-> [function]trace(Charstring fn)->Function
+> [function]
+> trace(Charstring fn)->Function
 
 > [function-docs]
 > Trace function named `fn`.
@@ -72,7 +80,8 @@ ___
 
 ___
 
-> [function]untrace(Charstring fn)->Function
+> [function]
+> untrace(Charstring fn)->Function
 
 > [function-docs]
 > Untrace function named `fn` 
@@ -81,6 +90,7 @@ ___
 
 ___
 
-> [function]vref(Vector of (Charstring,Number),Number)->(Charstring,Number)
+> [function]
+> vref(Vector of (Charstring,Number),Number)->(Charstring,Number)
 
 

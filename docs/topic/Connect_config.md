@@ -1,18 +1,21 @@
 # Connect config functions:
 
-> [function]connect_to_local_federation(Charstring name,Charstring new_server_name)->Boolean
+> [function]
+> connect_to_local_federation(Charstring name,Charstring new_server_name)->Boolean
 
 
 
 ___
 
-> [function]connect_to_local_federation(Charstring name)->Boolean
+> [function]
+> connect_to_local_federation(Charstring name)->Boolean
 
 
 
 ___
 
-> [function]connect_using_config(Record config,Boolean as_edge)->Boolean
+> [function]
+> connect_using_config(Record config,Boolean as_edge)->Boolean
 
 > [function-docs]
 > Connect to a federation using the `config` if `as_edge` is false this call 
@@ -22,7 +25,8 @@ ___
 
 ___
 
-> [function]connect_using_config_blob(Charstring blob,Boolean as_edge)->Boolean
+> [function]
+> connect_using_config_blob(Charstring blob,Boolean as_edge)->Boolean
 
 > [function-docs]
 > Same as `connect_using_config` but the blob is a Base64 encoded string 
@@ -32,7 +36,8 @@ ___
 
 ___
 
-> [function]connect_using_config_blob(Charstring blob,Charstring peername,Boolean as_edge)
+> [function]
+> connect_using_config_blob(Charstring blob,Charstring peername,Boolean as_edge)
                          ->Boolean
 
 > [function-docs]
@@ -43,7 +48,8 @@ ___
 
 ___
 
-> [function]connect_using_config_file(Charstring config,Boolean as_edge)->Boolean
+> [function]
+> connect_using_config_file(Charstring config,Boolean as_edge)->Boolean
 
 > [function-docs]
 > Same as `connect_using_config` but will read JSON-config from file on disk. 
@@ -52,13 +58,15 @@ ___
 
 ___
 
-> [function]get_all_addrs()->Bag of Vector
+> [function]
+> get_all_addrs()->Bag of Vector
 
 
 
 ___
 
-> [function]get_connect_config(Charstring peer)->Record
+> [function]
+> get_connect_config(Charstring peer)->Record
 
 > [function-docs]
 > Retrieve a connection config to connect as `peer` to this federation.
@@ -70,13 +78,15 @@ ___
 
 ___
 
-> [function]get_connect_config(Charstring peer,Record extras)->Record
+> [function]
+> get_connect_config(Charstring peer,Record extras)->Record
 
 
 
 ___
 
-> [function]get_connect_config_blob(Charstring peer,Record extras)->Charstring
+> [function]
+> get_connect_config_blob(Charstring peer,Record extras)->Charstring
 
 > [function-docs]
 > Base64 encoded string of `get_connect_config`. can be used in conjunction
@@ -86,13 +96,15 @@ ___
 
 ___
 
-> [function]get_connect_config_blob(Charstring peer)->Charstring
+> [function]
+> get_connect_config_blob(Charstring peer)->Charstring
 
 
 
 ___
 
-> [function]peer_certificate(Charstring peer)->(Charstring cert,Charstring)
+> [function]
+> peer_certificate(Charstring peer)->(Charstring cert,Charstring)
 
 > [function-docs]
 > When using certificate policy stored use this stored function to set
@@ -102,7 +114,8 @@ ___
 
 ___
 
-> [function]reconnect_using_config_blob(Charstring blob,Charstring peername,Boolean as_edge)
+> [function]
+> reconnect_using_config_blob(Charstring blob,Charstring peername,Boolean as_edge)
                            ->Boolean
 
 > [function-docs]
@@ -114,7 +127,8 @@ ___
 
 ___
 
-> [function]reconnect_using_config_blob(Charstring blob,Boolean as_edge)->Boolean
+> [function]
+> reconnect_using_config_blob(Charstring blob,Boolean as_edge)->Boolean
 
 > [function-docs]
 > Same as `connect_using_config` but the blob is a Base64 encoded string 
@@ -124,7 +138,8 @@ ___
 
 ___
 
-> [function]server_addrs()->Bag of (Charstring,Integer)
+> [function]
+> server_addrs()->Bag of (Charstring,Integer)
 
 > [function-docs]
 > Set of configurable server addresses.
@@ -133,7 +148,8 @@ ___
 
 ___
 
-> [function]set_peer_cert(Charstring c,Charstring k)->Boolean
+> [function]
+> set_peer_cert(Charstring c,Charstring k)->Boolean
 
 > [function-docs]
 > Set the certificate to use for peer to `c` and key to `k`. Only neccessary to
@@ -143,7 +159,8 @@ ___
 
 ___
 
-> [function]set_peer_cert_policy(Charstring policy)->Charstring
+> [function]
+> set_peer_cert_policy(Charstring policy)->Charstring
 
 > [function-docs]
 > Sets the policy to use when assigning certificates to a new peer.
@@ -156,12 +173,14 @@ ___
 
 ___
 
-> [function]verfify_connect_config(Record config)->Boolean
+> [function]
+> verfify_connect_config(Record config)->Boolean
 
 
 
 ___
 
-> [function]verify_connect_config(Charstring blob)->Boolean
+> [function]
+> verify_connect_config(Charstring blob)->Boolean
 
 

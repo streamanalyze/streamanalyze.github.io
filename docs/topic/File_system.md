@@ -1,6 +1,7 @@
 # File system functions:
 
-> [function]all_files_under(Charstring folder)->Bag of (Charstring,Charstring)
+> [function]
+> all_files_under(Charstring folder)->Bag of (Charstring,Charstring)
 
 > [function-docs]
 > Get all files somewhere under `folder`
@@ -10,7 +11,8 @@
 
 ___
 
-> [function]base_filename(Charstring path)->Charstring
+> [function]
+> base_filename(Charstring path)->Charstring
 
 > [function-docs]
 > The Unix style file name part of `path` 
@@ -19,13 +21,15 @@ ___
 
 ___
 
-> [function]create_folder(Charstring folder)->Charstring
+> [function]
+> create_folder(Charstring folder)->Charstring
 
 
 
 ___
 
-> [function]dir(Charstring d)->Bag of Charstring
+> [function]
+> dir(Charstring d)->Bag of Charstring
 
 > [function-docs]
 > List files in directory named `d`.
@@ -35,7 +39,8 @@ ___
 
 ___
 
-> [function]dir(Charstring path,Charstring pat)->Bag of Charstring d
+> [function]
+> dir(Charstring path,Charstring pat)->Bag of Charstring d
 
 > [function-docs]
 > List files in directory `path` whose names match the pattern `pat` 
@@ -44,7 +49,8 @@ ___
 
 ___
 
-> [function]dir()->Bag of Charstring
+> [function]
+> dir()->Bag of Charstring
 
 > [function-docs]
 > List files in current working directory `pwd()` 
@@ -53,7 +59,8 @@ ___
 
 ___
 
-> [function]directories_in(Charstring f)->Bag of Charstring
+> [function]
+> directories_in(Charstring f)->Bag of Charstring
 
 > [function-docs]
 > Get names of all directories in folder `f` 
@@ -62,7 +69,8 @@ ___
 
 ___
 
-> [function]directoryp(Charstring path)->Boolean
+> [function]
+> directoryp(Charstring path)->Boolean
 
 > [function-docs]
 > Is a `path` a directory? 
@@ -71,7 +79,8 @@ ___
 
 ___
 
-> [function]dirpath(Charstring file)->Charstring
+> [function]
+> dirpath(Charstring file)->Charstring
 
 > [function-docs]
 > Convert `file` to Unix style filename ended with a single `/` 
@@ -80,7 +89,8 @@ ___
 
 ___
 
-> [function]filedate(Charstring file)->Timeval
+> [function]
+> filedate(Charstring file)->Timeval
 
 > [function-docs]
 > The time when `file` was last updated 
@@ -89,7 +99,8 @@ ___
 
 ___
 
-> [function]file_exists(Charstring file)->Boolean
+> [function]
+> file_exists(Charstring file)->Boolean
 
 > [function-docs]
 > Does `file` exists? 
@@ -98,7 +109,8 @@ ___
 
 ___
 
-> [function]file_lines(Charstring file)->Number
+> [function]
+> file_lines(Charstring file)->Number
 
 > [function-docs]
 > The number of lines in `file` 
@@ -107,7 +119,8 @@ ___
 
 ___
 
-> [function]find_file(Charstring folder,Charstring file)->Charstring
+> [function]
+> find_file(Charstring folder,Charstring file)->Charstring
 
 > [function-docs]
 > Get full path to first occurence of `file` somewhere under `folder` 
@@ -116,7 +129,8 @@ ___
 
 ___
 
-> [function]folder_of(Charstring path)->Charstring f
+> [function]
+> folder_of(Charstring path)->Charstring f
 
 > [function-docs]
 > The Unix style folder name of `path` 
@@ -125,7 +139,8 @@ ___
 
 ___
 
-> [function]full_filename(Charstring path)->Charstring
+> [function]
+> full_filename(Charstring path)->Charstring
 
 > [function-docs]
 > The Unix style name of file `path` 
@@ -134,7 +149,8 @@ ___
 
 ___
 
-> [function]full_filenames(Charstring f,Charstring pat)->Bag of Charstring
+> [function]
+> full_filenames(Charstring f,Charstring pat)->Bag of Charstring
 
 > [function-docs]
 > Get the path names of the files in folder `f` that match pattern `pat` 
@@ -143,7 +159,8 @@ ___
 
 ___
 
-> [function]load_osql(Charstring file)->Charstring
+> [function]
+> load_osql(Charstring file)->Charstring
 
 > [function-docs]
 > Evaluate OSQL statements in `file` 
@@ -152,7 +169,8 @@ ___
 
 ___
 
-> [function]load_osql(Charstring file,Charstring tn)->Charstring
+> [function]
+> load_osql(Charstring file,Charstring tn)->Charstring
 
 > [function-docs]
 > Evaluate OSQL statements in `file` belonging to topic named `tn` 
@@ -161,7 +179,8 @@ ___
 
 ___
 
-> [function]popd()->Charstring
+> [function]
+> popd()->Charstring
 
 > [function-docs]
 > Go back to folder before last `pushd(path)` 
@@ -170,7 +189,8 @@ ___
 
 ___
 
-> [function]pushd(Charstring path)->Charstring
+> [function]
+> pushd(Charstring path)->Charstring
 
 > [function-docs]
 > Make `path` current working directory. Go back with `popd()` 
@@ -179,7 +199,8 @@ ___
 
 ___
 
-> [function]pwd()->Charstring
+> [function]
+> pwd()->Charstring
 
 > [function-docs]
 > The current working directory 
@@ -188,7 +209,8 @@ ___
 
 ___
 
-> [function]read_file(Charstring file)->Charstring
+> [function]
+> read_file(Charstring file)->Charstring
 
 > [function-docs]
 > Get contents of `file` as a string 
@@ -197,7 +219,8 @@ ___
 
 ___
 
-> [function]sa_home()->Charstring
+> [function]
+> sa_home()->Charstring
 
 > [function-docs]
 > User's home folder 
@@ -206,7 +229,8 @@ ___
 
 ___
 
-> [function]subdirectories(Charstring f)->Bag of Charstring
+> [function]
+> subdirectories(Charstring f)->Bag of Charstring
 
 > [function-docs]
 > Get names of all directories under folder `f`, including `f` 
@@ -215,7 +239,8 @@ ___
 
 ___
 
-> [function]temp_folder()->Charstring
+> [function]
+> temp_folder()->Charstring
 
 > [function-docs]
 > User's folder for temporary files 
@@ -224,7 +249,8 @@ ___
 
 ___
 
-> [function]write_file(Charstring cont,Charstring filename)->Charstring
+> [function]
+> write_file(Charstring cont,Charstring filename)->Charstring
 
 > [function-docs]
 > Write `cont` into `filename` 
@@ -233,6 +259,7 @@ ___
 
 ___
 
-> [function]write_filepath(Charstring cont,Charstring path)->Charstring
+> [function]
+> write_filepath(Charstring cont,Charstring path)->Charstring
 
 

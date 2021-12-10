@@ -217,7 +217,8 @@ and `aggv(b, #'min')` respectively.
 
 ## Functions
 
-> [function]abs(Vector v)->Vector of Number
+> [function]
+> abs(Vector v)->Vector of Number
 
 > [function-docs]
 > The absolute values in vector `v` 
@@ -226,7 +227,8 @@ and `aggv(b, #'min')` respectively.
 
 ___
 
-> [function]aggv(Bag of Vector bv,Function fn)->Vector of Number
+> [function]
+> aggv(Bag of Vector bv,Function fn)->Vector of Number
 
 > [function-docs]
 > Apply aggregate function `fn` on each position of the vectors in `bv` 
@@ -235,7 +237,8 @@ ___
 
 ___
 
-> [function]argmax(Vector v)->Integer i
+> [function]
+> argmax(Vector v)->Integer i
 
 > [function-docs]
 > Indicies of the largest elements in `v` 
@@ -244,7 +247,8 @@ ___
 
 ___
 
-> [function]concat(Vector v,Vector w)->Vector
+> [function]
+> concat(Vector v,Vector w)->Vector
 
 > [function-docs]
 > Concatenate vectors `v` and `w` 
@@ -253,7 +257,8 @@ ___
 
 ___
 
-> [function]dim(Vector v)->Integer
+> [function]
+> dim(Vector v)->Integer
 
 > [function-docs]
 > Size of vector `v` 
@@ -262,7 +267,8 @@ ___
 
 ___
 
-> [function]div(Vector v,Number lambda)->Vector of Number
+> [function]
+> div(Vector v,Number lambda)->Vector of Number
 
 > [function-docs]
 > Divide elements in vector `v` with `lambda`, `v / lambda` 
@@ -271,7 +277,8 @@ ___
 
 ___
 
-> [function]div(Number lambda,Vector w)->Vector of Number
+> [function]
+> div(Number lambda,Vector w)->Vector of Number
 
 > [function-docs]
 > Divide `lambda` with each element in vector `w`, `lambda / w` 
@@ -280,7 +287,8 @@ ___
 
 ___
 
-> [function]elemdiv(Vector v,Vector w)->Vector of Number
+> [function]
+> elemdiv(Vector v,Vector w)->Vector of Number
 
 > [function-docs]
 > Divide elements in vector `v` with elements in `w`, `v ./ w` 
@@ -289,7 +297,8 @@ ___
 
 ___
 
-> [function]elempower(Vector v,Number exp)->Vector of Number
+> [function]
+> elempower(Vector v,Number exp)->Vector of Number
 
 > [function-docs]
 > Compute `power(e,exp)` for each element `e` in vector `v`, `v .^ exp` 
@@ -298,7 +307,8 @@ ___
 
 ___
 
-> [function]elemtimes(Vector v,Vector w)->Vector of Number
+> [function]
+> elemtimes(Vector v,Vector w)->Vector of Number
 
 > [function-docs]
 > Multiply vectrors `v` and `w` element by element, `v .* w` 
@@ -307,7 +317,8 @@ ___
 
 ___
 
-> [function]euclid(Vector v,Vector w)->Real
+> [function]
+> euclid(Vector v,Vector w)->Real
 
 > [function-docs]
 > Euclidean distance between vectors `v` and `w` 
@@ -316,7 +327,8 @@ ___
 
 ___
 
-> [function]fft(Vector v)->Vector of Complex
+> [function]
+> fft(Vector v)->Vector of Complex
 
 > [function-docs]
 > Full FFT over a vector 
@@ -325,7 +337,8 @@ ___
 
 ___
 
-> [function]geodist(Vector v,Vector w)->Real
+> [function]
+> geodist(Vector v,Vector w)->Real
 
 > [function-docs]
 > The surface distance in meters between geographic 
@@ -335,7 +348,8 @@ ___
 
 ___
 
-> [function]ifft(Vector v)->Vector of Number
+> [function]
+> ifft(Vector v)->Vector of Number
 
 > [function-docs]
 > Inverse full FFT 
@@ -344,7 +358,8 @@ ___
 
 ___
 
-> [function]irfft(Vector v)->Vector of Number
+> [function]
+> irfft(Vector v)->Vector of Number
 
 > [function-docs]
 > IRFFT over vectors of numbers producing vectors on number 
@@ -353,7 +368,8 @@ ___
 
 ___
 
-> [function]manhattan(Vector of Number v,Vector of Number w)->Number
+> [function]
+> manhattan(Vector of Number v,Vector of Number w)->Number
 
 > [function-docs]
 > Manhattan distance between vectors `v` and `w` 
@@ -362,7 +378,8 @@ ___
 
 ___
 
-> [function]max(Vector v)->Object
+> [function]
+> max(Vector v)->Object
 
 > [function-docs]
 > The largest element in vector `v` 
@@ -371,7 +388,8 @@ ___
 
 ___
 
-> [function]maxmin(Bag of Vector of Number b)->Vector of Number
+> [function]
+> maxmin(Bag of Vector of Number b)->Vector of Number
 
 > [function-docs]
 > Transform to [0, 1]: Subtract min, divide by (max - min) 
@@ -380,7 +398,8 @@ ___
 
 ___
 
-> [function]maxnorm(Vector of Number v,Vector of Number w)->Real
+> [function]
+> maxnorm(Vector of Number v,Vector of Number w)->Real
 
 > [function-docs]
 > Maxnorm distance between vectors `v` and `w` 
@@ -389,7 +408,8 @@ ___
 
 ___
 
-> [function]mean(Vector v)->Real
+> [function]
+> mean(Vector v)->Real
 
 > [function-docs]
 > Average of vector of numbers `v` 
@@ -398,7 +418,8 @@ ___
 
 ___
 
-> [function]meansub(Bag of Vector of Number b)->Vector of Number
+> [function]
+> meansub(Bag of Vector of Number b)->Vector of Number
 
 > [function-docs]
 > Transform to N(0, s): Subtract mean(v) 
@@ -407,7 +428,8 @@ ___
 
 ___
 
-> [function]min(Vector v)->Object
+> [function]
+> min(Vector v)->Object
 
 > [function-docs]
 > The smallest element in vector `v` 
@@ -416,7 +438,8 @@ ___
 
 ___
 
-> [function]minkowski(Vector of Number v,Vector of Number w,Number r)->Real
+> [function]
+> minkowski(Vector of Number v,Vector of Number w,Number r)->Real
 
 > [function-docs]
 > Minkowski distance of degress `r` between vectors `v` and `w` 
@@ -425,7 +448,8 @@ ___
 
 ___
 
-> [function]minus(Vector v,Vector w)->Vector of Number r
+> [function]
+> minus(Vector v,Vector w)->Vector of Number r
 
 > [function-docs]
 > Subtract elements in vectors `v` and `w`, `v .- w` 
@@ -434,7 +458,8 @@ ___
 
 ___
 
-> [function]minus(Vector v,Number lambda)->Vector of Number
+> [function]
+> minus(Vector v,Number lambda)->Vector of Number
 
 > [function-docs]
 > Subtract `lambda` from each element in vector `v`, `v - lambda` 
@@ -443,7 +468,8 @@ ___
 
 ___
 
-> [function]minus(Number lambda,Vector w)->Vector of Number
+> [function]
+> minus(Number lambda,Vector w)->Vector of Number
 
 > [function-docs]
 > Subtract `lambda` from each element in vector `w`, `lambda - w` 
@@ -452,7 +478,8 @@ ___
 
 ___
 
-> [function]new_vector(Number dim,Object e)->Vector
+> [function]
+> new_vector(Number dim,Object e)->Vector
 
 > [function-docs]
 > Construct vector of size `dim` will all elements being `e` 
@@ -461,7 +488,8 @@ ___
 
 ___
 
-> [function]numvector(Object x)->Vector of Number
+> [function]
+> numvector(Object x)->Vector of Number
 
 > [function-docs]
 > Cast `x` to vector of numbers 
@@ -470,7 +498,8 @@ ___
 
 ___
 
-> [function]ones(Number dim)->Vector of Number
+> [function]
+> ones(Number dim)->Vector of Number
 
 > [function-docs]
 > Construct vector of `dim` 1:s 
@@ -479,7 +508,8 @@ ___
 
 ___
 
-> [function]permute(Vector v,Vector of Number indl)->Vector
+> [function]
+> permute(Vector v,Vector of Number indl)->Vector
 
 > [function-docs]
 > Reorder vector `v` on index positions in `indl` 
@@ -488,7 +518,8 @@ ___
 
 ___
 
-> [function]plus(Vector v,Vector w)->Vector of Number r
+> [function]
+> plus(Vector v,Vector w)->Vector of Number r
 
 > [function-docs]
 > Add elements in vectors `v` and `w`, `v .+ w` 
@@ -497,7 +528,8 @@ ___
 
 ___
 
-> [function]plus(Vector v,Number lambda)->Vector of Number
+> [function]
+> plus(Vector v,Number lambda)->Vector of Number
 
 > [function-docs]
 > Add `lambda` to each element in vector `v`, `v + lambda` 
@@ -506,7 +538,8 @@ ___
 
 ___
 
-> [function]plus(Number lambda,Vector w)->Vector of Number
+> [function]
+> plus(Number lambda,Vector w)->Vector of Number
 
 > [function-docs]
 > Add `lambda` to each element in vector `w`, `lambda + w` 
@@ -515,7 +548,8 @@ ___
 
 ___
 
-> [function]rfft(Vector v)->Vector of Number
+> [function]
+> rfft(Vector v)->Vector of Number
 
 > [function-docs]
 > RFFT over vectors of numbers 
@@ -524,7 +558,8 @@ ___
 
 ___
 
-> [function]section(Vector v,Number l,Number u)->Vector r
+> [function]
+> section(Vector v,Number l,Number u)->Vector r
 
 > [function-docs]
 > The subvector of vector `v` starting at position `p` and ending at `u` 
@@ -533,7 +568,8 @@ ___
 
 ___
 
-> [function]skip(Vector v,Number n)->Vector
+> [function]
+> skip(Vector v,Number n)->Vector
 
 > [function-docs]
 > Skip first `n` elements in vector `v` 
@@ -542,7 +578,8 @@ ___
 
 ___
 
-> [function]stdev(Vector v)->Real
+> [function]
+> stdev(Vector v)->Real
 
 > [function-docs]
 > Standard deviation of vector of numbers `v` 
@@ -551,7 +588,8 @@ ___
 
 ___
 
-> [function]sum(Vector v)->Number
+> [function]
+> sum(Vector v)->Number
 
 > [function-docs]
 > The sum of the numbers in vector `v` 
@@ -560,7 +598,8 @@ ___
 
 ___
 
-> [function]times(Vector v,Vector w)->Number
+> [function]
+> times(Vector v,Vector w)->Number
 
 > [function-docs]
 > Scalar product of vectors `v` and `w`, `v * W` 
@@ -569,7 +608,8 @@ ___
 
 ___
 
-> [function]times(Number lambda,Vector w)->Vector of Number
+> [function]
+> times(Number lambda,Vector w)->Vector of Number
 
 > [function-docs]
 > Multiply `lambda` with elements in `w`, `lambda * w` 
@@ -578,7 +618,8 @@ ___
 
 ___
 
-> [function]times(Vector v,Number lambda)->Vector of Number
+> [function]
+> times(Vector v,Number lambda)->Vector of Number
 
 > [function-docs]
 > Multiply elements in vector `v` with `lambda`, `v * lambda` 
@@ -587,7 +628,8 @@ ___
 
 ___
 
-> [function]times(Vector of Number v,Matrix m)->Vector of Number
+> [function]
+> times(Vector of Number v,Matrix m)->Vector of Number
 
 > [function-docs]
 > Vector-matrix multiplication, `v * m` 
@@ -596,7 +638,8 @@ ___
 
 ___
 
-> [function]times(Matrix a,Matrix b)->Matrix
+> [function]
+> times(Matrix a,Matrix b)->Matrix
 
 > [function-docs]
 > Matrix multiplication, `a * b` 
@@ -605,7 +648,8 @@ ___
 
 ___
 
-> [function]times(Matrix m,Vector of Number w)->Vector of Number
+> [function]
+> times(Matrix m,Vector of Number w)->Vector of Number
 
 > [function-docs]
 > Matrix-vector multiplication, `m * v` 
@@ -614,7 +658,8 @@ ___
 
 ___
 
-> [function]transpose(Matrix m)->Matrix
+> [function]
+> transpose(Matrix m)->Matrix
 
 > [function-docs]
 > Transpose matrix `m` 
@@ -623,7 +668,8 @@ ___
 
 ___
 
-> [function]uminus(Vector v)->Vector of Number
+> [function]
+> uminus(Vector v)->Vector of Number
 
 > [function-docs]
 > Negate numbers in vector `v`, `-v` 
@@ -632,7 +678,8 @@ ___
 
 ___
 
-> [function]vdiff(Vector v,Vector w)->Vector
+> [function]
+> vdiff(Vector v,Vector w)->Vector
 
 > [function-docs]
 > Elements in vector `v` that are not in vector `w` 
@@ -641,13 +688,15 @@ ___
 
 ___
 
-> [function]vectorize(Bag b)->Vector v
+> [function]
+> vectorize(Bag b)->Vector v
 
 
 
 ___
 
-> [function]vmean(Bag of Vector of Number bv)->Vector of Number
+> [function]
+> vmean(Bag of Vector of Number bv)->Vector of Number
 
 > [function-docs]
 > Mean vector for a given bag of vectors `bv` 
@@ -656,7 +705,8 @@ ___
 
 ___
 
-> [function]zeros(Number dim)->Vector of Number
+> [function]
+> zeros(Number dim)->Vector of Number
 
 > [function-docs]
 > Construct vector of `dim` 0:s 
@@ -665,7 +715,8 @@ ___
 
 ___
 
-> [function]zscore(Bag of Vector of Number b)->Bag of Vector of Number
+> [function]
+> zscore(Bag of Vector of Number b)->Bag of Vector of Number
 
 > [function-docs]
 > Transform elements in the vectors in `b` into normal distributions

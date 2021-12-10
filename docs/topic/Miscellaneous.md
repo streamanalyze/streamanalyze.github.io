@@ -46,31 +46,36 @@ Print an error message `msg` on the console and raises an exception:
 
 ## Functions
 
-> [function]autosave()->Boolean
+> [function]
+> autosave()->Boolean
 
 
 
 ___
 
-> [function]autosave(Boolean stat)->Boolean
+> [function]
+> autosave(Boolean stat)->Boolean
 
 
 
 ___
 
-> [function]auto_commit(Boolean stat)->Boolean
+> [function]
+> auto_commit(Boolean stat)->Boolean
 
 
 
 ___
 
-> [function]cases(Vector conditions,Vector values)->Object
+> [function]
+> cases(Vector conditions,Vector values)->Object
 
 
 
 ___
 
-> [function]coalesce(Bag sq,Object dflt)->Object
+> [function]
+> coalesce(Bag sq,Object dflt)->Object
 
 > [function-docs]
 > Return default value `dflt` if a query result `sq` is empty 
@@ -79,7 +84,8 @@ ___
 
 ___
 
-> [function]erase_image()->Charstring
+> [function]
+> erase_image()->Charstring
 
 > [function-docs]
 > Delete the current database image 
@@ -88,7 +94,8 @@ ___
 
 ___
 
-> [function]extlang(Charstring lang)->Boolean
+> [function]
+> extlang(Charstring lang)->Boolean
 
 > [function-docs]
 > Enable access to external programming language `lang` 
@@ -97,19 +104,22 @@ ___
 
 ___
 
-> [function]getwatermark()->Object
+> [function]
+> getwatermark()->Object
 
 
 
 ___
 
-> [function]image_file()->Charstring
+> [function]
+> image_file()->Charstring
 
 
 
 ___
 
-> [function]load_extension(Charstring ext)->Boolean
+> [function]
+> load_extension(Charstring ext)->Boolean
 
 > [function-docs]
 > Load plugin named `ext` 
@@ -118,7 +128,8 @@ ___
 
 ___
 
-> [function]oid_no(Object o)->Integer i
+> [function]
+> oid_no(Object o)->Integer i
 
 > [function-docs]
 > The number identifying surrogate object `o` 
@@ -127,19 +138,22 @@ ___
 
 ___
 
-> [function]reload_extension(Charstring ext)->Boolean
+> [function]
+> reload_extension(Charstring ext)->Boolean
 
 
 
 ___
 
-> [function]save_database(Charstring image)->Charstring
+> [function]
+> save_database(Charstring image)->Charstring
 
 
 
 ___
 
-> [function]save_image()->Charstring
+> [function]
+> save_image()->Charstring
 
 > [function-docs]
 > Save current database image on disk 
@@ -148,7 +162,8 @@ ___
 
 ___
 
-> [function]set_final(Charstring fn)->Boolean
+> [function]
+> set_final(Charstring fn)->Boolean
 
 > [function-docs]
 > Declare function `fn` as final (no late binding) 
@@ -157,13 +172,15 @@ ___
 
 ___
 
-> [function]set_resulttypes(Object fn,Charstring lfn)->Bag of Function
+> [function]
+> set_resulttypes(Object fn,Charstring lfn)->Bag of Function
 
 
 
 ___
 
-> [function]set_stateful(Charstring fn)->Bag of Function
+> [function]
+> set_stateful(Charstring fn)->Bag of Function
 
 > [function-docs]
 > Declare all resolvents of function named `fn` to be stateful 
@@ -172,13 +189,15 @@ ___
 
 ___
 
-> [function]startup_dir()->Charstring
+> [function]
+> startup_dir()->Charstring
 
 
 
 ___
 
-> [function]stateful(Function fno)->Boolean
+> [function]
+> stateful(Function fno)->Boolean
 
 > [function-docs]
 > Is resolvent `fno` stateful? 
@@ -187,7 +206,8 @@ ___
 
 ___
 
-> [function]substv(Object x,Object y,Object o)->Object
+> [function]
+> substv(Object x,Object y,Object o)->Object
 
 > [function-docs]
 > Replace `x` with `y` in `o` 
@@ -196,6 +216,7 @@ ___
 
 ___
 
-> [function]unnest_arguments(Function fn)->Boolean
+> [function]
+> unnest_arguments(Function fn)->Boolean
 
 

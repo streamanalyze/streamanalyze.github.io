@@ -1,6 +1,7 @@
 # High order functions:
 
-> [function]apply(Function f,Vector args)->Bag of Vector
+> [function]
+> apply(Function f,Vector args)->Bag of Vector
 
 > [function-docs]
 > Call the OSQL function `f` with parameters `args`.
@@ -10,7 +11,8 @@
 
 ___
 
-> [function]applyfunction1(Function fn,Object arg)->Bag
+> [function]
+> applyfunction1(Function fn,Object arg)->Bag
 
 > [function-docs]
 > Call function `fn(arg)` 
@@ -19,7 +21,8 @@ ___
 
 ___
 
-> [function]eval(Charstring x)->Bag
+> [function]
+> eval(Charstring x)->Bag
 
 > [function-docs]
 > Evaluate expression `x` 
@@ -28,7 +31,8 @@ ___
 
 ___
 
-> [function]evalv(Charstring x)->Bag of Vector
+> [function]
+> evalv(Charstring x)->Bag of Vector
 
 > [function-docs]
 > Evaluate expression `x` and return bag of row vectors 
@@ -37,7 +41,8 @@ ___
 
 ___
 
-> [function]mapvector(Function fn,Vector v)->Vector
+> [function]
+> mapvector(Function fn,Vector v)->Vector
 
 > [function-docs]
 > Apply function `fn` on each element of vector `v` 

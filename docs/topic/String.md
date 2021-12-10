@@ -28,7 +28,8 @@ Examples:
 
 ## Functions
 
-> [function]aton(Charstring s)->Number
+> [function]
+> aton(Charstring s)->Number
 
 > [function-docs]
 > Convert string `s` to number 
@@ -37,7 +38,8 @@ Examples:
 
 ___
 
-> [function]capitalize(Charstring s)->Charstring
+> [function]
+> capitalize(Charstring s)->Charstring
 
 > [function-docs]
 > Capitalize string `s` 
@@ -46,7 +48,8 @@ ___
 
 ___
 
-> [function]charstring(Object x)->Charstring
+> [function]
+> charstring(Object x)->Charstring
 
 > [function-docs]
 > Cast `x` to string 
@@ -55,7 +58,8 @@ ___
 
 ___
 
-> [function]concat(Charstring x,Charstring y)->Charstring
+> [function]
+> concat(Charstring x,Charstring y)->Charstring
 
 > [function-docs]
 > Concatenate strings `y` and `y`. Same as `x+y` 
@@ -64,7 +68,8 @@ ___
 
 ___
 
-> [function]length(Charstring str)->Number
+> [function]
+> length(Charstring str)->Number
 
 > [function-docs]
 > Number of characters in string `str` 
@@ -73,7 +78,8 @@ ___
 
 ___
 
-> [function]like(Charstring str,Charstring pat)->Boolean
+> [function]
+> like(Charstring str,Charstring pat)->Boolean
 
 > [function-docs]
 > Match string `str` against regualar expression `pat` 
@@ -82,7 +88,8 @@ ___
 
 ___
 
-> [function]like_i(Charstring str,Charstring pat)->Boolean
+> [function]
+> like_i(Charstring str,Charstring pat)->Boolean
 
 > [function-docs]
 > Match string `str` against regualar expression `pat` ignoring case 
@@ -91,7 +98,8 @@ ___
 
 ___
 
-> [function]locate(Charstring substr,Charstring str)->Integer
+> [function]
+> locate(Charstring substr,Charstring str)->Integer
 
 > [function-docs]
 > The position of the first occurrence of substring `substr` in `str` 
@@ -100,7 +108,8 @@ ___
 
 ___
 
-> [function]locate_right(Charstring substr,Charstring str)->Integer
+> [function]
+> locate_right(Charstring substr,Charstring str)->Integer
 
 > [function-docs]
 > The position of the last occurrence of substring `substr` in `str` 
@@ -109,7 +118,8 @@ ___
 
 ___
 
-> [function]lower(Charstring s)->Charstring
+> [function]
+> lower(Charstring s)->Charstring
 
 > [function-docs]
 > Lower case string `s` 
@@ -118,7 +128,8 @@ ___
 
 ___
 
-> [function]ltrim(Charstring chars,Charstring str)->Charstring
+> [function]
+> ltrim(Charstring chars,Charstring str)->Charstring
 
 > [function-docs]
 > Remove characters in `chars` from beginning of `str` 
@@ -127,7 +138,8 @@ ___
 
 ___
 
-> [function]not_empty(Charstring s)->Boolean
+> [function]
+> not_empty(Charstring s)->Boolean
 
 > [function-docs]
 > Is string `s` empty or all whitespaced? 
@@ -137,7 +149,8 @@ ___
 
 ___
 
-> [function]ntoa(Number x)->Charstring
+> [function]
+> ntoa(Number x)->Charstring
 
 > [function-docs]
 > Convert number `x` to string 
@@ -146,7 +159,8 @@ ___
 
 ___
 
-> [function]plus(Charstring x,Object y)->Charstring r
+> [function]
+> plus(Charstring x,Object y)->Charstring r
 
 > [function-docs]
 > Concatenate strings `x` and `y`. Inverses produce prefix or suffix 
@@ -155,7 +169,8 @@ ___
 
 ___
 
-> [function]replace(Charstring str,Vector of Charstring from_str,
+> [function]
+> replace(Charstring str,Vector of Charstring from_str,
        Vector of Charstring to_str)->Charstring
 
 > [function-docs]
@@ -166,7 +181,8 @@ ___
 
 ___
 
-> [function]rtrim(Charstring chars,Charstring str)->Charstring
+> [function]
+> rtrim(Charstring chars,Charstring str)->Charstring
 
 > [function-docs]
 > Remove characters in `chars` from end of `str` 
@@ -175,7 +191,8 @@ ___
 
 ___
 
-> [function]section(Charstring str,Number l,Number u)->Charstring
+> [function]
+> section(Charstring str,Number l,Number u)->Charstring
 
 > [function-docs]
 > The substring of `str` starting at position `l` and ending at `u` 
@@ -184,7 +201,8 @@ ___
 
 ___
 
-> [function]skip(Charstring str,Number l)->Charstring
+> [function]
+> skip(Charstring str,Number l)->Charstring
 
 > [function-docs]
 > Skip `l` characters in the beginning of string `str` 
@@ -193,7 +211,8 @@ ___
 
 ___
 
-> [function]split(Charstring str,Charstring delim)->Vector of Charstring
+> [function]
+> split(Charstring str,Charstring delim)->Vector of Charstring
 
 > [function-docs]
 > Create a vector of substrings in `str` delimited by `delim` 
@@ -203,7 +222,8 @@ ___
 
 ___
 
-> [function]split(Charstring str)->Vector of Charstring
+> [function]
+> split(Charstring str)->Vector of Charstring
 
 > [function-docs]
 > Unoack `str` into a vector of characters
@@ -213,7 +233,8 @@ ___
 
 ___
 
-> [function]stringify(Object o)->Charstring
+> [function]
+> stringify(Object o)->Charstring
 
 > [function-docs]
 > Convert object `o` to string.
@@ -223,7 +244,8 @@ ___
 
 ___
 
-> [function]trim(Charstring chars,Charstring str)->Charstring
+> [function]
+> trim(Charstring chars,Charstring str)->Charstring
 
 > [function-docs]
 > Remove characters in `chars` from beginning and end of `str` 
@@ -232,7 +254,8 @@ ___
 
 ___
 
-> [function]unstringify(Charstring s)->Object o
+> [function]
+> unstringify(Charstring s)->Object o
 
 > [function-docs]
 > Parse string `s` to object 
@@ -241,7 +264,8 @@ ___
 
 ___
 
-> [function]upper(Charstring str)->Charstring uppr
+> [function]
+> upper(Charstring str)->Charstring uppr
 
 > [function-docs]
 > Upper case string `str` 
@@ -250,6 +274,7 @@ ___
 
 ___
 
-> [function]vref(Charstring str,Number i)->Charstring
+> [function]
+> vref(Charstring str,Number i)->Charstring
 
 
