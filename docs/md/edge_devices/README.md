@@ -41,7 +41,7 @@ When connecting to a federation you need a couple of things:
 
 1. A `name` for the peer you are connecting e.g. **edge1**
 2. An `address` and `port` to the nameserver of the federation.
-3. Certificates and Keys for accessig the federation if TSL is enabled.
+3. Certificates and Keys for accessing the federation if TSL is enabled.
 
 If the federations TLS is not enabled you can simply connect an edge
 client with name `name` to a federation at `address:port` with:
@@ -51,8 +51,8 @@ edge_listener("name@address:port");
 ```
 
 When the federation has TLS enabled you will need to configure sa.engine
-with a **Certificate Authoority (CA) file**, **Certificate file for the peer**, 
-and the **private key file** of the certicifate of the peer.
+with a **Certificate Authority (CA) file**, **Certificate file for the peer**, 
+and the **private key file** of the certificate of the peer.
 
 You can enable security on an edge client by calling
 ```

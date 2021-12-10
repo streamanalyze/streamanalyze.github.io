@@ -7,7 +7,7 @@ Before following this guide make sure that.
 All commands issued on the SAMA5D27 are issued from `/home/root`.
 
 Start by going to [https://studio.streamanalyze.com/download#tgeneral](https://studio.streamanalyze.com/download#tgeneral) 
-and copy the link address for the Raspberru pi (RPI) download.
+and copy the link address for the Raspberry pi (RPI) download.
 
 Next download sa.engine to the SAMA5D27 by entering the following wget command from a terminal on the SAMA5D27: (I had an issue with certificates on my SAMA5D27.
 

@@ -61,7 +61,7 @@ Stream` will send the same edge query to each edge in the vector
 `edges` and then merge the result from all of the edges into one
 stream on the server. 
 
-##Stream of shake status vectors
+## Stream of shake status vectors
 
 In the fusion model in the stream server we need to compare the latest
 values from each edge model running `detect_shake(5)` to see whether

@@ -1,11 +1,11 @@
-#REST api
+# REST api
 The REST api can be used to control the sa.engine server using REST requests.
 
 Since the output of sa.egine queries are streaming data of possibly infite size 
 you need to access the data of posted streams via a console REPL, the visual 
 analyzer or any of the programatic API:s like Javascript, C or Java.
 
-##Endpoints
+## Endpoints
 Each endpoint needs to have a query parameter `token` with the API token for
 the rest API. To run the examples you have to install the package "request"
 for nodejs:

@@ -198,7 +198,7 @@ set mypi() = asin(1)*2;
 mypi()
 ```
 
-###  <a name="define-model-function">  Derived functions </a>
+### <a style="text-decoration: none" name="define-model-function">Derived functions </a>
 
 A *derived function* is a function defined by an expression.
 
@@ -371,7 +371,7 @@ as type `Vector of Vector of Number`.
 [[1,2],[3,4]] .* [[2,3],[6,7]]
 ```
 
-### <a name="FFT"> The Fast Fourier Transform
+### <a style="text-decoration: none" name="FFT"> The Fast Fourier Transform
 
 The function `rfft(v)` computes the real number [Fast Fourier
 Transform](https://en.wikipedia.org/wiki/Fast_Fourier_transform)

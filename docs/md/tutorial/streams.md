@@ -141,7 +141,7 @@ stream, called **stream windows**, e.g. a stream of the latest
 vectors. There are several built-in functions in sa.engine for forming
 such streams of windows.
 
-###Forming windows with winagg
+### Forming windows with winagg
 
 Try this CQ visualized as `Bar plot`:
 ```LIVE {"vis":"showBar"}

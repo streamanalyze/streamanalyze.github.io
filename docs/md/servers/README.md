@@ -76,7 +76,7 @@ nameserver("my_nameserver:35022");
 listen();
 ```
 
-Now start sa.engie with `-O config.osql`. This will start sa.engine which will 
+Now start sa.engine with `-O config.osql`. This will start sa.engine which will 
 then load `config.osql`:
 
 ```
@@ -113,7 +113,7 @@ call `server` instead of `nameserver`:
 ```LIVE {"vis":"showMarkdown"}
 mddoc(functionnamed("server"))
 ```
-Once you've called `server` you can start it by calling `listen`. The sorthand 
+Once you've called `server` you can start it by calling `listen`. The shorthand 
 command line argument for this is `-s descr` however, when starting from the 
 command line you cannot set the desired port explicitly.
 

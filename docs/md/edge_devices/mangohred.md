@@ -1,10 +1,10 @@
-#Getting started with the MangOH red with a wp76xx.
+# Getting started with the MangOH red with a wp76xx.
 
 This section will describe how to connect a pre-configured MangOH red 
 board running a Sierra Wireless [wp76xx](https://source.sierrawireless.com/resources/airprime/hardware_specs_user_guides/airprime_wp76xx_product_technical_specification/) module via a USB cable to a
 stream server on the local PC.
 
-##Windows users
+## Windows users
 
 In order to allow the MangOH red to connect to a Windows PC over the USB
 cable the PC needs to have the drivers installed. The drivers can be downloaded 
@@ -12,7 +12,7 @@ from our [mirror](https://dl.streamanalyze.com/mangohred/GenericDriverSetup.exe)
 or from sierra wireless [home page](https://source.sierrawireless.com/resources/legato/drivers-for-wp75xx_wp76xx_wp8548-series-modules---build-4653/), which requires 
 an account. Download the executable and run it. 
 
-##All users
+## All users
 Start using the MangOH red as an edge device by plugging in the micro USB cable 
 in the port located under the board, see the green rectangle in **Fig 1**. 
 
@@ -45,7 +45,7 @@ signal_stream("accelerometer");
 The MangOH red device running a wp76xx module is now ready to be used as an 
 edge device to the local PC.
 
-#Using the wp76xx binaries to create a custom sa.engine app.
+# Using the wp76xx binaries to create a custom sa.engine app.
 This section will outline how to create a custom application for the MangOH red
 running a wp76xx. It will include:
 
@@ -71,7 +71,7 @@ archive at a location of your choice.
 
 ## Building the project from the command line
 If running the development environment in the MangOH red virtual machine or on
-a native linux machine simply cd into the **sa.mangoh** folder and type:
+a native Linux machine simply cd into the **sa.mangoh** folder and type:
 ```
 make sa_deploy
 ```

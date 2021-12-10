@@ -164,7 +164,7 @@ clustering](https://en.wikipedia.org/wiki/K-means_clustering)
 algorithm or for linear regression.
 
 <a name="transactions"></a>
-##Undo changes
+## Undo changes
 
 The system logs all changes made by users if transaction logging is
 enabled. This means that the sa.engine user can undo all model

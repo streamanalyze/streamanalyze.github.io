@@ -46,7 +46,7 @@ starting point is to check `get_all_addrs()` on all peers and make sure that the
 is an IP/hostname that is reachable from the client to the server.
 
 ## Secure sockets (TLS)
-Sa.engine uses ARM mbedtls for securing the transport layer. In sa.engine all peers
+Sa.engine uses ARM Mbed TLS for securing the transport layer. In sa.engine all peers
 must have a signed certificate from a common **Certificate Authority**. The server 
 certificate should have it's common name set to it's peer name.
 
