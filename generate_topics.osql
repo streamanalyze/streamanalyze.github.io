@@ -1,4 +1,9 @@
 load_model("getting-started");
+load_model("statistical_analysis_guide");
+load_model("streamer_tutorial");
+load_model("pi0");
+
+
 
 write_file(get_summary_md("","summary.md"), "docs/summary.md");
 write_file(get_summary_md("","summary.md"), "docs/md/summary.md");
@@ -6,6 +11,8 @@ write_file(get_summary_md("topics/","summary.md"), "docs/md/topics/summary.md");
 write_file(get_summary_md("topics/","summary.md"), "docs/topic/summary.md");
 write_file(get_summary_md("modelmd/","summary.md"), "docs/md/modelmd/summary.md");
 write_file(get_summary_md("modelmd/","summary.md"), "docs/usermd/summary.md");
+write_file(get_summary_md("modelmd/","summary.md"), "docs/systemmd/summary.md");
+write_file(get_summary_md("modelmd/","summary.md"), "docs/md/systemmd/summary.md");
 create_folder("docs/topic");
 
 select write_file(content,"docs/topic/"+file)

@@ -8,6 +8,7 @@ This document will walk you through how to connect a raspberry pi zero with an E
 
 
 
+
 > [live-only] **Note:** Before following this guide make sure that you have installed sa.engine and connected your Raspberry Pi Zero to your federation. See [Getting started](#/docs/&load_external=streamanalyze.com/getting-started&goto=getting-started/README.md).
 
 ## Configuring the pi zero.
@@ -18,6 +19,7 @@ deploy_model(["pi0-edge"],"pi0");
 ```
 
 Start the sensor process:
+
 ```LIVE {"peer":"Pi0-edge"}
 start_phat();
 ```
@@ -35,7 +37,7 @@ signals();
 ```
 
 ## Conclusion
-Congratulations you've streamed your first sensor data from a Raspberry Pi Zero. Now you can try to apply the [detect-shake model]( /docs/md/tutorial/edge-query.md) on this data stream to get started with some edge analytics!
+Congratulations you've streamed your first sensor data from a Raspberry Pi Zero. Now you can try to apply the [detect-shake model](/docs/md/tutorial/edge-query.md) on this data stream to get started with some edge analytics!
 
 This tutorial uses the function `csv:socket_stream` function to read sensor data from a TCP socket.
 

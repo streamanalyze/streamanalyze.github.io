@@ -58,7 +58,9 @@ To add live code examples to documentation all you need to to is adding `LIVE` a
 For instance, the following:
 
 <pre><code>&#96;&#96;&#96;LIVE
+<br/>
 1+1;
+<br/>
 &#96;&#96;&#96;</code></pre>
 
 will produce:
@@ -70,7 +72,9 @@ will produce:
 To change visualization, you can add a JSON-object after the LIVE tag:
 
 <pre><code>&#96;&#96;&#96;LIVE {"vis": "Line plot"}
+<br/>
 sin(iota(1,200)/50)
+<br/>
 &#96;&#96;&#96;</code></pre>
 
 will produce:

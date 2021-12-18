@@ -1,0 +1,261 @@
+/*-*-sql-*-*******************************************************************
+ * sa.engine
+ *
+ * Description: Master file for user model
+ *
+ ****************************************************************************/
+
+current_topics(['dbscan']);
+
+create function get_dbscan_string(Charstring name) -> Charstring
+/* 
+Generate functions for a dbscan instance named `name` This will create 
+dbscan functions prefixed with `<name>_` Look at the topic dbscan after 
+generating a table.
+*/
+  as replace(
+'
+
+current_topics(["dbscan"]);
+
+create function {NAME}:ddrtab(Number corepoint) -> Vector of Number
+  /* Function to store directly density reachable (DDR) relationship on 
+     core datapoints */
+  as stored;
+  
+create function {NAME}:datapoints(Number id) -> Vector of Number v
+  /* Function to store data points to be clustered */
+  as stored;
+create_index("{NAME}:datapoints", "v", "XTREE", "multiple");
+
+create function {NAME}:datapoint_weight(Number id) -> Number p
+  as stored;
+
+create function {NAME}:mu() -> Number as stored;
+set {NAME}:mu() = 0;
+
+create function {NAME}:clustered_points(Number cid) -> Bag of Number p
+  /* Function to store clustering result as mapping between cluster identifier
+     cid and a bag of data points dp assigned to that cluster */
+  as stored;
+create_index("{NAME}:clustered_points", "p", "hash", "multiple");
+
+create function {NAME}:clusters() -> bag of number as stored;  
+  
+create function {NAME}:dbscan_add_data(Bag of vector data) -> Boolean
+  as { declare Number i;
+    set i = count(select {NAME}:datapoints(d) from number d);
+    for each Vector v where v in data {
+       set {NAME}:datapoints(i) = v;
+       set {NAME}:datapoint_weight(i) = 1;
+       set i = i+1;
+    };
+  };
+
+create function {NAME}:dbscan_add_data(Stream of Vector data) 
+                                     -> Boolean
+  as {NAME}:dbscan_add_data(extract(data));
+
+create function {NAME}:ddrtab_adapter(Number corepoint) -> Bag of Number x
+  as select x where x in {NAME}:ddrtab(corepoint);
+  
+create function {NAME}:neighbors(Number pid, Number eps) 
+                               -> Bag of Number bqid
+  /* Calculates EPS-neighborhood of point P among the data points DATPOINTS */
+  as select qid 
+       from Number qid, Vector of Number qv, Vector of Number pv
+      where pv = {NAME}:datapoints(pid)
+        and qv = {NAME}:datapoints(qid)
+        and pid != qid
+        and {NAME}:datapoint_weight(pid) > {NAME}:mu()
+        and euclid(pv,qv) < eps;
+
+create function {NAME}:dc(Number p) -> Bag of Number q
+  /* Returns data points density-connected with point p 
+     p     : given point*/
+  as tclose(#"{NAME}:ddrtab_adapter", p);
+
+create function {NAME}:ddr_corepoints() -> Bag of Number
+ /* Retrieve the core points of the clusters from ddrtab */
+  as select p
+       from Number p, Vector of Number vq
+      where vq = {NAME}:ddrtab(p);
+
+create function {NAME}:build_ddrtab(Number eps, Number minpts) -> Boolean
+  /* Build table of directly desnity reachable (DDR) relationship on 
+     core datapoints */
+  as { clear_function("{NAME}:ddrtab");
+           add {NAME}:ddrtab(p) = neighbors
+               from Number p, Vector of Number neighbors, Vector of Number pv
+              where pv = {NAME}:datapoints(p) 
+                and neighbors = vectorof({NAME}:neighbors(p, eps))
+                and dim(neighbors) >= minpts;
+    };
+    
+create function {NAME}:dbscan(Number eps, Number minpts) -> Boolean
+  /* Runs DBSCAN algorithm with the DDR table {NAME}:ddrtab, 
+     stores clustering results  in {NAME}:clustered_points */
+  as { declare Integer cn;
+           set cn = 1;
+           clear_function("{NAME}:clustered_points");
+           clear_function("{NAME}:clusters");
+           {NAME}:build_ddrtab(eps,minpts);
+           for each  Number p
+              where p in {NAME}:ddr_corepoints()
+                and notany(select p 
+                             from  Integer c
+                            where p in {NAME}:clustered_points(c))
+              { for each Number q
+                       where q in {NAME}:dc(p)
+                          add {NAME}:clustered_points(cn) = q;
+                    add {NAME}:clusters() = cn;
+                    set cn = cn + 1; 
+                    
+              };
+     };
+    
+create function {NAME}:dbscan_classify(Vector v, Number eps, Number minPts) 
+                                     -> Number
+  as select c
+       from Number c, Bag n, Bag cb
+      where n = (select qid 
+                   from Number qid, 
+                        Vector of Number qv
+                  where qv = {NAME}:datapoints(qid)
+                    and {NAME}:datapoint_weight(qid) > {NAME}:mu()
+                    and euclid(v,qv) < eps
+                  limit minPts)
+        and cb = first(select x from Number x
+                   where count(n) >= minPts
+                     and first(n) in {NAME}:clustered_points(x))
+        and c = case when notany(cb) then -1 else first(cb) end; 
+        
+costhint(#"{NAME}:dbscan_classify","bbbf", [10,0.1]);
+      
+current_topics([]);
+',["{NAME}"], [name]);
+
+create function dbscan:generate(Charstring name) -> Object
+  as eval(get_dbscan_string(name));
+
+create function dbscan:save_model(Charstring instance, Charstring model,
+                                  Charstring file) -> Boolean
+  as {  
+      json:unload([theresolvent(instance+":datapoints"),
+                   theresolvent(instance+":datapoint_weight"),
+                   theresolvent(instance+":mu"),
+                   theresolvent(instance+":clustered_points"),
+                   theresolvent(instance+":clusters")], model,
+                                file+"-weights.json");
+  };
+
+create function dbscan:save_model(Charstring instance, Charstring model)
+                                -> Boolean
+  as dbscan:save_model(instance,model,"master");
+
+create function _get_scatter_dimensions(Number x, Number y, Bag of Vector b) 
+                                      -> Vector of Vector of Number
+  as select vector of  concat(permute(v,[x,y]), [size,n]) 
+       from Vector of Number row, 
+            vector v, Number size, Number n
+      where row in b
+        and v = row[3]
+        and [size,n] = 
+       case when row[2] = -1 
+            then [3,-1] 
+            else [5, row[2]] end
+      order by size desc;
+      
+create function true_positive(Bag of Vector b) -> Number
+/* Number of item pairs that are in the same cluster and belong to the same 
+class */
+  as 
+    count(select v
+            from Vector v, Vector v2, Vector of Vector w, Number i, Number j
+           where w = vectorof(b)
+             and v = w[i]
+             and v2 =w[j]
+             and v[1] = v2[1]
+             and v[2] = v2[2]
+             and j != i);
+       
+create function true_negative(Bag of Vector b) -> Number
+/* Number of item pair that are in different clusters and blong to different 
+classes
+*/
+  as count(select v
+             from Vector v, Vector v2, Vector of Vector w, Number i, Number j
+            where w = vectorof(b)
+              and v = w[i]
+              and v2 =w[j]
+              and v[1] != v2[1]
+              and v[2] != v2[2]
+              and j != i);
+              
+create function false_negative(Bag of Vector b) -> Number
+/* Number of item pairs that are in different cluster and belong to different 
+classes*/
+  as count(select v
+             from Vector v, Vector v2, Vector of Vector w, Number i, Number j
+            where w = vectorof(b)
+              and v = w[i]
+              and v2 =w[j]
+              and v[1] = v2[1]
+              and v[2] != v2[2]
+              and j != i);
+              
+create function false_positive(Bag of Vector b) -> Number
+/* Number of items pairs that are in the same cluster but belong to different
+classes*/
+  as count(select v
+             from Vector v, Vector v2, Vector of Vector w, Number i, Number j
+            where w = vectorof(b)
+              and v = w[i]
+              and v2 =w[j]
+              and v[1] != v2[1]
+              and v[2] = v2[2]
+              and j != i);
+       
+create function cluster_stats(Bag of Vector b, Number beta) -> Vector of Number
+/*
+Calculates Precision, recall, `beta` F-measure and Rand-index for the labelled
+and classified data `d`.
+- `d` Bag of vector where each vector contains at least `[label, cluster_id]`
+- `beta` beta for F-measure set to 1 to do F1-measre
+The following table can be used for reference on how true positives(tp),
+false negatives (fn), true negatives (tn) and false positives(fp) is defined:
+
+|                   | same cluster | different clusters |
+| :---------------- | :----------: | :----------------: |
+| Same class        | TP           | FN                 |
+| Different class   | FP           | TN                 |
+
+The precision, recall F-measure and rand index is then calculated using
+the following formulas:
+- Precision formula: `tp/(tp+fp)`
+- Recall formula: `tp/(tp+fn)`
+- F-measure formula: `(beta^2 +1)*precision*recall/(beta*precision+recall)`
+- Rand index formula: `(tp+tn)/(tp+fp+tn+fn)`
+
+returns: a vector of number where each index has the following metric:
+1. precision
+2. recall
+3. Fbeta-measure
+4. Rand index
+
+*/
+  as select [p,r,f,ri]
+       from Number p, Number r, Number f, Number tp, 
+            Number fp, Number tn, Number fn, Number ri
+      where tp = true_positive(b)
+        and fp = false_positive(b)
+        and tn = true_negative(b)
+        and fn = false_negative(b)
+        and p = case when tp+fp = 0 then -1 else tp / (tp+fp) end
+        and r = case when tp+fn = 0 then -1 else tp / (tp+fn) end
+        and f = case when p+r = 0 then -1 
+                     else (beta^2 + 1) * p * r / (beta * p + r) end
+        and ri = case when (tp+fp+tn+fn) = 0  then -1 
+                      else (tp+tn)/(tp+fp+tn+fn) end;
+
+current_topics([]); 

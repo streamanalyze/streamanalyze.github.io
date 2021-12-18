@@ -108,6 +108,46 @@ ___
 ___
 
 > [function]
+> histogram(Bag of Number b,Vector limits)->Vector of Integer
+
+> [function-docs]
+> Calculate a histogram over a bag `b`, with `limits` vector.
+>   `limits` is a vector with `[min,max,number of bins]` 
+>   the range for the histograms is always $ [min,max) $ 
+
+
+
+___
+
+> [function]
+> histogram(Bag of Number b,Number min,Number max,Number bins)->Vector of Integer
+
+> [function-docs]
+> Calculate a histogram over a bag `b`, with `min`, `max`, and `bins`
+>   the range for the histogram is always $ [min,max) $ 
+
+
+
+___
+
+> [function]
+> histogram(Bag of Vector b,Vector of Vector limits)->Vector of Integer
+
+> [function-docs]
+> Calculate a histogram over a bag of vector `b`, with `limits` vector.
+>   Limits must be a vector of the same dimension as each vector in `b` and:
+>   
+>   $$
+>   limits_i = [min_i,max_i, bins_i]`
+>   $$
+> 
+>   the range for the histograms is always $ [min,max) $ 
+
+
+
+___
+
+> [function]
 > inject(Bag b,Object o)->Bag
 
 > [function-docs]
@@ -138,20 +178,20 @@ ___
 ___
 
 > [function]
-> median(Bag of Number b)->Number
+> median(Vector v)->Number
 
 > [function-docs]
-> The median of numbers in `b` 
+> The median of numbers in `v` 
 
 
 
 ___
 
 > [function]
-> median(Vector v)->Number
+> median(Bag of Number b)->Number
 
 > [function-docs]
-> The median of numbers in `v` 
+> The median of numbers in `b` 
 
 
 

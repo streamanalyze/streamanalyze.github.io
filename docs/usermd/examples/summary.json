@@ -1,5 +1,6 @@
 ["Examples", "README.md", 
   [
-    ["Transposing", "transpose.md"]
+    ["Transposing", "transpose.md"], 
+    ["Scatter Matrix", "visualization/scatter_matrix.md"]
  ]
 ]

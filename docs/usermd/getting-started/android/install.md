@@ -11,7 +11,7 @@
 
 ## Download and start the SA Edge app
 
-Now that you have signed up it is time to download and start an instance of the SA Edege app on your Android phone.
+Now that you have signed up, it is time to download and start an instance of the SA Edge app on your Android device.
 
 **1.** Go to the [download page](https://studio.streamanalyze.com/download).
 
@@ -30,7 +30,7 @@ The app should say that it is not yet configured and needs a sa.studio connectio
 
 ## Connect your edge device to the server
 
-Now that you have the SA Engine app installed on your Android phone it is time to start a server in the cloud and connect your phone the server as an edge device.
+Now that you have the SA Engine app installed on your Android device it is time to start a server in the cloud and connect your phone the server as an edge device.
 
 **1.** Go back to the SA Studio Community Edition [landing page](https://studio.streamanalyze.com/).
 
@@ -50,7 +50,7 @@ Now that you have the SA Engine app installed on your Android phone it is time t
 
 <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-android-edge/sa-studio-connect-edges-input-android-edge.png" alt="sa-studio-connect-edges-input-android-edge.png" width="300"/>
 
-**5.** Open the SA app on your Android phone and click the "SETUP" button. This will activate the camera so you can scan a QR code. You will have to give the SA app permission to use the camera for this step.
+**5.** Open the SA app on your Android device and click the "SETUP" button. This will activate the camera so you can scan a QR code. You will have to give the SA app permission to use the camera for this step.
 
 <table>
 <td><img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-android-edge/android-app-open.jpg" alt="android-app-open.jpg" width="200"/></td>

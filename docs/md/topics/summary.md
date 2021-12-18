@@ -5,6 +5,7 @@
   - [CSV](/docs/topic/CSV)
   - [Database index](/docs/topic/Database_index)
   - [Dataflow](/docs/topic/Dataflow)
+  - [dbscan](/docs/topic/dbscan)
   - [Debugging](/docs/topic/Debugging)
   - [Documentation](/docs/topic/Documentation)
   - [Edge](/docs/topic/Edge)

@@ -1,0 +1,15 @@
+["Statistical Analysis over datasets", "docs.md", [
+    ["Pre processing","docs/preprocess.md",[
+        ["1. Create meta data model", "docs/metadata.md"],
+        ["2. Converting the data", "docs/converting_data.md"],
+        ["3. Looking at the data", "docs/look.md"],
+        ["4. Stats over the data", "docs/calc_stats.md"],
+        ["5. Making sense of the data", "docs/making_sense.md"]
+    ]],
+    ["Modelling", "docs/modelling.md",[
+        ["1. Tachometer model.", "docs/tach_model.md"],
+        ["2. DBSCAN.", "docs/dbscan.md"],
+        ["3. FFT-spectral search.","docs/fft.md"]
+    ]]
+    
+]]

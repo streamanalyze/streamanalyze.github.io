@@ -1,22 +1,22 @@
 # Stream functions:
 
 > [function]
-> changed(Stream s)->Stream
+> changed(Stream of Vector s,Vector of Number indexes)->Stream of Vector
 
 > [function-docs]
-> Stream containing the elements of stream `s` that are different 
->      than their predecessor 
+> Stream containing the vectors of stream `s` whose elements in `indexes`
+>      are different than their predecessor 
 
 
 
 ___
 
 > [function]
-> changed(Stream of Vector s,Vector of Number indexes)->Stream of Vector
+> changed(Stream s)->Stream
 
 > [function-docs]
-> Stream containing the vectors of stream `s` whose elements in `indexes`
->      are different than their predecessor 
+> Stream containing the elements of stream `s` that are different 
+>      than their predecessor 
 
 
 
@@ -94,10 +94,43 @@ ___
 ___
 
 > [function]
-> merge_streams(Bag of Stream b)->Stream
+> histogram(Stream s,Vector limits)->Stream of Vector of Integer
 
 > [function-docs]
-> Merge streams in bag `b` 
+> Calculate  a stream of histograms over stream `s`, with `limits` vector.
+>   `limits` is a vector with `[min,max,number of bins]` 
+>   the range for the histograms is always $ [min,max) $ 
+
+
+
+___
+
+> [function]
+> histogram(Stream of Number s,Number min,Number max,Number bins)
+         ->Stream of Vector of Integer
+
+> [function-docs]
+> Calculate a stream histograms over a stream `s`, with `min`, `max`, and `bins`
+>   the range for the histograms are always $ [min,max) $ 
+
+
+
+___
+
+> [function]
+> histogram(Stream of Vector s,Vector of Vector limits)
+         ->Stream of Vector of Vector
+
+> [function-docs]
+> Calculate a stream of histograms over a stream of vector `s`, 
+>   with `limits` vector. Limits must be a vector of the same dimension 
+>   as each vector in `s` and:
+>   
+>   $$
+>   limits_i = [min_i,max_i, bins_i]`
+>   $$
+> 
+>   the range for the histograms is always $ [min,max) $ 
 
 
 
@@ -108,6 +141,16 @@ ___
 
 > [function-docs]
 > Merge streams `s1` and `s2` 
+
+
+
+___
+
+> [function]
+> merge_streams(Bag of Stream b)->Stream
+
+> [function-docs]
+> Merge streams in bag `b` 
 
 
 
@@ -125,21 +168,21 @@ ___
 ___
 
 > [function]
-> pivot_streams(Vector of Stream vs,Vector iv)->Stream of Vector
+> pivot_streams(Vector of Stream vs)->Stream of Vector
 
 > [function-docs]
-> A stream of the most recently received values in `vs`, 
->      having the vector `iv` as the initial element 
+> A stream of the most recently received elements in `vs` 
 
 
 
 ___
 
 > [function]
-> pivot_streams(Vector of Stream vs)->Stream of Vector
+> pivot_streams(Vector of Stream vs,Vector iv)->Stream of Vector
 
 > [function-docs]
-> A stream of the most recently received elements in `vs` 
+> A stream of the most recently received values in `vs`, 
+>      having the vector `iv` as the initial element 
 
 
 
@@ -157,6 +200,19 @@ ___
 ___
 
 > [function]
+> predwin(Stream s,Integer c,Object p,Function e,Function l)->Stream of Vector
+
+> [function-docs]
+> Form predicate windows over stream `s` by applying the window delimination
+>      functions `e` and `l` on sliding change windows over `s` of size `cw`
+>      with stride 1. A new window is started when `e(cw,p)` is true 
+>      and ended when `l(cw, p)` is true 
+
+
+
+___
+
+> [function]
 > predwin(Stream s,Integer c,Object p,Function e,Function l,Boolean start_entered)
        ->Stream of Vector
 
@@ -165,19 +221,6 @@ ___
 >      functions `e` and `l` on sliding change windows over `s` of size `cw`
 >      with stride 1. A new window is started when `e(cw,p)` is true or at the
 >      begining if `start_entered=true` 
->      and ended when `l(cw, p)` is true 
-
-
-
-___
-
-> [function]
-> predwin(Stream s,Integer c,Object p,Function e,Function l)->Stream of Vector
-
-> [function-docs]
-> Form predicate windows over stream `s` by applying the window delimination
->      functions `e` and `l` on sliding change windows over `s` of size `cw`
->      with stride 1. A new window is started when `e(cw,p)` is true 
 >      and ended when `l(cw, p)` is true 
 
 
@@ -215,18 +258,18 @@ ___
 ___
 
 > [function]
-> readlines(Charstring file,Charstring delim,Number chunk)
-         ->Stream of Vector of Charstring
+> readlines(Charstring file)->Stream of Charstring
+
+> [function-docs]
+> Stream of lines in `file` 
 
 
 
 ___
 
 > [function]
-> readlines(Charstring file)->Stream of Charstring
-
-> [function-docs]
-> Stream of lines in `file` 
+> readlines(Charstring file,Charstring delim,Number chunk)
+         ->Stream of Vector of Charstring
 
 
 
@@ -356,17 +399,17 @@ ___
 ___
 
 > [function]
-> streamof(Stream s)->Stream
+> streamof(Bag b)->Stream
+
+> [function-docs]
+> Convert a bag `b` to a stream 
 
 
 
 ___
 
 > [function]
-> streamof(Bag b)->Stream
-
-> [function-docs]
-> Convert a bag `b` to a stream 
+> streamof(Stream s)->Stream
 
 
 
@@ -403,20 +446,6 @@ ___
 ___
 
 > [function]
-> twinagg(Stream of Timeval s,Number size,Number stride)
-       ->Stream of Timeval of Vector
-
-> [function-docs]
-> Stream of time windows over stream `s`  represented as 
->      time stamped vectors where:
->      `size` is the window size in seconds
->      `stride` is the window stride in seconds 
-
-
-
-___
-
-> [function]
 > twinagg(Stream of Timeval s,Number size,Number stride,Timeval start)
        ->Stream of Timeval of Vector
 
@@ -426,6 +455,20 @@ ___
 >      `size` is the window size in seconds
 >      `stride` is the window stride in seconds
 >      `start` is the point in time where the windowing should start. 
+
+
+
+___
+
+> [function]
+> twinagg(Stream of Timeval s,Number size,Number stride)
+       ->Stream of Timeval of Vector
+
+> [function-docs]
+> Stream of time windows over stream `s`  represented as 
+>      time stamped vectors where:
+>      `size` is the window size in seconds
+>      `stride` is the window stride in seconds 
 
 
 

@@ -70,7 +70,9 @@ Now that you have SA Engine installed on your Linux it is time to start a server
 
 ```
 ./sa.engine -O connect.osql
-``` Verify that your Linux edge is connected by running the query:
+```
+
+Verify that your Linux edge is connected by running the query:
 
 
 ```LIVE

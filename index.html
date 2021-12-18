@@ -135,7 +135,7 @@
                 lang = lang.split("{")[0].trim();
               }
               //return `<pre v-pre="" data-lang="<href ='https://streamanalyze.com'>OSQL</a>"><code class="lang-OSQL"="">${code}</code></pre>`
-              return `<pre v-pre="" data-lang="">
+              return `<pre v-pre="" data-lang="OSQL">
                   <a style="position: absolute;
                             top: 0.75em;
                             z-index: 10;
@@ -143,10 +143,10 @@
                             opacity: 0.6;
                             color: inherit;
                             cursor: pointer;
-                            z-index: 10;
+                            z-index: 10; left: 10px;
                             font-size: var(--font-size-s);
                             line-height: 1;" target="_blank"
-                      onclick="goto_deeplink()">Try it in SA Studio!</a><code style="margin-top: -25px;" class="lang-OSQL">${code}</code></pre>`
+                      onclick="goto_deeplink()">Try it in SA Studio!</a><code style="margin-top: -25px;" class="lang-OSQL">${Prism.highlight(code, Prism.languages.OSQL, 'OSQL')}</code></pre>`
 
             }
             const ret = this.origin.code.apply(this, arguments);
@@ -196,6 +196,14 @@
               e.setAttribute("href",newLink);
               e.setAttribute("target","_blank");
             })
+            const links =  document.querySelectorAll("a");
+            links.forEach((e) => {
+              const href = e.getAttribute("href");
+              if(href && href.startsWith("#/DL")){
+                const newLink = "https://studio.streamanalyze.com/home?goto=1&dl="+btoa(href.substring("#/DL".length));
+                e.setAttribute("href",newLink);
+              }
+            })
           })
         }
       ]
@@ -212,6 +220,9 @@
   <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
   <script src="https://unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script>
+  <script src="https://docs.streamanalyze.com/prism.osql.js"></script>
+  
+
 </body>
 
 </html>

@@ -346,7 +346,7 @@ ___
 ___
 
 > [function]
-> sign(Number x)->Number
+> sign(Number x)->Integer
 
 > [function-docs]
 > The signum of `x` 
