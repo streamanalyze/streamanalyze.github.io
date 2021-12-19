@@ -6,7 +6,7 @@ Do you want to learn how to create awesome looking charts and get a statistical 
 
 This tutorial will walk you through how to do statistical analysis of a dataset. This dataset is a collection of data from a Computer Fan where each reading has five measurements: **Accelerometer (X, Y, Z), Tachometer**, and **PWM**.
 
-This is a walk through of the work flow from a raw dataset to understanding the data. The first two parts will walk through the first steps of converting the raw data to a streamed format and looking at it. The guide consists of XX steps:
+This is a walk through of the work flow from a raw dataset to understanding the data. The first two parts will walk through the first steps of converting the raw data to a streamed format and looking at it. Below is an overview of the steps:
 
 > [note] **Note:** If you are running in SA Studio Community Edition or do not want to wait for the processing of all histograms you can go straight to step 5 since this model comes with the statistics pre-loaded.
 
