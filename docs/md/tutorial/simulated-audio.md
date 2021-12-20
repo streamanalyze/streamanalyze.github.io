@@ -27,7 +27,7 @@ y(t) &= A*sin(\omega{t}) \\
 $$
 where A is the amplitude and f is the frequency (Hz).
 
-<img src="/docs/images/sine-wave.png">
+<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/sine-wave.png">
 
 The p in the figure is the period $ (p = 1/f) $.
 
@@ -62,7 +62,7 @@ up by varying (or _modulating_) the frequency of our sound wave.
 
 Consider the following oscillation of the frequency, where $ f_l $ is the lowest and $ f_h $ is the highest.
 
-![frequency variation](/docs/images/frequency-wave.png "frequency variation")
+![frequency variation](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/docs/frequency-wave.png "frequency variation")
 
 > [note]   **Note:** Do not confuse this sine wave with the actual sound wave. This is only shows how we want the frequency component of the sound wave to vary over time. 
 

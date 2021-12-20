@@ -200,7 +200,7 @@
             links.forEach((e) => {
               const href = e.getAttribute("href");
               if(href && href.startsWith("#/DL")){
-                const newLink = "https://studio.streamanalyze.com/home?goto=1&dl="+btoa(href.substring("#/DL".length));
+                const newLink = "https://studio.streamanalyze.com/home?goto=1&dl="+btoa("#"+href.substring("#/DL".length));
                 e.setAttribute("href",newLink);
               }
             })

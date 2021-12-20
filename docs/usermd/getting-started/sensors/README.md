@@ -3,7 +3,7 @@ All of these are already supported for Enterprises and paying customers.
 
 1. [Raspberry Pi Zero + Environphat](/docs/usermd/getting-started/sensors/pi0envphat.md)
 2. Raspberry Pi + SenseHat (coming soon)
-3. Using arduino and RS232 to get sensor data (coming soon)
+3. [Using Arduino and RS232 to get sensor data](/DL/docs/&load_external=streamanalyze.com/streamer_tutorial&goto=streamer_tutorial/docs.md)
 4. Using csv:popen_stream for quick prototyping (coming soon)
 5. Using a socket server for CSV:socket_stream (coming soon)
 6. Using a socket server for JSON:socket_stream (coming soon)
