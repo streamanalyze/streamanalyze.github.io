@@ -11,7 +11,7 @@
 > </div>
 
 > [static-only]
-> 1.  [Your first queries](http://docs.streamanalyze.com/current/index.html#md_tutorial_README_html)
+> 1.  [Your first queries](https://docs.streamanalyze.com/index.html#/docs/md/tutorial/README.md)
 
 > [live-only]
 > 1.  [Your first queries](/docs/md/tutorial/README.md)

@@ -3,7 +3,7 @@ This document will walk you through how to connect a raspberry pi zero with an E
 
 **Hardware**:
 * [Raspberry Pi Zero](https://www.electrokit.com/en/product/raspberry-pi-zero-wh-board-with-header-2/)
-* [Enironphat](https://www.electrokit.com/en/product/enviro-phat-2/?gclid=Cj0KCQiAhf2MBhDNARIsAKXU5GTj4jVE8YJU4d5xfWGjLHyRI14ME42Z2qcb6KO7gCKGTk6dFcMsud4aAlzMEALw_wcB)
+* [Environphat](https://www.electrokit.com/en/product/enviro-phat-2/?gclid=Cj0KCQiAhf2MBhDNARIsAKXU5GTj4jVE8YJU4d5xfWGjLHyRI14ME42Z2qcb6KO7gCKGTk6dFcMsud4aAlzMEALw_wcB)
 
 
 
