@@ -1,1 +1,4 @@
+/docs/**/*.osql
+/docs/**/*.csv
+/docs/**/*.json
 /docs/*.cmd
