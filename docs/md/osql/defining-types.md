@@ -1,4 +1,4 @@
-## Defining Types
+# Defining Types
 
 The `create type` statement creates a new type stored in the database. The properties are defined separately as functions.
 
@@ -42,7 +42,7 @@ If *key* is specified for a property, it indicates that each value of the attrib
 create type TA under Student, Employee;
 ```
 
-### Deleting Types
+## Deleting Types
 
 The `delete type` statement deletes a type and all its subtypes.
 

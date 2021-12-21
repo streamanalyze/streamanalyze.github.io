@@ -1,4 +1,5 @@
-# Working with several streams in a query.
+# Working with several streams in a query
+
 In this section we will go through how to use one of the stream
 merging operators `pivot_streams` to combine several streams in a
 query. This tutorial might help you if you are working with streams of

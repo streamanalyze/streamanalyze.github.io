@@ -1,4 +1,4 @@
-## Creating Objects
+# Creating Objects
 
 The *create object* statement populates the database by creating objects and as instance(s) of a given [type](/docs/md/osql/defining-types.md) and all its supertypes.
 
@@ -54,7 +54,7 @@ Example:
 
 It is possible to specify `null` for a value when no initialization is desired for the corresponding function.
 
-### Deleting objects
+## Deleting objects
 
 Objects are deleted from the database with the `delete` statement.
 

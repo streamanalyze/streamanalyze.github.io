@@ -15,7 +15,7 @@ address of persons one can define:
      as select nm
           from Charstring a
          where personprops(p) = (nm,a);
- 
+         
    create function address(Person p) -> Charstring a
      as select a
           from Charstring nm

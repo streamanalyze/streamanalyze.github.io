@@ -1,4 +1,4 @@
-## Queries
+# Queries
 
 *Queries* retrieve objects having specified properties from the database. A query can be one of the following:
 
@@ -10,7 +10,7 @@
 
 4. It can be a general [expression](/docs/md/osql/basic-constructs.md#expressions).
 
-### <a name="function-calls"> Function calls </a>
+## Function calls
 
 A simple form of queries are calls to functions, for example: 
 ```
@@ -56,7 +56,7 @@ Example:
 In a function call, the types of the actual parameters must be the same as, or subtypes of, the types of the corresponding formal parameters.
 
 
-### <a name="the-select-statement"> The select statement </a>
+## The select statement
 
 The *select statement* provides the most flexible way to specify queries.
 
@@ -100,7 +100,7 @@ The `from` clause declares data types of local variables used in the query.  <a 
 The `where` clause gives selection criteria for the search. The where clause is specified as a *predicate*.
 </a>
 
-### <a name="predicates"> Predicates </a>
+## Predicates
 
 The `where` clause in a select statement specifies a selection filter as a logical predicate over variables. A predicate is an [expression](/docs/md/osql/basic-constructs.md#expressions) returning a boolean value, which can be expressed as logical value comparison operators (`>, *, +` etc.) and functions returning boolean results. The boolean operators `and` and `or` can be used to combine boolean values into composite predicates. 
 
@@ -138,7 +138,7 @@ select age(:p1) < 20 and home(:p1)="Uppsala"
 ```
 The query returns `true` if person `:p1` is younger than 20 and lives in Uppsala.
 
-### <a name="nested-function-calls"> Nested function calls </a>
+## Nested function calls
 
 If a function is applied on the result of a function returning a [bag](/docs/md/osql/basic-constructs.md#collections) of values, the outer function is applied **on each element** of that bag, the bag is *flattened*. This is called **Daplex semantics**. 
 
@@ -151,7 +151,7 @@ For example, consider the query:
 
 The function `friends()` returns a bag of persons, on which the function `name()` is applied. The normal semantics in sa.engine is that when a function (e.g. `name()`) is applied on a bag valued function (e.g. `friends()`) it will be *applied on each element* of the returned bag. In the example a bag of the names of the persons that are friends with Bill is returned. 
 
-### <a name="in-operator"> The *in* operator</a>
+## The *in* operator
 
 If a function returns a [bag](/docs/md/osql/basic-constructs.md#collections) the elements of that bag can be accessed using the `in` operator. 
 
@@ -175,7 +175,7 @@ Example:
 The query returns the names of all persons paired with the number of persons in the database. 
 
 
-### <a name="tuple-expression"> Tuple expressions</a>
+## Tuple expressions
 
 To retrieve the results of [tuple valued functions](/docs/md/osql/defining-functions.md#function-signatures) in queries, use *tuple expression* (syntax: `tuple-expr`).
 
@@ -193,7 +193,7 @@ Example:
    set (:m,:f)=parents2(:cain)
 ```
 
-### <a name="into-clause"> Into clause</a>
+## Into clause
 
 The optional `into` clause specifies variables to be bound to the result. 
 
@@ -223,7 +223,7 @@ Inspect `:r` with one of these equivalent queries:
    in(:r) 
 ```
 
-### <a name="aggregate-functions"> Aggregate functions</a>
+## Aggregate functions
 
 Aggregate functions such as `sum()`, `mean()`, `stdev()`, `min()`, `max()`, `count()` are handled specially. They are applied on entire [collections](/docs/md/osql/basic-constructs.md#collections) of values, rather than being applied for each element using the [Daplex semantics](/docs/md/osql/queries.md#nested-function-calls) of normal function calls.
 
@@ -301,7 +301,7 @@ The sort key does not need to be part of the result. For example, the following 
 ```
 
 
-### <a name="grouped-selections"> Grouped selections</a>
+## Grouped selections
 
 When analyzing data it is often necessary to group data, for example to get the sum of the salaries of employees per department. Such regroupings are specified though the optional `group by` clause. It specifies on which [expression](/docs/md/osql/basic-constructs.md#expressions) in the select clause the data should be grouped and summarized. This is called a *grouped selection*.
 
@@ -350,7 +350,7 @@ The group key need not be part of the result. For example the following query re
 ```
 
 
-### <a name="top-k-queries"> Top-k queries</a>
+## Top-k queries
 
 The optional `limit-clause` limits the number of returned values from the select statement. It is often used together with ordered selections to specify *top-k queries* returning the first few tuples in a set of objects based on some ranking.
 
@@ -373,7 +373,7 @@ For example, the following query retrieves the `:k+3` lowest income earners, whe
     limit :k+3
 ```
 
-### <a name="quantifier-function"> Quantifiers</a>
+## Quantifier function</a>
 
 The function `some()` implements logical exist over a subquery. 
 

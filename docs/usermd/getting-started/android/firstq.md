@@ -1,6 +1,8 @@
 
 > [note]  **Note:** Prerequisite(s): [Install on Android](/docs/usermd/getting-started/android/install.md)  
 
+# Executing your first query
+
 ## Test your setup
 
 Now that you have added your Android phone as an edge device to the server it is time to test some queries.
@@ -48,7 +50,7 @@ Now that you have tested that you can execute queries on the Android edge device
 
 **1.** First we check what sensors (signals) we have access to. We do this by executing the following query (ensure that you have <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-android-edge/device-selector-android-edge.png" alt="device-selector-android-edge.png" width="100" /> as selected device).
 
-```LIVE {"peer":"Android-edge"}
+```LIVE {"peer":"Android-edge","vis":"showText"}
 signals();
 ```
 
@@ -65,7 +67,7 @@ The query returns a set of the names of all the signals on the device and should
 
 **2.** Plot the accelerometer signal by executing the folowing query.
 
-```LIVE
+```LIVE {"peer":"Android-edge","vis":"showLine"}
 signal_stream("accelerometer");
 ```
 
@@ -80,7 +82,7 @@ Now that we have examined the accelerometer it is time to develop a simple model
 
 **1.** First we define a helping function that combines the three gravitation vectors in the stream from the accelerometer. This is done by typing in the function below and running it as a query (ensure that you still have <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-android-edge/device-selector-android-edge.png" alt="device-selector-android-edge.png" width="100" /> as selected device).
 
-```sql
+```LIVE {"peer":"Android-edge"}
 create function gravity_acceleration() -> Stream of Number 
   as select Stream of sqrt(sum(g .^ 2))
        from Vector of Number g
@@ -91,7 +93,7 @@ The query should return a string `#[OID <NUM> ]` which is the id of the function
 
 **2.** Test the helping function by running the following query.
 
-```sql
+```LIVE {"peer":"Android-edge","vis":"showLine"}
 stdev(winagg(gravity_acceleration(),50,5));
 ```
 
@@ -102,7 +104,7 @@ The query passes "a window" over the stream and computes the standard deviation 
 
 **3.** Define a function that signals if the shaking is above some threshold. This is done by running the following query.
 
-```sql
+```LIVE {"peer":"Android-edge"}
 create function shake_state(Number threshold) -> Stream of Number
   as select Stream of shakes
        from Number shakes, Number elem
@@ -113,7 +115,7 @@ create function shake_state(Number threshold) -> Stream of Number
 
 **4.** Test the shake state function by running the following query and shaking the phone.
 
-```sql
+```LIVE {"peer":"Android-edge","vis":"showLine"}
 shake_state(5);
 ```
 
@@ -124,7 +126,7 @@ The output plot should show a step function with value `1` if the phone is shaki
 
 **5.** We want the final model to only emit values if the shake state changes. This is done by wrapping the function call in a `changed()` statement. We do this in a separate function by running the following query.
 
-```sql
+```LIVE {"peer":"Android-edge"}
 create function shakes(Number threshold) -> Stream of Number
   as changed(shake_state(threshold));
 ```
@@ -136,12 +138,23 @@ The output of `shakes` is better visualized by simply printing the values than p
 
 **6.** Now our final model is ready. Try it by running the following query.
 
-```sql
+```LIVE {"peer":"Android-edge","vis":"showText"}
 shakes(5);
 ```
 
 It should emit the value `1` when the phone starts shaking, and the value `0` when it stops. Just what we wanted! 
 
+```shell
+0
+1
+0
+1
+0
+1
+0
+1
+0
+```
 
 
 ## Conclusion

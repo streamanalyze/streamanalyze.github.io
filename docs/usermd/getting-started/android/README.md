@@ -11,4 +11,4 @@
 > </div>
 
 
-1.  [Your first queries on Android](/docs/usermd/getting-started/android/firstq.md)
+2.  [Your first queries on Android](/docs/usermd/getting-started/android/firstq.md)

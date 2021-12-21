@@ -1,4 +1,5 @@
-# Visualizing geographical data using GeoJSON.
+# Visualizing geographical data using GeoJSON
+
 SA Studio supports visualization on Google Maps using [Geo JSON](https://geojson.org).
 You can try out and build your own GeoJSON object at [geojson.io](https://geojson.io).
 

@@ -1,8 +1,8 @@
-## Basic Constructs
+# Basic Constructs
 
 The basic building blocks of the OSQL query language are described here.
 
-### <a name="statements"> Statements
+## Statements
 
 *Statements* instruct sa.engine to perform various kinds of operations on the database, for example:
 ```
@@ -13,7 +13,7 @@ quit
 
 When using the sa.engine Console REPL, OSQL statements are always terminated by a semicolon (;). The `;` is not needed when using sa.studio. 
 
-### <a name="identifiers"> Identifiers
+## Identifiers
 
 *Identifiers* represent names of OSQL variables, functions, and types. Examples:
 ```
@@ -30,7 +30,7 @@ Notice that OSQL identifiers are NOT case sensitive; i.e. they are always intern
 create function ...
 ```
 
-### <a name="variables"> Variables
+## Variables
 
 *Variables* are of two kinds: *local variables* or *session variables*. 
 
@@ -100,11 +100,11 @@ Examples:
    "Hello World"
 ```
 
-### <a name="comments"> Comments 
+## Comments 
 
 A *comment* enclosed with `/*` and `*/`can be placed anywhere in an OSQL statement outside identifiers, constants, strings, or variables. 
 
-### <a name="expressions"> Expressions
+## Expressions
 
 *Expressions* are formulas expressed with the OSQL syntax that can be evaluated by the system to produce a *value*. Complex expressions can be built up in terms of other expression. Expressions are basic building blocks in all kinds of OSQL statements.
 
@@ -140,7 +140,7 @@ Notice that Boolean expressions, *predicates*, either return *true*, or nothing 
      => nothing
 ```
 
-### <a name="collections"> Collections
+## Collections
 
 *Collections* represent sets of objects. OSQL supports three kinds of collections: bags, vectors, and key-value associations (records):
 

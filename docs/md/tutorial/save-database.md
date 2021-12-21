@@ -85,7 +85,7 @@ following way:
 
 - Right click `User models` and choose `Create new model`, then enter
 the name of your new model, e.g. `my_c_to_f` for storing the [ctof
-function](/docs/md/tutorial/basic-functions.md#define-model-function)
+function](/docs/md/tutorial/basic-functions.md#derived-functions)
 in the pull-down menu. Then click `OK` to create a new model folder
 named `my_c_to_f`.
 
@@ -116,7 +116,7 @@ to the left. Then expand the `Models` folder in the side bar of the
 OSQL editor view.  You will the see `my_c_to_f` in the sidebar under
 `User models`. Select it and click on `master.osql`. You will enter a
 text editor for the file where you can paste the definition of the
-function [ctof()](/docs/md/tutorial/basic-functions.md#define-model-function)
+function [ctof()](/docs/md/tutorial/basic-functions.md#derived-functions)
 
 Don't forget to save the model file by clicking <i class="material-icons" style="vertical-align: middle">save</i> or pressing `ctrl+s`. Quit the
 editor by clicking <i class="material-icons" style="vertical-align: middle">close</i>.

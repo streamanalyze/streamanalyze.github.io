@@ -10,4 +10,4 @@
 > </a>
 > </div>
 
-1.  [Your first queries](/docs/usermd/getting-started/rpi/firstq.md)
+2.  [Your first queries](/docs/usermd/getting-started/rpi/firstq.md)

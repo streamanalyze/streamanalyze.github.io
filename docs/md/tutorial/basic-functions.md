@@ -87,7 +87,7 @@ doc(topic_named("Documentation"))
 
 or go to [Topics->Documentation](/docs/topic/Documentation) for details.
 
-### Math functions
+## Math functions
 
 There is a large library of basic mathematical functions built into
 the system and the usual arithmetic operators are available.
@@ -101,7 +101,7 @@ sin(3.14/2)*cos(3.14)
 To learn more about basic math functions go to
 [Topics->Math](/docs/topic/Math).
 
-### Session variables
+## Session variables
 
 During sessions with sa.engine it is often practical to temporarily
 save values of expressions in **session variables** prefixed with `:`
@@ -120,7 +120,7 @@ The session variable `:pi` is assigned the value of `sin(1)` and then
 permanently save values in the built-in database you must use **stored
 functions**, as explained next.
 
-### Stored functions
+## Stored functions
 
 Analysis *models* are defined in terms of a number of OSQL
 functions. OSQL functions are created and stored in the database by
@@ -196,7 +196,7 @@ set mypi() = asin(1)*2;
 mypi()
 ```
 
-### <a style="text-decoration: none" name="define-model-function">Derived functions </a>
+## Derived functions
 
 A *derived function* is a function defined by an expression.
 
@@ -218,7 +218,7 @@ argument(s) (`c` in `ctof`), the type(s) of the argument(s)
 (e.g. `Number`), and the type of the result from the computation,
 (e.g. `-> Number`).
 
-### Temporal functions
+## Temporal functions
 
 The function `local_time()` returns the current wall time as an [ISO
 time stamp](https://sv.wikipedia.org/wiki/ISO_8601).
@@ -250,7 +250,7 @@ local_time(ts(1))
 
 For more about functions over time visit [Topics->Time](/docs/topic/Time).
 
-### Vectors
+## Vectors
 
 So far the function calls were made over single values and sets of
 single values. Building mathematical models, e.g. to identify
@@ -303,7 +303,7 @@ returns element-wise multiplication.
 [1, 2, 3, 4] .^ 2
 ```
 
-### Vector functions
+## Vector functions
 
 There are many built-in **vector functions**, e.g.:
 
@@ -356,7 +356,7 @@ minkowski([1,2],[3,4], 2);
 minkowski([1,2],[3,4], 1.e320);
 ```
 
-### Matrices
+## Matrices
 
 A **matrix** is a two-dimensional numerical vector. It is the same
 as type `Vector of Vector of Number`.
@@ -369,7 +369,7 @@ as type `Vector of Vector of Number`.
 [[1,2],[3,4]] .* [[2,3],[6,7]]
 ```
 
-### <a style="text-decoration: none" name="FFT"> The Fast Fourier Transform
+## The Fast Fourier Transform
 
 The function `rfft(v)` computes the real number [Fast Fourier
 Transform](https://en.wikipedia.org/wiki/Fast_Fourier_transform)
@@ -393,7 +393,7 @@ The later tutorial section [Querying the microphone](/docs/md/tutorial/audiostre
 shows how user-defined functions over vectors and FFT can be used for
 filtering audio streams in real-time.
 
-### Vectors of objects
+## Vectors of objects
 
 So far the vectors contained only numbers, as required by math
 functions and operators. Actually, vectors can contain any kind of
@@ -414,7 +414,7 @@ as will be explained later.
 Go to [Topics->Vector](/docs/topic/Vector) for documentation of vector
 functions.
 
-### Sets and bags
+## Sets and bags
 
 Functions can also produce sets of objects where the order is not
 guaranteed as with vectors. For example, the function `range(n)`

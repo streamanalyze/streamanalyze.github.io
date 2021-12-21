@@ -1,4 +1,5 @@
 # Multi plot
+
 When using the visualization method `Multi plot` you can prepend a stream with
 a record giving it instructions on how to visualize the coming data.
 

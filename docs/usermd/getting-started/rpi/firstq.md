@@ -1,7 +1,7 @@
 
 > [note]  **Note:** Prerequisite(s): [Install on Rasperry Pi](/docs/usermd/getting-started/rpi/install.md) 
 
- 
+# Executing your first query
 
 ## Test your setup
 
@@ -150,6 +150,7 @@ edge_cq("pi-edge", "
 You are now looking at a stream of temperature readings from the internal sensor on the CPU.
 
 ## Defining a signal of the temperature sensor.
+
 To wrap this up, let's add some meta-data to `my_ctof` model that contains the necessary steps to add the 
 temperature sensor as a signal in sa.engine. Copy the following OSQL-statements and paste them into the `master.osql` file for the model **my_ctof**:
 

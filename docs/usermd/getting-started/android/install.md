@@ -1,6 +1,5 @@
-> [note]   **Note:** Prerequisite(s): [Install on Android](/docs/usermd/getting-started/android/install.md) 
-
 # Connecting Android device to your federation
+
 > [live-only] Since you are running inside a live  environment you can go directly to Device Hub -> getting started:
 > <div class="CTACont">
 > <a class="CTABtn" role="button" href="#/device_hub/getStarted/Android">

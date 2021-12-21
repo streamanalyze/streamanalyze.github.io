@@ -1,5 +1,4 @@
-
-## Bar plot.
+# Bar plot
 
 **Bar plot** works on the same data as **Line plot** but is better suited for
 the Vector and Record data.

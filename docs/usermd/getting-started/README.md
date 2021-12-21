@@ -1,4 +1,5 @@
 # Community Edition Guides
+
 These getting started guides will walk you through the steps of signing up and getting started with SA Studio. They should give you the basics needed for starting with Streaming Edge Analytics using SA Engine and Studio.
 
 Some of the guides will have prerequisite reads, if this is the case a note box like the one below will inform you of it.
@@ -13,9 +14,11 @@ Some of the guides will have prerequisite reads, if this is the case a note box 
 These are the getting started guides for the SA Studio Community Edition.
 
 ### Basic
+
 1. [Sign up](/docs/usermd/getting-started/sign-up.md)
 
 ### Getting started with edges
+
 1. [Getting started with Windows](/docs/usermd/getting-started/windows/install.md) 
 2. [Getting started with Linux (x86/64)](/docs/usermd/getting-started/linux/install.md) 
 3. [Getting started with Mac](/docs/usermd/getting-started/macos/install.md) 
@@ -46,6 +49,7 @@ All of these are already supported for Enterprises and paying customers.
 ### Analytics and data crunching using SA Engine.
 
 1. [Statistical analytics 1](/DL/docs/&load_external=streamanalyze.com/statistical_analysis_guide&goto=statistical_analysis_guide/docs.md)
+
 ### Connecting SA Studio to external systems
 
 All of these are already supported for Enterprises and paying customers.

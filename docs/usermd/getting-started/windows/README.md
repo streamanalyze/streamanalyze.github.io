@@ -11,4 +11,4 @@
 > </a>
 > </div>
 
-1.  [Your first queries on Windows](/docs/usermd/getting-started/windows/firstq.md)
+2.  [Your first queries on Windows](/docs/usermd/getting-started/windows/firstq.md)

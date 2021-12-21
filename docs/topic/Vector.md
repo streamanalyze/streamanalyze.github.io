@@ -14,7 +14,7 @@ Notice that the [select vector statement](/docs/md/osql/vector-queries.md)
 provides a powerful mechanism for constructing new vectors through
 queries in terms of functions.
 
-### <a name="numerical-vector-functions"> Numerical vector functions </a>
+## Numerical vector functions
 
 The following infix *operators* over numeric vectors `v` and `w`,
 matrices `a` and `b`, and numbers `lambda` are defined:
@@ -174,7 +174,7 @@ min([1,2,3]);
 min(["a","b","c"])
 ```
 
-## <a name="vector-aggregate-functions"> Vector aggregate functions </a>
+# Vector aggregate functions
 
 Dimension-wise aggregates over bags of vectors can be computed using
 the function `aggv()`.

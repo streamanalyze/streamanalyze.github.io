@@ -1,4 +1,4 @@
-## Searching Source Code
+# Searching Source Code
 
 The source code of all functions except some basic system functions are stored in the database. You can retrieve the source code for a particular function, search for functions whose names contain some string, or make searches based on the source code itself. Some system functions are available to do this.
 

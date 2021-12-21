@@ -1,5 +1,6 @@
 > [note]  **Note:** Prerequisite(s): [Install on macOS](/docs/usermd/getting-started/macos/install.md) 
 
+# Executing your first query
 
 > [note]  **Note:** This guide requires Java to run. To check if you have Java installed open Terminal on your Mac and run the following command.
 

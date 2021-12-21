@@ -1,5 +1,4 @@
-
-## Scatter plot
+# Scatter plot
 
 Scatter plot works with all the data types as well. But it makes the most sense
 when there are at least two dimensions. Lets start by creating a streaming

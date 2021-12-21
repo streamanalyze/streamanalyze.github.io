@@ -1,4 +1,4 @@
-## The Local Database
+# The Local Database
 
 sa.engine includes a built-in main-memory **local database**. The main
 use of the local database is for storing models, parameters and other

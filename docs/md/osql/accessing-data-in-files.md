@@ -1,4 +1,4 @@
-## Accessing data in files
+# Accessing data in files
 
 The file system where an sa.engine server is running can be accessed with a number of system functions:
 
@@ -34,7 +34,7 @@ The function `filedate()` returns the write time of a file with a given name:
 filedate(Charstring file) -> Date
 ```
 
-### Reading and writing files
+## Reading and writing files
 
 The function `readlines()` returns the lines in a file as a bag of strings:
 ```

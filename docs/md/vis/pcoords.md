@@ -1,5 +1,4 @@
-
-## Parallel coordinates
+# Parallel coordinates
 
 **Parallel coordinates** is a very good alternative when visualizing many 
 dimensions. [Wikipedia](https://en.wikipedia.org/wiki/Parallel_coordinates)

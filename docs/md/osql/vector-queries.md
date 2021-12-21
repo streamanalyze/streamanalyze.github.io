@@ -1,4 +1,4 @@
-## Vector queries
+# Vector queries
 
 The order of the objects in the bag returned by a regular [select statement](/docs/md/osql/queries.md#the-select-statement) is __not__ predetermined unless an [order by](/docs/md/osql/queries.md#ordered-selections) clause is specified. However, even if `order by` is specified the system will not preserve the order of the result of a select-statement if it is used in other operations.
 
@@ -15,7 +15,7 @@ If it is required to maintain the order of a set of data values the data type *V
 5. It can be a call to some [vector function](/docs/topic/Vector)
 returning vectors as result.
 
-### <a name="vector-construction"> Vector construction
+## Vector construction
 
 The vector constructor `[...]` notation creates a single vector with explicit contents. The following query constructs a vector of three numbers: 
 ```sql
@@ -41,7 +41,7 @@ The above query is different from the following query that returns a bag of tupl
     where name(p)="Bill"
 ```
 
-### <a name="the-select-vector-statement"> The select vector statement
+## The select vector statement
 
 The *select vector* statement provides a powerful way to construct new vectors by queries. It has the same syntax as the select-statement except for the keywords `Vector of` following the `select` clause. The difference is that whereas the select-statement returns a bag of objects, the select vector statement returns a vector of objects. 
 
@@ -108,7 +108,7 @@ By contrast, note that this query:
 ```
 returns `[-10,-10]`.
 
-### <a name="accessing-vector-elements"> Accessing vector elements
+## Accessing vector elements
 
 Vector elements can be accessed using the `[..]` syntax. The first element in a vector has index 1. 
 

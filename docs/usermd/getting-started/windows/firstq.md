@@ -1,4 +1,7 @@
 > [note]  **Note:** Prerequisite(s): [Install on windows](/docs/usermd/getting-started/windows/install.md) 
+
+# Executing your first query
+
 ## Test your setup
 
 Now that you have added your local Windows machine as an edge device to the server it is time to test some queries.
@@ -48,7 +51,7 @@ Also note that the local SA Engine instance in your Windows CMD prompt should co
 Now we have verified that your Windows machine is connected to the server, and that it can run queries retrieved from the server.
 
 
-##  Accessing the microphone
+## Accessing the microphone
 
 Now that you have tested that you can execute queries on the Windows machine it is time to do some tests with the microphone.
 

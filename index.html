@@ -28,6 +28,7 @@
       --sidebar-nav-pagelink-background-image--loaded: none;
       --sidebar-nav-pagelink-background-image: none;
       --sidebar-nav-pagelink-background-image--active: none;
+      --sidebar-toggle-offset-top: 75px;
       --content-max-width: 65em;
     }
 
@@ -97,12 +98,23 @@
       align-items: center;
     }
     .nav {
-      margin-top: 50px;
+      margin-top: 80px;
+    }
+    element.style {
+    }
+    .app-nav.no-badge {
+      background: #f7f7f7;
+      padding: 20px;
+      right: 0px;
+      top: 0px;
+      left: 0px;
+      text-align: left;
     }
   </style>
 </head>
 
 <body>
+  <nav class="app-nav no-badge"><ul><li><a href="#/docs/md/README" title="Docs">Docs</a></li><li><a href="#/docs/md/topics/README" title="Topics">Topics</a></li><li><a href="#/docs/md/modelmd/README" title="Guides">Guides</a></li></ul></nav>
   <div id="app"></div>
   <script>
     function goto_deeplink() {

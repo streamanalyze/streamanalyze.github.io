@@ -45,7 +45,7 @@ installed on an Android device.
 Finally, we will develop a new model called `detect-shake` that uses
 the accelerometer on the Android device.
 
-### Edge clients on PCs
+## Edge clients on PCs
 
 As a first step, we ship the model `my_c_to_f` to an edge client
 running on the server computer.

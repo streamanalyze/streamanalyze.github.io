@@ -1,4 +1,4 @@
-## Second Order Functions
+# Second Order Functions
 
 sa.engine functions are internally represented as any other objects and stored in the database. Object representing functions can be used in functions and queries too. An object representing a function is called a *functional*. *Second order functions* are functions that take functionals as arguments or results.
 
@@ -34,7 +34,7 @@ You can use generic functions when applying non-unique resolvents, in which case
 
 For example, `apply(functionnamed("plus"),[2,3.5])` returns `[5.5]`. This call will be somewhat slower than `apply(#'number.number.plus->number',[2,3.5])` since the resolvent is selected using [late binding](/docs/md/osql/defining-functions.md#late-binding).
 
-### <a name="transitive-closure"> Transitive closures
+## Transitive closures
 
 The *transitive closure* function `tclose()` is a second order function to explore graphs where the edges are expressed by a *transition function* specified by argument `fno`:
 ```
@@ -101,7 +101,7 @@ The query `tclose(#'arcstod',1,0)` will return the bag:
 
 **Notice** that only the first argument and result in the transition function define graph vertices's, while the remaining arguments and results are extra parameters for passing information through the traversal, as with `arcstod()`. Notice that there may be no more than three extra parameters in a transition function.
 
-### <a name="iterating-apply"> Iteration
+## Iteration
 
 The function `iterate()` applies a function `fn()` repeatedly. 
 

@@ -1,4 +1,4 @@
-## OSQL Syntax
+# OSQL Syntax
 
 For the syntax we use [BNF notation](https://en.wikipedia.org/wiki/Backus-Naur_form) with the following special constructs:
 

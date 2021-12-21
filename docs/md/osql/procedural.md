@@ -1,4 +1,4 @@
-## Procedural and stateful functions
+# Procedural and stateful functions
 
 A *procedural function* is a function defined as a sequence of OSQL
 statements that may have side effects, e.g. database update
@@ -57,7 +57,7 @@ Example of use:
 ```
    flatten_incomes(1000)
 ```
-### Iterating over results
+## Iterating over results
 
 The `for each` statement iterates over the result of a query by
 executing the `for each` body for each result variable binding of the

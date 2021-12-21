@@ -1,4 +1,5 @@
 # Install on i.MX8
+
 This guide assumes that you have installed a Linux based operating system with glibc on your [i.MX8](https://www.nxp.com/products/processors-and-microcontrollers/arm-processors/i-mx-applications-processors/i-mx-8-processors:IMX8-SERIES). 
 If you are using a configuration that does not have glibc or Linux on your i.MX8 contact us at hello@streamanalyze.com and let us know. SA Engine can be built against any of the standard C libraries and OS:es.
 
@@ -9,6 +10,7 @@ If you are using a configuration that does not have glibc or Linux on your i.MX8
 
 
 ## Download sa.engine package.
+
 Go to [the download page](https://studio.streamanalyze.com/download#tgeneral) and click the clipboard icon next to the i.MX8 download:
 
 <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/imx8_download.png" alt="imx8_download.png" style="width:100%"/>

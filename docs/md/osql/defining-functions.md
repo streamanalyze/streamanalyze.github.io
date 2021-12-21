@@ -1,4 +1,4 @@
-## Defining Functions
+# Defining Functions
 
 The *create function* statement defines a new user function stored in the database. Functions can be one of the following kinds:
 
@@ -31,7 +31,7 @@ Examples:
 
 Function names are **not** case sensitive and are internally stored upper-cased.
 
-### <a name="function-signatures"> Function signatures
+## Function signatures
 
 The *function signature* defines the types of the arguments and results of a function. 
 
@@ -56,7 +56,7 @@ Functions may return more than a single value as *tuples*, for example:
 has the signature `marriages(Person p) -> Bag of (Person spouse, Integer year)`.
 
  
-### <a name="stored-function"> Stored functions
+## Stored functions
 
 The *function body* specifies how values relate to arguments in a function definition.
 
@@ -75,7 +75,7 @@ A stored function is represented as a table in the database.
 
 **Notice** that stored functions cannot have arguments declared `Bag of`.
 
-### <a name="derived-function"> Derived functions
+## Derived functions
 
 A *derived function* is defined by a single query.
 
@@ -155,7 +155,7 @@ When functions in queries return tuples with more than one element the results a
       and name(p) = "Oscar"
 ```
 
-### <a name="overloaded-functions"> Overloaded functions
+## Overloaded functions
 
 Function names may be *overloaded*, i.e., functions having the same name may be defined differently for different argument types. This allows to define generic functions applicable on objects of several different argument types. Each specific implementation of an overloaded function is called a *resolvent*.
 
@@ -190,7 +190,7 @@ For example, the function:
 ```
 will choose the resolvent `CHARSTRING.CHARSTRING.LESS->BOOLEAN` since the function `name()` returns a string. In both cases the type resolution (selection of resolvent) will be done at compile time.
 
-### <a name="late-binding"> Late binding
+## Late binding
 
 Sometimes it is not possible to determine the resolvent to choose based on its arguments, so the type resolution has to be done at run time. This is called *late binding*.
 
@@ -219,7 +219,7 @@ Now, suppose that we need a function that returns the gross incomes of all perso
 ```
 Since `income` is overloaded with resolvents `EMPLOYEE.INCOME->INTEGER` and `MANAGER.INCOME->INTEGER` and both qualify to apply to employees, the resolution of `income(p)` will be done at run time. To avoid the overhead of late binding one may use casting, as explained next.
 
-### <a name="casting-expression"> Casting
+## Casting expressions
 
 The type of an expression can be explicitly defined using the *casting* statement, for example:
 ```sql
@@ -228,7 +228,7 @@ The type of an expression can be explicitly defined using the *casting* statemen
 ```
 
 
-### <a name="deleting-function"> Deleting functions
+## Deleting functions
 
 Functions are deleted with the `delete function` statement. 
 

@@ -1,6 +1,7 @@
 > [warning **Work in progress:** This section is still a work in progress 
 
 # Advanced configuration of nameservers and peers
+
 When setting up a real federation with sa.engine the basic configurations will
 only get you so far. In this section we will go through how you can configure the
 following settings:
@@ -11,6 +12,7 @@ following settings:
 * Connect configurations
 
 ## Configure hostname of server
+
 By default sa.engine takes the hostname of the host computer as it's hostname.
 In many cases it is desirable to set this to a DNS name or similar. This can 
 either be done by setting the environment variable `SA_HOSTNAME` to the desired
@@ -46,6 +48,7 @@ starting point is to check `get_all_addrs()` on all peers and make sure that the
 is an IP/hostname that is reachable from the client to the server.
 
 ## Secure sockets (TLS)
+
 Sa.engine uses ARM Mbed TLS for securing the transport layer. In sa.engine all peers
 must have a signed certificate from a common **Certificate Authority**. The server 
 certificate should have it's common name set to it's peer name.
@@ -66,6 +69,7 @@ authority.
 
 After calling `enable_security` all socket operations will default to TLS 
 operations. You have now enabled the physical security.
+
 ## Connect configurations
 
 Since there are many parameters to set which might be hard to get correctly set up 
@@ -76,6 +80,7 @@ used these configuration records to connect sa.engines to a federation.
 
 
 ### federation.localhost
+
 When a nameserver starts listening it will create a federation.localhost (unless configured not to) and put it under `sa_home()`:
 ```LIVE
 read_file(sa_home()+"federation.localhost");

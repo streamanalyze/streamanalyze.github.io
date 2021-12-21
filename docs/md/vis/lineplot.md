@@ -1,4 +1,5 @@
 # Line plot
+
 Lets start by looking at how **Line plot** works:
 ```LIVE {"vis":"showLine"}
 simsig(siota(1,200)/10);

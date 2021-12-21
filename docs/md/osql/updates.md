@@ -1,4 +1,4 @@
-## Updates
+# Updates
 
 Information stored in the database represent mappings between function arguments and results. These mappings are either defined at object creation time or altered by one of the function update statements: `set`, `add`, or `remove`. The extent of a function is the bag of tuples mapping its arguments to corresponding results. Updating a stored function means updating its extent.
 
@@ -112,7 +112,7 @@ The query:
 ```
 will return the string `"Hello, I am Tore"`.
 
-### <a name="cardinality-constraints"> Cardinality constraints
+## Cardinality constraints
 
 A *cardinality constraint* is a system maintained restriction on the number of allowed occurrences in the database of an argument or result of a [stored function](/docs/md/osql/defining-functions.md#stored-functions). For example, a cardinality constraint can be that there is at most one salary per person, while a person may have any number of children. The cardinality constraints are normally specified by function signatures.
 
@@ -166,7 +166,7 @@ Any variable in a stored function can be specified as key, which will restrict t
 
 Cardinality constraints can also be specified for foreign functions, which is important for optimizing queries using the functions. It is then up to the foreign function implementer to guarantee that specified cardinality constraints hold.
 
-### <a name="dynamic-updates"> Dynamic updates
+## Dynamic updates
 
 Sometimes it is necessary to create objects whose types are not known until runtime. Similarly one may wish to update functions without knowing the name of the function until runtime. This is achieved by the following procedural system functions:
 

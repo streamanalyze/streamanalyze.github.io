@@ -1,4 +1,4 @@
-## Querying the microphone
+# Querying the microphone
 
 If you run the desktop version of sa.studio it will start a stream
 server on your PC. If you also have Java installed you will have
@@ -108,7 +108,7 @@ stream elements since it is outside the frequency band `[80,400]`.
 > [exercise] **Exercise:** Make a query to find out your current background noise
 level.
 
-### <a name="define-model-function"> Defining a Model Function </a>
+## Defining a Model Function
 
 In order to re-use the above CQ for different frequency bands we can
 define a function `audio_band()` representing a model that returns a stream 

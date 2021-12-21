@@ -1,4 +1,4 @@
-## Identifying sounds
+# Identifying sounds
 
 In this tutorial it is shown how to identify sounds from an audio
 stream. It utilizes the built-in database to store pre-recorded
