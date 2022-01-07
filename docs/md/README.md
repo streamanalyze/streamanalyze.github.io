@@ -1,3 +1,4 @@
+# SA Engine documentation
 Read **[sa.engine - under the hood](https://streamanalyze.com/under-the-hood/)** for an overview
 of the full capabilities of the sa.engine system.
 

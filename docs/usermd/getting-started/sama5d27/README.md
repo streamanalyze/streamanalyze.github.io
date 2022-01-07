@@ -1,4 +1,6 @@
-> [note]  **Note:** Prerequisite(s): [sign up](/docs/usermd/getting-started/sign-up.md) 
+> [note]  **Note:** Prerequisite(s): [sign up](/docs/usermd/getting-started/sign-up.md)
+
+<iframe style="display: block; margin: auto" src="https://www.youtube.com/embed/o8HnpSsB528" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 1. [Install sa.engine on SAMA5D27](/docs/usermd/getting-started/sama5d27/install.md)
 

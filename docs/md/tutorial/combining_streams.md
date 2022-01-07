@@ -1,7 +1,7 @@
 # Working with several streams in a query
 
 In this section we will go through how to use one of the stream
-merging operators `pivot_streams` to combine several streams in a
+merging functions, `pivot_streams`, to combine several streams in a
 query. This tutorial might help you if you are working with streams of
 several signals and would like to combine and compare them.
 
@@ -9,7 +9,7 @@ several signals and would like to combine and compare them.
 
 The function `pivot_streams` transforms a vector of streams $ VS $ into
 a *pivoted* stream of vectors $ PS $ where each element $ PS_i $ is the
-most recently received value in stream $ VS_i $.
+most recently received value from some stream $ VS_i $ in $ VS $.
 
 ```LIVE
 doc("pivot_streams")

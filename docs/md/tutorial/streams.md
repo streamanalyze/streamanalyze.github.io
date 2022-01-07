@@ -226,7 +226,7 @@ ts(winagg(simstream(0.01),10,5))
   stream as line plot, bar plot, and text.
 
 The kind of windows discussed so far are called *counting windows* in
-that they produce windows vectors based on counting the incoming
+that they produce window vectors based on counting the incoming
 stream elements. This is a very efficient and simple method to form
 windows, e.g. for continuously computing statistics over windows of
 arriving data, as the moving average above. It works particular well
@@ -237,9 +237,9 @@ However, if the elements arrive irregularly one needs to form
 during a time period rather than how many elements have
 arrived. Temporal windows are formed with the OSQL function
 `twinagg(ts, size, Stride)` that takes a timestamped stream of objects
-as input and produces a time stamped stream of vectors of objects as
-result. The parameters `size` and 'stride' are here measured in seconds
-rather than number of elements as `winagg()`.
+as input and produces a time stamped stream of vectors of
+objects as result. The parameters `size` and 'stride' are here
+measured in seconds rather than number of elements as `winagg()`.
 
 *For example:*
 
