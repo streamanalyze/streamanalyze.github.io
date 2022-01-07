@@ -1,6 +1,8 @@
 > [note]  **Note:** Prerequisite(s): [sign up](/docs/usermd/getting-started/sign-up.md) 
 
-<iframe style="display: block; margin: auto" src="https://www.youtube.com/embed/m4WHSSJ7KtU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ 
+> [yt-embed] embed/m4WHSSJ7KtU
+
 # This section is for generic Linux on x86/64 architecture with GLibc.
 
 1. [Install sa.engine on Linux x86/64](/docs/usermd/getting-started/linux/install.md)

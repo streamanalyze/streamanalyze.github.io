@@ -1,7 +1,9 @@
 
 > [note]  **Note:** Prerequisite(s): [sign up](/docs/usermd/getting-started/sign-up.md) 
 
-<iframe  style="display: block; margin: auto" src="https://www.youtube.com/embed/Qn7NtcMpUSc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ 
+> [yt-embed] embed/Qn7NtcMpUSc
+
 
 1. [Install sa.engine on Windows](/docs/usermd/getting-started/windows/install.md)
 

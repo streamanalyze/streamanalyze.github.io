@@ -181,6 +181,15 @@
               return "<div  class='docs-function'><p>" + src.slice(13) + "</div>"
             } else if (src.startsWith("<p>[function-docs]")) {
               return "<div  class='md-box docs'><p>" + src.slice(18) + "</div>"
+            } else if (src.startsWith("<p>[yt-embed]")) {
+              return `<div class='md-box' style="
+                      position: relative;
+                      padding-bottom: 56.25%;
+                      height: 0;"> 
+                   <iframe style="display: block;position: absolute;top: 0;left: 0;margin: 0; width: 100%; height: 100%;" 
+                         src="https://www.youtube.com/${src.slice(13,-4).trim()}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+                   </iframe>
+                 </div>`;
             }
             return "<blockquote>" + src + "</blockquote>";
           }
