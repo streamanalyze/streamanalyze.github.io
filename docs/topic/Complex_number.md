@@ -1,14 +1,14 @@
 # Complex number functions:
 
 > [function]
-> abs(Complex v)->Number
+> abs(Complex v)->Real
 
 
 
 ___
 
 > [function]
-> complex(Number re,Number im)->Complex
+> complex(Real re,Real im)->Complex
 
 > [function-docs]
 > Constructor and accessors for complex numbers 
@@ -25,14 +25,14 @@ ___
 ___
 
 > [function]
-> div(Number x,Complex y)->Complex
+> div(Real x,Complex y)->Complex
 
 
 
 ___
 
 > [function]
-> div(Complex x,Number y)->Complex
+> div(Complex x,Real y)->Complex
 
 
 
@@ -73,7 +73,7 @@ ___
 ___
 
 > [function]
-> im(Vector of Complex v)->Vector of Number
+> im(Vector of Complex v)->Vector of Real
 
 > [function-docs]
 > The imaginary numbers of a complex vector 
@@ -90,14 +90,14 @@ ___
 ___
 
 > [function]
-> minus(Number x,Complex y)->Complex
+> minus(Real x,Complex y)->Complex
 
 
 
 ___
 
 > [function]
-> minus(Complex x,Number y)->Complex
+> minus(Complex x,Real y)->Complex
 
 
 
@@ -118,7 +118,7 @@ ___
 ___
 
 > [function]
-> plus(Number x,Complex y)->Complex
+> plus(Real x,Complex y)->Complex
 
 
 
@@ -142,7 +142,7 @@ ___
 ___
 
 > [function]
-> plus(Complex x,Number y)->Complex
+> plus(Complex x,Real y)->Complex
 
 
 
@@ -166,7 +166,7 @@ ___
 ___
 
 > [function]
-> re(Vector of Complex v)->Vector of Number
+> re(Vector of Complex v)->Vector of Real
 
 > [function-docs]
 > The real numbers of a complex vector 
@@ -176,7 +176,7 @@ ___
 ___
 
 > [function]
-> times(Complex x,Number y)->Complex
+> times(Complex x,Real y)->Complex
 
 
 
@@ -200,7 +200,7 @@ ___
 ___
 
 > [function]
-> times(Number x,Complex y)->Complex
+> times(Real x,Complex y)->Complex
 
 
 

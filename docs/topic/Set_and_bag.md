@@ -61,7 +61,7 @@ ___
 ___
 
 > [function]
-> iota(Number l,Number u)->Bag of Integer r
+> iota(Integer l,Integer u)->Bag of Integer r
 
 > [function-docs]
 > Same as `range(l,u)` 
@@ -91,7 +91,7 @@ ___
 ___
 
 > [function]
-> range(Number u)->Bag of Integer
+> range(Integer u)->Bag of Integer
 
 > [function-docs]
 > Construct bag of integers between `0` and `u` 
@@ -101,7 +101,7 @@ ___
 ___
 
 > [function]
-> range(Number l,Number u)->Bag of Integer
+> range(Integer l,Integer u)->Bag of Integer
 
 > [function-docs]
 > Construct bag of integers between `l` and `u` 

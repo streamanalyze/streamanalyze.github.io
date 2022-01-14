@@ -56,7 +56,7 @@ ___
 ___
 
 > [function]
-> tclosed(Function fn,Object o,Number maxdepth)->(Object r,Integer depth)
+> tclosed(Function fn,Object o,Integer maxdepth)->(Object r,Integer depth)
 
 > [function-docs]
 > Get the transitive closure of applying the function fn on the

@@ -442,7 +442,7 @@ ___
 > minkowski(Vector of Number v,Vector of Number w,Number r)->Real
 
 > [function-docs]
-> Minkowski distance of degress `r` between vectors `v` and `w` 
+> Minkowski distance of degree `r` between vectors `v` and `w` 
 
 
 
@@ -479,7 +479,7 @@ ___
 ___
 
 > [function]
-> new_vector(Number dim,Object e)->Vector
+> new_vector(Integer dim,Object e)->Vector
 
 > [function-docs]
 > Construct vector of size `dim` will all elements being `e` 
@@ -499,7 +499,7 @@ ___
 ___
 
 > [function]
-> ones(Number dim)->Vector of Number
+> ones(Number dim)->Vector of Integer
 
 > [function-docs]
 > Construct vector of `dim` 1:s 
@@ -706,7 +706,7 @@ ___
 ___
 
 > [function]
-> zeros(Number dim)->Vector of Number
+> zeros(Number dim)->Vector of Integer
 
 > [function-docs]
 > Construct vector of `dim` 0:s 

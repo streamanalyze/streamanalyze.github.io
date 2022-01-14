@@ -42,7 +42,7 @@ ___
 ___
 
 > [function]
-> dropfunction(Function fn,Number permanent)->Function
+> dropfunction(Function fn,Integer permanent)->Function
 
 > [function-docs]
 > Remove all rows of stored function `fn`. 

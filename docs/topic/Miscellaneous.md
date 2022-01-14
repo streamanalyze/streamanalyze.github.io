@@ -68,23 +68,6 @@ ___
 ___
 
 > [function]
-> cases(Vector conditions,Vector values)->Object
-
-
-
-___
-
-> [function]
-> coalesce(Bag sq,Object dflt)->Object
-
-> [function-docs]
-> Return default value `dflt` if a query result `sq` is empty 
-
-
-
-___
-
-> [function]
 > erase_image()->Charstring
 
 > [function-docs]

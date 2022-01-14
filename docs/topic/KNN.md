@@ -25,14 +25,14 @@ ___
 ___
 
 > [function]
-> knn(Vector of Number,Number k,Function fn)->Bag
+> knn(Vector of Number,Integer k,Function fn)->Bag
 
 
 
 ___
 
 > [function]
-> k_nearest(Vector of Number x,Number k,Function disfn,Bag of (Object,
+> k_nearest(Vector of Number x,Integer k,Function disfn,Bag of (Object,
          Vector of Number))->Bag of (Object,Object)
 
 > [function-docs]
@@ -44,7 +44,7 @@ ___
 ___
 
 > [function]
-> k_nearest_with_fn(Vector of Number x,Number k,Function disfn,Function fn)
+> k_nearest_with_fn(Vector of Number x,Integer k,Function disfn,Function fn)
                  ->Bag of (Object,Object)
 
 

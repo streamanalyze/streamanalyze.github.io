@@ -319,7 +319,7 @@ ___
 ___
 
 > [function]
-> server(Charstring name,Charstring host,Number port)->Boolean
+> server(Charstring name,Charstring host,Integer port)->Boolean
 
 > [function-docs]
 > Run this process as server named `name` on `host` listening on `port` 

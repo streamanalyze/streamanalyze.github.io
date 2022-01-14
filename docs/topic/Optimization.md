@@ -89,10 +89,10 @@ ___
 ___
 
 > [function]
-> plan_cost(Function f)->(Real co,Real fo)
+> plan_cost(Function f)->Bag of (Real,Real)
 
 > [function-docs]
-> The estimated cost of executing function `f` 
+> The estimated cost of executing resolvents of function `f` 
 
 
 
@@ -110,10 +110,10 @@ ___
 ___
 
 > [function]
-> plan_cost(Charstring fn)->(Real,Real)
+> plan_cost(Charstring fn)->Bag of (Real,Real)
 
 > [function-docs]
-> The estimated cost of executing function named `fn` 
+> The estimated cost of executing resolvents of function named `fn` 
 
 
 

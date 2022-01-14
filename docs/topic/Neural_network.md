@@ -369,13 +369,13 @@ ___
 
 > [function-docs]
 > Training of an RNN sann. The trainer will unroll the network based on the
-> size of the windows in data.
->   `sann` The sann network to train.
->   `learning_rate` The rate at which the weights in the network are updated.
->   `data` Stream of training data. Each Vector of Vector must have the format
->         `[[<truth>, <observation>]]`. Both `truth` and `observation` may have 
->         the type `Vector of Number` or `Numarray` 
-> 
+>      size of the windows in data.
+>      `sann` The sann network to train.
+>      `learning_rate` The rate at which the weights in the network are updated.
+>      `data` Stream of training data. Each Vector of Vector must have the format
+>      `[[<truth>, <observation>]]`. Both `truth` and `observation` may have 
+>      the type `Vector of Number` or `Numarray` 
+>   
 
 
 
@@ -413,8 +413,8 @@ ___
 > sann:srand(Integer seed)->Boolean
 
 > [function-docs]
-> Seed the neural network random generator with seed `seed`, good when testing
->  neural networks to get consistent results 
+> Seed the neural network random generator with seed `seed`, good when 
+>      testing neural networks to get consistent results 
 
 
 
@@ -460,8 +460,8 @@ ___
 
 > [function-docs]
 > Creates a tree structure of the network. Call this function on a sann
->    in the visual analyzer with `automatic` as visualization to get a graph
->    visualization of the network 
+>      in the visual analyzer with `automatic` as visualization to get a graph
+>      visualization of the network 
 
 
 
@@ -702,9 +702,9 @@ ___
 
 > [function-docs]
 > Create a variable tensor.
-> `dimensions` vector of a maximum size 4 with sizes for each dimension.
-> `vals` values for the tensor
-> `gradients` gradients of tensor, if unsure how to use, set to `[0]` 
+>      `dimensions` vector of a maximum size 4 with sizes for each dimension.
+>      `vals` values for the tensor
+>      `gradients` gradients of tensor, if unsure how to use, set to `[0]` 
 
 
 
@@ -714,7 +714,8 @@ ___
 > truth_vec(Number size,Number truth)->Vector of Number
 
 > [function-docs]
-> Create a vector of number of size `size` where index `truth` is set to 1 
+> Create a vector of number of size `size` where index `truth` 
+>      is set to 1 
 
 
 

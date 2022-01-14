@@ -21,7 +21,7 @@ The system supports the usual basic arithmetic operators:
 ___
 
 > [function]
-> acos(Number x)->Real
+> acos(Real x)->Real
 
 > [function-docs]
 > Inverse cosine radians of `x` 
@@ -31,7 +31,7 @@ ___
 ___
 
 > [function]
-> asin(Number x)->Real
+> asin(Real x)->Real
 
 > [function-docs]
 > Inverse sine radians of `x` 
@@ -41,7 +41,7 @@ ___
 ___
 
 > [function]
-> atan(Number x)->Real
+> atan(Real x)->Real
 
 > [function-docs]
 > Inverse tangent radians of `x` 
@@ -51,7 +51,7 @@ ___
 ___
 
 > [function]
-> atan2(Number y,Number x)->Number
+> atan2(Real y,Real x)->Real
 
 > [function-docs]
 > The angle in radians between the positive x-axis of a plane and 
@@ -72,7 +72,7 @@ ___
 ___
 
 > [function]
-> cos(Number x)->Real
+> cos(Real x)->Real
 
 > [function-docs]
 > Cosine of `x` radians 
@@ -102,7 +102,7 @@ ___
 ___
 
 > [function]
-> exp(Number x)->Real
+> exp(Real x)->Real
 
 > [function-docs]
 > Natural exponent `e^x` 
@@ -122,7 +122,7 @@ ___
 ___
 
 > [function]
-> frand(Number high)->Real
+> frand(Real high)->Real
 
 > [function-docs]
 > Real random number in interval `[0,high)` 
@@ -132,7 +132,7 @@ ___
 ___
 
 > [function]
-> frand(Number low,Number high)->Real
+> frand(Real low,Real high)->Real
 
 > [function-docs]
 > Real random number in interval `[low,high)` 
@@ -162,7 +162,7 @@ ___
 ___
 
 > [function]
-> ln(Number x)->Real
+> ln(Real x)->Real
 
 > [function-docs]
 > Natural logarithm of `x` 
@@ -172,7 +172,7 @@ ___
 ___
 
 > [function]
-> log10(Number x)->Real
+> log10(Real x)->Real
 
 > [function-docs]
 > The base 10 logarithm of `x` 
@@ -286,7 +286,7 @@ ___
 ___
 
 > [function]
-> rand(Number low,Number high)->Integer
+> rand(Integer low,Integer high)->Integer
 
 > [function-docs]
 > Integer random number in interval `[low,high)` 
@@ -296,7 +296,7 @@ ___
 ___
 
 > [function]
-> rand(Number high)->Integer
+> rand(Integer high)->Integer
 
 > [function-docs]
 > Integer random number in interval `[0,high)` 
@@ -306,7 +306,7 @@ ___
 ___
 
 > [function]
-> rand_seed(Number x)->Integer
+> rand_seed(Integer x)->Integer
 
 > [function-docs]
 > New random seed 
@@ -336,7 +336,7 @@ ___
 ___
 
 > [function]
-> roundto(Object o,Number digits)->Literal
+> roundto(Object o,Integer digits)->Literal
 
 > [function-docs]
 > Round numeric values in `o` to `digits` significant decimals 
@@ -356,7 +356,7 @@ ___
 ___
 
 > [function]
-> sin(Number x)->Real
+> sin(Real x)->Real
 
 > [function-docs]
 > Sine of `x` radians 
@@ -376,7 +376,7 @@ ___
 ___
 
 > [function]
-> tan(Number x)->Real
+> tan(Real x)->Real
 
 > [function-docs]
 > Tangent of `x` radians 

@@ -18,8 +18,8 @@ my_get_summary_md("modelmd/","summary.md","*",["Getting started"],2);
 
 write_file(get_summary_md("","summary.md"), "docs/summary.md");
 write_file(get_summary_md("","summary.md"), "docs/md/summary.md");
-write_file(:model_summary, "docs/md/topics/summary.md");
-write_file(:model_summary, "docs/topic/summary.md");
+write_file(get_summary_md("topics/","summary.md"), "docs/md/topics/summary.md");
+write_file(get_summary_md("topics/","summary.md"), "docs/topic/summary.md");
 write_file(:model_summary, "docs/md/modelmd/summary.md");
 write_file(:model_summary, "docs/usermd/summary.md");
 write_file(:model_summary, "docs/systemmd/summary.md");

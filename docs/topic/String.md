@@ -69,7 +69,7 @@ ___
 ___
 
 > [function]
-> length(Charstring str)->Number
+> length(Charstring str)->Integer
 
 > [function-docs]
 > Number of characters in string `str` 

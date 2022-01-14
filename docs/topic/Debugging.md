@@ -1,17 +1,7 @@
 # Debugging functions:
 
 > [function]
-> asserteq(Object x,Object y,Charstring message)->Boolean
-
-> [function-docs]
-> Print error message if `x` and `y` are different 
-
-
-
-___
-
-> [function]
-> expanded_image(Function f)->Number
+> expanded_image(Function f)->Integer
 
 
 
