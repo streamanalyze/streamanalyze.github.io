@@ -19,23 +19,25 @@ create function get_tach(Integer pwm) -> Number
 
 We can fill the `tach` function with the following query:
 
-```OSQL
-select add_function("tach", [p],[ta])
+```LIVE
+select addfunction("tach", [p],[ta])
   from Integer p, Number ta
  where (p,ta) in (
-     select distinct pwm, tach
-       from Integer pwm, Integer tach, Vector v
-      where v in class_stream(2)
-        and tach = Number(v[4,1])
-        and pwm = round(Number(v[5,1])));
+     select pwm, mean(tach)
+       from Integer pwm, Integer tach, Vector of Number v
+      where v in class_stream(2) 
+        and tach = Number(v[4])
+        and pwm = round(Number(v[5]))
+      group by pwm
+);
 ```
 
 ## Looking at difference
 
-```LIVE {"vis":"automatic"}
+```LIVE
 {'sa_plot': 'Scatter plot', 
  'labels':['pwm','tach', 'rati',"class","i"],
- "y_axis": "rati", "color_axis": "class", "size_axis": "off"};         
+ "y_axis": "rati", "color_axis": "class", "size_axis": "off"}; 
 select vector of [pwm,tach,tach/get_tach(pwm),c,i]
   from Integer i, Number tach, Number pwm,
        Vector of vector v, Integer c
@@ -59,10 +61,11 @@ set :v = (select Vector of [
               pwm
             ]
             from Vector v, Number tach, Number pwm
-           where v in merge_streams(bag(test_stream(1,1),
-                                        test_stream(2,-1),
-                                        test_stream(3,-1),
-                                        test_stream(4,-1)))
+           where v in merge_streams(
+                       bag(widowed_stats_test_stream(1,1),
+                           widowed_stats_test_stream(2,-1),
+                           widowed_stats_test_stream(3,-1),
+                           widowed_stats_test_stream(4,-1)))
              and tach = v[2,4,1]
              and pwm = v[2,5,1]);
 ```

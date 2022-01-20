@@ -2,7 +2,7 @@
 
 This section will quickly outline how to use DBSCAN on the Tachometer and PWM in the dataset. For more details on how DBSCAN works checkout [the documentation for DBSCAN](/docs/systemmd/dbscan/docs)
 
-```OSQL
+```LIVE
 // Create DBSCAN instance
 
 load_system_model("dbscan");
@@ -10,7 +10,7 @@ load_system_model("dbscan");
 dbscan:generate("tach_pwm");
 ```
 
-```OSQL
+```LIVE
 // Add Tach and PWM (4,5) to DBSCAN model for all data
 // EXCEPT low voltage (which is the outlier we want to
 // Identify)
@@ -47,7 +47,7 @@ select d
 
 Except for some outliers we have a consistent min distance below 30, let's start with that as hyper parameter to DBCSAN. Min points is set to 3.
 
-```OSQL
+```LIVE
 //Fit the model
 tach_pwm:dbscan(30,3)
 ```
@@ -77,10 +77,10 @@ set :v = (select Vector of [
               pwm
             ]
             from Vector v, Number tach, Number pwm
-           where v in merge_streams(bag(test_stream(1,-1),
-                                        test_stream(2,1),
-                                        test_stream(3,1),
-                                        test_stream(4,1)
+           where v in merge_streams(bag(widowed_stats_test_stream(1,-1),
+                                        widowed_stats_test_stream(2,1),
+                                        widowed_stats_test_stream(3,1),
+                                        widowed_stats_test_stream(4,1)
                                         ))
              and tach = v[2,4,1]
              and pwm = v[2,5,1]);

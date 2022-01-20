@@ -125,27 +125,6 @@ __Multiply vector elements:__
 [[1],2,3].*[[4],5,[6]]
 ```
 
-__Matrix multiplication:__
-
-The type `Matrix` is an alias for `Vector of Vector of Number`.
-
-The scalar product is computed when the function `times` (operator
-`*`) is applied on vectors and on combinations of vectors and
-matrices.
-
-Matrix multiplication is used when the function `times` (operator `*`)
-is applied on matrices. The shapes of `a` and `b` must match.
-
-*Matrix multiplication:*
-```LIVE
-[[1,2],[3,4],[5,6]] * [[7,8],[9,10]]
-```
-
-*Two scalar multiplications*
-```LIVE
-[4,5,6] * [[1,2,3],[6,7,8]]
-```
-
 __Raise each element to a given exponent:__
 
 ```LIVE
@@ -173,6 +152,48 @@ min([1,2,3]);
 
 min(["a","b","c"])
 ```
+
+# Transforming vectors
+
+The function `section(v,l,u), ` returns a *splice* of
+a vector `v`, e.g.:
+
+```LIVE
+section([1,2,3,4,5],2,4)
+```
+The function `skip(v,n)` returns the part of vector `v` starting at
+position `n+1`, e.g.:
+```LIVE
+skip(["a","b","c"],2)
+```
+
+The function `permute(v,indl)` permutes the elements of a vector, e.g.:
+```LIVE
+permute([1,2,3,4,5],[2,4])
+```
+
+# Matricies
+
+The type `Matrix` is an alias for type `Vector of Vector of Number`.
+
+Matrix multiplication is used when the function `times` (operator `*`)
+is applied on matrices. The shapes of `a` and `b` must match, e.g.:
+```LIVE
+[[1,2],[3,4],[5,6]] * [[7,8],[9,10]]
+```
+
+The scalar product is computed when the function `times` (operator
+`*`) is applied on vectors and on combinations of vectors and
+matrices, e.g.two scalar multiplications:
+```LIVE
+[4,5,6] * [[1,2,3],[6,7,8]]
+```
+The function `transpose(m)` trasposes the matrix `m`, e.g.:
+```LIVE
+transpose([[1,2,3],[6,7,8]])
+```
+
+
 
 # Vector aggregate functions
 

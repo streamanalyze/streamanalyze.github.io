@@ -120,7 +120,7 @@ multiplot:scatter_matrix([1,2],
                          "class","off",350,1),
 {"batch": 1});
 multicastreceive((select vector of "s"+range(4)),
-                 "get_tpwmc",[[1],[2],[3],[4]])
+                 "get_tpwmc",[[1,true],[2,true],[3,true],[4,true]])
 ```
 
 > [note] **Note:**  The use of `merge` to add the field `"batch":1` to the top level multi plot record.

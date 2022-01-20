@@ -140,7 +140,7 @@ The above command will start 20 SAS (SA Engine Servers) connected to the federat
 
 ```LIVE
 /* Make sure all new servers have loaded the model */
-ship("s"+iota(1,4),'load_model("statisitical_analysis")');
+ship("s"+iota(1,4),'load_model("statistical_analysis_guide")');
 ```
 
 ## Multicast receive
