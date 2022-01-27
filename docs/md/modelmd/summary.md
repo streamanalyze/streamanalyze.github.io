@@ -42,3 +42,6 @@
         - [3. FFT-spectral search.](/docs/usermd/statistical_analysis_guide/docs/fft.md)
     - [Streamer tutorial](/docs/usermd/streamer_tutorial/docs.md)
     - [RPI0 + Environphat](/docs/usermd/pi0/docs.md)
+    - [MQTT Tutorial](/docs/usermd/mqtt-tutorial/README.md)
+      - [Simple example](/docs/usermd/mqtt-tutorial/simple.md)
+      - [Secure MQTT](/docs/usermd/mqtt-tutorial/secure-mqtt.md)

@@ -259,10 +259,20 @@ ___
 ___
 
 > [function]
-> argmax(Vector v)->Integer i
+> argmax(Vector v)->Integer
 
 > [function-docs]
-> Indicies of the largest elements in `v` 
+> Index of the first largest element in `v` 
+
+
+
+___
+
+> [function]
+> argmin(Vector v)->Integer
+
+> [function-docs]
+> Index of the first smallest element in `v` 
 
 
 

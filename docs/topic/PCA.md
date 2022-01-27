@@ -30,7 +30,7 @@ ___
 ___
 
 > [function]
-> rank_dimensions(Bag of Vector of Number observations)->(Number,Number)
+> rank_dimensions(Bag of Vector of Number observations)->Bag of (Number,Number)
 
 > [function-docs]
 > Rank the dimensions in a set of `observations` by their variances 
@@ -40,7 +40,7 @@ ___
 ___
 
 > [function]
-> rank_pca_dim(Vector sorted_pca)->(Number,Number)
+> rank_pca_dim(Vector sorted_pca)->Bag of (Number,Number)
 
 > [function-docs]
 > Rank the dimensions in a set of sorted PCA vectors by their variances 

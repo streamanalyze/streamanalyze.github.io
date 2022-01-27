@@ -1,3 +1,4 @@
+load_model("mqtt-tutorial");
 load_model("pi0");
 load_model("streamer_tutorial");
 load_model("statistical_analysis_guide");
