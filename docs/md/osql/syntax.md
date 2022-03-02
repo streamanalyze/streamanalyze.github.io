@@ -141,9 +141,9 @@ delete-object-stmt ::= 'delete' variable
 Syntax of *queries*:
 ```
 query ::= 
-      select-stmt |
-      select-vector-stmt |
-      select-stream-stmt |
+      select-query              |
+      select-vector-query       |
+      select-stream-query       |
       expression
 ```
 Syntax of *function calls*:
@@ -158,7 +158,7 @@ infix-operator ::=
 
 parameter-value ::= 
       expression |
-      '(' select-stmt ')' |
+      '(' select-query ')' |
       tuple-expression
 
 tuple-expression ::= '(' expression-commalist ')'
@@ -180,9 +180,9 @@ check-clauses ::=
       'check' expression '=>' expression [check-clauses]
 ```
 
-Syntax of the *select statement*:
+Syntax of a *select query*:
 ```
-select-stmt ::=
+select-query ::=
       'select' ['distinct']
       [select-clause]
       [into-clause]
@@ -217,10 +217,10 @@ predicate-expression ::=
       '(' predicate-expression ')'                    |
       expression
 ```
-Syntax of *select Vector* queries
+Syntax of *select vector queries*:
 
 ```
-select-vector-stmt ::=
+select-vector-query ::=
       'select Vector of' expression
       ['distinct']
       [select-clause]
@@ -231,10 +231,10 @@ select-vector-stmt ::=
       [order-by-clause]
       [limit-clause]
 ```
-Syntax of *select Stream* queries
+Syntax of *select stream queries*:
 
 ```
-select-stream-stmt ::=
+select-query ::=
       'select Stream of' expression
       [select-clause]
       [from-clause]

@@ -56,39 +56,6 @@ ___
 ___
 
 > [function]
-> pc(Charstring fn)->Bag of Function
-
-> [function-docs]
-> Display the execution plan of function named `fn`.
->      If `fn` is generic display execution plans of its resolvents 
-
-
-
-___
-
-> [function]
-> pc(Function f)->Bag of Function r
-
-> [function-docs]
-> Display the execution plan of function `f`. 
->      If `f` is a generic function display execution plans of its resolvents 
-
-
-
-___
-
-> [function]
-> pc(Charstring fn,Charstring bpat)->Function
-
-> [function-docs]
-> Display the execution plan of function named `fn` 
->      for binding pattern `bpat` 
-
-
-
-___
-
-> [function]
 > plan_cost(Function f)->Bag of (Real,Real)
 
 > [function-docs]

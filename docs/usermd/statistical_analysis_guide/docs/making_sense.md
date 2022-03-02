@@ -36,13 +36,13 @@ select vector of x
  order by i)
 ```
 
-### Conclusions so far.
+### Conclusions so far
 
 So far when looking at the data we can conclude that the fan was probably rotated between recordings meaning that we would have to remove the rotations of the gravitational acceleration vector before using its absolute values for detecting different classes. However we can using the standard deviation easily detect if there is an object stuck in the fan (which makes sense logically as well).
 
 This means that we now have three other classes left to separate using the Tachometer and PWM. Let's see what we can dig out.
 
-## Scatter Plot Matrices.
+## Scatter Plot Matrices
 
 Let's start by looking only at the standard deviation of the accelerometer dimensions in a scatter plot matrix.
 
@@ -75,7 +75,7 @@ select vector of [x,y,z,tach,pwm,i,c]
 
 These graph further support that we can easily separate class 3 from the rest of the classes. This is not news anymore since we got to the same conclusion before. But it is nice to verify.
 
-### Comparing the mean of Tachometer and PWN.
+### Comparing the mean of Tachometer and PWN
 
 Let's compare the mean of the Tachometer to the mean of the PWM:
 

@@ -42,11 +42,11 @@ band_mask(10,3,5)
 ```
 
 The function `band_mask()` creates a new vector by using a `select
-Vector of` statement. 
+Vector of` query. 
 
-> [note]   **Note:** In general `select` statements filter, transform, or
+> [note]   **Note:** In general `select` queries filter, transform, or
 generate collections of objects of different kinds. In this case the
-`select Vector of x` statement generates a new vector where each
+`select Vector of x` query generates a new vector where each
 element `x` is a number. 
 
 In order to use `band_mask()` to filter out frequencies outside the

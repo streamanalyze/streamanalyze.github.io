@@ -21,7 +21,7 @@ create function class_index(Charstring class) -> Number
 
 ## Label
 
-Just as it's convenient to be able to represent a class as a number it is convenient to have a mapping from the index on which a dimension is. The function `label` stores the name of the dimension on the i:th index in every datapoint.
+Just as it's convenient to be able to represent a class as a number it is also convenient to represent each observable variable ("AccX", "AccY", "AccZ", "Tach", "pwm") with its index in the data. The function `label` stores the name of the variable on the i:th index in every datapoint.
 
 ```OSQL
 create function label(Number i) -> Charstring
@@ -47,11 +47,16 @@ create function test_class_file(Number i) -> Bag of Charstring
 
 ## Stored stats
 
-This function will be used to store statistics about each dimension for each class. Each statistics vector will contain `[mean, standard deviation, min, max, cnt]`.
+This function will be used to store statistics about each variable for each class. Each statistics vector will contain `[mean, standard deviation, min, max, cnt]`.
 
 ```OSQL
-create function stored_stats(Number class, Number dimension) -> Vector of Number;
+create function stored_stats(Number class, Number variable_index) -> Vector of Number;
 ```
+
+So, for example, to get the standard deviation of the z-acceleration of the "obstructed" class you would access
+`stored_stats(4,3)[2]` since the "obstructed" class has index 4 (see values below), the z-acceleration variable has index 3, and
+standard deviation is the second element in the stored vector.
+
 
 ## Class stream
 
@@ -99,13 +104,16 @@ add test_class_file(4) = "streamed_fan_obstructed_test_odr800.1vb9ajnj.json";
 
 ## Windows statistics
 
-The `windowed_stats_1024` function will keep record of
-windowed statistics for each dimension in each class:
+The `windowed_stats_1024` function will keep record of windowed statistics for each variable in each class
+(1024 is the window size):
 
 ```OSQL
-create function windowed_stats_1024(Integer id, Integer class) -> Vector of Vector of Number 
+create function windowed_stats_1024(Integer window_index, Integer class) -> Vector of Vector of Number 
   as stored;
 ```
+
+For example, a call to `windowed_stats_1024(i,j)` will return the stats for window $W_i$ in class $C_j$. The returned stats will be N (5) stats vectors, one for each observable variable ("AccX", "AccY", ...), where each stats vector contains the statistics (mean, standard deviation, min, max, cnt) for the window over that variable.
+
 
 ## A few final convenience functions
 

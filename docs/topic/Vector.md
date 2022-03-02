@@ -390,6 +390,13 @@ ___
 ___
 
 > [function]
+> integer_vector(Vector of Real v)->Vector of Integer
+
+
+
+___
+
+> [function]
 > irfft(Vector v)->Vector of Number
 
 > [function-docs]
@@ -540,7 +547,7 @@ ___
 ___
 
 > [function]
-> permute(Vector v,Vector of Number indl)->Vector
+> permute(Vector v,Vector of Integer indl)->Vector
 
 > [function-docs]
 > Reorder vector `v` on index positions in `indl` 

@@ -346,6 +346,18 @@ ___
 ___
 
 > [function]
+> start_engine(Charstring name,Charstring image,Number timeout,Charstring flgs)
+            ->Charstring
+
+> [function-docs]
+> Start a new local server named `name` on this computer with `image`.
+>      Wait for server to start `timeout` seconds before failing 
+
+
+
+___
+
+> [function]
 > start_engine(Charstring name,Charstring image)->Charstring
 
 > [function-docs]
@@ -356,7 +368,7 @@ ___
 ___
 
 > [function]
-> start_engine(Charstring name,Charstring image,Number timeout)->Charstring
+> start_engine(Charstring name,Charstring image,Number timeou)->Charstring
 
 > [function-docs]
 > Start a new local server named `name` on this computer with `image`.
@@ -371,6 +383,16 @@ ___
 
 > [function-docs]
 > Start a new local server named `name` on this computer 
+
+
+
+___
+
+> [function]
+> start_nameserver(Charstring name,Charstring extra_flags)->Charstring
+
+> [function-docs]
+> Start a new nameserver named `name` on this computer 
 
 
 

@@ -4,7 +4,7 @@
 
 Do you want to learn how to create awesome looking charts and get a statistical understanding of your dataset using plots like the one above? Then this guide is for you!
 
-This tutorial will walk you through how to do statistical analysis of a dataset. This dataset is a collection of data from a Computer Fan where each reading has five measurements: **Accelerometer (X, Y, Z), Tachometer**, and **PWM**.
+This tutorial will walk you through how to do statistical analysis of a dataset. This dataset is a collection of data from a Computer Fan where each reading has five measurements (observable variables): **Accelerometer (X, Y, Z), Tachometer**, and **PWM**.
 
 This is a walk through of the work flow from a raw dataset to understanding the data. The first two parts will walk through the first steps of converting the raw data to a streamed format and looking at it. Below is an overview of the steps:
 
@@ -14,9 +14,9 @@ This is a walk through of the work flow from a raw dataset to understanding the 
 2. Converting JSON-object dataset into a stream of Vectors.
 3. Looking at the raw dataset - can we see some obvious patterns?
 4. Calculating statistics over the dataset for further analysis.
-    - Global stats (mean, standard deviation, min, max, count) for each dimension.
-    - Histograms of all dimensions and classes.
-    - Windowed statistics to compare dimensions
+    - Global stats (mean, standard deviation, min, max, count) for each measurement.
+    - Histograms of all variables and classes.
+    - Windowed statistics to compare variables.
 5. Making sense of the data.
     - Using Parallel coordinates and Scatter Plots
     - Using Scatter plot Matrices
@@ -33,7 +33,7 @@ The dataset can be downloaded [here](https://s3.eu-west-1.amazonaws.com/data.str
 
 ### Classes:
 
-* Low voltage - low voltage supply to the fan (10V istead of 12V)
-* Normal
+* Low voltage - low voltage supply to the fan (10V istead of 12V).
+* Normal.
 * Object - small electrical cord stuck in fan.
-* Obstructed - (cloth put in front of fan to simulate dust build up
+* Obstructed - (cloth put in front of fan to simulate dust build up.

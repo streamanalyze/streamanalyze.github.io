@@ -13,7 +13,7 @@ on the server.
 
 In addition, store and forward can be configured to never send
 streams to the server allowing for a fully detached execution of
-queries. 
+queries.
 
 To understand SNF you will now learn how to configure an edge device
 to run edge queries on start.
@@ -22,7 +22,7 @@ to run edge queries on start.
 **edge1** connected. If you are running 'sandbox' in
 studio.streamanalyze.com you always have a prestarted edge named
 **edge1** connected; in sa.studio Desktop you have to start **edge1**
-explicitly. 
+explicitly.
 
 ## Configuring store and forward
 
@@ -36,14 +36,14 @@ Store and forward has the following configurable options:
   between each forward attempt *north* to the SAS where the edge is
   registered. If not set then edge will attempt to forward once `buffer-size/2`
   elements are buffered.
-  
+
 * `buffer-size` (Default 1000) - Maximum number of elements to buffer
   between each forward attempt. If the stream produces more than
   `buffer-size` elements with the `store-and-forward-interval` the
   oldest values will be dropped. If `store-and-forward-interval` is
   not set edge will attempt to forward elements once `buffer-size/2`
   elements are buffered.
-  
+
 * `store-and-forward-storefn` (Default
   `stream.charstring.charstring.record.snf_publish_storer->boolean`) -
   The OSQL function to call in the server when requesting pending
@@ -70,8 +70,13 @@ set :forward1 = {
 ```
 We can use `:forward1` as SNF parameter `opts` to
 `edge_cq(edge,cq,opts)`. For example, the following SNF query will
-start `simstream(1)` and store up to 1000 elements before sending them north
+start `simstream(1)` and store up to 100 elements before sending them north
 every 3 seconds:
+
+> [note] **Note:** Unlike the regular behavior of `edge_cq()`, results
+> from a store-and-forward query will not be visible until you subscribe to it.
+> How to do this is described in the next section.
+
 ```LIVE
 edge_cq("edge1","select simstream(1) limit 1000", :forward1);
 ```
@@ -126,13 +131,13 @@ function is a *sink*.
 
 
 
-### Using the build in CSV storer function.
+### Using the built-in CSV storer function
 
 Let's try using the built-in **CSV storer function**. Start by
 creating a new option record:
 ```LIVE
 set :forward2 = {
-  "store-and-forward": "forward2", 
+  "store-and-forward": "forward2",
   "store-and-forward-interval": 3,
   "store-and-forward-storefn": "snf_csv_storer",
   "buffer-size": 100
@@ -203,7 +208,7 @@ As an example, we produce a data flow named `my-flow` by a `publish`
 sink for the edge query `simstream(0.02)` with SNF options
 `:localForward`:
 ```LIVE
-edge_cq("edge1", "publish(simstream(0.02),'my-flow') limit 10000", 
+edge_cq("edge1", "select publish(simstream(0.02),'my-flow') limit 10000",
         :localForward);
 ```
 On the SAS we can now subscribe to the published flow `my-flow` from `edge1`
@@ -215,7 +220,7 @@ As usual you can use `cancel_edge_cq` to stop it:
 ```LIVE
 cancel_edge_cq("edge1","local-forward1");
 ```
-# Persistent edge queries 
+# Persistent edge queries
 
 By now you have learned how to run regular edge queries with SNF. This
 section describes how to create *persistent edge queries* that run
@@ -242,16 +247,14 @@ When an edge starts it will go through all instances of `EdgeQuery`
 and start them. If you dynamically create more `EdgeQuery` objects
 during an interactive session they will be used at the next edge
 restart. You can activate a persistent edge query `eq` by calling
-`run_stored_edge_query(cq)`.
+`run_stored_edge_query(eq)`.
 
 Documentation of properties of the type `Edgequery`:
 ```LIVE {"vis":"showMarkdown"}
-select mddoc(f) 
+select mddoc(f)
   from Function f
  where f in methods(typenamed("Edgequery"))
 ```
-
-
 
 You can cancel a persistent edge query as usual with
 `cancel_edge_cq()`. However if you do not want the query to run again

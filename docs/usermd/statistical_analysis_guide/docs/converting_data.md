@@ -20,7 +20,7 @@ into main memory but it will cause a large overhead and it is not applicable for
 }
 ```
 
-If you look at the JSON-Object the dimension information is under `payload->sensors` while the readings are under `payload->values`. The following query will read in
+If you look at the JSON-Object the observable variables information is under `payload->sensors` while the readings are under `payload->values`.
 
 ## Converting data
 

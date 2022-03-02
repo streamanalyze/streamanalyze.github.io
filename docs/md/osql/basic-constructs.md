@@ -55,7 +55,7 @@ The user can declare a session variable to be of a particular type by the *sessi
    declare Integer :i, Real :x3
 ```
 
-Session variables can be assigned either by the `into` clause of the [select statement](/docs/md/osql/queries.md#the-select-statement) or by the session variable assignment statement *set*. 
+Session variables can be assigned either by the `into` clause of the [select queries](/docs/md/osql/queries.md#the-select-statement) or by the session variable assignment statement *set*. 
 
 Examples
 ```

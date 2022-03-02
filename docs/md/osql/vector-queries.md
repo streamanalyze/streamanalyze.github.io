@@ -1,16 +1,16 @@
 # Vector queries
 
-The order of the objects in the bag returned by a regular [select statement](/docs/md/osql/queries.md#the-select-statement) is __not__ predetermined unless an [order by](/docs/md/osql/queries.md#ordered-selections) clause is specified. However, even if `order by` is specified the system will not preserve the order of the result of a select-statement if it is used in other operations.
+The order of the objects in the bag returned by a regular [select query](/docs/md/osql/queries.md#the-select-statement) is __not__ predetermined unless an [order by](/docs/md/osql/queries.md#ordered-selections) clause is specified. However, even if `order by` is specified the system will not preserve the order of the result of a select query if it is used in other operations.
 
-If it is required to maintain the order of a set of data values the data type *Vector* has to be used. The collection data type *Vector* represents ordered collections of any kinds of objects; the simplest and most common case of a vector is a numerical vector of numbers. In case the order of a query result is significant you can specify *vector queries* that preserve the order in a query result by returning vectors rather than the bags returned by regular select statements. This is particularly important when working with numerical vectors. A vector query can be one of the following:
+If it is required to maintain the order of a set of data values the data type *Vector* has to be used. The collection data type *Vector* represents ordered collections of any kinds of objects; the simplest and most common case of a vector is a numerical vector of numbers. In case the order of a query result is significant you can specify *vector queries* that preserve the order in a query result by returning vectors rather than the bags returned by regular select queries. This is particularly important when working with numerical vectors. A vector query can be one of the following:
 
 1. It can be a [vector construction](/docs/md/osql/vector-queries.md#vector-construction) expression that creates a new vector from other objects.
 
 2. It can be a [vector indexing](/docs/md/osql/vector-queries.md#accessing-vector-elements) expression that accesses vector elements by their indexes.
 
-3. It can be a regular [select statement](/docs/md/osql/vector-queries.mdqueries.md#the-select-statement) returning a set of constructed vectors.
+3. It can be a regular [select query](/docs/md/osql/vector-queries.mdqueries.md#the-select-statement) returning a set of constructed vectors.
 
-4. It can be a [select vector statement](/docs/md/osql/vector-queries.md#the-select-vector-statement) that returns an ordered vector rather than an unordered bag as the regular select statement.
+4. It can be a [select vector query](/docs/md/osql/vector-queries.md#the-select-vector-statement) that returns an ordered vector rather than an unordered bag as the regular select query.
 
 5. It can be a call to some [vector function](/docs/topic/Vector)
 returning vectors as result.
@@ -43,7 +43,7 @@ The above query is different from the following query that returns a bag of tupl
 
 ## The select vector statement
 
-The *select vector* statement provides a powerful way to construct new vectors by queries. It has the same syntax as the select-statement except for the keywords `Vector of` following the `select` clause. The difference is that whereas the select-statement returns a bag of objects, the select vector statement returns a vector of objects. 
+A *select vector query* provides a powerful way to construct new vectors by queries. It has the same syntax as a select query except for the keywords `Vector of` following the `select` clause. The difference is that whereas a select query returns a bag of objects, a select vector query returns a vector of objects. 
 
 Example:
 ```sql
@@ -54,7 +54,7 @@ Example:
 ```
 The query returns the vector `[2,4,6]`.
 
-Notice that the `order by` clause normally should be present when constructing vectors with the select vector statement in order to exactly specify the order of the elements in the vector. If no `order by` clause is present the order of the elements in the vector is arbitrarily chosen by the system based on the query, which is the order that is the most efficient to produce.
+Notice that the `order by` clause normally should be present when constructing vectors with a select vector query in order to exactly specify the order of the elements in the vector. If no `order by` clause is present the order of the elements in the vector is arbitrarily chosen by the system based on the query, which is the order that is the most efficient to produce.
 
 The built-in function `range()` is very useful when constructing vectors. It has the signature:
 ```

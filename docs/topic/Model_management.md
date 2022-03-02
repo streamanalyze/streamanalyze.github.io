@@ -43,16 +43,6 @@ ___
 ___
 
 > [function]
-> download_model_files(Charstring model)->Bag of Charstring
-
-> [function-docs]
-> Download all files in user `model` on Stream Server 
-
-
-
-___
-
-> [function]
 > download_textfile(Charstring path,Charstring file)->Charstring fullpath
 
 > [function-docs]
@@ -164,6 +154,168 @@ ___
 ___
 
 > [function]
+> models:available(Charstring repo)->Bag of Charstring
+
+> [function-docs]
+> Get models available as `repo` 
+
+
+
+___
+
+> [function]
+> models:available()->Bag of Charstring
+
+> [function-docs]
+> Same as `models:available("default")` 
+
+
+
+___
+
+> [function]
+> models:create_release(Charstring model,Charstring version)->Charstring
+
+> [function-docs]
+> Create `version` of `model` - Unsigned.
+
+
+
+___
+
+> [function]
+> models:create_release(Charstring model,Charstring version,Charstring ca_name,
+                     Charstring pkey,Charstring pw)->Charstring
+
+> [function-docs]
+> Create a signed release `version` of `model` using the supplied ca private
+> key and optional password for private key. 
+
+
+
+___
+
+> [function]
+> models:get_repository_configurations()->Record
+
+
+
+___
+
+> [function]
+> models:import(Charstring repo,Charstring model,Charstring version)->Charstring
+
+> [function-docs]
+> Import `version` of `model` from **models:repository** with name `repo` 
+
+
+
+___
+
+> [function]
+> models:import(Charstring model,Charstring version)->Charstring
+
+> [function-docs]
+> same as `models:import("default",model,version)` 
+
+
+
+___
+
+> [function]
+> models:installed_locally()->Bag of Charstring
+
+> [function-docs]
+> Get a bag of all locally installed models. 
+
+
+
+___
+
+> [function]
+> models:is_published(Charstring repo,Charstring model,Charstring version)
+                   ->Boolean
+
+> [function-docs]
+> Check if `version` of `model` is published on `repo` 
+
+
+
+___
+
+> [function]
+> models:is_published(Charstring model,Charstring version)->Boolean
+
+> [function-docs]
+> same as `models:is_published("default",model,version)` 
+
+
+
+___
+
+> [function]
+> models:publish(Charstring repo,Charstring model,Charstring version)->Charstring
+
+> [function-docs]
+> Publish `version` of `model` on `repo`. Note that you must
+> have created a local release with the model and version before
+> publishing it. See:
+> 
+> ```LIVE
+> doc(apropos("models:create_release"))
+> ```
+> 
+
+
+
+___
+
+> [function]
+> models:publish(Charstring model,Charstring version)->Charstring
+
+> [function-docs]
+> Same as `models:publish("default",model,version)` 
+
+
+
+___
+
+> [function]
+> models:repository(Charstring name)->Record
+
+> [function-docs]
+> Stored function for keeping track of repositories to install
+> model from. `name` must be unique and the record has the following
+> format:
+> ```
+> {
+>   "url": "http(s)://url.to.your.repo:port",
+>   "base_path": "/models/",
+>   "http_headers": {
+>     "authorization": "token-for-auth",
+>     "header2": "another header needed for connection",
+>     ...
+>     "headerN"; "Header n"
+>   }
+> }
+> ```
+> 
+> You may add more fields to the record for your convenience but sa.enigne
+> will not look at any other fields that these.
+> 
+
+
+
+___
+
+> [function]
+> models:update_repository_configurations(Record input)->Boolean
+
+
+
+___
+
+> [function]
 > model_folder(Charstring model)->Charstring
 
 > [function-docs]
@@ -185,16 +337,6 @@ ___
 
 > [function]
 > send_textfile_to_peer(Charstring peer,Charstring file)->Charstring fullpath
-
-
-
-___
-
-> [function]
-> server_user_model_files(Charstring model)->Bag of (Charstring,Charstring)
-
-> [function-docs]
-> The user `model` files on Stream Server 
 
 
 

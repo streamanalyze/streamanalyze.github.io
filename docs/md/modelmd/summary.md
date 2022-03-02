@@ -45,3 +45,8 @@
     - [MQTT Tutorial](/docs/usermd/mqtt-tutorial/README.md)
       - [Simple example](/docs/usermd/mqtt-tutorial/simple.md)
       - [Secure MQTT](/docs/usermd/mqtt-tutorial/secure-mqtt.md)
+      - [Message from query](/docs/usermd/mqtt-tutorial/query-msg.md)
+    - [Data reduction tutorial](/docs/usermd/data-reduction-tutorial/docs.md)
+    - [Tensorflow Lite Tutorial](/docs/usermd/tensorflow-lite-tutorial/README.md)
+      - [Getting started](/docs/usermd/tensorflow-lite-tutorial/docs/getting-started.md)
+      - [Regression with DNN](/docs/usermd/tensorflow-lite-tutorial/docs/regression-with-dnn.md)

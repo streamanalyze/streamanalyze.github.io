@@ -1,22 +1,22 @@
 # Stream functions:
 
 > [function]
-> changed(Stream of Vector s,Vector of Number indexes)->Stream of Vector
+> changed(Stream s)->Stream
 
 > [function-docs]
-> Stream containing the vectors of stream `s` whose elements in `indexes`
->      are different than their predecessor 
+> Stream containing the elements of stream `s` that are different 
+>      than their predecessor 
 
 
 
 ___
 
 > [function]
-> changed(Stream s)->Stream
+> changed(Stream of Vector s,Vector of Number indexes)->Stream of Vector
 
 > [function-docs]
-> Stream containing the elements of stream `s` that are different 
->      than their predecessor 
+> Stream containing the vectors of stream `s` whose elements in `indexes`
+>      are different than their predecessor 
 
 
 
@@ -137,20 +137,20 @@ ___
 ___
 
 > [function]
-> merge_streams(Stream s1,Stream s2)->Stream
+> merge_streams(Bag of Stream b)->Stream
 
 > [function-docs]
-> Merge streams `s1` and `s2` 
+> Merge streams in bag `b` 
 
 
 
 ___
 
 > [function]
-> merge_streams(Bag of Stream b)->Stream
+> merge_streams(Stream s1,Stream s2)->Stream
 
 > [function-docs]
-> Merge streams in bag `b` 
+> Merge streams `s1` and `s2` 
 
 
 
@@ -168,21 +168,23 @@ ___
 ___
 
 > [function]
-> pivot_streams(Vector of Stream vs)->Stream of Vector
+> pivot_streams(Vector of Stream vs,Vector iv)->Stream of Vector
 
 > [function-docs]
-> A stream of the most recently received elements in `vs` 
+> **DEPRECATED** use `streams:pivot` instead.
+>      A stream of the most recently received values in `vs`, 
+>      having the vector `iv` as the initial element 
 
 
 
 ___
 
 > [function]
-> pivot_streams(Vector of Stream vs,Vector iv)->Stream of Vector
+> pivot_streams(Vector of Stream vs)->Stream of Vector
 
 > [function-docs]
-> A stream of the most recently received values in `vs`, 
->      having the vector `iv` as the initial element 
+> **DEPRECATED** use `streams:pivot` instead.
+>      A stream of the most recently received elements in `vs` 
 
 
 
@@ -200,19 +202,6 @@ ___
 ___
 
 > [function]
-> predwin(Stream s,Integer c,Object p,Function e,Function l)->Stream of Vector
-
-> [function-docs]
-> Form predicate windows over stream `s` by applying the window delimination
->      functions `e` and `l` on sliding change windows over `s` of size `cw`
->      with stride 1. A new window is started when `e(cw,p)` is true 
->      and ended when `l(cw, p)` is true 
-
-
-
-___
-
-> [function]
 > predwin(Stream s,Integer c,Object p,Function e,Function l,Boolean start_entered)
        ->Stream of Vector
 
@@ -221,6 +210,19 @@ ___
 >      functions `e` and `l` on sliding change windows over `s` of size `cw`
 >      with stride 1. A new window is started when `e(cw,p)` is true or at the
 >      begining if `start_entered=true` 
+>      and ended when `l(cw, p)` is true 
+
+
+
+___
+
+> [function]
+> predwin(Stream s,Integer c,Object p,Function e,Function l)->Stream of Vector
+
+> [function-docs]
+> Form predicate windows over stream `s` by applying the window delimination
+>      functions `e` and `l` on sliding change windows over `s` of size `cw`
+>      with stride 1. A new window is started when `e(cw,p)` is true 
 >      and ended when `l(cw, p)` is true 
 
 
@@ -258,18 +260,18 @@ ___
 ___
 
 > [function]
-> readlines(Charstring file)->Stream of Charstring
-
-> [function-docs]
-> Stream of lines in `file` 
+> readlines(Charstring file,Charstring delim,Number chunk)
+         ->Stream of Vector of Charstring
 
 
 
 ___
 
 > [function]
-> readlines(Charstring file,Charstring delim,Number chunk)
-         ->Stream of Vector of Charstring
+> readlines(Charstring file)->Stream of Charstring
+
+> [function-docs]
+> Stream of lines in `file` 
 
 
 
@@ -399,6 +401,13 @@ ___
 ___
 
 > [function]
+> streamof(Stream s)->Stream
+
+
+
+___
+
+> [function]
 > streamof(Bag b)->Stream
 
 > [function-docs]
@@ -409,7 +418,112 @@ ___
 ___
 
 > [function]
-> streamof(Stream s)->Stream
+> streams:debounce(Stream s,Number start_s,Number debounce)->Stream
+
+> [function-docs]
+> Debounce a stream sane as `streams:time_section` except for that the stop
+>    condition is when `s` has not emitted any new values in the last `debounce`
+>    seconds. 
+
+
+
+___
+
+> [function]
+> streams:merge(Bag of Stream b)->Stream
+
+
+
+___
+
+> [function]
+> streams:merge(Stream s1,Stream s2)->Stream
+
+> [function-docs]
+> Merge streams `s1` and `s2` 
+
+
+
+___
+
+> [function]
+> streams:pivot(Vector of Stream vs,Vector iv)->Stream of Vector
+
+> [function-docs]
+> A stream of the most recently received values in `vs`, 
+>      having the vector `iv` as the initial element 
+
+
+
+___
+
+> [function]
+> streams:pivot(Vector of Stream vs)->Stream of Vector
+
+> [function-docs]
+> A stream of the most recently received elements in `vs` 
+
+
+
+___
+
+> [function]
+> streams:skip_s(Stream s,Number sec)->Stream
+
+> [function-docs]
+> Skip all elements arriving in the first `sec` seconds of 
+>    stream `s`. 
+
+
+
+___
+
+> [function]
+> streams:timeout(Stream s,Number timeout)->Stream
+
+
+
+___
+
+> [function]
+> streams:time_section(Stream s,Number start_s,Number stop_s)->Stream
+
+> [function-docs]
+> Skip elements arriving in first `start_s` seconds on stream s and stop after 
+>    `stop_s` seconds. Same as `section(stream,start,stop)` except for that the 
+>    start and stop values are in seconds.
+
+
+
+___
+
+> [function]
+> streams:zip(Vector of Stream vs,Vector of Integer indices)->Stream of Vector
+
+> [function-docs]
+> A stream where each received values in `vs`, 
+>      is "zipped" together on the indices in `indices`. 
+>      Indices not in `indices` will have the latest seen value
+>      on each emit
+
+
+
+___
+
+> [function]
+> streams:zip(Vector of Stream vs)->Stream of Vector
+
+> [function-docs]
+> A stream where each received values in `vs`, 
+>      is "zipped" together one at a time. Should only
+>      be used of streams have the same pace.
+
+
+
+___
+
+> [function]
+> stream_function_tuples(Charstring peer,Charstring fn,Vector args)->Bag of Vector
 
 
 
@@ -446,6 +560,20 @@ ___
 ___
 
 > [function]
+> twinagg(Stream of Timeval s,Number size,Number stride)
+       ->Stream of Timeval of Vector
+
+> [function-docs]
+> Stream of time windows over stream `s`  represented as 
+>      time stamped vectors where:
+>      `size` is the window size in seconds
+>      `stride` is the window stride in seconds 
+
+
+
+___
+
+> [function]
 > twinagg(Stream of Timeval s,Number size,Number stride,Timeval start)
        ->Stream of Timeval of Vector
 
@@ -455,20 +583,6 @@ ___
 >      `size` is the window size in seconds
 >      `stride` is the window stride in seconds
 >      `start` is the point in time where the windowing should start. 
-
-
-
-___
-
-> [function]
-> twinagg(Stream of Timeval s,Number size,Number stride)
-       ->Stream of Timeval of Vector
-
-> [function-docs]
-> Stream of time windows over stream `s`  represented as 
->      time stamped vectors where:
->      `size` is the window size in seconds
->      `stride` is the window stride in seconds 
 
 
 

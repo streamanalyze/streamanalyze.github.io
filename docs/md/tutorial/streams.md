@@ -41,7 +41,7 @@ from a stream. If a simple function like `sin` or operator like `*` is
 applied on a stream generator it will be applied on *each element* of
 the stream thus generating a transformed stream as in the example.
 
-You can stop an infinite CQ by using `select` combined with `limit`,
+You can stop an infinite CQ by specifying a `limit` in a select query,
 for example:
 
 ```LIVE {"vis":"showLine"}
@@ -115,7 +115,7 @@ sample_stream(ts(rand(100)),0.1)
 ## Stream filters
 
 CQs can be defined that filter out stream elements fulfilling user
-defined conditions using a `select Stream of` statement. For example,
+defined conditions using a `select Stream of` query. For example,
 the following CQ filters out the stream elements of `simstream(0.1)`
 larger than 0.7 visualized as a line plot:
 
@@ -129,15 +129,6 @@ select Stream of x
 The CQ generates a new stream of the selected stream elements. Notice
 how the result stream pauses (slows down) when when elements less than
 0.7 are produced by `simstream(0.01)`.
-
-> [note]   **Note:** If you are familiar with [SQL](https://www.w3schools.com/sql/) you
-will notice that the `select` statements of SQL and OSQL are
-similar. The fundamental difference is that the `select` statement in
-OSQL operates on many kinds of collections and objects, while SQL's
-`select` statement operates only on rows in tables. Variables in SQL's
-`select` statement can be bound only to rows in tables, while OSQL
-allows variables of any type, e.g. numbers or strings in different
-kinds of collections such as vectors, streams or bags.
 
 ## Stream windows
 

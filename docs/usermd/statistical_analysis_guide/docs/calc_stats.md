@@ -23,18 +23,21 @@ create function vstats(Bag b) -> Vector
 
 ### Get statistics for a class
 
-The function `get_stats` takes a class $ C_i $and returns a vector where the first element is the class $ C_i $for the stats and the second element is a vector of vector $ stats $ where the $ stats_k = [mean_k, stdev_k, min_k, max_k, cnt_k] $ for dimension $ k $.
+The function `get_stats` takes a class number $i$ and returns a vector where the first element is the provided class number and the second element consists of the stats vector for each variable ("AccX", "AccY", ...) in class $C_i$. So the second element is a vector of $N$ (5) stats vectors (one for each variable) and each stats vector is on the form $[mean, stdev, min, max, count]$.
 
 ```OSQL
 create function get_stats(Number class) -> Vector
 /* Get mean stdev min max and count for class `class` */     
-  as [class, aggv(extract(class_stream(class)),
-                  #"vstats")];
+  as [class, aggv(extract(class_stream(class)), #"vstats")];
 ```
+
+>[note]**Note:** The function `extract()` simply extracts elements in a stream one by one as elements in a bag
+> and the function `aggv()` applies a function over a bag of values. A function object object can be specified
+> with hashtag and function name in quotes, so here `#"vstats"` refers to the function `vstats()` we defined above.
 
 ### Get windowed statistics
 
-The function `get_windowed_stats` takes a class $ C_i $ and creates windows $ W_i $ where i is the order of the window and the size of the window is the second argument  $ w_size $ and returns a vector where the first element is $ C_i $.  and the second element i a vector of vector where each inner vector  $ V_i $ is the statistics for $ W_i $.
+The function `get_windowed_stats` takes a class number and a window size $w_{size}$ and creates statistics vectors for each window of all variables in the class. It returns a vector where the first element is the class number and the second element is a vector of vector of vector where each inner vector $stats_{i,j}$ is the statistics for window $i$ over variable $j$. The middle vector has one element for each of the $N$ (5) observable variables ("AccX", "AccY", ...). And the outer vector has one element per window (see note below for details).
 
 ```OSQL
 create function get_windowed_stats(Number class, Number window_size, boolean train) -> Vector
@@ -45,9 +48,29 @@ create function get_windowed_stats(Number class, Number window_size, boolean tra
              where v in winagg(class_stream(class,train), window_size, window_size))]; 
 ```
 
+>[note]**Note:** The output format
+> ```
+>              "AccX"       "AccY"            "pwm"
+> [class, [ [stats_{1,1}, stats_{1,2}, ..., stats_{1,N}],   // window 1
+>           [stats_{2,1}, stats_{2,2}, ..., stats_{2,N}],   // window 2
+>           ... ] ]                                         // ...
+> ```
+>
+> So, for example, to get the mean of the variable "AccZ" from the fifth window you would index the result as follows:
+>
+> ```
+>        ┌─── Stats are stored in the 2nd element.
+>        │  ┌─── 5th window.
+>        │  │  ┌─── "AccZ" is the 3rd variable.
+>        │  │  │  ┌─── Mean is 1st element in the stats vector.
+>        ↓  ↓  ↓  ↓
+> output[2][5][3][1]
+> ```
+
+
 ### Add windows stats to stored function
 
-The function `add_windowed_1024_stats` takes the result from a call to `get_windows_stats` and fills the stored function `windowd_stats_1024` with the data.
+The function `add_windowed_1024_stats` takes the result from a call to `get_windowed_stats` and fills the stored function `windowed_stats_1024` with the data.
 
 ```OSQL
 create function add_windowed_1024_stats(Vector input) -> number
@@ -62,6 +85,9 @@ create function add_windowed_1024_stats(Vector input) -> number
     return i;
 }; 
 ```
+
+When the stored function `windowed_stats_1024` is filled with data you can query it with a class number and window index to get the stats vectors of all variables for that window. The result format is a vector with N (5) stats vectors, one for each variable ("AccX", "AccY", ...).
+
 
 ### Creating histograms
 
@@ -79,13 +105,13 @@ Below you can find the OSQL code for creating histograms for a `Stream of Number
 "aggregate(Bag b,Object e0,Charstring fn)->Object"
 ```
 
-Aggregate takes a collection of values  (`Vector`, `Bar`, or `Stream`) $ V $ an initial value $ V_0 $ and a function $ fn $ and calculates:
+Aggregate takes a collection of values  (`Vector`, `Bag`, or `Stream`) $ V $ an initial value $ V_0 $ and a function $ fn $ and calculates:
 
 $$
 V_i = fn(V_{i-1} , V_i)
 $$
 
-If $ V $ is a bag or vector then the final $ v_i $ is returned. If $ V $ is a stream then each $ v_i $ is emitted.
+If $ V $ is a bag or vector then the final $ V_i $ is returned. If $ V $ is a stream then each $ V_i $ is emitted.
 
 The function `histogram_stream` uses `bin_vector`  to create a so called "one-hot" vector of size $ sz $ where all elements are 0 except for the element $ i $ where $ i $ is the index in the histogram measurement $ x $ would have in a histogram with min $ lo $, max $ hi $ and number of bins $ bins $. And then aggregates these vectors with a starting vector of zeros and the function `+`.
 
@@ -104,16 +130,16 @@ create function histogram_stream(Stream of Number s, Number lo, Number hi, Numbe
   as aggregate(bin_vector(s, lo,hi,bins), zeros(bins), '+');
 ```
 
-### Calculate histogram for a class and dimension
+### Calculate histogram for a class and variable
 
-The function `calc_histogram` takes a class, the dimension index, minimum and maximum values of the dimension and the number of bins you wish to split the histogram up in and returns a vector where the first element is the class, the second element the index of the dimension and the third is the histogram for the dimension in that class:
+The function `calc_histogram` takes a class, minimum and maximum values of the variable and the number of bins you wish to split the histogram up in and returns a vector where the first element is the class and the second element is the histogram for the variable in that class:
 
 ```OSQL
 create function calc_histogram(Number class, Number min, Number max, Number bins) -> Vector
   as [class, histogram(extract(class_stream(class)), min,max,bins)];
 ```
 
-If you recall the function `get_stats` it returns a vector where the first element is the class $ C_i $for the stats and the second element is a vector of vector $ stats $ where the $ stats_k = [mean_k, stdev_k, min_k, max_k, cnt_k] $ for dimension $ k $.
+If you recall the function `get_stats` it returns a vector where the first element is the class number $C_i$ for the stats and the second element is a vector of vector $stats$ where the $stats_k = [mean_k, stdev_k, min_k, max_k, cnt_k] $ for variable $k$.
 
 ## Using a federation to parallelize the computation
 
@@ -136,16 +162,18 @@ This is done using the `start_engine` function:
 start_engine("s"+iota(1,4),"");
 ```
 
-The above command will start 20 SAS (SA Engine Servers) connected to the federation. Once they are started we want to load this model on each one:
+The above command will start 4 SAS (SA Engine Servers) connected to the federation. Once they are started we want to load this model on each one:
 
 ```LIVE
 /* Make sure all new servers have loaded the model */
 ship("s"+iota(1,4),'load_model("statistical_analysis_guide")');
 ```
 
+>[note]**Note:** The function `ship()` sends a query string to a peer for evaluation and gets back the result.
+
 ## Multicast receive
 
-Multicast_receive takes a vector of peers $ P $ a function $ fn $ and a vector of arguments $ args $ and for each peer $ P_i $ collect the results of calling $ fn $ with arguments $ args_i $. For instance in the call below results in the following table:
+The function `multicastreceive` takes a vector of peers $ P $ a function $ fn $ and a vector of arguments $ args $ and for each peer $ P_i $ collect the results of calling $ fn $ with arguments $ args_i $. For instance in the call below results in the following table:
 
 | Peer | Function | Arguments |
 | -------- | -------- | -------- |
@@ -154,7 +182,7 @@ Multicast_receive takes a vector of peers $ P $ a function $ fn $ and a vector o
 | s3     | get_stats     | `[3]`     |
 | s4    | get_stats     | `[4]`     |
 
-If you recall the function `get_stats` it returns a vector where the first element is the class $ C_i $for the stats and the second element is a vector of vector $ stats $ where the $ stats_k = [mean_k, stdev_k, min_k, max_k, cnt_k] $ for dimension $ k $.
+If you recall the function `get_stats` it returns a vector where the first element is the class $ C_i $for the stats and the second element is a vector of vector $ stats $ where the $ stats_k = [mean_k, stdev_k, min_k, max_k, cnt_k] $ for variable $ k $.
 
 The query below will split the workload of calculating the stats for each class on a separate server and then add the result to
 the stored function `stored_stats`.
@@ -174,7 +202,10 @@ select class_name(class),label(i),stored_stats(class,i)
  order by class, i asc;
 ```
 
-The same method is used for calculating histograms. This time we use all of our 20 servers to let them calculate the histogram from one of the dimensions on one of the datasets.
+>[note]**Note:** The function `setfunction(fn,args,res)` is the same as setting values in a stored function using
+> `set fn(args) = res`.
+
+The same method is used for calculating histograms. This time we use all of our 4 servers to let them calculate the histogram from one of the variables on one of the datasets.
 
 ```LIVE
 select setfunction("stored_histogram", [class,i],[data[i]])
@@ -182,7 +213,7 @@ select setfunction("stored_histogram", [class,i],[data[i]])
  where v in multicastreceive(vectorof("s"+iota(1,4)),
                              'calc_histogram',vectorof(.[range(4)]))
    and class = v[1]
-   and data = v[2];;
+   and data = v[2];
 ```
 
 Finally we fill our stored stats functions in the same way as before, using multicast to parallelize the computation and then updating the local database with the result.

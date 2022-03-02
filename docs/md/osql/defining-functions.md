@@ -101,7 +101,7 @@ Examples:
      as age(p) < 18
 ```
 
-Since the select statement returns a bag of values, derived functions also often return `Bag of` results. If you know that a function returns a bag of values you should indicate that in the signature. 
+Since the select query returns a bag of values, derived functions also often return `Bag of` results. If you know that a function returns a bag of values you should indicate that in the signature. 
 
 Example:
 ```sql
