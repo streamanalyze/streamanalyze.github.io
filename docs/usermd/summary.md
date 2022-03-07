@@ -28,6 +28,7 @@
   - [Connecting sensors to your edge](/docs/usermd/getting-started/sensors/README.md)
     - [Pi0 Environphat](/docs/usermd/getting-started/sensors/pi0envphat.md)
 - [More guides](/docs/md/modelmd/README)
+    - [random_forest](/docs/systemmd/random_forest/docs.md)
     - [DBSCAN](/docs/systemmd/dbscan/docs.md)
     - [Statistical Analysis over datasets](/docs/usermd/statistical_analysis_guide/docs.md)
       - [Pre processing](/docs/usermd/statistical_analysis_guide/docs/preprocess.md)

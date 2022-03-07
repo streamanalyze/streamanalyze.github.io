@@ -35,4 +35,5 @@
   - [Vector](/docs/topic/Vector)
   - [Visual Analyzer](/docs/topic/Visual_Analyzer)
   - [dbscan](/docs/topic/dbscan)
+  - [random_forest](/docs/topic/random_forest)
   - [serial](/docs/topic/serial)

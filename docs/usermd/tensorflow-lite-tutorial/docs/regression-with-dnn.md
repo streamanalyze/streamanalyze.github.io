@@ -14,24 +14,19 @@ $$[X_{1}, X_{2}, \ldots, X_{9}] \rightarrow [Y]$$
 
 ## Loading the model
 
-Ensure that you are in the correct directory by changing to the tutorial dir.
-
-```LIVE
-cd(sa_home() + "/models/tensorflow-lite-tutorial");
-```
-
-Load the model with `tfl:read_binary_file` and store the result in the `tfl:model` table.   
+Load the model with `tfl:read_binary_file` and store the result in the `tfl:model` table.
 
 ```LIVE
 set tfl:model('dnn_model') =
-    tfl:read_binary_file("models/dnn_model.tflite");
+    tfl:read_binary_file(model_folder("tensorflow-lite-tutorial")
+                         + "models/dnn_model.tflite");
 ```
 
 ## Inference
 
 As described in the previous section, inference is done with the function `tfl:predict`. It takes the name of the model and a stream of batch inputs as input parameters.
 
-So to use the DNN model for inference, simply run `tfl:predict` with the the model name and some vehicle data as input vectors. 
+So to use the DNN model for inference, simply run `tfl:predict` with the the model name and some vehicle data as input vectors.
 
 In this example we want to predict MPG for two vehicles with the following stats:
 

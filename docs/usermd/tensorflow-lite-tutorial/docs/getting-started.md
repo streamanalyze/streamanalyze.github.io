@@ -1,6 +1,6 @@
 # Getting started
 
-This section describes how to do inference with a simple Tensorflow Lite model. 
+This section describes how to do inference with a simple Tensorflow Lite model.
 
 ## Loading the Tensorflow Lite plugin
 
@@ -29,17 +29,12 @@ We see, for example, that for cars with around 50 horsepowers the model should p
 
 ## Loading the model
 
-Ensure that you are in the correct directory by changing to the tutorial dir.
-
-```LIVE
-cd(sa_home() + "/models/tensorflow-lite-tutorial");
-```
-
-Load the model with `tfl:read_binary_file` and store the result in the `tfl:model` table.   
+Load the model with `tfl:read_binary_file` and store the result in the `tfl:model` table.
 
 ```LIVE
 set tfl:model('horsepower') =
-    tfl:read_binary_file("models/horsepower_model.tflite");
+    tfl:read_binary_file(model_folder("tensorflow-lite-tutorial")
+                         + "models/horsepower_model.tflite");
 ```
 
 
