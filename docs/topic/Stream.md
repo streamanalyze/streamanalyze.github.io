@@ -574,6 +574,21 @@ ___
 ___
 
 > [function]
+> twinagg(Stream of Timeval s,Number size,Function pred,Vector args)
+       ->Stream of Timeval of Vector
+
+> [function-docs]
+> Stream of time windows over stream `s` represented as
+>      time stamped vectors where:
+>      `size` is the window size in seconds
+>      `pred` is a test function returning true if the window should be emitted
+>      `args` is a vector containing any additional arguments to the function pred 
+
+
+
+___
+
+> [function]
 > twinagg(Stream of Timeval s,Number size,Number stride,Timeval start)
        ->Stream of Timeval of Vector
 
@@ -583,6 +598,20 @@ ___
 >      `size` is the window size in seconds
 >      `stride` is the window stride in seconds
 >      `start` is the point in time where the windowing should start. 
+
+
+
+___
+
+> [function]
+> twinagg(Stream of Timeval s,Number size,Function pred)
+       ->Stream of Timeval of Vector
+
+> [function-docs]
+> Stream of time windows over stream `s` represented as
+>      time stamped vectors where:
+>      `size` is the window size in seconds
+>      `pred` is a test function returning true if the window should be emitted 
 
 
 

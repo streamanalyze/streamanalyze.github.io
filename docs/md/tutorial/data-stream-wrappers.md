@@ -55,11 +55,11 @@ streams of *CANBUS frames* represented as vectors `[ts, cid, fid, pl]` where:
 - `cid` is an integer *CANBUS identifier* for the CANBUS interface on
   the device producing the frame. There may be several such
   interfaces enumerated from 0 and up.
- 
+
  - `fid` is an integer *frame identifier*. The frame identifier
    uniquely identifies frames per CANBUS interface. The same `fid` can
    represent different measurements in different CANBUS interfaces.
- 
+
  - `pl` is the *payload* of the frame. It contains values of one or
    several measurements (i.e. signals) produced by the frame. The
    payload is represented as an 8-byte binary field. A single payload
@@ -79,7 +79,7 @@ predefined pace of 10HZ.
 can:simulated_bus()
 ```
 
-> [exercise] **Exercise:** Inspect the source code of `can:simulatedstream` to
+> [exercise] **Exercise:** Inspect the source code of `can:simulated_bus` to
 understand how it works.
 
 Meta-data for signals from CANBUS data sources are represented as
@@ -89,7 +89,7 @@ super-type `Signal`:
 
 - `cid(s)` is the CANBUS interface identifier used for producing the
   raw CANBUS stream where signal `s` is extracted.
-    
+
 - `fid(s)` is the identifier of the CANBUS frame whose payload is
   producing values of `s`.
 
@@ -123,7 +123,7 @@ ts_signal_stream(signal_named('s'))
 > [note]   **Note:** If there are errors in your code you can use the `rollback`
 command to undo all database updates so far in the session. Then you
 can correct and re-run the model definitions. However, in the free web
-based *sandbox* version of sa.studio you must first issue the call
+based *SA Studio Community Edition* you must first issue the call
 `autocommit(false)` to enable `rollback` (see [Undo
 changes](/docs/md/tutorial/save-database.md#transactions)).
 

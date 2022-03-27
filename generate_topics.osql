@@ -1,3 +1,5 @@
+load_model("conditional-stats-on-streams");
+load_model("canbus-guide");
 load_model("tensorflow-lite-tutorial");
 load_model("data-reduction-tutorial");
 load_model("mqtt-tutorial");
