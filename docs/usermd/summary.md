@@ -57,4 +57,5 @@
       - [Working with recorded streams](/docs/usermd/canbus-guide/docs/working-with-recorded-streams.md)
       - [Working with the CAN bus](/docs/usermd/canbus-guide/docs/working-with-the-can-bus.md)
       - [Full example with analysis](/docs/usermd/canbus-guide/docs/full-example-with-analysis.md)
+      - [Combining with other sensors](/docs/usermd/canbus-guide/docs/combining-streams-with-other-sensors.md)
     - [Conditinal statistics on streams](/docs/usermd/conditional-stats-on-streams/docs.md)
