@@ -9,29 +9,7 @@ When creating data analysis models it is preferable to work on recorded data in 
 
 The default behavior for SA Engine CANBUS data wrapper model is to use `can:simulated_bus` to produce a random raw CANBUS stream for `can:signal_bus`, `can:signal_stream` and `can:ts_signal_stream`.
 
-We can change the CAN signal stream to instead read CAN frames from a file. To do this we first create a function that reads rows of CAN frames and returns them as a stream of CAN signals.
-
-```LIVE
-create function socket_can_file_stream(Charstring filename) -> Stream of Vector
-  /* Returns a stream of CAN-frames extracted from the socketCAN log file `filename`. */
-  as select Stream of [
-              timeval(aton(trim("()", ts))),
-              integer(aton(trim("vcan", canid))),
-              hex2integer(fid),
-              hex2binary(payload)
-            ]
-       from Charstring ts,
-            Charstring canid,
-            Charstring fidpl,
-            Charstring fid,
-            Charstring payload
-      where [fid, payload] = split(fidpl, "#")
-        and [ts, canid, fidpl] in (select split(line, " ")
-                                     from Charstring line
-                                    where line in readlines(filename));
-```
-
-This guide comes with a recorded CAN data file `j1939-can-data.log` (socketCAN format) containing frames that can be decoded with the provided `j1939.dbc` DBC file.
+We can change the CAN signal stream to instead read CAN frames from a file. This guide comes with a recorded CAN data file `j1939-can-data.log` (socketCAN format) containing frames that can be decoded with the provided `j1939.dbc` DBC file.
 
 `j1939-can-data.log`:
 ```
@@ -46,11 +24,11 @@ This guide comes with a recorded CAN data file `j1939-can-data.log` (socketCAN f
 ...
 ```
 
-To set the recorded file as the CAN data source we create a wrapper function that calls our CAN data file reader.
+To set the recorded file as the CAN data source we create a wrapper function that calls a CAN data file reader.
 
 ```LIVE
 create function j1939_can_data_stream() -> Stream of Vector
-  as socket_can_file_stream(sa_home() +
+  as can:playback_socketcan(sa_home() +
         'models/canbus-guide/j1939-can-data.log');
 ```
 

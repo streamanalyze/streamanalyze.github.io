@@ -56,37 +56,15 @@ We will read the CAN frames from a recorded file. A file containing CAN frames (
 
 >[note] **Note:** If you run this guide on a device that has access to a CAN bus you can use the real CAN bus instead if you have means to replay the recorde file on the CAN bus. How to do this with canplayer is described in the chapter [Working with the CAN bus](/DL/docs/usermd/canbus-guide/docs/working-with-the-can-bus.md).
 
-To fix so that the CAN bus frames are read from the recorded file we first need to create a function that parses a socketCAN file and outputs each row as a CAN frame in a stream.
-
-```LIVE
-create function socket_can_file_stream(Charstring filename) -> Stream of Vector
-  /* Returns a stream of CAN-frames extracted from the socketCAN log file `filename`. */
-  as select Stream of [
-              timeval(aton(trim("()", ts))),
-              integer(aton(trim("vcan", canid))),
-              hex2integer(fid),
-              hex2binary(payload)
-            ]
-       from Charstring ts,
-            Charstring canid,
-            Charstring fidpl,
-            Charstring fid,
-            Charstring payload
-      where [fid, payload] = split(fidpl, "#")
-        and [ts, canid, fidpl] in (select split(line, " ")
-                                     from Charstring line
-                                    where line in readlines(filename));
-```
-
-Then we create a wrapper function that passes our recorded file to the CAN parser function.
+We create a wrapper function that passes our recorded file to a socketCAN parser function.
 
 ```LIVE
 create function j1939_can_data_stream() -> Stream of Vector
-  as socket_can_file_stream(sa_home() +
+  as can:playback_socketcan(sa_home() +
         'models/canbus-guide/j1939-can-data.log');
 ```
 
-And finally we set the CAN bus wrapper to use the wrapper function we just created as signal source.
+And then we set the CAN bus wrapper to use the wrapper function we just created as signal source.
 
 ```LIVE
 set bus(typenamed("can:signal")) = #'j1939_can_data_stream';

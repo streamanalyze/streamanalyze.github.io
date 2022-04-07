@@ -42,6 +42,7 @@ The SA Engine CANBUS data stream wraper comes with a few useful functions that w
 * `can:signal_stream()` - Outputs a stream of vectors with measurements from a given set of signals, called a *signal stream*.
 * `can:ts_signal_stream()` - Outputs a timestamped signal stream.
 * `can:import_dbc()` - Import a CAN DBC file.
+* `can:playback_socketcan()` - Playback recorded socketCAN files.
 
 Other useful standard functions.
 
