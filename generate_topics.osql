@@ -7,28 +7,89 @@ load_model("pi0");
 load_model("streamer_tutorial");
 load_model("statistical_analysis_guide");
 load_system_model("random_forest");
-load_model("getting-started");
+
+load_model("getting-started-with-android");
+load_model("getting-started-with-hms-hgp");
+load_model("getting-started-with-linux");
+load_model("getting-started-with-mac");
+load_model("getting-started-with-microchip-sama5d27");
+load_model("getting-started-with-mx-4-t30");
+load_model("getting-started-with-nxp-imx-6");
+load_model("getting-started-with-nxp-imx-8");
+load_model("getting-started-with-raspberry-pi");
+load_model("getting-started-with-windows");
+load_model("connecting-edge-device");
+
 
 create function my_get_summary_md(Charstring prefix, Charstring file, Charstring pattern, Vector ignore, Number indent) -> Charstring
+  /* Custom wrapper for get_summaries() method that also can produce model
+     summaries (JSON record with menu items).
+
+     Arguments:
+       PREFIX    - String that determines which summary record to produce.
+       FILE      - Not used?
+       PATTERN   - A pattern string used to only produce summary for specific
+                   user models.
+       IGNORE    - User models to ignore, a vector of strings that is matched
+                   to the model titles.
+       INDENT    - The level of indentation the summary should have in the
+                   menu?
+  */
   as select content
-       from Record r, Charstring content 
-      where r in case when prefix = '' then get_summaries()                                 
+       from Record r, Charstring content
+      where r in case when prefix = '' then get_summaries()
                       when like(prefix, '*topics/')  or like(prefix, '*topic/') then [get_summary('Topics',streamof(['||TOPICS||']))]
                       when like(prefix, '*modelmd/') then [{'title': 'Guides', 'folder': 1, 'children': vectorof(select rec from Record rec where rec in get_model_listings(pattern) and notany(rec["title"] in ignore)) }]
                       else  get_summaries() end
         and content = get_summary_md0(r,indent);
-set :model_summary = my_get_summary_md("modelmd/","summary.md","*getting-started*",[],0) + 
-"\n- [More guides](/docs/md/modelmd/README)\n" + 
-my_get_summary_md("modelmd/","summary.md","*",["Getting started"],2);
 
+
+// Get summary for models as Markdown. This will be the menu on the "Guides" page.
+
+set :getting_started_guides = ["Connecting an edge device",
+                               "Getting started with Windows",
+                               "Getting started with Linux",
+                               "Getting started with Mac",
+                               "Getting started with Android",
+                               "Getting started with Raspberry Pi",
+                               "Getting started with NXP i.MX 6",
+                               "Getting started with NXP i.MX 8",
+                               "Getting started with MX-4 T30",
+                               "Getting started with HMS HGP",
+                               "Getting started with Microchip SAMA5D27"];
+
+set :model_summary = "- [Connection guides](/docs/md/modelmd/README)\n" +
+                     my_get_summary_md("modelmd/","summary.md","*connecting-edge*",[],1) + "\n" +
+                     "- [Getting-started guides](/docs/md/modelmd/README)\n" +
+                     my_get_summary_md("modelmd/","summary.md","*getting-started*",[],1) + "\n" +
+                     "- [More guides](/docs/md/modelmd/README)\n" +
+                     my_get_summary_md("modelmd/","summary.md","*",:getting_started_guides,2);
+
+
+// -- "Docs" page --
+// Write the regular Docs summary (the menu items under the Docs page; Introduction, Tutorial, Vizualisation, etc.) to file as Markdown.
 
 write_file(get_summary_md("","summary.md"), "docs/summary.md");
 write_file(get_summary_md("","summary.md"), "docs/md/summary.md");
+
+
+// -- "Topics" page --
+// Write the Topics summary (the menu items under the Topics page) to file as Markdown.
+
 write_file(get_summary_md("topics/","summary.md"), "docs/md/topics/summary.md");
 write_file(get_summary_md("topics/","summary.md"), "docs/topic/summary.md");
+
+
+// -- "Guides" page --
+// Write the models summary (the menu items under the Guides page) to file as Markdown.
+
 write_file(:model_summary, "docs/md/modelmd/summary.md");
 write_file(:model_summary, "docs/usermd/summary.md");
 write_file(:model_summary, "docs/systemmd/summary.md");
+
+
+// Scrape topic content to populate the "Topics" page.
+
 create_folder("docs/topic");
 
 select write_file(content,"docs/topic/"+file)
