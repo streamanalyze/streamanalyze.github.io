@@ -12,7 +12,9 @@ The command should print out the version number of Java if Java is installed. If
 
 ## Connect your Mac to the server
 
-First you need to connect your Mac to the server. Follow the [Connecting an edge device](#/device_hub/getStarted) guide and come back here when your Mac is connected.
+> [static-only] First you need to connect your Mac to the server. Follow the [Connecting an edge device](/docs/usermd/connecting-edge-device/docs) guide and come back here when your Mac is connected.
+
+> [live-only] First you need to connect your Mac to the server. Follow the [Connecting an edge device](https://studio.streamanalyze.com/home?goto=1&dl=Iy9kb2NzLyZsb2FkX2V4dGVybmFsPXN0cmVhbWFuYWx5emUuY29tL2Nvbm5lY3RpbmctZWRnZS1kZXZpY2UmZ290bz1jb25uZWN0aW5nLWVkZ2UtZGV2aWNlL2RvY3MubWQ=) guide and come back here when your Mac is connected.
 
 ## Test your setup
 
