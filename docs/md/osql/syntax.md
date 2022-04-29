@@ -310,7 +310,7 @@ procedure-stmt ::=
       update-stmt |
       set-local-variable-stmt |
       query |
-      if-stmt |
+      case-stmt |
       commit-stmt |
       abort-stmt |
       loop-stmt |
@@ -331,10 +331,11 @@ for-each-stmt ::=
                  [where-clause] 
                  procedure-body
 
-if-stmt ::=
-      'if' expression
-      'then' procedure-body
-      ['else' procedure-body]
+case-stmt ::=
+      'case' when-statements ['else' statement] 'end'
+      
+when-statements ::=
+      'when' expression 'then' statement [when-statements]
 
 set-local-variable-stmt ::= 'set' local-variable '=' expression
 

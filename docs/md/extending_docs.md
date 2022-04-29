@@ -1,11 +1,11 @@
-# Adding documentation to user models.
+# Adding documentation to user models
 
 Documentation can be added to your models by following a few steps. This section assumes that you have basic knowledge about creating and loading user models in sa.engine.
 
 These steps include adding markdown files with documentation text and a `summary.json` file containing
 the structure of the markdown files. At the end of this section there is a runnable example that will generate a model with documentation.
 
-## Adding markdown files to model.
+## Adding markdown files to model
 
 This can either be done from your regular file system or through sa.studio.
 
@@ -52,7 +52,7 @@ load_model("my_documented_model");
 
 Now refresh this documentation page and look at the bottom of the listing to the left, you should see a section called **my_documented_model**.
 
-# Adding live code examples to documentation.
+# Adding live code examples to documentation
 
 To add live code examples to documentation all you need to to is adding `LIVE` after the code block start.
 For instance, the following:
@@ -68,6 +68,8 @@ will produce:
 ```LIVE
 1+1;
 ```
+
+## Visualization
 
 To change visualization, you can add a JSON-object after the LIVE tag:
 
@@ -95,6 +97,28 @@ Where the name of the visualization method is the same as the ones you see on th
 * `Bar plot`
 * `Scatter plot`
 * `p-coords`
+
+
+## Select device
+
+To change device the code runs on, you can add a "peer" element to a JSON-object after the LIVE tag.
+
+Examples:
+
+```
+LIVE {"peer":"Server"}
+```
+
+```
+LIVE {"peer":"Linux-edge"}
+```
+
+The "peer" element can be combined with the "vis" element, like this:
+
+```
+LIVE {"peer": "Linux-edge", "vis": "Line plot"}
+```
+
 
 > [note]    **Note:** You can edit the current section from the documentation by pressing <code>Shift-Enter</code> or the edit button at the typ.
 
@@ -129,7 +153,7 @@ The valid tags are:
 ### Note
 
 ```markdown
-> [note] **Note:** 
+> [note] **Note:**
 ```
 
 > [note] **Note:**
@@ -137,11 +161,11 @@ The valid tags are:
 ### Exercise
 
 ```markdown
-> [exercise] **Exercise:** 
+> [exercise] **Exercise:**
 > With several lines
 ```
 
-> [exercise] **Exercise:** 
+> [exercise] **Exercise:**
 > With several lines
 
 ### Tip
@@ -162,7 +186,31 @@ The valid tags are:
 ### Warning
 
 ```
-> [warning] **Warning:** 
+> [warning] **Warning:**
 ```
 
 > [warning] **Warning:**
+
+
+# Extended Markdown syntax support
+
+## Tables
+
+The documentation supports [Markdown tables](https://www.markdownguide.org/extended-syntax/#tables).
+
+Example:
+
+```
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
+```
+
+Is rendered as:
+
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
+
