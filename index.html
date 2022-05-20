@@ -78,6 +78,11 @@
       font-size: 14pt;
     }
 
+    .docs-function-body{
+        white-space: pre-wrap;
+        font-family: monospace;
+    }
+
     .CTABtn {
       fill: #000000;
       color: #000000;
@@ -180,7 +185,7 @@
             } else if (src.startsWith("<p>[function]")) {
               return "<div  class='docs-function'><p>" + src.slice(13) + "</div>"
             } else if (src.startsWith("<p>[function-docs]")) {
-              return "<div  class='md-box docs'><p>" + src.slice(18) + "</div>"
+              return "<div  class='md-box docs docs-function-body'><p>" + src.slice(18) + "</div>"
             } else if (src.startsWith("<p>[yt-embed]")) {
               return `<div class='md-box' style="
                       position: relative;
