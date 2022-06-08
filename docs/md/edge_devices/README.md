@@ -1,35 +1,41 @@
-# Edge devices
+# Edge clients
 
-This section goes through how to install edge clients on various devices.
-When connecting an edge client to a federation there are two ways to connect.
-The easiest way is using the [Device Hub](!#/device_hub/) and it's **connect 
-config** blobs. But can just as well be done by manually configuring your edge
-devices.
+This section goes through how to install edge clients on various
+devices.   
 
-The download page is located at [studio.streamanalyze.com/download](!https://studio.streamanalyze.com/download)
+To connect your device to an sa.engine federeration you first need to
+install an **edge client** app on your device.  The edge client apps
+can be downloaded from
+[studio.streamanalyze.com/download](https://studio.streamanalyze.com/download)
 
-## Connect config.
-Using a connect config is as easy as navigating to the 
-[Device Hub](!#/device_hub/) and using the appropriate way to get a connect config from there. For more information on how connect configurations works see
-the [advanced](/docs/md/servers/advanced.md) section under servers.
+Once you have downloaded and installed the edge client app, navigate
+to the [Device Hub](/device_hub/) and select a connection
+configuration blob for your kind of device from there.
 
-### Android
-Use the Android edge client app to scan the QR code; then press
-connect. In the video below you can see the flow from downloading the
-edge client app to connecting it as an edge to the federation of a
-sa.studio community.  <video style="width: 100%"  controls> <source
+
+## Android
+
+The Android edge client app can be dowloaded from
+[studio.streamanalyze.com/download](https://studio.streamanalyze.com/download).
+Once installed, scan the QR code; then press connect. In the video
+below you can see the flow from downloading the edge client app to
+connecting it as an edge client to a **federation** of sa.engine
+servers (SASes) accessible from SA Studio. <video style="width: 100%"
+controls> <source
 src="https://s3-eu-west-1.amazonaws.com/dl.streamanalyze.com/gifs/connect_android.webm"
 type="video/webm"> Your browser does not support the video tag.
 </video>
 
 
-### Interactive prompt e.g. Linux (x86 and ARM)/Windows/OSX
+## Command line configuration
 
-Either copy the first config blob and paste it inside a running
-sa.engine or copy the second one and paste in in a shell where
-sa.engine is in your path.  In the video below you can see the flow
-from downloading sa.engine to connecting it as an edge client to the
-federation of a sa.studio community.
+If you are using a regular OS shell under e.g. Linux, Windows or OSX,
+the system can be configured using command line tools. You can either
+copy the first configigutaion blob for your device and paste it inside
+a running sa.engine, or you can copy the second one and paste in in a
+shell where sa.engine is in your path.  In the video below you can see
+the flow from downloading sa.engine to connecting it as an edge client
+to the federation of a sa.studio community.
 
 <video style="width: 100%"  controls>
 <source src="https://s3-eu-west-1.amazonaws.com/dl.streamanalyze.com/gifs/connect_terminal_edge.webm" type="video/webm">
@@ -37,7 +43,8 @@ Your browser does not support the video tag.
 </video>
 
 ## Manual configuration.
-When connecting to a federation you need a couple of things:
+
+When manually connecting to a federation you need a couple of things:
 
 1. A `name` for the peer you are connecting e.g. **edge1**
 2. An `address` and `port` to the nameserver of the federation.

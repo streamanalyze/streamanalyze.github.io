@@ -1,4 +1,4 @@
-# Update functions:
+# Update
 
 > [function]
 > addfunction(Charstring fn,Vector args,Vector row)->Boolean

@@ -1,4 +1,4 @@
-# Sensor ontology functions:
+# Sensor ontology
 
 > [function]
 > bus(Type wt)->Function

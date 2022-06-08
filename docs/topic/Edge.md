@@ -1,4 +1,4 @@
-# Edge functions:
+# Edge
 
 > [function]
 > cancel_edge_cq(Charstring edge,Object id)->Object

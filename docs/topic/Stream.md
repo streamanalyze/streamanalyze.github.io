@@ -1,4 +1,4 @@
-# Stream functions:
+# Stream
 
 > [function]
 > changed(Stream s)->Stream
@@ -74,7 +74,7 @@ ___
 ___
 
 > [function]
-> heartbeat(Number pace)->Stream of Number
+> heartbeat(Real pace)->Stream of Real
 
 > [function-docs]
 > Stream of seconds from start emitted at given `pace` in seconds 
@@ -127,7 +127,7 @@ ___
 >   as each vector in `s` and:
 >   
 >   $$
->   limits_i = [min_i,max_i, bins_i]`
+>   limits_i = [min_i,max_i, bins_i]
 >   $$
 > 
 >   the range for the histograms is always $ [min,max) $ 
@@ -240,7 +240,7 @@ ___
 ___
 
 > [function]
-> ravg(Stream s)->Stream of Number
+> ravg(Stream s)->Stream of Real
 
 > [function-docs]
 > Running averages of elements in stream `s` 
@@ -250,7 +250,7 @@ ___
 ___
 
 > [function]
-> rcount(Stream s)->Stream of Number
+> rcount(Stream s)->Stream of Integer
 
 > [function-docs]
 > Stream of running count of elements in stream `s` 
@@ -296,7 +296,7 @@ ___
 ___
 
 > [function]
-> rsum(Stream s)->Stream of Number
+> rsum(Stream s)->Stream of Real
 
 > [function-docs]
 > Stream of running averages of elements in stream `s` 
@@ -306,7 +306,7 @@ ___
 ___
 
 > [function]
-> sample_every(Stream s,Number pace)->Stream
+> sample_every(Stream s,Real pace)->Stream
 
 > [function-docs]
 > Run stream `s` and emit values every `pace` seconds since the last value 
@@ -316,7 +316,7 @@ ___
 ___
 
 > [function]
-> sample_stream(Bag expression,Number pace)->Stream
+> sample_stream(Bag expression,Real pace)->Stream
 
 > [function-docs]
 > Stream of `expression` evaluated every `pace` seconds 
@@ -354,7 +354,7 @@ ___
 ___
 
 > [function]
-> simstream(Number pace)->Stream of Real
+> simstream(Real pace)->Stream of Real
 
 > [function-docs]
 > A simulated harmonic stream 
@@ -364,7 +364,7 @@ ___
 ___
 
 > [function]
-> simwinstream(Number pace,Number sz)->Stream of Vector of Real
+> simwinstream(Real pace,Integer sz)->Stream of Vector of Real
 
 
 
@@ -550,7 +550,7 @@ ___
 ___
 
 > [function]
-> ts_simstream(Number pace)->Stream of Timeval of Number
+> ts_simstream(Real pace)->Stream of Timeval of Real
 
 > [function-docs]
 > A sumulated time stamped harmonic stream 

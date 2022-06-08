@@ -2,6 +2,9 @@
 
 > [note] **Note:** This guide is designed for running inside SA Studio. Doing so makes it possible to run the code blocks interactively (like a Jupyter Notebook). If you read this documentation on the regular documentation website some internal links might not work and you will only be able to read the code examples, not run them.
 
+> [note] **Note:** This guide is works for both Raspberry Pis and Raspberry Pi Zeros. If you run this guide with a Raspberry Pi Zero, you must select the device "Pi0-edge" instead of "Pi-edge" wherever queries are executed on the device.
+
+
 ## Connect your Raspberry Pi to the server
 
 > [static-only] First you need to connect your Raspberry Pi to the server. Follow the [Connecting an edge device](/docs/usermd/connecting-edge-device/docs) guide and come back here when your Raspberry Pi is connected.
@@ -12,154 +15,90 @@
 
 Now that you have connected your Raspberry Pi to the server it is time to test some queries.
 
-**1.** Go to the OSQL editor by clicking the ![OSQL editor](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/osql-editor-icon.png "OSQL editor") icon.
+**1.** Select "server" in the device list at the bottom and run the following query by pushing the ![Play](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/run-queries-icon.png "Play") icon.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio.png" alt="sa-studio.png" style="width:100%"/>
-
-**2.** Open a new OSQL editor by clicking the <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/open-new-osql-editor-button.png" alt="open-new-osql-editor-button.png" width="120"/> button.
-
-**3.** Ensure that the queries will be evaluated on the server by selecting "server" in the device list at the bottom.
-
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/sa-studio-osql-editor-device-selector-server.png" alt="sa-studio-osql-editor-device-selector-server.png" width="250"/>
-
-**4.** In the editor window, write the query `listening_edges();`.
-
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio-osql-editor-enter-query.png" alt="sa-studio-osql-editor-enter-query.png" style="width:100%"/>
-
-Then run the query by pressing the ![Run queries](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/run-queries-icon.png "Run queries") icon to run the query. The result is a list of edges that are connected to the server. Your Raspberry Pi should be present with the name "PI-EDGE" (or "PI0-EDGE" if it is a Raspberry Pi Zero).
-
-```shell
-["EDGE1","PI-EDGE"]
+```LIVE
+listening_edges();
 ```
 
-**5.** Change the device on which the queries are run by clicking <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/device-selector.png" alt="device-selector.png"  /> at the bottom (next to the run query button) and select `Pi-edge` from the list.
-
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/sa-studio-osql-editor-device-selector-pi-edge.png" alt="sa-studio-osql-editor-device-selector-pi-edge.png" width="250"/>
-
-Now when you run a query it will execute on your Raspberry Pi.
-
-
-**6.** Try executing a query on the Raspberry Pi edge device by having  <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/device-selector-pi-edge.png" alt="device-selector-win-edge.png" width="70" /> as selected device, delete the previous query from the editor window and execute the new query:
-
+The result is a list of edges that are connected to the server. Your device should be present with the name you gave it when connecting the edge ("PI-EDGE" or "PI0-EDGE" if it is a Raspberry Pi Zero).
 
 ```shell
+["PI-EDGE"]
+```
+
+**2.** You can change which device the queries are run on by clicking the device selector <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/device-selector.png" alt="device-selector.png" width="60" /> at the bottom of the code block (next to the play button). Try this and select your edge device from the list. Now when you run a query it will execute on your edge device. Run the following query on your edge device.
+
+```LIVE {"peer":"Server"}
 this_peerid();
 ```
 
+This should output the name you gave your edge device when connecting it to the server.
 
-This should output the string `"PI-EDGE"` which is the id of your Raspberry Pi edge device.
-
-Also note that SA Engine instance on the Raspberry Pi should confirm in your SSH session that it ran the query `this_peerid()`.
+Also note that the local SA Engine instance in your device's terminal prompt should confirm that it ran the query `this_peerid()`.
 
 ```shell
 2021-10-18T14:38:32.392 Running query 1: this_peerid();
 2021-10-18T14:38:32.444 Query 1 finished
 ```
 
-Now we have verified that your Raspberry Pi is connected to the server, and that it can run queries retrieved from the server.
+Now we have verified that your Raspberry Pi is connected to the server, and that it can run queries received from the server.
 
 
-## Deploy and run a model
+## Create a model
 
-Now that you have tested that you can execute queries on the Raspberry Pi edge device it is time to deploy a simple model. Our model will be a simple mathematical transform that converts temperature values from Celsius to Farenheit. First we will create the model and save it on our server. Then we will deploy it to the edge and run it.
+Now that you have tested that you can execute queries on the Raspberry Pi edge device it is time to create a model. Our model will be a mathematical transform that converts temperature values from Celsius to Farenheit.
 
-**1.** Right click on "User models" and then select "Create new model".
+**1.** Create the following function that will constitute our model on your edge device (remember, if you are running this guide with a Pi Zero you must first change the device in the device selector from <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/device-selector-pi-edge.png" alt="device-selector-win-edge.png" width="70" /> to "Pi0-edge"):
 
-![add-user-model.png](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/add-user-model2.png "add-user-model2.png")
-
-**2.** Write the model name "my_ctof" in the dialog that appears and click "Ok".
-
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/new-model-dialog2.png" alt="new-model-dialog2.png" style="width:100%"/>
-
-This creates a new folder "my_ctof" with three files.
-
-![sa-studio-osql-editor-user-models-my-ctof.png](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio-osql-editor-user-models-my-ctof.png "sa-studio-osql-editor-user-models-my-ctof.png")
-
-**3.** Click on the `master.osql` file and add the following to the file by pasting it into the editor window:
-
-```sql
+```LIVE {"peer":"Pi-edge"}
 create function ctof(Number c) -> Number
   /* Convert a Celsius degree `c` to Fahrenheit */
   as c * 9 / 5 + 32;
 ```
 
-**4.** Save the file by clicking the ![Save](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/save-icon.png "Save") icon in the top right corner (or pressing `Ctrl-s`).
+**2.** Now you can try the model on the edge device by running the following query:
 
-Unsaved files are marked in the editor tab with an aterisk `*` next to its name. When you save the file the asterisk disappears.
-
-**5.** Verify that `my_ctof` has been added to your models by running the `user_models();` query in a new OSQL tab. The steps for running a query in a new tab is:
-
-   1. Click the plus sign in the top right corner and select "New OSQL tab".
-
-![sa-studio-osql-editor-new-osql-tab.png](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio-osql-editor-new-osql-tab.png "sa-studio-osql-editor-new-osql-tab.png")
-
-   2. Ensure that you have selected the correct device (now it should be set to <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/device-selector.png" alt="device-selector.png" width="60" />).
-
-   3. Write the query (`user_models();`) in the editor tab.
-
-   4. Run the query with the ![Run queries](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/run-queries-icon.png "Run queries") icon in the bottom left corner.
-
-The output should include `"my_ctof"`.
-
-**6.** Now you can deploy the model by running the following query (on the <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/device-selector.png" alt="device-selector.png" width="60" />):
-
-```shell
-deploy_model(["pi-edge"],"my_ctof");
-```
-
-The edge device answers with its peer id (`"PI-EDGE"`) when the model has been deployed. Note that the SA Engine instance confirmes that the model was loaded in the Raspberry Pi SSH session.
-
-```shell
-2021-11-08T10:33:33.306 Running query 2: _download_commit_model('my_ctof')
-Reading OSQL statements from "/home/pi/SA/models/my_ctof/master.osql"
-2021-11-08T10:33:36.930 Query 2 finished
-2021-11-08T10:33:36.932 Terminating coroutines for 2
-2021-11-08T10:33:36.932 Query 2 cancelled
-2021-11-08T10:33:36.950 Query 2 cancelled
-```
-
-**7.** Now you can run the model on the edge by simply changing device to <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/device-selector-pi-edge.png" alt="device-selector-win-edge.png" width="70" /> and run the following query:
-
-```shell
+```LIVE {"peer":"Pi-edge"}
 ctof(32);
 ```
 
 You should get the result `89.6` from your edge device.
 
-**8.** You can also ship queries to edges from the server by using the built-in function `edge_cq(Charstring edge, Charstring query)` which evaluates `query` on `edge`.
+**3.** You can also ship queries to edges from the server by using the built-in function `edge_cq(Charstring edge, Charstring query)` which evaluates `query` on `edge`.
 
 Try this by first ensuring that you have selected <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/device-selector.png" alt="device-selector.png" width="60" /> as your device and run the following query:
 
-```shell
+```LIVE {"peer":"Server"}
 edge_cq('pi-edge', 'ctof(72)');
 ```
 
 You should get the result `161.6` from your edge device.
 
 ## Get a stream of readings from the temperature sensor.
+
 On a Raspberry Pi you can access the temperature reading by the file `/sys/class/thermal/thermal_zone0/temp`. Each reading is in `celsius * 1000`
 
 To get a stream of temperature readings you can use the `csv:file_stream` function with `"loop"` as option.
 
 
-```
+```LIVE {"peer":"Server"}
 edge_cq("pi-edge", "
         csv:file_stream('/sys/class/thermal/thermal_zone0/temp', 'loop',0.1)/1000
-        ");;
+        ");
 ```
 
+This should show a stream of temperature readings from the internal sensor on the CPU.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/pi_read_sensor_csv.png" alt="pi_read_sensor_csv.png" style="width:100%" />
+> [static-only]
+> <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/pi_read_sensor_csv.png" alt="pi_read_sensor_csv.png" style="width:100%" />
 
-
-You are now looking at a stream of temperature readings from the internal sensor on the CPU.
 
 ## Defining a signal of the temperature sensor.
 
-To wrap this up, let's add some meta-data to `my_ctof` model that contains the necessary steps to add the
-temperature sensor as a signal in sa.engine. Copy the following OSQL-statements and paste them into the `master.osql` file for the model **my_ctof**:
+To wrap this up, let's add some meta-data that contains the necessary steps to add the temperature sensor as a signal in SA Engine:
 
-```
+```LIVE {"peer":"Pi-edge"}
 create Signal (name, doc) instances
  ("CPU_temp", "Temperature reading from the CPU tempereature sensor");
 
@@ -170,41 +109,28 @@ set ts_signal_stream(signal_named("CPU_temp")) =
                                    'loop',0.1)/1000);
 ```
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/sa-studio-model-with-metadata.png" alt="sa-studio-model-with-metadata.png" style="width:100%" />
+If you call the function `signals()` on the Raspberry Pi now you will see that we have a signal called `CPU_temp` defined:
 
-
-Save the file and then re-deploy the model to `pi-edge`:
-
+```LIVE {"peer":"Pi-edge"}
+signals();
 ```
-deploy_model(["pi-edge"],"my_ctof");
-```
-
-If you call the function `signals()` on the Raspberry pi now you will see that we have a signal called `CPU_temp` defined:
-
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/sa-studio-osql-editor-signals-pi-edge.png" alt="sa-studio-osql-editor-signals-pi-edge.png" />
-
 
 You can now get a stream of the temperature signal by running:
 
+```LIVE {"peer":"Pi-edge","vis":"Line plot"}
+signal_stream("CPU_temp");
 ```
-edge_cq('pi-edge', 'signal_stream("CPU_temp")');
-```
-
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/sa-studio-osql-editor-signal-stream-temp-pi-edge.png" alt="sa-studio-osql-editor-signal-stream-temp-pi-edge.png"  />
-
 
 
 To get a stream of readings in Fahrenheit simply apply the function `ctof` to each number in the signal stream:
 
+```LIVE {"peer":"Pi-edge","vis":"Line plot"}
+select ctof(c)
+  from Number c
+  where c in signal_stream("CPU_temp");
 ```
-edge_cq('pi-edge', '
-          select ctof(c)
-            from Number c
-           where c in signal_stream("CPU_temp")
-        ');
-```
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-pi-edge/sa-studio-osql-editor-signal-stream-f-temp-pi-edge.png" alt="sa-studio-osql-editor-signal-stream-f-temp-pi-edge.png"  />
 
+This plots the CPU temperature in Fahrenheit of the Raspberry Pi.
 
 
 ## Conclusion

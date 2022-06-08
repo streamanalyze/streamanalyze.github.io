@@ -1,4 +1,4 @@
-# System meta-data functions:
+# System meta-data
 The data that the system internally uses for maintaining the database
 is exposed to OSQL and can be queried in terms of types and functions
 as other data. For example, the types and functions used in the
@@ -257,7 +257,7 @@ ___
 ___
 
 > [function]
-> methods(Type t)->Function
+> methods(Type t)->Bag of Function
 
 > [function-docs]
 > The functions having one argument of type `t` 

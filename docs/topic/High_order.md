@@ -1,4 +1,4 @@
-# High order functions:
+# High order
 
 > [function]
 > apply(Function f,Vector args)->Bag of Vector

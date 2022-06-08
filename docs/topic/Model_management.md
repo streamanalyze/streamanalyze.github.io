@@ -1,4 +1,4 @@
-# Model management functions:
+# Model management
 
 > [function]
 > create_model(Charstring model)->Charstring

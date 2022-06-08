@@ -1,5 +1,6 @@
 - [Topics](/docs/md/topics/README)
   - [Aggregate](/docs/topic/Aggregate)
+  - [Binary data](/docs/topic/Binary_data)
   - [CSV](/docs/topic/CSV)
   - [Complex number](/docs/topic/Complex_number)
   - [Connect config](/docs/topic/Connect_config)
@@ -35,5 +36,5 @@
   - [Vector](/docs/topic/Vector)
   - [Visual Analyzer](/docs/topic/Visual_Analyzer)
   - [dbscan](/docs/topic/dbscan)
-  - [random_forest](/docs/topic/random_forest)
+  - [random forest](/docs/topic/random_forest)
   - [serial](/docs/topic/serial)

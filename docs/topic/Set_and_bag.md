@@ -1,4 +1,4 @@
-# Set and bag functions:
+# Set and bag
 
 > [function]
 > bequal(Bag x,Bag y)->Boolean

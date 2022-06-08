@@ -1,4 +1,4 @@
-# Documentation functions:
+# Documentation
 
 > [function]
 > add_topic(Function f,Charstring topic)->Topic
@@ -81,6 +81,17 @@ ___
 ___
 
 > [function]
+> file:current_folder()->Charstring
+
+> [function-docs]
+> Get the folder of the current file, or current working
+> directory if no file is being loaded. 
+
+
+
+___
+
+> [function]
 > functions(Topic t)->Bag of Function
 
 > [function-docs]
@@ -131,16 +142,6 @@ ___
 ___
 
 > [function]
-> signature(Type t)->Charstring
-
-> [function-docs]
-> The signature of type `t` 
-
-
-
-___
-
-> [function]
 > signature(Function f)->Bag of Charstring
 
 > [function-docs]
@@ -152,10 +153,10 @@ ___
 ___
 
 > [function]
-> sourcecode(Type t)->Charstring
+> signature(Type t)->Charstring
 
 > [function-docs]
-> Source code to of user defined type `t` 
+> The signature of type `t` 
 
 
 
@@ -176,6 +177,16 @@ ___
 
 > [function-docs]
 > Source code of resolvents of function named `fn` 
+
+
+
+___
+
+> [function]
+> sourcecode(Type t)->Charstring
+
+> [function-docs]
+> Source code to of user defined type `t` 
 
 
 

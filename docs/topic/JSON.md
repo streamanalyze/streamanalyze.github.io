@@ -1,4 +1,4 @@
-# JSON functions:
+# JSON
 A **record** represents a set of attributes and their corresponding
 values of an artifact. For example, the following record may represent
 that a person named `Tore` has the income `100000`:
@@ -78,6 +78,13 @@ ___
 ___
 
 > [function]
+> json:popen(Charstring cmd)->Record
+
+
+
+___
+
+> [function]
 > json:request(Charstring url)->Record
 
 > [function-docs]
@@ -98,16 +105,6 @@ ___
 ___
 
 > [function]
-> json:serial_stream(Charstring sn,Integer br)->Stream
-
-> [function-docs]
-> json stream from serial port named `sp` with baud rate `br` 
-
-
-
-___
-
-> [function]
 > json:serial_stream(Charstring sn,Integer br,Charstring flow_control,
                   Integer data_bits,Integer stop_bits,Integer parity)->Stream
 
@@ -119,10 +116,10 @@ ___
 ___
 
 > [function]
-> json:socket_stream(Charstring host,Integer sp,Object request)->Stream
+> json:serial_stream(Charstring sn,Integer br)->Stream
 
 > [function-docs]
-> json stream from port `sp` on `host` 
+> json stream from serial port named `sp` with baud rate `br` 
 
 
 
@@ -139,7 +136,27 @@ ___
 ___
 
 > [function]
+> json:socket_stream(Charstring host,Integer sp,Object request)->Stream
+
+> [function-docs]
+> json stream from port `sp` on `host` 
+
+
+
+___
+
+> [function]
 > json:stringify(Object o)->Charstring
+
+
+
+___
+
+> [function]
+> json:unload(Charstring fn,Charstring model,Charstring file)->Charstring
+
+> [function-docs]
+> Unload function named `fn` as JSON `file` in `model` on server 
 
 
 
@@ -151,16 +168,6 @@ ___
 
 > [function-docs]
 > Unload functions `fnol` into JSON `file` in `model` 
-
-
-
-___
-
-> [function]
-> json:unload(Charstring fn,Charstring model,Charstring file)->Charstring
-
-> [function-docs]
-> Unload function named `fn` as JSON `file` in `model` on server 
 
 
 
@@ -181,20 +188,20 @@ ___
 ___
 
 > [function]
-> json:write_file(Charstring file,Stream s)->Charstring
+> json:write_file(Charstring file,Bag b)->Charstring
 
 > [function-docs]
-> Write elements in stream `s` into `file` in JSON format 
+> Write elements in bag `b` into `file` in JSON format 
 
 
 
 ___
 
 > [function]
-> json:write_file(Charstring file,Bag b)->Charstring
+> json:write_file(Charstring file,Stream s)->Charstring
 
 > [function-docs]
-> Write elements in bag `b` into `file` in JSON format 
+> Write elements in stream `s` into `file` in JSON format 
 
 
 
@@ -268,6 +275,9 @@ ___
 ___
 
 > [function]
-> vref(Record,Object)->Object
+> vref(Record r,Object k)->Object
+
+> [function-docs]
+> Same as `r[k]` access value of key `k` in record `r` 
 
 

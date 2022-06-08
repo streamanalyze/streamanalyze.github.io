@@ -1,4 +1,4 @@
-# Logging functions:
+# Logging
 
 > [function]
 > console_logger(Boolean flag)->Boolean

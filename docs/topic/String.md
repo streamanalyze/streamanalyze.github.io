@@ -1,4 +1,4 @@
-# String functions:
+# String
 __String concatenation__
 
 String concatenation is made using the `+` operator. Examples:
@@ -69,10 +69,20 @@ ___
 ___
 
 > [function]
-> length(Charstring str)->Integer
+> dim(Charstring str)->Integer
 
 > [function-docs]
 > Number of characters in string `str` 
+
+
+
+___
+
+> [function]
+> length(Charstring str)->Integer
+
+> [function-docs]
+> Legacy; use `dim(str)` instead 
 
 
 
@@ -276,5 +286,8 @@ ___
 
 > [function]
 > vref(Charstring str,Number i)->Charstring
+
+> [function-docs]
+> Same as `str[i]` to access character `i` in `str` 
 
 

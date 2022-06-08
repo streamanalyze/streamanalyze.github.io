@@ -1,4 +1,4 @@
-# Complex number functions:
+# Complex number
 
 > [function]
 > abs(Complex v)->Real

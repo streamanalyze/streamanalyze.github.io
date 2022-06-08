@@ -1,4 +1,4 @@
-# CSV functions:
+# CSV
 sa.engine supports several ways to save and load data. One of the
 easiest ways is using [Comma Separated Value (CSV)
 files](https://en.wikipedia.org/wiki/Comma-separated_values).  Any

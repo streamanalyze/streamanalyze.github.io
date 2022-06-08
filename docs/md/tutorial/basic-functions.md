@@ -81,14 +81,15 @@ As `doc()`, `sourcecode()` works also for objects.
 sourcecode(apropos("atan"))
 ```
 
-The functions are grouped into **topics** stored in the database. To
-get summary of all documentation functions do:
+The functions are grouped into **topics** stored in the database. 
+Navigate to [Docs->Topics](docs/md/topics/README.md)
+for documentation of the functions for a specific topoc.
 
+To get summary of all functions for a given topic do:
 ```LIVE
 doc(topic_named("Documentation"))
 ```
 
-or go to [Topics->Documentation](/docs/topic/Documentation) for details.
 
 ## Math functions
 

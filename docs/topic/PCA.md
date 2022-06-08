@@ -1,4 +1,4 @@
-# PCA functions:
+# PCA
 
 > [function]
 > lpcascore(Bag of (Vector of Number,Object),Number d)->(Vector of Number,
@@ -61,12 +61,5 @@ ___
 
 > [function]
 > unlabel(Bag of (Vector of Number,Object))->Vector of Number v
-
-
-
-___
-
-> [function]
-> vref(Vector of (Number,Vector of Number),Number)->(Number,Vector of Number)
 
 

@@ -1,4 +1,4 @@
-# Dataflow functions:
+# Dataflow
 
 > [function]
 > drop_flow(Object flow)->Charstring

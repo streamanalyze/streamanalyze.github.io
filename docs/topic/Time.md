@@ -1,4 +1,4 @@
-# Time functions:
+# Time
 Objects of type `Timeval` represent absolute time points. The time
 points are internally represented using [Coordinated Universal
 Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)(UTC)

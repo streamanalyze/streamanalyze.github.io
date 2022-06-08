@@ -1,4 +1,4 @@
-# random_forest functions:
+# random forest
 
 > [function]
 > randv(Integer dim,Integer len)->Vector of Integer
