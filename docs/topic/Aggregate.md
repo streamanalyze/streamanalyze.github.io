@@ -1,4 +1,4 @@
-# Aggregate functions:
+# Aggregate
 Aggregate functions compute a single result from the elements in a
 bag.
 
@@ -111,9 +111,8 @@ ___
 > histogram(Bag of Number b,Vector limits)->Vector of Integer
 
 > [function-docs]
-> Calculate a histogram over a bag `b`, with `limits` vector.
->   `limits` is a vector with `[min,max,number of bins]` 
->   the range for the histograms is always $ [min,max) $ 
+> Calculate a histogram over a bag `b` where the `limits` vector specifies
+>    the ranges and number of bins as `[min,max,number of bins]` 
 
 
 
@@ -131,17 +130,12 @@ ___
 ___
 
 > [function]
-> histogram(Bag of Vector b,Vector of Vector limits)->Vector of Integer
+> histogram(Bag of Vector b,Matrix limits)->Vector of Integer
 
 > [function-docs]
-> Calculate a histogram over a bag of vector `b`, with `limits` vector.
->   Limits must be a vector of the same dimension as each vector in `b` and:
->   
->   $$
->   limits_i = [min_i,max_i, bins_i]`
->   $$
-> 
->   the range for the histograms is always $ [min,max) $ 
+> Calculate a histogram over a bag of tuple vectors `b` where each row
+>    $ l_i $ in the `limits` matrix specifies the ranges and number of bins in 
+>    tuple position $i$ as $ l_i = [min_i,max_i, bins_i] $ 
 
 
 
@@ -161,7 +155,7 @@ ___
 > max(Bag b)->Object
 
 > [function-docs]
-> Return the largest element in bag `b` 
+> The largest element in bag `b` 
 
 
 
@@ -181,7 +175,7 @@ ___
 > median(Vector v)->Number
 
 > [function-docs]
-> The median of numbers in `v` 
+> The median of numbers in vector `v` 
 
 
 
@@ -191,7 +185,7 @@ ___
 > median(Bag of Number b)->Number
 
 > [function-docs]
-> The median of numbers in `b` 
+> The median of numbers in bag `b` 
 
 
 
@@ -201,7 +195,7 @@ ___
 > min(Bag b)->Object
 
 > [function-docs]
-> Return the smallest element in bag `b` 
+> The smallest element in bag `b` 
 
 
 

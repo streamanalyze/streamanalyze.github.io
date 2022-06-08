@@ -1,4 +1,4 @@
-# Database index functions:
+# Database index
 
 > [function]
 > create_index(Function f,Charstring par,Charstring indtype,

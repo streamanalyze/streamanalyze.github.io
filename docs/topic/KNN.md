@@ -1,4 +1,4 @@
-# KNN functions:
+# KNN
 
 > [function]
 > classdistances(Vector of Number x,Function disfn,Bag of (Object,

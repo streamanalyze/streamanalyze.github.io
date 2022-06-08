@@ -2,13 +2,14 @@
 
 > [note] **Note:** This guide is designed for running inside SA Studio. Doing so makes it possible to run the code blocks interactively (like a Jupyter Notebook). If you read this documentation on the regular documentation website some internal links might not work and you will only be able to read the code examples, not run them.
 
-> [note]  **Note:** This guide requires Java to run. To check if you have Java installed open Terminal on your Mac and run the following command.
+> [note]  **Note:** This guide requires Java to run. To check if you have Java installed open Terminal on your Mac and run the following command:
+>
+>```shell
+>$ java -version
+>```
+>
+>The command should print out the version number of Java if Java is installed. If Java is not installed you can download and install the appropriate version from [Oracle's Java Download Page](https://www.oracle.com/downloads/).
 
-```shell
-$ java -version
-```
-
-The command should print out the version number of Java if Java is installed. If Java is not installed you can download and install the appropriate version from [Oracle's Java Download Page](https://www.oracle.com/downloads/).
 
 ## Connect your Mac to the server
 
@@ -20,49 +21,34 @@ The command should print out the version number of Java if Java is installed. If
 
 Now that you have connected your Mac to the server it is time to test some queries.
 
-**1.** Go to the OSQL editor by clicking the ![OSQL editor](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/osql-editor-icon.png "OSQL editor") icon.
+**1.** Select "server" in the device list at the bottom and run the following query by pushing the ![Play](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/run-queries-icon.png "Play") icon.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio.png" alt="sa-studio.png" style="width:100%"/>
+```LIVE
+listening_edges();
+```
 
-**2.** Open a new OSQL editor by clicking the <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/open-new-osql-editor-button.png" alt="open-new-osql-editor-button.png" width="120"/> button.
-
-**3.** Ensure that the queries will be evaluated on the server by selecting "server" in the device list at the bottom.
-
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-mac-edge/sa-studio-osql-editor-device-selector-server.png" alt="sa-studio-osql-editor-device-selector-server.png" width="250"/>
-
-**4.** In the editor window, write the query `listening_edges();`.
-
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio-osql-editor-enter-query.png" alt="sa-studio-osql-editor-enter-query.png" style="width:100%"/>
-
-Then run the query by pressing the ![Run queries](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/run-queries-icon.png "Run queries") icon to run the query. The result is a list of edges that are connected to the server. Your Mac should be present with the name "MACOS-EDGE".
+The result is a list of edges that are connected to the server. Your device should be present with the name you gave it when connecting the edge.
 
 ```shell
 ["MACOS-EDGE"]
 ```
 
-**5.** Change the device on which the queries are run by clicking <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/device-selector.png" alt="device-selector.png" width="60" /> at the bottom (next to the run query button) and select `Macos-edge` from the list.
+**2.** You can change which device the queries are run on by clicking the device selector <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/device-selector.png" alt="device-selector.png" width="60" /> at the bottom of the code block (next to the play button). Try this and select your edge device from the list. Now when you run a query it will execute on your edge device. Run the following query on your edge device.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-mac-edge/sa-studio-osql-editor-device-selector-mac-edge.png" alt="sa-studio-osql-editor-device-selector-mac-edge.png" width="250"/>
-
-Now when you run a query it will execute on your Mac.
-
-
-**6.** Try executing a query on the Mac by having <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-mac-edge/device-selector-mac-edge.png" alt="device-selector-mac-edge.png" width="70" /> as selected device, delete the previous query from the editor window and execute the new query:
-
-```shell
+```LIVE {"peer":"Server"}
 this_peerid();
 ```
 
-This should output the string `"MACOS-EDGE"` which is the id of your Mac.
+This should output the name you gave your edge device when connecting it to the server.
 
-Also note that the local SA Engine instance in your Mac Terminal prompt should confirm that it ran the query `this_peerid()`.
+Also note that the local SA Engine instance in your device's terminal prompt should confirm that it ran the query `this_peerid()`.
 
 ```shell
-2021-11-08T18:08:55.185 Running query 1: this_peerid();
-2021-11-08T18:08:55.242 Query 1 finished
+2021-10-18T14:38:32.392 Running query 1: this_peerid();
+2021-10-18T14:38:32.444 Query 1 finished
 ```
 
-Now we have verified that your Mac is connected to the server, and that it can run queries retrieved from the server.
+Now we have verified that your Mac is connected to the server, and that it can run queries received from the server.
 
 
 ## Accessing the microphone
@@ -71,7 +57,7 @@ Now that you have tested that you can execute queries on the Mac it is time to d
 
 **1.** Test that you have your microphone working by running the following query while making some sound (ensure that you have <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-mac-edge/device-selector-mac-edge.png" alt="device-selector-mac-edge.png" width="70" /> as selected device before running the query).
 
-```sql
+```LIVE {"peer":"Mac-edge","vis":"Bar plot"}
 audio(256, 16000);
 ```
 
@@ -91,7 +77,7 @@ Now that we have tested the microphone it is time to build a simple model that d
 
 **1.** Create a simple audio frequency detection model by running the following query (ensure that you still have <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-mac-edge/device-selector-mac-edge.png" alt="device-selector-mac-edge.png" width="70" /> as selected device).
 
-```sql
+```LIVE {"peer":"Mac-edge"}
 create function audio_band(Number low, Number up)
                          -> Stream of Number
     as select Stream of hz
@@ -119,14 +105,9 @@ The model analyzes the audio stream in real time to detect whether it contains s
 4. It only emits the detected result if the strength of the signal is larger than 0.001. This is to filter out background noise.
 
 
-**2.** Change the output selector to Line plot.
+**2.** Run the `audio_band()` model with the frequency interval `80` - `400` Hz.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-mac-edge/sa-studio-osql-editor-output-selector-line-plot.png" alt="sa-studio-osql-editor-output-selector-line-plot.png" width="300"/>
-
-
-**3.** Run the `audio_band()` model with the frequency interval `80` - `400` Hz.
-
-```sql
+```LIVE {"peer":"Mac-edge", "vis":"Line plot"}
 audio_band(80, 400);
 ```
 

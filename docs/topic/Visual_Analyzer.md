@@ -1,4 +1,4 @@
-# Visual Analyzer functions:
+# Visual Analyzer
 
 > [function]
 > va(Charstring connection,Charstring server)->Boolean

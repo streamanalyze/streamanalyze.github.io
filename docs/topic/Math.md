@@ -1,4 +1,4 @@
-# Math functions:
+# Math
 The system supports the usual basic arithmetic operators:
 ```
    x + y

@@ -1,4 +1,4 @@
-# Connect config functions:
+# Connect config
 
 > [function]
 > connect_to_local_federation(Charstring name,Charstring new_server_name)->Boolean

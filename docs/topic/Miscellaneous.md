@@ -1,4 +1,4 @@
-# Miscellaneous functions:
+# Miscellaneous
 String identifying the current version of sa.engine:
 ```
 system_version() -> Charstring
@@ -47,14 +47,14 @@ Print an error message `msg` on the console and raises an exception:
 ## Functions
 
 > [function]
-> autosave()->Boolean
+> autosave(Boolean stat)->Boolean
 
 
 
 ___
 
 > [function]
-> autosave(Boolean stat)->Boolean
+> autosave()->Boolean
 
 
 
@@ -106,6 +106,13 @@ ___
 
 > [function-docs]
 > Load plugin named `ext` 
+
+
+
+___
+
+> [function]
+> object_numbered(Integer i)->Object
 
 
 

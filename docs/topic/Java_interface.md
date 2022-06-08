@@ -1,4 +1,4 @@
-# Java interface functions:
+# Java interface
 
 > [function]
 > audio(Number windowsize,Number samplerate)->Stream of Vector of Number

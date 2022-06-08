@@ -1,4 +1,4 @@
-# Peer management functions:
+# Peer management
 
 > [function]
 > all_peerinfo()->Bag of (Charstring,Charstring,Integer,Integer,Record)

@@ -1,4 +1,4 @@
-# serial functions:
+# serial
 
 > [function]
 > serial:streamer(Charstring serial_port,Integer baud_rate,Integer start_byte,

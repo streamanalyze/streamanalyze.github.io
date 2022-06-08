@@ -1,4 +1,4 @@
-# Neural network functions:
+# Neural network
 
 > [function]
 > maxi(Vector v)->Number i

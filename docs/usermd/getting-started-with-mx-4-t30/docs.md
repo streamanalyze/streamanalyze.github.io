@@ -27,7 +27,7 @@ The result is a list of edges that are connected to the server. Your device shou
 
 **2.** You can change which device the queries are run on by clicking the device selector <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/device-selector.png" alt="device-selector.png" width="60" /> at the bottom of the code block (next to the play button). Try this and select your edge device from the list. Now when you run a query it will execute on your edge device. Run the following query on your edge device.
 
-```LIVE {"peer":"mx4-edge"}
+```LIVE {"peer":"Server"}
 this_peerid();
 ```
 
@@ -156,6 +156,8 @@ ts_report_level(my_sensor());
 Now we get timestamped reports for the sensor measurements.
 
 ## Conclusion
+
+Congratulations! You have now developed your first model on an edge device.
 
 > [static-only] Where to go from here:
 > * Use the [documentation](http://docs.streamanalyze.com/) to learn more about OSQL and how you can build models and interact with edge devices.

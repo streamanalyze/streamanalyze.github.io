@@ -1,4 +1,4 @@
-# Transitive closure functions:
+# Transitive closure
 
 > [function]
 > iterate(Function fn,Integer maxdepth,Object,Object)->(Object,Object)

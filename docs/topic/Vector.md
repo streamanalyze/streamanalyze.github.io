@@ -1,4 +1,4 @@
-# Vector functions:
+# Vector
 Functions over vectors are divided into:
 
 - **Numerical vector functions** operate on numerical vectors.
@@ -738,6 +738,16 @@ ___
 
 > [function-docs]
 > Mean vector for a given bag of vectors `bv` 
+
+
+
+___
+
+> [function]
+> vref(Vector v,Number i)->Object
+
+> [function-docs]
+> Value of element `i` in vector `v`, same as `v[i]` 
 
 
 

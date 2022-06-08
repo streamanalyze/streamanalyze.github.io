@@ -1,4 +1,4 @@
-# Debugging functions:
+# Debugging
 
 > [function]
 > expanded_image(Function f)->Integer
@@ -75,12 +75,5 @@ ___
 
 > [function-docs]
 > Untrace function named `fn` 
-
-
-
-___
-
-> [function]
-> vref(Vector of (Charstring,Number),Number)->(Charstring,Number)
 
 

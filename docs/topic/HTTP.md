@@ -1,4 +1,4 @@
-# HTTP functions:
+# HTTP
 
 > [function]
 > http:download_file(Charstring url,Record header,Charstring file)->Record

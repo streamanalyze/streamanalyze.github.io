@@ -10,43 +10,29 @@
 
 ## Test your setup
 
-Now that you have connected your Android phone to the server it is time to test some queries.
+Now that you have connected your Android device to the server it is time to test some queries.
 
-**1.** Go to the OSQL editor by clicking the ![OSQL editor](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/osql-editor-icon.png "OSQL editor") icon.
+**1.** Select "server" in the device list at the bottom and run the following query by pushing the ![Play](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/run-queries-icon.png "Play") icon.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio.png" alt="sa-studio.png" style="width:100%"/>
+```LIVE
+listening_edges();
+```
 
-**2.** Open a new OSQL editor by clicking the <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/open-new-osql-editor-button.png" alt="open-new-osql-editor-button.png" width="120"/> button.
-
-**3.** Ensure that the queries will be evaluated on the server by selecting "server" in the device list at the bottom.
-
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-android-edge/sa-studio-osql-editor-device-selector-server.png" alt="sa-studio-osql-editor-device-selector-server.png" width="250"/>
-
-**4.** In the editor window, write the query `listening_edges();`.
-
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/sa-studio-osql-editor-enter-query.png" alt="sa-studio-osql-editor-enter-query.png" style="width:100%"/>
-
-Then run the query by pressing the ![Run queries](https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/run-queries-icon.png "Run queries") icon to run the query. The result is a list of edges that are connected to the server. Your Android phone should be present with the name "ANDROID-EDGE".
+The result is a list of edges that are connected to the server. Your device should be present with the name you gave it when connecting the edge.
 
 ```shell
 ["ANDROID-EDGE"]
 ```
 
-**5.** Change the device on which the queries are run by clicking <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/device-selector.png" alt="device-selector.png" width="60" /> at the bottom (next to the run query button) and select `Android-edge` from the list.
+**2.** You can change which device the queries are run on by clicking the device selector <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-win-edge/device-selector.png" alt="device-selector.png" width="60" /> at the bottom of the code block (next to the play button). Try this and select your edge device from the list. Now when you run a query it will execute on your edge device. Run the following query on your edge device.
 
-<img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-android-edge/sa-studio-osql-editor-device-selector-android-edge.png" alt="sa-studio-osql-editor-device-selector-win-edge.png" width="250"/>
-
-Now when you run a query it will execute on your Android edge device.
-
-**6.** Try executing a query on the Android edge device by having <img src="https://s3.eu-north-1.amazonaws.com/assets.streamanalyze.com/getting-started-guides/community-edition-android-edge/device-selector-android-edge.png" alt="device-selector-android-edge.png" width="100" /> as selected device, delete the previous query from the editor window and execute the new query:
-
-```LIVE {"peer":"Android-edge"}
+```LIVE {"peer":"Server"}
 this_peerid();
 ```
 
-This should output the string `"ANDROID-EDGE"` which is the id of your Android edge device.
+This should output the name you gave your edge device when connecting it to the server.
 
-Now we have verified that your Android phone is connected to the server, and that it can run queries retrieved from the server.
+Now we have verified that your Android device is connected to the server, and that it can run queries received from the server.
 
 
 ## Examine the sensors

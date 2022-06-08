@@ -1,4 +1,4 @@
-# File system functions:
+# File system
 
 > [function]
 > all_files_under(Charstring folder)->Bag of (Charstring,Charstring)
@@ -16,6 +16,16 @@ ___
 
 > [function-docs]
 > The Unix style file name part of `path` 
+
+
+
+___
+
+> [function]
+> cd(Charstring folder)->Charstring
+
+> [function-docs]
+> Set current wroking directory 
 
 
 
@@ -120,6 +130,16 @@ ___
 ___
 
 > [function]
+> file_path(Charstring nm)->Charstring
+
+> [function-docs]
+> The Unix style path to file named `nm` 
+
+
+
+___
+
+> [function]
 > find_file(Charstring folder,Charstring file)->Charstring
 
 > [function-docs]
@@ -140,30 +160,10 @@ ___
 ___
 
 > [function]
-> full_filename(Charstring path)->Charstring
-
-> [function-docs]
-> The Unix style name of file `path` 
-
-
-
-___
-
-> [function]
 > full_filenames(Charstring f,Charstring pat)->Bag of Charstring
 
 > [function-docs]
-> Get the path names of the files in folder `f` that match pattern `pat` 
-
-
-
-___
-
-> [function]
-> load_osql(Charstring file)->Charstring
-
-> [function-docs]
-> Evaluate OSQL statements in `file` 
+> Get the paths to the files in folder `f` that match pattern `pat` 
 
 
 
@@ -174,6 +174,16 @@ ___
 
 > [function-docs]
 > Evaluate OSQL statements in `file` belonging to topic named `tn` 
+
+
+
+___
+
+> [function]
+> load_osql(Charstring file)->Charstring
+
+> [function-docs]
+> Evaluate OSQL statements in `file` 
 
 
 

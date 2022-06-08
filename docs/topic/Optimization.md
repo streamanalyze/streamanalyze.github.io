@@ -1,10 +1,17 @@
-# Optimization functions:
+# Optimization
 
 > [function]
 > bijective_function(Function f)->Boolean
 
 > [function-docs]
 > Is function `f` bijective? 
+
+
+
+___
+
+> [function]
+> costhint(Function f,Charstring bpat,Object q)->Function
 
 
 
@@ -33,6 +40,16 @@ ___
 ___
 
 > [function]
+> export_plan(Charstring fn,Charstring file)->Bag of Function
+
+> [function-docs]
+> Write execution plans of resolvents of `f` into `file` 
+
+
+
+___
+
+> [function]
 > optmethod(Charstring m)->Charstring r
 
 > [function-docs]
@@ -46,10 +63,20 @@ ___
 ___
 
 > [function]
-> parteval(Charstring fn)->Function
+> parteval(Charstring fn)->Bag of Function
 
 > [function-docs]
-> Declare function named `fn` to be partially evaluated 
+> Declare resolvents of function named `fn` to be partially evaluated 
+
+
+
+___
+
+> [function]
+> plan_cost(Charstring fn)->Bag of (Real,Real)
+
+> [function-docs]
+> The estimated cost of executing resolvents of function named `fn` 
 
 
 
@@ -69,7 +96,7 @@ ___
 > plan_cost(Charstring fn,Charstring bpat)->(Real,Real)
 
 > [function-docs]
-> The extimated cost of executing function named `fn` 
+> The estimated cost of executing function named `fn` 
 >      for binding pattern `bpat` 
 
 
@@ -77,27 +104,7 @@ ___
 ___
 
 > [function]
-> plan_cost(Charstring fn)->Bag of (Real,Real)
-
-> [function-docs]
-> The estimated cost of executing resolvents of function named `fn` 
-
-
-
-___
-
-> [function]
-> recompile(Function f)->Function
-
-> [function-docs]
-> Recompile function `f` 
-
-
-
-___
-
-> [function]
-> recompile(Charstring fn)->Function
+> recompile(Charstring fn)->Bag of Function
 
 > [function-docs]
 > Recompile function named `fn` 
@@ -107,21 +114,31 @@ ___
 ___
 
 > [function]
-> reoptimize(Function f)->Function
+> recompile(Function f)->Bag of Function
 
 > [function-docs]
-> Reoptimize execution plan of function `f`, including all subqueries 
+> Recompile resolvents of function `f` 
 
 
 
 ___
 
 > [function]
-> reoptimize(Charstring fn)->Function
+> reoptimize(Charstring fn)->Bag of Function
 
 > [function-docs]
 > Reoptimize execution plan of function named `fn`, 
 >       including all subqueries 
+
+
+
+___
+
+> [function]
+> reoptimize(Function f)->Bag of Function
+
+> [function-docs]
+> Reoptimize execution plan of function `f`, including all subqueries 
 
 
 
@@ -138,9 +155,9 @@ ___
 ___
 
 > [function]
-> unparteval(Charstring fn)->Function
+> unparteval(Charstring fn)->Bag of Function
 
 > [function-docs]
-> Make function named `fn` not be partially evaluated any longer 
+> Make resolvents of function named `fn` not be partially evaluated 
 
 
