@@ -7,7 +7,6 @@
   - [Database index](/docs/topic/Database_index)
   - [Dataflow](/docs/topic/Dataflow)
   - [Debugging](/docs/topic/Debugging)
-  - [Development](/docs/topic/Development)
   - [Documentation](/docs/topic/Documentation)
   - [Edge](/docs/topic/Edge)
   - [File system](/docs/topic/File_system)
