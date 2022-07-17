@@ -1,0 +1,317 @@
+Description: >
+  Script to create a SA Engine model repo using 
+  Cloud Front + Lambda@Edge + S3.
+  The Route53 Record and Certificate is not created using
+  this template. Create them in wichever way you please.
+  You must also create a secret named sa/cf/jwt_key in us-east-1
+  with the key for your signed JWT tokens.
+###############################################################################
+Parameters:
+###############################################################################
+
+  DomainName:
+    Type: String
+    Description: The domain name.
+
+  CertArn:
+    Type: String
+    Description: The arn of the certificate to use for the CF distribution
+
+  PriceClass:
+    Type: String
+    Description: The CloudFront distribution price class
+    Default: 'PriceClass_All'
+    AllowedValues:
+      - 'PriceClass_100'
+      - 'PriceClass_200'
+      - 'PriceClass_All'
+
+###############################################################################
+Resources:
+###############################################################################
+  IndexLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Role: !GetAtt IndexLambdaRole.Arn
+      Runtime: nodejs16.x
+      Handler: index.handler
+      Code:
+        ZipFile: |
+          var crypto = require('crypto');
+          const querystring = require('querystring');
+          //Response when JWT is not valid.
+          const response401 = {
+              status: '401',
+              statusDescription: 'Unauthorized',
+              headers: {
+                  'cache-control': [{
+                      key: 'Cache-Control',
+                      value: 'max-age=100'
+                  }],
+                  'content-type': [{
+                      key: 'Content-Type',
+                      value: 'text/html'
+                  }]
+              },
+              body: "Unauthorized",
+          };
+          const algorithmMap = {
+              HS: 'sha',
+              RS: 'RSA-SHA'
+          };
+
+          // Load the AWS SDK
+          var AWS = require('aws-sdk'),
+              region = "us-east-1",
+              secretName = "sa/cf/jwt_key",
+              secret,
+              decodedBinarySecret;
+
+          // Create a Secrets Manager client
+          var client = new AWS.SecretsManager({
+              region: region
+          });
+          var JWK = false
+
+          function base64urlDecode(str) {
+              return Buffer.from(base64urlUnescape(str), 'base64').toString();
+          }
+
+          function base64urlUnescape(str) {
+              str += new Array(5 - str.length % 4).join('=');
+              return str.replace(/\-/g, '+').replace(/_/g, '/');
+          }
+
+          const getSecret = new Promise((res, rej) => {
+              client.getSecretValue({ SecretId: secretName }, function (err, data) {
+                  if (err) {
+                      if (err.code === 'DecryptionFailureException')
+                          // Secrets Manager can't decrypt the protected secret text using the provided KMS key.
+                          // Deal with the exception here, and/or rethrow at your discretion.
+                          throw err;
+                      else if (err.code === 'InternalServiceErrorException')
+                          // An error occurred on the server side.
+                          // Deal with the exception here, and/or rethrow at your discretion.
+                          throw err;
+                      else if (err.code === 'InvalidParameterException')
+                          // You provided an invalid value for a parameter.
+                          // Deal with the exception here, and/or rethrow at your discretion.
+                          throw err;
+                      else if (err.code === 'InvalidRequestException')
+                          // You provided a parameter value that is not valid for the current state of the resource.
+                          // Deal with the exception here, and/or rethrow at your discretion.
+                          throw err;
+                      else if (err.code === 'ResourceNotFoundException')
+                          // We can't find the resource that you asked for.
+                          // Deal with the exception here, and/or rethrow at your discretion.
+                          throw err;
+                  }
+                  else {
+                      // Decrypts secret using the associated KMS key.
+                      // Depending on whether the secret is a string or binary, one of these fields will be populated.
+                      if ('SecretString' in data) {
+                          secret = data.SecretString;
+                      } else {
+                          let buff = new Buffer(data.SecretBinary, 'base64');
+                          decodedBinarySecret = buff.toString('ascii');
+                      }
+                  }
+
+                  // Your code goes here. 
+                  res(JSON.parse(secret).key);
+              });
+          });
+
+          exports.handler = async (event, context, cb) => {
+              if (!JWK) {
+                  JWK = await getSecret;
+              }
+              const request = event.Records[0].cf.request;
+              if (!request.querystring) {
+                  console.log("Error: No JWT in the querystring");
+                  cb(null, response401)
+                  return;
+              }
+              const params = querystring.parse(request.querystring);
+              const token = params.jwt;
+              if (!token) {
+                  console.log("Error: No JWT in the querystring");
+                  cb(null, response401)
+                  return;
+              }
+
+              const [headerSeg, payloadSeg, signatureSeg] = token.split('.', 3);
+              const header = JSON.parse(base64urlDecode(headerSeg));
+              const payload = JSON.parse(base64urlDecode(payloadSeg));
+              const signature = base64urlUnescape(signatureSeg);
+              const algorithm = header.alg.slice(0, 2); // first the characters indicate algorithm
+              const method = algorithmMap[algorithm] + header.alg.slice(2); // map JWA algorithm name to NodeJS implementation
+              const input = [headerSeg, payloadSeg].join('.');
+              const key = JWK;
+
+              if (algorithm === 'HS') { // HMAC or symmetric algorithm ?
+                  if (signature !== crypto.createHmac(method, key).update(input).digest('base64')) {
+                      cb(null, response401)
+                      return;
+                  }
+              } else {
+                  const publicKey = '-----BEGIN PUBLIC KEY-----\n' + key.replace(/(.{64})/g, '$1\n') + '\n-----END PUBLIC KEY-----';
+                  if (!crypto.createVerify(method).update(input).verify(publicKey, signature, 'base64')) {
+                      cb(null, response401)
+                      return;
+                  }
+              }
+              if (payload.exp && Date.now() > payload.exp * 1000) {
+                  cb(null, response401)
+                  return;
+              }
+              if (!payload.sub) {
+                  cb(null, response401);
+              } else if (payload.sub.indexOf(request.uri.split("/")[1]) >= 0) {
+                  cb(null, request);
+              } else {
+                  cb(null, response401);
+              }
+              return;
+          }
+
+
+  IndexLambdaRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service:
+            - lambda.amazonaws.com
+            - edgelambda.amazonaws.com
+          Action: sts:AssumeRole
+      ManagedPolicyArns:
+      - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      - arn:aws:iam::aws:policy/SecretsManagerReadWrite
+
+  IndexLambdaVersion:
+    Type: Custom::LatestLambdaVersion
+    Properties:
+      ServiceToken: !GetAtt PublishLambdaVersion.Arn
+      FunctionName: !Ref IndexLambda
+      Nonce: 16109
+
+  # Custom resource for getting latest version of a lambda,
+  # as required by CloudFront.
+
+  PublishLambdaVersion:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs16.x
+      Role: !GetAtt PublishLambdaVersionRole.Arn
+      Code:
+        ZipFile: |
+          const {Lambda} = require('aws-sdk')
+          const {send, SUCCESS, FAILED} = require('cfn-response')
+          const lambda = new Lambda()
+          exports.handler = (event, context) => {
+            const {RequestType, ResourceProperties: {FunctionName}} = event
+            if (RequestType == 'Delete') return send(event, context, SUCCESS)
+            lambda.publishVersion({FunctionName}, (err, {FunctionArn}) => {
+              err
+                ? send(event, context, FAILED, err)
+                : send(event, context, SUCCESS, {FunctionArn})
+            })
+          }
+  PublishLambdaVersionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service: lambda.amazonaws.com
+          Action: sts:AssumeRole
+      ManagedPolicyArns:
+      - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+      - PolicyName: PublishVersion
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action: lambda:PublishVersion
+            Resource: '*'
+  CloudFrontDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Aliases:
+          - !Ref DomainName
+        DefaultRootObject: index.html
+        CustomErrorResponses:
+          - ErrorCachingMinTTL: 300
+            ErrorCode: 403
+            ResponseCode: 200
+            ResponsePagePath: /index.html
+          - ErrorCachingMinTTL: 300
+            ErrorCode: 404
+            ResponseCode: 200
+            ResponsePagePath: /index.html
+        Enabled: true
+        HttpVersion: http2
+        Origins:
+          - DomainName: !Join ['', [!Ref Bucket, '.s3.amazonaws.com']]
+            Id: the-s3-bucket
+            S3OriginConfig:
+              OriginAccessIdentity:
+                !Join ['', ['origin-access-identity/cloudfront/', !Ref CloudFrontOriginAccessIdentity]]
+        DefaultCacheBehavior:
+          TargetOriginId: the-s3-bucket
+          ForwardedValues:
+            QueryString: true
+          ViewerProtocolPolicy: redirect-to-https
+          LambdaFunctionAssociations:
+          - EventType: viewer-request
+            LambdaFunctionARN: !GetAtt IndexLambdaVersion.FunctionArn
+        PriceClass: !Ref PriceClass
+        ViewerCertificate:
+          AcmCertificateArn: !Ref CertArn
+          MinimumProtocolVersion: TLSv1
+          SslSupportMethod: sni-only
+      Tags:
+        - Key: Domain
+          Value: !Ref DomainName
+
+          
+
+  CloudFrontOriginAccessIdentity:
+    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+    Properties:
+      CloudFrontOriginAccessIdentityConfig:
+        Comment: !Sub 'CloudFront OAI for ${DomainName}'
+
+  Bucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    Properties:
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      Tags:
+        - Key: Domain
+          Value: !Ref DomainName
+
+  BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref Bucket
+      PolicyDocument:
+        Statement:
+          - Action:
+              - s3:GetObject
+            Effect: Allow
+            Resource: !Join ['', ['arn:aws:s3:::', !Ref Bucket, '/*']]
+            Principal:
+              CanonicalUser: !GetAtt CloudFrontOriginAccessIdentity.S3CanonicalUserId
