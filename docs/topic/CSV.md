@@ -42,16 +42,6 @@ csv:file_stream("test.csv");
 ## Functions
 
 > [function]
-> csv:file_stream(Charstring file)->Stream of Vector
-
-> [function-docs]
-> Stream tuples from CSV `file` 
-
-
-
-___
-
-> [function]
 > csv:file_stream(Charstring file,Charstring option)->Stream of Vector
 
 > [function-docs]
@@ -68,6 +58,26 @@ ___
 > [function-docs]
 > Playback CSV `file` in a specified `pace`. 
 >      The `option` is one of `read`, `loop`, or `tail` 
+
+
+
+___
+
+> [function]
+> csv:file_stream(Charstring file)->Stream of Vector
+
+> [function-docs]
+> Stream tuples from CSV `file` 
+
+
+
+___
+
+> [function]
+> csv:from_string(Charstring row)->Vector
+
+> [function-docs]
+> Read CSV from a charstring 
 
 
 
@@ -94,18 +104,6 @@ ___
 ___
 
 > [function]
-> csv:serial_stream(Charstring sn,Integer br,Charstring flow_control,
-                 Integer data_bits,Integer stop_bits,Integer parity)
-                 ->Stream of Vector
-
-> [function-docs]
-> CSV stream from serial port named `sp` with baud rate `br` 
-
-
-
-___
-
-> [function]
 > csv:serial_stream(Charstring sn,Integer br)->Stream of Vector
 
 > [function-docs]
@@ -116,10 +114,12 @@ ___
 ___
 
 > [function]
-> csv:socket_stream(Charstring host,Integer sp)->Stream of Vector
+> csv:serial_stream(Charstring sn,Integer br,Charstring flow_control,
+                 Integer data_bits,Integer stop_bits,Integer parity)
+                 ->Stream of Vector
 
 > [function-docs]
-> CSV stream from port `sp` on `host` 
+> CSV stream from serial port named `sp` with baud rate `br` 
 
 
 
@@ -136,10 +136,10 @@ ___
 ___
 
 > [function]
-> csv:unload(Vector of Function fv,Charstring model,Charstring file)->Charstring
+> csv:socket_stream(Charstring host,Integer sp)->Stream of Vector
 
 > [function-docs]
-> Unload functions in `fv` into CSV `file` in `model` 
+> CSV stream from port `sp` on `host` 
 
 
 
@@ -150,6 +150,36 @@ ___
 
 > [function-docs]
 > Unload function named `fn` into CSV `file` in `model` 
+
+
+
+___
+
+> [function]
+> csv:unload(Vector of Function fv,Charstring model,Charstring file)->Charstring
+
+> [function-docs]
+> Unload functions in `fv` into CSV `file` in `model` 
+
+
+
+___
+
+> [function]
+> csv:write_file(Charstring file,Bag b)->Boolean
+
+> [function-docs]
+> Write bag of vectors `b` into `file` in CSV format 
+
+
+
+___
+
+> [function]
+> csv:write_file(Charstring file,Stream s)->Boolean
+
+> [function-docs]
+> Write Stream of vectors `s` into `file` in CSV format 
 
 
 
@@ -167,30 +197,10 @@ ___
 ___
 
 > [function]
-> csv:write_file(Charstring file,Bag b)->Boolean
-
-> [function-docs]
-> Write bag of vectors `b` into `file` in CSV format 
-
-
-
-___
-
-> [function]
 > csv:write_file(Charstring file,Number feedback,Stream s)->Stream of Vector
 
 > [function-docs]
 > Write Stream of vectors `s` into `file` in CSV format.
 >       Return saved rows every `feedback` rows 
-
-
-
-___
-
-> [function]
-> csv:write_file(Charstring file,Stream s)->Boolean
-
-> [function-docs]
-> Write Stream of vectors `s` into `file` in CSV format 
 
 

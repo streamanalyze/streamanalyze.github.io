@@ -15,12 +15,11 @@ The command will save the current database in a **database image**
 file named `sa.engine.dmp` inside the `bin` folder of your **SA home
 folder**. The result of `save` is the full database image file name.
 
-> [note]  **Note:** In the free web-based *sandbox* version of sa.engine the
-saved database image will disappear when the sandbox is restarted
-after 1-2 days. When restated sandbox system will use the 'factory'
-database image instead. 
-You can find the exact location of the current image
-file by calling the function `image_file()`.
+> [note] **Note:** In the free web-based *sandbox* version of
+sa.engine the saved database image will disappear when the sandbox is
+restarted after 1-2 days. When the sandbox is restarted, it will use
+the 'factory' database image instead.  You can find the exact location
+of the current image file by calling the function `image_file()`.
 
 You get the current **SA home folder** by evaluating:
 
@@ -148,7 +147,7 @@ available next time you run sa.studio.
 ## System models
 
 There is a library of predefined **system models** available. They are
-by default not loaded into the stream server. To see what system
+by default not loaded into the database. To see what system
 models are available click `<> -> System Models` and you can choose
 among a number of predefined system models. Some of these implement AI
 learning algorithms.
@@ -190,10 +189,16 @@ You can also make a *save point* by executing the command
 `save`, the database is not saved on disk. This is practical
 when a part of the model has been developed.
 
-> [note]  **Note:** The free web based *sandbox* version of sa.studio has
-limited memory that may be exhausted by the
-extra space needed to enable long rollbacks. This can be alleviated by
-issuing the `commit` command now and then to free space for the log.
+> [note] **Note:** OSQL statements are by default *auto-committed*
+  which means that there is an implicit `commit` statement executed
+  after each (set of) OSQL statements sent to the system. Auto-commit
+  is disabled by calling `auto_commit(false)`.
+
+> [note] **Note:** The free web based *sandbox* version of sa.studio
+has limited memory that may be exhausted by the extra space needed to
+enable long rollbacks if auto-commit is disabled. This can be
+alleviated by issuing the `commit` command now and then to free space
+for the log.
 
 The [next tutorial](/docs/md/tutorial/streams.md) shows how to query
 potentially infinite streams.

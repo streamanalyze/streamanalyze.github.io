@@ -1,5 +1,5 @@
 # Neural network
-
+**TODO: Introduction remains to be written!**
 > [function]
 > maxi(Vector v)->Number i
 

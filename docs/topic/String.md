@@ -29,7 +29,7 @@ Examples:
 ## Functions
 
 > [function]
-> aton(Charstring s)->Number
+> aton(Charstring s)->Number n
 
 > [function-docs]
 > Convert string `s` to number 

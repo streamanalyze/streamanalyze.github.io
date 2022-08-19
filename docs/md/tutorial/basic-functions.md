@@ -81,14 +81,9 @@ As `doc()`, `sourcecode()` works also for objects.
 sourcecode(apropos("atan"))
 ```
 
-The functions are grouped into **topics** stored in the database. 
-Navigate to [Docs->Topics](docs/md/topics/README.md)
-for documentation of the functions for a specific topoc.
-
-To get summary of all functions for a given topic do:
-```LIVE
-doc(topic_named("Documentation"))
-```
+The functionality of sa.engngine is grouped into **topics** stored in
+the database.  Navigate to [Docs->Topics](docs/md/topics/README.md)
+for documentation of a specific topic.
 
 
 ## Math functions
@@ -109,7 +104,7 @@ To learn more about basic math functions go to
 
 During sessions with sa.engine it is often practical to temporarily
 save values of expressions in **session variables** prefixed with `:`
-by using the `set` statement, e.g.
+by using the `set` statement, e.g.:
 
 ```LIVE
 set :pi = asin(1)*2;
@@ -117,8 +112,7 @@ set :pi = asin(1)*2;
 sin(:pi/2)*cos(:pi)
 ```
 
-The session variable `:pi` is assigned the value of `sin(1)` and then
-`2` is added.
+The session variable `:pi` is first assigned the value of `asin(1)*2`.
 
 > [note] **Note:** Session variables disappear when you exit
 > sa.engine. To permanently save values in the built-in database you
@@ -128,11 +122,12 @@ The session variable `:pi` is assigned the value of `sin(1)` and then
 
 Analysis *models* are defined in terms of a number of OSQL
 functions. OSQL functions are created and stored in the database by
-evaluating a `create function` statement.
+evaluating a `create function` statement. There are functions of
+different kinds, depending on how they are used.
 
-**Stored functions** hold tabulated function values permanently in the
-built-in database. They are created by a `create function ... as
-stored` statement.
+**Stored functions** are functions that hold tabulated
+function values permanently in the built-in database. They are created
+by a `create function ... as stored` statement.
 
 *Example:*
 
@@ -202,25 +197,25 @@ mypi()
 
 ## Derived functions
 
-A *derived function* is a function defined by an expression.
+A **derived function** is a function defined by an OSQL expression.
 
 *Example:*
 The following function converts Celsius degrees to
 Fahrenheit:
 
 ```LIVE
-create function ctof(Number c) -> Number
+create function ctof(Real c) -> Real
   /* Convert a Celsius degree `c` to Fahrenheit */ 
   as c * 9 / 5 + 32;
 
 ctof(10)
 ```
 
-The head of the function, e.g `ctof(Number c) -> Number`, is called
+The head of the function, e.g `ctof(Real c) -> Real`, is called
 the function's **signature**. It defines the name(s) of the
 argument(s) (`c` in `ctof(c)`), the type(s) of the argument(s)
-(e.g. `Number`), and the type of the result from the computation,
-(e.g. `-> Number`).
+(e.g. `Real`), and the type of the result from the computation,
+(e.g. `-> Real`).
 
 ## Temporal functions
 
@@ -239,7 +234,7 @@ local_time();
 now()
 ```
 
-The function `ts(Object o)->Timeval` returns a **time stamped object**
+The function `ts(Object o)->Timeval` returns a **time stamped object**,
 which represents a timestamped value `o`.
 
 *Examples:*
@@ -307,8 +302,6 @@ returns element-wise multiplication.
 [1, 2, 3, 4] .^ 2
 ```
 
-## Vector functions
-
 There are many built-in **vector functions**, e.g.:
 
 ```LIVE
@@ -336,7 +329,7 @@ the following function computes the Euclidean distance between vector
 `v` and `w`:
 
 ```LIVE
-create function dist(Vector v, Vector w) -> Number
+create function dist(Vector v, Vector w) -> Real
   /* Compute the Euclidean distance between `v` and `w` */
   as sqrt(sum((v - w) .^ 2));
 
@@ -414,8 +407,7 @@ objects. By contrast, a **stream** can be seen as a possibly infinite growing
 sequence of objects. Vectors can be used to group elements in streams, 
 as will be explained later.
 
-Go to [Topics->Vector](/docs/topic/Vector) for documentation of vector
-functions.
+Go to [Topics->Vector](/docs/topic/Vector) for documentation of vectors.
 
 ## Sets and bags
 
@@ -471,130 +463,7 @@ sum(range(200)/2)
 See [Topics->Aggregate](/docs/topic/Aggregate) for more on aggregate
 functions.
 
-## Select queries
+The [next tutorial](/docs/md/tutorial/queries.md) will show how to
+make general **queries** that selects collections of objects from the
+database.
 
-**Select queries** can filter out and transform objects fulfilling
-some specific properties from collections of objects.
-
-This is an example of a query selecting the odd elements
-among the integers between 10 and 15:
-
-```LIVE
-select i
-  from Integer i
- where i in range(10,15)
-   and odd(i)
-```
-
-The following query returns the name and values of the constants in
-the stored function `const` whose closest integer is 3:
-
-```LIVE
-select c,const(c) 
-  from Charstring c
- where round(const(c))=3
-```
-
-Queries may both filter, transform, and generate collections. For
-example, the following query computes the set of divisors for the integer 144:
-
-```LIVE
-select d
-  from Integer d, Integer n
- where d in range(2,sqrt(n))
-   and 0 = mod(n,d)
-   and n = 144
-```
-Queries my be used for defining derived functions in models, for example:
-```LIVE
-create function divisors(Integer n) -> Bag of Integer
-  as select d
-       from Integer d
-      where d in range(2,n/3)
-        and 0 = mod(n,d)
-```
-The following query returns the divisors of 143:
-```LIVE
-divisors(143)
-```
-
-Queries can be made over different kinds of collections. For example,
-the following select query returns the prime numbers in the vector
-`[197,143,2]`:
-
-```LIVE
-select n
-  from Integer n
- where n in [197,143,2] 
-   and notany(divisors(n))
-```
-
-> [note] **Note:** If you are familiar with
-[SQL](https://www.w3schools.com/sql/) you will notice that `select`
-expressions of SQL and OSQL are similar. SQL's `select statement` is
-proved to be very effective for querying and transforming tables in
-databases.  However, variables in SQL's `select` statement must be
-bound only to rows in uniform tables, while variables in OSQL select
-expressions can be bound to any kind of objects, e.g. strings,
-numbers, vectors, matrices, tensors, bags, streams, records or user
-defined objects. Combined with functions this makes analytical models
-in different domains easy to express with OSQL. 
-
-In the tutorial [Streams](/docs/md/tutorial/streams.md) it will be
-shown how to specify OSQL queries over live streams.
-
-General queries over sets and bags are documented in
-[Queries](/docs/md/osql/queries.md).
-
-Qeries to filter and transform elements in vectors and
-tensors are documented in [Vector
-queries](/docs/md/osql/vector-queries.md).
-
-## Case rules
-
-**Case rules** allow to define functions and formulas that have
-different definitions depending on their arguments. For example, a
-`signum(x)` function can be defined as:
-
-
-```LIVE
-create function signum(Real x) -> Integer
-  as case when x > 0 then 1
-          when x = 0 then 0
-          else -1 end
-```
-
-The built-in function `sign(x)` does the same. Another example of a
-functions defined in terms of case rules is the built in
-function `atan2(y,x)`:
-
-```LIVE
-sourcecode("atan2")
-```
-
-In general, case rules compute values conditioned on values of
-variables. The case rules compute these values without
-executing any actions (side effects). This is different from
-conditional statements in conventional programming languages such as
-`if {condition} do-something; else do-something-else;` where different
-side effects (actions) are executed based on a condition.
-
-Case rules can be used in queries, for example:
-
-```LIVE
-select case when x <= -40 then "too cold"
-            when x < 0    then "freezing"
-            when x < 18   then "cold"
-            when x < 23   then "plesant"
-            when x < 40   then "hot"
-            else "too hot"
-        end
-       from Real x
-      where x in 10*range(-4,4)
-```
-
-This illustrates how case rules can be used for specifying
-decision rules based on values of variables.
-
-The [next tutorial](/docs/md/tutorial/save-database.md) shows how to
-develop models, undo changes, and save the database of models on disk.

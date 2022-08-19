@@ -1,10 +1,10 @@
 # Stream
-
+**TODO: Introduction remains to be written!**
 > [function]
 > changed(Stream s)->Stream
 
 > [function-docs]
-> Stream containing the elements of stream `s` that are different 
+> Stream containing the elements of stream `s` that are different
 >      than their predecessor 
 
 
@@ -36,7 +36,7 @@ ___
 > diota(Number pace,Number l,Number u)->Stream of Number
 
 > [function-docs]
-> Stream of natural numbers between `l` and `u` 
+> Stream of natural numbers between `l` and `u`
 >      with delays of `pace` seconds between produced stream elements 
 
 
@@ -98,7 +98,7 @@ ___
 
 > [function-docs]
 > Calculate  a stream of histograms over stream `s`, with `limits` vector.
->   `limits` is a vector with `[min,max,number of bins]` 
+>   `limits` is a vector with `[min,max,number of bins]`
 >   the range for the histograms is always $ [min,max) $ 
 
 
@@ -122,10 +122,10 @@ ___
          ->Stream of Vector of Vector
 
 > [function-docs]
-> Calculate a stream of histograms over a stream of vector `s`, 
->   with `limits` vector. Limits must be a vector of the same dimension 
+> Calculate a stream of histograms over a stream of vector `s`,
+>   with `limits` vector. Limits must be a vector of the same dimension
 >   as each vector in `s` and:
->   
+> 
 >   $$
 >   limits_i = [min_i,max_i, bins_i]
 >   $$
@@ -172,7 +172,7 @@ ___
 
 > [function-docs]
 > **DEPRECATED** use `streams:pivot` instead.
->      A stream of the most recently received values in `vs`, 
+>      A stream of the most recently received values in `vs`,
 >      having the vector `iv` as the initial element 
 
 
@@ -196,34 +196,6 @@ ___
 > [function-docs]
 > Playback time stamped stream of vectors `s` with pace
 >      according to time stamp in each first vector elements of `s` 
-
-
-
-___
-
-> [function]
-> predwin(Stream s,Integer c,Object p,Function e,Function l,Boolean start_entered)
-       ->Stream of Vector
-
-> [function-docs]
-> Form predicate windows over stream `s` by applying the window delimination
->      functions `e` and `l` on sliding change windows over `s` of size `cw`
->      with stride 1. A new window is started when `e(cw,p)` is true or at the
->      begining if `start_entered=true` 
->      and ended when `l(cw, p)` is true 
-
-
-
-___
-
-> [function]
-> predwin(Stream s,Integer c,Object p,Function e,Function l)->Stream of Vector
-
-> [function-docs]
-> Form predicate windows over stream `s` by applying the window delimination
->      functions `e` and `l` on sliding change windows over `s` of size `cw`
->      with stride 1. A new window is started when `e(cw,p)` is true 
->      and ended when `l(cw, p)` is true 
 
 
 
@@ -285,6 +257,20 @@ ___
 ___
 
 > [function]
+> remote:function(Charstring peer,Charstring fn,Vector args)->Stream
+
+
+
+___
+
+> [function]
+> remote:query(Charstring peer,Charstring query)->Stream
+
+
+
+___
+
+> [function]
 > remote_function_stream(Charstring peer,Charstring fn,Vector args)
                       ->Stream of Vector
 
@@ -336,7 +322,7 @@ ___
 > section(Stream s,Number start,Number stop)->Stream
 
 > [function-docs]
-> The section of stream `s` starting at position `start` 
+> The section of stream `s` starting at position `start`
 >      and ending at `stop`. 
 
 
@@ -358,13 +344,6 @@ ___
 
 > [function-docs]
 > A simulated harmonic stream 
-
-
-
-___
-
-> [function]
-> simwinstream(Real pace,Integer sz)->Stream of Vector of Real
 
 
 
@@ -450,7 +429,7 @@ ___
 > streams:pivot(Vector of Stream vs,Vector iv)->Stream of Vector
 
 > [function-docs]
-> A stream of the most recently received values in `vs`, 
+> A stream of the most recently received values in `vs`,
 >      having the vector `iv` as the initial element 
 
 
@@ -471,7 +450,7 @@ ___
 > streams:skip_s(Stream s,Number sec)->Stream
 
 > [function-docs]
-> Skip all elements arriving in the first `sec` seconds of 
+> Skip all elements arriving in the first `sec` seconds of
 >    stream `s`. 
 
 
@@ -489,8 +468,8 @@ ___
 > streams:time_section(Stream s,Number start_s,Number stop_s)->Stream
 
 > [function-docs]
-> Skip elements arriving in first `start_s` seconds on stream s and stop after 
->    `stop_s` seconds. Same as `section(stream,start,stop)` except for that the 
+> Skip elements arriving in first `start_s` seconds on stream s and stop after
+>    `stop_s` seconds. Same as `section(stream,start,stop)` except for that the
 >    start and stop values are in seconds.
 
 
@@ -501,8 +480,8 @@ ___
 > streams:zip(Vector of Stream vs,Vector of Integer indices)->Stream of Vector
 
 > [function-docs]
-> A stream where each received values in `vs`, 
->      is "zipped" together on the indices in `indices`. 
+> A stream where each received values in `vs`,
+>      is "zipped" together on the indices in `indices`.
 >      Indices not in `indices` will have the latest seen value
 >      on each emit
 
@@ -514,7 +493,7 @@ ___
 > streams:zip(Vector of Stream vs)->Stream of Vector
 
 > [function-docs]
-> A stream where each received values in `vs`, 
+> A stream where each received values in `vs`,
 >      is "zipped" together one at a time. Should only
 >      be used of streams have the same pace.
 
@@ -560,64 +539,6 @@ ___
 ___
 
 > [function]
-> twinagg(Stream of Timeval s,Number size,Number stride)
-       ->Stream of Timeval of Vector
-
-> [function-docs]
-> Stream of time windows over stream `s`  represented as 
->      time stamped vectors where:
->      `size` is the window size in seconds
->      `stride` is the window stride in seconds 
-
-
-
-___
-
-> [function]
-> twinagg(Stream of Timeval s,Number size,Function pred,Vector args)
-       ->Stream of Timeval of Vector
-
-> [function-docs]
-> Stream of time windows over stream `s` represented as
->      time stamped vectors where:
->      `size` is the window size in seconds
->      `pred` is a test function returning true if the window should be emitted
->      `args` is a vector containing any additional arguments to the function pred 
-
-
-
-___
-
-> [function]
-> twinagg(Stream of Timeval s,Number size,Number stride,Timeval start)
-       ->Stream of Timeval of Vector
-
-> [function-docs]
-> Stream of time windows over stream `s`  represented as 
->      time stamped vectors where:
->      `size` is the window size in seconds
->      `stride` is the window stride in seconds
->      `start` is the point in time where the windowing should start. 
-
-
-
-___
-
-> [function]
-> twinagg(Stream of Timeval s,Number size,Function pred)
-       ->Stream of Timeval of Vector
-
-> [function-docs]
-> Stream of time windows over stream `s` represented as
->      time stamped vectors where:
->      `size` is the window size in seconds
->      `pred` is a test function returning true if the window should be emitted 
-
-
-
-___
-
-> [function]
 > vectorof(Stream b)->Vector v
 
 > [function-docs]
@@ -632,18 +553,6 @@ ___
 
 > [function-docs]
 > Convert a vector `v` to a stream 
-
-
-
-___
-
-> [function]
-> winagg(Stream s,Number size,Number stride)->Stream of Vector
-
-> [function-docs]
-> Stream of count windows over stream `s` represented as vectors where:
->      `size` is the number of elements in each window
->      `stride` is the number of elements in the window stride 
 
 
 

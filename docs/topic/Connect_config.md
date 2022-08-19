@@ -1,14 +1,14 @@
 # Connect config
-
+**TODO: Introduction remains to be written!**
 > [function]
-> connect_to_local_federation(Charstring name,Charstring new_server_name)->Boolean
+> connect_to_local_federation(Charstring name)->Boolean
 
 
 
 ___
 
 > [function]
-> connect_to_local_federation(Charstring name)->Boolean
+> connect_to_local_federation(Charstring name,Charstring new_server_name)->Boolean
 
 
 
@@ -20,17 +20,6 @@ ___
 > [function-docs]
 > Connect to a federation using the `config` if `as_edge` is false this call 
 > will only register the process as a client.
-
-
-
-___
-
-> [function]
-> connect_using_config_blob(Charstring blob,Boolean as_edge)->Boolean
-
-> [function-docs]
-> Same as `connect_using_config` but the blob is a Base64 encoded string 
-> representation of the config Record. 
 
 
 
@@ -49,6 +38,17 @@ ___
 ___
 
 > [function]
+> connect_using_config_blob(Charstring blob,Boolean as_edge)->Boolean
+
+> [function-docs]
+> Same as `connect_using_config` but the blob is a Base64 encoded string 
+> representation of the config Record. 
+
+
+
+___
+
+> [function]
 > connect_using_config_file(Charstring config,Boolean as_edge)->Boolean
 
 > [function-docs]
@@ -59,7 +59,57 @@ ___
 ___
 
 > [function]
+> federation:connect(Charstring name,Charstring peername,Boolean reregister,
+                  Boolean as_edge)->Boolean
+
+> [function-docs]
+> Connect to federation using federation file named `name` with `peername` and
+>  as a client or edge. 
+
+
+
+___
+
+> [function]
+> federation:get_current()->Charstring
+
+
+
+___
+
+> [function]
+> federation:list()->Bag of Charstring file
+
+
+
+___
+
+> [function]
+> federation:save(Charstring name,Charstring blob)->Charstring
+
+> [function-docs]
+> Save `blob` into federation file with name `name` 
+
+
+
+___
+
+> [function]
+> federation:set_current(Charstring name)->Charstring
+
+
+
+___
+
+> [function]
 > get_all_addrs()->Bag of Vector
+
+
+
+___
+
+> [function]
+> get_connect_config(Charstring peer,Record extras)->Record
 
 
 
@@ -79,7 +129,7 @@ ___
 ___
 
 > [function]
-> get_connect_config(Charstring peer,Record extras)->Record
+> get_connect_config_blob(Charstring peer)->Charstring
 
 
 
@@ -97,18 +147,22 @@ ___
 ___
 
 > [function]
-> get_connect_config_blob(Charstring peer)->Charstring
+> peer_certificate(Charstring peer)->(Charstring cert,Charstring)
+
+> [function-docs]
+> When using certificate policy stored use this stored function to set
+> certificate and key for each peername 
 
 
 
 ___
 
 > [function]
-> peer_certificate(Charstring peer)->(Charstring cert,Charstring)
+> reconnect_using_config_blob(Charstring blob,Boolean as_edge)->Boolean
 
 > [function-docs]
-> When using certificate policy stored use this stored function to set
-> certificate and key for each peername 
+> Same as `connect_using_config` but the blob is a Base64 encoded string 
+> representation of the config Record where reregister is enabled
 
 
 
@@ -122,17 +176,6 @@ ___
 > Same as `connect_using_config` but the blob is a Base64 encoded string 
 > representation of the config Record and peername is overridden and reregister is 
 > enabled 
-
-
-
-___
-
-> [function]
-> reconnect_using_config_blob(Charstring blob,Boolean as_edge)->Boolean
-
-> [function-docs]
-> Same as `connect_using_config` but the blob is a Base64 encoded string 
-> representation of the config Record where reregister is enabled
 
 
 
@@ -168,19 +211,5 @@ ___
 >  * **basic** - Same certificate and key to all edges. Set the certificate 
 >    and key to use with `set_peer_cert(Charstring c, Charstring k)`
 >  * **stored** - Store certificates per peer. In  `peer_certificate`
-
-
-
-___
-
-> [function]
-> verfify_connect_config(Record config)->Boolean
-
-
-
-___
-
-> [function]
-> verify_connect_config(Charstring blob)->Boolean
 
 

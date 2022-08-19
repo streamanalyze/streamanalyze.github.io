@@ -1,5 +1,5 @@
 # Transitive closure
-
+**TODO: Introduction remains to be written!**
 > [function]
 > iterate(Function fn,Integer maxdepth,Object,Object)->(Object,Object)
 

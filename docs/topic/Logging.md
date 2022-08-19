@@ -1,5 +1,5 @@
 # Logging
-
+**TODO: Introduction remains to be written!**
 > [function]
 > console_logger(Boolean flag)->Boolean
 

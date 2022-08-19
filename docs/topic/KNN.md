@@ -1,5 +1,5 @@
 # KNN
-
+**TODO: Introduction remains to be written!**
 > [function]
 > classdistances(Vector of Number x,Function disfn,Bag of (Object,
               Vector of Number))->Bag of (Number,Object)

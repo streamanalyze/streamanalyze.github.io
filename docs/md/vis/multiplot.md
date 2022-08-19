@@ -97,7 +97,7 @@ select simsig(x), sin(x), cos(x), (sin(x)+1.1)/(cos(x)+1.1)
 
 There are a few predefined convenience functions for generating multi plot records in the `multiplot:` namespace that can be useful when analysing data.
 
-* `multiplot:barplot_matric`
+* `multiplot:barplot_matrix`
 * `multiplot:generate_scatter_pcoords_grid`
 * `multiplot:scatter_matrix`
 * `multiplot:tagged_lineplots`
@@ -109,7 +109,7 @@ There are a few predefined convenience functions for generating multi plot recor
 
 When doing statistical analysis of sensor measurements that have been classified it can be of use to display the data in a grid of bar plots where each row presents a class and each column represents a sensor.
 
-To plot the measurements for different classes we can use `multiplot:barplot_matric`. It produces a multiplot record for a grid of barplots with classes on the grid y-axis and measurements for each sensor on the x-axis.
+To plot the measurements for different classes we can use `multiplot:barplot_matrix`. It produces a multiplot record for a grid of barplots with classes on the grid y-axis and measurements for each sensor on the x-axis.
 
 Parameters:
 
@@ -137,13 +137,13 @@ So the inner vector of vector can be seen as a matrix with the columns represent
 
 Let's say that you have a weather station with five (5) different sensors (temperature, humidity, etc). Let's also say that the measurements are taken during three (3) different states of the environment (e.g., raining, sunny, snowing). We call the states *classes*.
 
-To plot the data we first call `multiplot:barplot_matric` with the number of classes (3), the number of variables (5), the names of the classes, the names of the variables (we use generic names in this example), and finally the height of the plots (200). After the record-generating function call we provide the data on the required format.
+To plot the data we first call `multiplot:barplot_matrix` with the number of classes (3), the number of variables (5), the names of the classes, the names of the variables (we use generic names in this example), and finally the height of the plots (200). After the record-generating function call we provide the data on the required format.
 
 ```LIVE {"vis": "Automatic"}
-multiplot:barplot_matric(3, 5,
+multiplot:barplot_matrix(3, 5,
                          ["class1", "class2", "class3"],
                          ["var-1", "var-2", "var-3", "var-4", "var-5"],
-                         200);
+                         200,true);
 
       // class 1        class 2             class3
 [ [[1,2,3,4,5,6,7], [2,3,4,4,5,5,6], [2,3,4,8,9,9,7]],        // var 1

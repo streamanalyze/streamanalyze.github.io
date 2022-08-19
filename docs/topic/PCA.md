@@ -1,5 +1,5 @@
 # PCA
-
+**TODO: Introduction remains to be written!**
 > [function]
 > lpcascore(Bag of (Vector of Number,Object),Number d)->(Vector of Number,
          Object label)

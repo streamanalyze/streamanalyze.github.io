@@ -1,5 +1,5 @@
 # Optimization
-
+**TODO: Introduction remains to be written!**
 > [function]
 > bijective_function(Function f)->Boolean
 

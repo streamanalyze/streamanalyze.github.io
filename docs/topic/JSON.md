@@ -37,6 +37,106 @@ notation, for example:
 ___
 
 > [function]
+> geojson:collection(Vector of Record features)->Record
+
+> [function-docs]
+> Create a GeoJSON feature collection of a vector of GeoJSON objects 
+
+
+
+___
+
+> [function]
+> geojson:feature(Charstring geojsontype,Vector coords,Record props)->Record
+
+> [function-docs]
+> Create a GeoJSON line from the vector of `[longitude,latitude]` points
+>     with `properties.`
+>     
+
+
+
+___
+
+> [function]
+> geojson:line(Vector of Vector coords,Record props)->Record
+
+> [function-docs]
+> Create a GeoJSON line from the vector of `[longitude,latitude]` points
+>     with `properties.`
+>     
+
+
+
+___
+
+> [function]
+> geojson:point(Record r)->Record
+
+> [function-docs]
+> Create a GeoJSON point from a record `r` that describes the position
+>      of the point as:
+>         ```
+>         {
+>           'lat': latitude, 
+>           'lng': longitude, 
+>           'persistent': flag, 
+>           'id': id
+>         }
+>         ```
+>      * `lat`,`lng` - (Real) Latitude and Longitude of the point
+>      * `persistent` - (Boolean) true/false is thi point permanent on the map?
+>         if set to false the point will be removed when the next data arrives to
+>         the Geo JSON visualization
+>      * `id` - if `persistent==true` then `id` can be used to update the point.
+>         i.e. when a new geojson:point arrives to the visualization and `id`
+>         is set the older point with `id` will be removed before adding the new.  
+>      The full record is put into the `properties` field of the GeoJSON feature.
+>      Thus you can set any property the Google Maps supports for a GeoJSON point
+>      such as `title`, or `icon`.
+>   
+
+
+
+___
+
+> [function]
+> geojson:point(Object longitude,Object latitude,Record props)->Record
+
+> [function-docs]
+> Create a GeoJSON point object for the geo-position `latitude`/`longitude`
+>      with properties `props`
+>   
+
+
+
+___
+
+> [function]
+> geojson:point(Vector pos,Record props)->Record
+
+> [function-docs]
+> Create a GeoJSON point object for the geo-position `longitude`, `latitude`
+>      with properties `props`
+>   
+
+
+
+___
+
+> [function]
+> geojson:polygon(Vector of Vector coords,Record props)->Record
+
+> [function-docs]
+> Create a GeoJSON Polygon from the vector of `[longitude,latitude]` points
+>     with `properties.`
+>     
+
+
+
+___
+
+> [function]
 > geo_coordinate(Record r)->Vector of Number
 
 > [function-docs]
@@ -105,17 +205,6 @@ ___
 ___
 
 > [function]
-> json:serial_stream(Charstring sn,Integer br,Charstring flow_control,
-                  Integer data_bits,Integer stop_bits,Integer parity)->Stream
-
-> [function-docs]
-> json stream from serial port named `sp` with baud rate `br` 
-
-
-
-___
-
-> [function]
 > json:serial_stream(Charstring sn,Integer br)->Stream
 
 > [function-docs]
@@ -126,10 +215,11 @@ ___
 ___
 
 > [function]
-> json:socket_stream(Charstring host,Integer sp)->Stream
+> json:serial_stream(Charstring sn,Integer br,Charstring flow_control,
+                  Integer data_bits,Integer stop_bits,Integer parity)->Stream
 
 > [function-docs]
-> json stream from port `sp` on `host` 
+> json stream from serial port named `sp` with baud rate `br` 
 
 
 
@@ -146,17 +236,17 @@ ___
 ___
 
 > [function]
-> json:stringify(Object o)->Charstring
+> json:socket_stream(Charstring host,Integer sp)->Stream
+
+> [function-docs]
+> json stream from port `sp` on `host` 
 
 
 
 ___
 
 > [function]
-> json:unload(Charstring fn,Charstring model,Charstring file)->Charstring
-
-> [function-docs]
-> Unload function named `fn` as JSON `file` in `model` on server 
+> json:stringify(Object o)->Charstring
 
 
 
@@ -168,6 +258,16 @@ ___
 
 > [function-docs]
 > Unload functions `fnol` into JSON `file` in `model` 
+
+
+
+___
+
+> [function]
+> json:unload(Charstring fn,Charstring model,Charstring file)->Charstring
+
+> [function-docs]
+> Unload function named `fn` as JSON `file` in `model` on server 
 
 
 
@@ -188,20 +288,20 @@ ___
 ___
 
 > [function]
-> json:write_file(Charstring file,Bag b)->Charstring
+> json:write_file(Charstring file,Stream s)->Charstring
 
 > [function-docs]
-> Write elements in bag `b` into `file` in JSON format 
+> Write elements in stream `s` into `file` in JSON format 
 
 
 
 ___
 
 > [function]
-> json:write_file(Charstring file,Stream s)->Charstring
+> json:write_file(Charstring file,Bag b)->Charstring
 
 > [function-docs]
-> Write elements in stream `s` into `file` in JSON format 
+> Write elements in bag `b` into `file` in JSON format 
 
 
 

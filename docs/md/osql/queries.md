@@ -1,14 +1,24 @@
 # Queries
 
-*Queries* retrieve objects having specified properties from the database. A query can be one of the following:
+*Queries* retrieve objects having specified properties from the
+ database. A query can be one of the following:
 
-1. It can be [calls](/docs/md/osql/queries.md#function-calls) to a built-in or user defined function.
+1. It can be [calls](/docs/md/osql/queries.md#function-calls) to a
+built-in or user defined function.
 
-2. It can be a [select query](/docs/md/osql/queries.md#the-select-statement) to search the database for a set of objects having properties fulfilling a query condition specified as a logical [predicate](/docs/md/osql/queries.md#predicates).
+2. It can be a [set
+query](/docs/md/osql/queries.md#the-select-statement) to search the
+database for a set of objects having properties fulfilling a query
+condition specified as a logical
+[predicate](/docs/md/osql/queries.md#predicates).
 
-3. It can be a [vector query](/docs/md/osql/vector-queries.md#the-select-vector-statement) to construct an ordered sequence (vector) of objects fulfilling the query condition.
+3. It can be a [vector
+query](/docs/md/osql/vector-queries.md#the-select-vector-statement) to
+construct an ordered sequence (vector) of objects fulfilling the query
+condition.
 
-4. It can be a general [expression](/docs/md/osql/basic-constructs.md#expressions).
+4. It can even be a general
+[expression](/docs/md/osql/basic-constructs.md#expressions).
 
 ## Function calls
 
@@ -20,7 +30,8 @@ A simple form of queries are calls to functions, for example:
    "a" + 1
 ```
 
-The built-in functions `plus()`, `minus()`, `times()`, and `div()` have infix syntax `+,-,*,/` with the usual priorities.
+The built-in functions `plus()`, `minus()`, `times()`, and `div()`
+have infix syntax `+,-,*,/` with the usual priorities.
 
 Example:
 ```
@@ -31,7 +42,9 @@ is equivalent to:
    times(plus(income(:eve),income(:ham)),0.5)
 ```
 
-The `+` operator is defined for both numbers and strings. For strings it implements string concatenation. The result of a function call can be saved temporarily in an session variable.
+The `+` operator is defined for both numbers and strings. For strings
+it implements string concatenation. The result of a function call can
+be saved temporarily in an session variable.
 
 Example:
 ```
@@ -46,25 +59,35 @@ Example:
    set :pb = parents(:cain)
 ```
 
-In this case the value of `:pb` is a [bag](/docs/md/osql/basic-constructs.md#collections). To get the elements of the bag, use the `in` function.
+In this case the value of `:pb` is a
+[bag](/docs/md/osql/basic-constructs.md#collections). To get the
+elements of the bag, use the `in` function.
 
 Example:
 ```
    in(:pb)
 ```
 
-In a function call, the types of the actual parameters must be the same as, or subtypes of, the types of the corresponding formal parameters.
+In a function call, the types of the actual parameters must be the
+same as, or subtypes of, the types of the corresponding formal
+parameters.
 
 
-## Select queries
+## Set queries
 
 The *select expression* provides a very flexible way to specify
-*select queries*.
+queries returning sets of objects called *set queries*. The returned
+sets in a set query may also contain duplicates, i.e. it actually
+returns *bags* rather than sets are returned from select expressions
+(see [Topics->Set and bag](/docs/topic/Set and bag)).
 
+A set query returns an unordered
+[bag](/docs/md/osql/basic-constructs.md#collections) of objects
+selected from the database. Duplicates are allowed in the result.
 
-A select query returns an unordered [bag](/docs/md/osql/basic-constructs.md#collections) of objects selected from the database. Duplicates are allowed in the result.
+For example, the result of the following query will contain duplicates
+if names of persons in the database are not unique:
 
-For example, the result of the following query will contain duplicates if names of persons in the database are not unique:
 ```sql
    select name(p) 
      from Person p 
@@ -72,9 +95,14 @@ For example, the result of the following query will contain duplicates if names 
 ```
 <a name="distinct-clause"> 
 
-Duplicates are removed from the query result when the keyword `distinct` is specified. By specifying `distinct` the result from a select query is a set rather than a bag.
+Duplicates are removed from the query result when the keyword
+`distinct` is specified. By specifying `distinct` the result from a
+set query is a set rather than a bag.
+
 </a>
+
 For example, this query returns the set of different names in the database:
+
 ```sql
    select distinct name(p) 
      from Person p 
@@ -85,7 +113,7 @@ In case you need to construct an ordered sequence of objects rather than a bag y
 
 <a name="select-clause">
 
-The `select` clause in a select query defines the objects to be retrieved based on bindings of local variables declared in the `from-clause` and filtered by the `where-clause`. The select clause is often a comma-separated list of [expressions](/docs/md/osql/basic-constructs.md#expressions) to retrieve a bag of *tuples* of objects from the database. 
+The `select` clause in a set query defines the objects to be retrieved based on bindings of local variables declared in the `from-clause` and filtered by the `where-clause`. The select clause is often a comma-separated list of [expressions](/docs/md/osql/basic-constructs.md#expressions) to retrieve a bag of *tuples* of objects from the database. 
 </a>
 Example:
 
@@ -103,7 +131,7 @@ The `where` clause gives selection criteria for the search. The where clause is 
 
 ## Predicates
 
-The `where` clause in a select query specifies a selection filter as a logical predicate over variables. A predicate is an [expression](/docs/md/osql/basic-constructs.md#expressions) returning a boolean value, which can be expressed as logical value comparison operators (`>, *, +` etc.) and functions returning boolean results. The boolean operators `and` and `or` can be used to combine boolean values into composite predicates. 
+The `where` clause in a set query specifies a selection filter as a logical predicate over variables. A predicate is an [expression](/docs/md/osql/basic-constructs.md#expressions) returning a boolean value, which can be expressed as logical value comparison operators (`>, *, +` etc.) and functions returning boolean results. The boolean operators `and` and `or` can be used to combine boolean values into composite predicates. 
 
 Examples:
 ```
@@ -131,7 +159,7 @@ is equivalent to
 
 The comparison operators (=, !=, >, <=, and >=) are treated as binary predicates. You can compare objects of any type.
 
-Predicates are allowed in the result of a select query. 
+Predicates are allowed in the result of a set query. 
 
 Example:
 ```sql
@@ -164,7 +192,7 @@ Example:
     where p in friends(q)
       and name(q) = "Tore"
 ```
-Elements in subqueries specified as nested select queries can also be accessed with the `in` operator. 
+Elements in subqueries specified as nested set queries can also be accessed with the `in` operator. 
 
 Example:
 ```sql
@@ -209,7 +237,7 @@ This query retrieves into the environment variable `:e`, which the object of typ
 
 **Notice** that if the result bag contains more than one object the *into* variable(s) will be bound only to the *first* object in the bag. In the example, if more that one person is named Eve only the first one found will be assigned to `:e`.
 
-If you wish to assign the entire result from a select query to a variable, enclose it in parentheses. The result will be a bag. The elements of the bag can then be extracted with the infix `in` operator or the `in()` function.
+If you wish to assign the entire result from a set query to a variable, enclose it in parentheses. The result will be a bag. The elements of the bag can then be extracted with the infix `in` operator or the `in()` function.
 
 Example:
 ```sql
@@ -245,7 +273,7 @@ Aggregate functions can be used in two ways:
 1. They can be used in [grouped selections](/docs/md/osql/queries.md#grouped-selections).
 2. They can be applied on *subqueries*.
 
-In the second case, the subqueries are specified as nested select queries returning bags.
+In the second case, the subqueries are specified as nested set queries returning bags.
 
 Example:
 ```
@@ -284,7 +312,7 @@ The statement assigns `:bigbag` to a bag of 10^7^ numbers. The bag is not explic
 ```
 
 ### <a name="ordered-selections"> Ordered selections</a>
-The `order by` clause specifies that the result should be sorted by the specified *sort key*. The sort order is descending when `desc` is specified and ascending otherwise. A select query with an order-by-clause is called an *ordered selection*.
+The `order by` clause specifies that the result should be sorted by the specified *sort key*. The sort order is descending when `desc` is specified and ascending otherwise. A set query with an order-by-clause is called an *ordered selection*.
 
 For example, the following query sorts the result descending based on the sort key `salary(p)`:
 
@@ -314,7 +342,7 @@ Example:
     group by name(p)
 ```
 
-A grouped selection is a select query with a `group by` clause present. The execution semantics of a grouped selection is different than for regular queries.
+A grouped selection is a set query with a `group by` clause present. The execution semantics of a grouped selection is different than for regular queries.
 
 Example:
 ```sql
@@ -353,7 +381,7 @@ The group key need not be part of the result. For example the following query re
 
 ## Top-k queries
 
-The optional `limit-clause` limits the number of returned values from the select query. It is often used together with ordered selections to specify *top-k queries* returning the first few tuples in a set of objects based on some ranking.
+The optional `limit-clause` limits the number of returned values from the set query. It is often used together with ordered selections to specify *top-k queries* returning the first few tuples in a set of objects based on some ranking.
 
 For example, the following query returns the names and salaries of the 10 highest income earners:
 

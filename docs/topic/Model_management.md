@@ -1,4 +1,19 @@
 # Model management
+**TODO: Introduction remains to be written!**
+> [function]
+> aws_cf:available(Record repo)->Bag of Charstring m
+
+
+
+___
+
+> [function]
+> aws_cf:url_generator(Charstring name,Record repo,Charstring model,
+                    Charstring version)->Charstring
+
+
+
+___
 
 > [function]
 > create_model(Charstring model)->Charstring
@@ -47,6 +62,14 @@ ___
 
 > [function-docs]
 > Download `file` in `path` under sa_home() 
+
+
+
+___
+
+> [function]
+> github:url_generator(Charstring name,Record repo,Charstring model,
+                    Charstring version)->Charstring
 
 
 
@@ -154,10 +177,15 @@ ___
 ___
 
 > [function]
-> models:available(Charstring repo)->Bag of Charstring
+> models:add_github_repo(Charstring name,Charstring organization,
+                      Charstring repository,Charstring auth_token)->Boolean
 
-> [function-docs]
-> Get models available as `repo` 
+
+
+___
+
+> [function]
+> models:add_official_repository(Charstring name,Charstring jwt)->Boolean
 
 
 
@@ -168,6 +196,23 @@ ___
 
 > [function-docs]
 > Same as `models:available("default")` 
+
+
+
+___
+
+> [function]
+> models:available(Charstring repo)->Bag of Charstring
+
+> [function-docs]
+> Get models available as `repo` 
+
+
+
+___
+
+> [function]
+> models:create(Charstring model)->Charstring
 
 
 
@@ -203,6 +248,16 @@ ___
 ___
 
 > [function]
+> models:import(Charstring model,Charstring version)->Charstring
+
+> [function-docs]
+> same as `models:import("default",model,version)` 
+
+
+
+___
+
+> [function]
 > models:import(Charstring repo,Charstring model,Charstring version)->Charstring
 
 > [function-docs]
@@ -213,10 +268,7 @@ ___
 ___
 
 > [function]
-> models:import(Charstring model,Charstring version)->Charstring
-
-> [function-docs]
-> same as `models:import("default",model,version)` 
+> models:install(Charstring file,Charstring name,Charstring version)->Charstring
 
 
 
