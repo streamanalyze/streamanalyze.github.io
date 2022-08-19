@@ -1,5 +1,5 @@
 # Database index
-
+**TODO: Introduction remains to be written!**
 > [function]
 > create_index(Function f,Charstring par,Charstring indtype,
             Charstring multiplicity)->Vector

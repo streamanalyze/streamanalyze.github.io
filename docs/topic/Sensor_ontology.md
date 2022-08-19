@@ -1,5 +1,5 @@
 # Sensor ontology
-
+**TODO: Introduction remains to be written!**
 > [function]
 > bus(Type wt)->Function
 

@@ -68,7 +68,6 @@ select pivot
    and fast_heartbeat_mod = mod(round(10*heartbeat(.1)), 2)
 ```
 
-
 ### Arithmetics on combined streams!
 
 If you want to run arithmetics on pivoted streams you first need
@@ -127,6 +126,49 @@ select v[1]*v[4] + v[3]*10, v[4], mean(win)
    and hbmodfast = mod(round(10*heartbeat(.1)), 2)
    and v in sv
    and win = v[2]
+```
+The following two queries seem to be defined in the same way, but they
+do give rise to different behavior:
+
+```LIVE {"vis":"automatic"}
+{'sa_plot': 'Scatter plot', 'labels':['x','y'], 'memory': 1000};
+pivot_streams([sin(10*heartbeat(.01)),
+               cos(10*heartbeat(.01))])
+```
+
+```LIVE {"vis":"automatic"}
+{'sa_plot': 'Scatter plot', 'labels':['x','y'], 'memory': 1000};
+select sin(x), cos(x)
+  from Number x
+ where x in 10*heartbeat(.02)
+```
+> [note]   **Note:** The first query differs slightly since it uses two
+*independent* streams together with [pivot
+streams](/docs/md/tutorial/pivot_streams.md), This means that we
+essentially have two streams where `sin` and `cos` are applied to
+their own stream over time (heartbeat) before they are merged.
+
+In the second example we apply `sin` and `cos` to the `x` from the
+*same* `heartbeat` stream. 
+
+More examples of how we can specify multiple streams in a query:
+
+```LIVE {"vis":"automatic"}
+{'sa_plot': 'Line plot', 'memory': 200};
+select pivot_streams([streamof(sin(x)), streamof(sin(x+pi()))])
+  from Stream of Number hb,
+       Number x
+ where hb = 10*heartbeat(.02)
+   and x in hb
+```
+
+```LIVE {"vis":"automatic"}
+{'sa_plot': 'Bar plot', 'memory': 200};
+pivot_streams(select Vector of sin(i/3 + 3*heartbeat(.03))
+                from Integer i
+               where i in iota(0,29)
+               order by i
+             )
 ```
 
 Hopefully these short examples has made you understand how you can

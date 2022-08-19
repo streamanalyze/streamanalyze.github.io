@@ -1,5 +1,5 @@
 # Debugging
-
+**TODO: Introduction remains to be written!**
 > [function]
 > expanded_image(Function f)->Integer
 

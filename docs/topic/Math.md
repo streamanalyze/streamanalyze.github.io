@@ -92,6 +92,16 @@ ___
 ___
 
 > [function]
+> divide(Integer x,Integer y)->(Integer q,Integer r)
+
+> [function-docs]
+> Quotient `q` and remainder `r` when dividing `x` with `y` 
+
+
+
+___
+
+> [function]
 > even(Number i)->Boolean
 
 > [function-docs]

@@ -2,7 +2,7 @@ Objects of type `Timeval` represent absolute time points. The time
 points are internally represented using [Coordinated Universal
 Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)(UTC)
 making them location independent. The time points are internally
-represented as number of microseconds since 00:00:00, January 1st,
+represented as number of microseconds since January 1st,
 1970, which is called the
 [epoch](https://en.wikipedia.org/wiki/Epoch_(computing)).
 

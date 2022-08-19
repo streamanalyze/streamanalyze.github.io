@@ -1,5 +1,5 @@
 # High order
-
+**TODO: Introduction remains to be written!**
 > [function]
 > apply(Function f,Vector args)->Bag of Vector
 
@@ -12,10 +12,35 @@
 ___
 
 > [function]
-> applyfunction1(Function fn,Object arg)->Bag
+> call(Function f)->Object
 
-> [function-docs]
-> Call function `fn(arg)` 
+
+
+___
+
+> [function]
+> call(Function f,Object x,Object y)->Object
+
+
+
+___
+
+> [function]
+> call(Function f,Object x)->Object
+
+
+
+___
+
+> [function]
+> call(Function f,Object x,Object y,Object z)->Object
+
+
+
+___
+
+> [function]
+> call(Function f,Object x,Object y,Object z,Object a)->Object
 
 
 

@@ -48,6 +48,21 @@ for example:
 select sin(10*heartbeat(0.05)) limit 5
 ```
 
+The query optimizer also allows applying functions on entire streams,
+for example:
+
+```LIVE {"vis":"automatic"}
+select sin(s)
+  from Stream of Number s
+ where s=10*heartbeat(.01)
+```
+
+can also be expressed as:
+
+```LIVE {"vis":"automatic"}
+sin(10*heartbeat(.01))
+```
+
 ## Synthetic streams
 
 The built-in library of trigonometric functions is very useful for
@@ -83,7 +98,7 @@ produced.  If you wait a while you will see how the stream start
 scrolling to the left.
 
 Time stamped streams can be defined by adding time stamps to the
-elements `x` of result stream by calling the function `ts(x)`. For
+elements `x` of a stream's result by calling the function `ts(x)`. For
 example, the following query returns the same timestamped simulated
 stream of numbers as `ts_simstream(0.01)`:
 
@@ -223,14 +238,14 @@ windows, e.g. for continuously computing statistics over windows of
 arriving data, as the moving average above. It works particular well
 if the elements arrive at a constant pace.
 
-However, if the elements arrive irregularly one needs to form
-*temporal windows* whose sizes are based on how many elements arrived
-during a time period rather than how many elements have
-arrived. Temporal windows are formed with the OSQL function
-`twinagg(ts, size, Stride)` that takes a timestamped stream of objects
-as input and produces a time stamped stream of vectors of
-objects as result. The parameters `size` and 'stride' are here
-measured in seconds rather than number of elements as `winagg()`.
+However, if the elements arrive irregularly one may need to form
+*temporal windows* whose sizes are based on elements arriving during a
+time period rather than on the number of arriving elements. Temporal
+windows are formed with the OSQL function `twinagg(ts, size, Stride)`
+that takes a timestamped stream of objects as input and produces a
+time stamped stream of vectors of objects as result. The parameters
+`size` and 'stride' are here measured in seconds rather than number of
+elements as `winagg()`.
 
 *For example:*
 
@@ -250,8 +265,46 @@ select mean(v), median(v)
    and v = value(tv)
 ```
 
-Notice that you can apply any [vector function](/docs/topic/Vector) on
+Notice that you can apply any [Vector function](/docs/topic/Vector) on
 `v`.
 
-The [next tutorial](/docs/md/tutorial/combining_streams.md) shows how to make queries
-over many streams.
+For more on windows over stream se topic
+[Windowing](/docs/topic/Windowing).
+
+The [next tutorial](/docs/md/tutorial/combining_streams.md) shows how
+to make queries over many streams.
+
+## Visualizing streams
+
+We show how to use [**Multi plot**](/docs/md/vis/multiplot.md) for
+flexible stream visualization.
+
+You can prefix a stream query with a JSON record specifying how to
+visualize the result. For example, the following query is visualized
+by a sliding line plot over the latest 200 values:
+
+```LIVE {"vis":"automatic"}
+{'sa_plot': 'Line plot', 'memory': 200};
+select sin(x), cos(x)
+  from Number x
+ where x in 10*heartbeat(.02)
+```
+
+Trigonometric functions lend themselves to algebraic manipulation over
+streams, like this amplitude modulation example:
+
+```LIVE {"vis":"automatic"}
+{'sa_plot': 'Line plot', 'memory': 200};
+select sin(x)*sin(x/30), cos(x)*cos(x/30)
+  from Number x
+ where x in 20*heartbeat(.01)
+```
+
+which is more appealing in parametric coordinates (scatter plot):
+
+```LIVE {"vis":"automatic"}
+{'sa_plot': 'Scatter plot', 'memory': 1000};
+select sin(x)*sin(x/30), cos(x)*cos(x/30)
+  from Number x
+ where x in 10*heartbeat(.005)
+```

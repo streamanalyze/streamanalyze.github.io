@@ -1,5 +1,5 @@
 # Dataflow
-
+**TODO: Introduction remains to be written!**
 > [function]
 > drop_flow(Object flow)->Charstring
 
@@ -18,7 +18,7 @@ ___
 ___
 
 > [function]
-> flows()->Bag
+> flows()->Bag of Record
 
 > [function-docs]
 > Get all current data flows 
@@ -55,10 +55,7 @@ ___
 ___
 
 > [function]
-> subscribe(Charstring edge,Charstring flow)->Object
-
-> [function-docs]
-> Follow data `flow` on `edge` 
+> pump:active_flows(Charstring name)->Vector of Charstring
 
 
 
@@ -69,5 +66,22 @@ ___
 
 > [function-docs]
 > Follow data `flow` 
+
+
+
+___
+
+> [function]
+> subscribe(Charstring edge,Charstring flow)->Object
+
+> [function-docs]
+> Follow data `flow` on `edge` 
+
+
+
+___
+
+> [function]
+> subscribe:merge(Vector of Charstring flows)->Object
 
 

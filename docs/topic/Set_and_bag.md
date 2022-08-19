@@ -1,5 +1,5 @@
 # Set and bag
-
+**TODO: Introduction remains to be written!**
 > [function]
 > bequal(Bag x,Bag y)->Boolean
 
